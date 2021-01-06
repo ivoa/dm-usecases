@@ -1,1 +1,1 @@
-# Mango Based Proposal for the Simple Position Case
+# Mango Based Proposal for the `Simple Position` Case

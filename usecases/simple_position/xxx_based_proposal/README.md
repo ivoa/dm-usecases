@@ -1,1 +1,1 @@
-# XXX Based Proposal for the Simple Position Case
+# XXX Based Proposal for the `Simple Position` Case

@@ -1,1 +1,1 @@
-# Mango Proposal for the Correlated Errors Case
+# Mango Proposal for the `Correlated Errors` Case

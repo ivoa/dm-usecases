@@ -1,0 +1,162 @@
+{
+  "@dmtype": "mango:MangoObject",
+  "mango:MangoObject.associatedData": [
+    {
+      "@dmtype": "mango:WebEndpoint",
+      "mango:Parameter.contentType": {
+        "@dmtype": "ivoa:string",
+        "@ref": "product_type",
+        "@value": "application/fits"
+      },
+      "mango:Parameter.description": {
+        "@dmtype": "ivoa:string",
+        "@value": "Raw Spectrum"
+      },
+      "mango:Parameter.uri": {
+        "@dmtype": "ivoa:string",
+        "@ref": "data_access",
+        "@value": "http://spectrum/581245887037857579/MOS1"
+      },
+      "mango:WebEndpoint.semantic": {
+        "@dmtype": "ivoa:string",
+        "@value": "#spectrum.raw"
+      }
+    },
+    {
+      "@dmtype": "mango:WebEndpoint",
+      "mango:Parameter.contentType": {
+        "@dmtype": "ivoa:string",
+        "@ref": "product_type",
+        "@value": "application/fits"
+      },
+      "mango:Parameter.description": {
+        "@dmtype": "ivoa:string",
+        "@value": "Raw Spectrum"
+      },
+      "mango:Parameter.uri": {
+        "@dmtype": "ivoa:string",
+        "@ref": "data_access",
+        "@value": "http://spectrum/581245887037857579/MO2"
+      },
+      "mango:WebEndpoint.semantic": {
+        "@dmtype": "ivoa:string",
+        "@value": "#spectrum.raw"
+      }
+    },
+    {
+      "@dmtype": "mango:WebEndpoint",
+      "mango:Parameter.contentType": {
+        "@dmtype": "ivoa:string",
+        "@ref": "product_type",
+        "@value": "application/fits"
+      },
+      "mango:Parameter.description": {
+        "@dmtype": "ivoa:string",
+        "@value": "Raw Spectrum"
+      },
+      "mango:Parameter.uri": {
+        "@dmtype": "ivoa:string",
+        "@ref": "data_access",
+        "@value": "http://spectrum/581245887037857579/PN"
+      },
+      "mango:WebEndpoint.semantic": {
+        "@dmtype": "ivoa:string",
+        "@value": "#spectrum.raw"
+      }
+    }
+  ],
+  "mango:MangoObject.identifier": {
+    "@dmtype": "ivoa:string",
+    "@ref": "namesaada",
+    "@value": "4XMM J224338.5-170418"
+  },
+  "mango:MangoObject.parameters": [
+    {
+      "mango:MangoObject.parameters": {
+        "@dmtype": "mango:Parameter",
+        "mango:Parameter.description": {
+          "@dmtype": "ivoa:string",
+          "@value": "Corrected position"
+        },
+        "mango:Parameter.measure": {
+          "@dmtype": "mango:stcextend.LonLatSkyPosition",
+          "mango:stcextend.LonLatSkyPosition.coord": {
+            "@dmtype": "mango:stcextend.LonLatPoint",
+            "coords:Coordinate.coordSys": {
+              "@ID": "SpaceFrame_ICRS",
+              "@dmtype": "coords:SpaceFrame",
+              "coords:SpaceFrame.equinox": {
+                "@dmtype": "coords:Epoch",
+                "@value": "NoSet"
+              },
+              "coords:SpaceFrame.refPosition": {
+                "@dmtype": "coords:StdRefLocation",
+                "coords:StdRefLocation.position": {
+                  "@dmtype": "ivoa:string",
+                  "@value": "NoSet"
+                }
+              },
+              "coords:SpaceFrame.spaceRefFrame": {
+                "@dmtype": "ivoa:string",
+                "@value": "ICRS"
+              }
+            },
+            "mango:stcextend.LonLatPoint.latitude": {
+              "@dmtype": "ivoa:real",
+              "@ref": "pos_dec_csa",
+              "@value": -17.071667101891
+            },
+            "mango:stcextend.LonLatPoint.longitude": {
+              "@dmtype": "ivoa:real",
+              "@ref": "pos_ra_csa",
+              "@value": 340.91055060369
+            }
+          },
+          "meas:Measure.error": {
+            "@dmtype": "meas:Error",
+            "meas:Error.statError": {
+              "@dmtype": "meas:Symmetrical",
+              "meas:Symmetrical.radius": {
+                "@dmtype": "ivoa:RealQuantity",
+                "ivoa:Quantity.unit": {
+                  "@dmtype": "ivoa:Unit",
+                  "@value": "NotSet"
+                },
+                "ivoa:RealQuantity.value": {
+                  "@dmtype": "ivoa:real",
+                  "@value": "0"
+                }
+              }
+            },
+            "meas:Error.sysError": {
+              "@dmtype": "meas:Symmetrical",
+              "meas:Symmetrical.radius": {
+                "@dmtype": "ivoa:RealQuantity",
+                "ivoa:Quantity.unit": {
+                  "@dmtype": "ivoa:Unit",
+                  "@value": "NotSet"
+                },
+                "ivoa:RealQuantity.value": {
+                  "@dmtype": "ivoa:real",
+                  "@value": "0"
+                }
+              }
+            }
+          }
+        },
+        "mango:Parameter.reductionStatus": {
+          "@dmtype": "ivoa:string",
+          "@value": "Corrected"
+        },
+        "mango:Parameter.semantic": {
+          "@dmtype": "ivoa:string",
+          "@value": "#postion.corrected"
+        },
+        "mango:Parameter.ucd": {
+          "@dmtype": "ivoa:string",
+          "@value": "pos"
+        }
+      }
+    }
+  ]
+}

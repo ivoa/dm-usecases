@@ -1,0 +1,298 @@
+{
+  "@dmtype": "mango:MangoObject",
+  "mango:MangoObject.associatedData": [],
+  "mango:MangoObject.identifier": {
+    "@dmtype": "ivoa:string",
+    "@ref": "recno",
+    "@value": 2
+  },
+  "mango:MangoObject.parameters": [
+    {
+      "mango:Parameter.measure": [
+        {
+          "@dmrole": "mango:Parameter.measure",
+          "@dmtype": "mango:Parameter",
+          "mango:Parameter.associatedParameters": [
+            {
+              "mango:Parameter.associatedParameters": [
+                {
+                  "@dmref": "_plate_number",
+                  "@dmrole": "mango:Parameter.associatedParameters"
+                },
+                {
+                  "@dmref": "_observatory",
+                  "@dmrole": "mango:Parameter.associatedParameters"
+                },
+                {
+                  "@dmref": "_rv_quality",
+                  "@dmrole": "mango:Parameter.associatedParameters"
+                }
+              ]
+            }
+          ],
+          "mango:Parameter.description": {
+            "@dmtype": "ivoa:string",
+            "@value": "Radial velocity, derived from the shift of some spectral feature in Heliocentric position coordinate (solar system bodies)"
+          },
+          "mango:Parameter.measure": {
+            "@dmtype": "meas:GenericMeasure",
+            "meas:GenericMeasure.coord": {
+              "@dmtype": "coords:PhysicalCoordinate",
+              "coords:PhysicalCoordinate.cval": {
+                "@dmtype": "ivoa:RealQuantity",
+                "ivoa:RealQuantity.unit": {
+                  "@dmtype": "ivoa:Unit",
+                  "@value": "km/sec"
+                },
+                "ivoa:RealQuantity.value": {
+                  "@dmtype": "ivoa:real",
+                  "@ref": "RV",
+                  "@value": -18.100000381469727
+                }
+              },
+              "meas:Measure.error": {
+                "@dmtype": "meas:Error",
+                "meas:Error.statError": {
+                  "@dmtype": "meas:Symmetrical",
+                  "meas:Symmetrical.radius": {
+                    "@dmtype": "ivoa:RealQuantity",
+                    "ivoa:Quantity.unit": {
+                      "@dmtype": "ivoa:Unit",
+                      "@value": "NotSet"
+                    },
+                    "ivoa:RealQuantity.value": {
+                      "@dmtype": "ivoa:real",
+                      "@value": "NotSet"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "mango:Parameter.reductionStatus": {
+            "@dmtype": "ivoa:string",
+            "@value": "Calibrated"
+          },
+          "mango:Parameter.semantic": {
+            "@dmtype": "ivoa:string",
+            "@value": "#radial velocity"
+          },
+          "mango:Parameter.ucd": {
+            "@dmtype": "ivoa:string",
+            "@value": "spect.dopplerVeloc;pos.heliocentric"
+          }
+        },
+        {
+          "@ID": "_plate_number",
+          "@dmrole": "mango:Parameter.measure",
+          "@dmtype": "mango:Parameter",
+          "mango:Parameter.description": {
+            "@dmtype": "ivoa:string",
+            "@value": "Number of plates used for radial velocity "
+          },
+          "mango:Parameter.measure": {
+            "@dmtype": "meas:GenericMeasure",
+            "meas:GenericMeasure.coord": {
+              "@dmtype": "coords:PhysicalCoordinate",
+              "coords:PhysicalCoordinate.cval": {
+                "@dmtype": "ivoa:RealQuantity",
+                "ivoa:RealQuantity.unit": {
+                  "@dmtype": "ivoa:Unit",
+                  "@value": "-"
+                },
+                "ivoa:RealQuantity.value": {
+                  "@dmtype": "ivoa:real",
+                  "@ref": "o_RV",
+                  "@value": 5
+                }
+              },
+              "meas:Measure.error": {
+                "@dmtype": "meas:Error",
+                "meas:Error.statError": {
+                  "@dmtype": "meas:Symmetrical",
+                  "meas:Symmetrical.radius": {
+                    "@dmtype": "ivoa:RealQuantity",
+                    "ivoa:Quantity.unit": {
+                      "@dmtype": "ivoa:Unit",
+                      "@value": "NotSet"
+                    },
+                    "ivoa:RealQuantity.value": {
+                      "@dmtype": "ivoa:real",
+                      "@value": "NotSet"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "mango:Parameter.reductionStatus": {
+            "@dmtype": "ivoa:string",
+            "@value": "Computed"
+          },
+          "mango:Parameter.semantic": {
+            "@dmtype": "ivoa:string",
+            "@value": "#Number.of.plates"
+          },
+          "mango:Parameter.ucd": {
+            "@dmtype": "ivoa:string",
+            "@value": "meta.number"
+          }
+        },
+        {
+          "@ID": "_observatory",
+          "@dmrole": "mango:Parameter.measure",
+          "@dmtype": "mango:Parameter",
+          "mango:Parameter.description": {
+            "@dmtype": "ivoa:string",
+            "@value": "the observatories contributing to the mean radial velocity  "
+          },
+          "mango:Parameter.measure": {
+            "@dmtype": "meas:GenericMeasure",
+            "meas:GenericMeasure.coord": {
+              "@dmtype": "coords:PhysicalCoordinate",
+              "coords:PhysicalCoordinate.cval": {
+                "@dmtype": "ivoa:RealQuantity",
+                "ivoa:RealQuantity.unit": {
+                  "@dmtype": "ivoa:Unit",
+                  "@value": "-"
+                },
+                "ivoa:RealQuantity.value": {
+                  "@dmtype": "ivoa:real",
+                  "@ref": "r_RV",
+                  "@value": "W"
+                }
+              },
+              "meas:Measure.error": {
+                "@dmtype": "meas:Error",
+                "meas:Error.statError": {
+                  "@dmtype": "meas:Symmetrical",
+                  "meas:Symmetrical.radius": {
+                    "@dmtype": "ivoa:RealQuantity",
+                    "ivoa:Quantity.unit": {
+                      "@dmtype": "ivoa:Unit",
+                      "@value": "NotSet"
+                    },
+                    "ivoa:RealQuantity.value": {
+                      "@dmtype": "ivoa:real",
+                      "@value": "NotSet"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "mango:Parameter.reductionStatus": {
+            "@dmtype": "ivoa:string",
+            "@value": "Computed"
+          },
+          "mango:Parameter.semantic": {
+            "@dmtype": "ivoa:string",
+            "@value": "#observatory"
+          },
+          "mango:Parameter.ucd": {
+            "@dmtype": "ivoa:string",
+            "@value": "meta.ref;pos.frame "
+          }
+        },
+        {
+          "@ID": "_rv_quality",
+          "@dmrole": "mango:Parameter.measure",
+          "@dmtype": "mango:Parameter",
+          "mango:Parameter.description": {
+            "@dmtype": "ivoa:string",
+            "@value": " Quality of radial velocity "
+          },
+          "mango:Parameter.measure": {
+            "@dmtype": "mango:stcextend.Flag",
+            "mango:stcextend.Flag.coord": {
+              "@dmtype": "mango:stcextend.FlagCoord",
+              "coords:Coordinate.coordSys": {
+                "@ID": "StatusFrame_QRVFLAG",
+                "@dmtype": "cab_msd:STCStatusSys",
+                "cab_msd:STCStatusSys.statusLabel": [
+                  {
+                    "cab_msd:STCStatusSys.statusLabel": [
+                      {
+                        "@dmrole": "cab_msd:STCStatusSys.statusLabel",
+                        "@dmtype": "cab_msd:StatusLabel",
+                        "cab_msd:StatusLabel.label": {
+                          "@dmtype": "ivoa:string",
+                          "@value": "Mean (max) error 0.5 (0.9)"
+                        },
+                        "cab_msd:StatusLabel.value": {
+                          "@dmtype": "ivoa:integer",
+                          "@value": "B"
+                        }
+                      },
+                      {
+                        "@dmrole": "cab_msd:STCStatusSys.statusLabel",
+                        "@dmtype": "cab_msd:StatusLabel",
+                        "cab_msd:StatusLabel.label": {
+                          "@dmtype": "ivoa:string",
+                          "@value": "Mean (max) error 1.2 (2.0)"
+                        },
+                        "cab_msd:StatusLabel.value": {
+                          "@dmtype": "ivoa:integer",
+                          "@value": "B"
+                        }
+                      },
+                      {
+                        "@dmrole": "cab_msd:STCStatusSys.statusLabel",
+                        "@dmtype": "cab_msd:StatusLabel",
+                        "cab_msd:StatusLabel.label": {
+                          "@dmtype": "ivoa:string",
+                          "@value": "Mean (max) error 2.5 (5.0)"
+                        },
+                        "cab_msd:StatusLabel.value": {
+                          "@dmtype": "ivoa:integer",
+                          "@value": "C"
+                        }
+                      },
+                      {
+                        "@dmrole": "cab_msd:STCStatusSys.statusLabel",
+                        "@dmtype": "cab_msd:StatusLabel",
+                        "cab_msd:StatusLabel.label": {
+                          "@dmtype": "ivoa:string",
+                          "@value": "Mean (max) error 5 (10)"
+                        },
+                        "cab_msd:StatusLabel.value": {
+                          "@dmtype": "ivoa:integer",
+                          "@value": "D"
+                        }
+                      },
+                      {
+                        "@dmrole": "cab_msd:STCStatusSys.statusLabel",
+                        "@dmtype": "cab_msd:StatusLabel",
+                        "cab_msd:StatusLabel.label": {
+                          "@dmtype": "ivoa:string",
+                          "@value": "Mean error > 10"
+                        },
+                        "cab_msd:StatusLabel.value": {
+                          "@dmtype": "ivoa:integer",
+                          "@value": "E"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              "mango:stcextend.FlagCoord.coord": {
+                "@dmtype": "ivoa:integer",
+                "@ref": "q_RV",
+                "@value": "B"
+              }
+            }
+          },
+          "mango:Parameter.semantic": {
+            "@dmtype": "ivoa:string",
+            "@value": "#quality_flag"
+          },
+          "mango:Parameter.ucd": {
+            "@dmtype": "ivoa:string",
+            "@value": "meta.code.qual"
+          }
+        }
+      ]
+    }
+  ]
+}

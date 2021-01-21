@@ -1,0 +1,10 @@
+{
+  "@dmtype": "mango:MangoObject",
+  "mango:MangoObject.associatedData": [],
+  "mango:MangoObject.identifier": {
+    "@dmtype": "ivoa:string",
+    "@ref": "main_id",
+    "@value": "LEDA  889060"
+  },
+  "mango:MangoObject.parameters": []
+}

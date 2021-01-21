@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VOTABLE version="1.4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.ivoa.net/xml/VOTable/v1.3"
+	xsi:schemaLocation="http://www.ivoa.net/xml/VOTable/v1.3 http://www.ivoa.net/xml/VOTable/v1.3">
+	<DESCRIPTION>
+		VizieR Astronomical Server vizier.u-strasbg.fr
+		Date: 2021-01-21T13:05:40 [V1.99+ (14-Oct-2013)]
+		Explanations and Statistics of UCDs: See LINK below
+		In case of problem, please report to: cds-question@unistra.fr
+		In this version, NULL integer columns are written as an empty string
+		&lt;TD&gt;&lt;/TD&gt;, explicitely possible from VOTable-1.3
+	</DESCRIPTION>
+	<!-- VOTable description at http://www.ivoa.net/Documents/latest/VOT.html -->
+	<INFO ID="VERSION" name="votable-version" value="1.99+ (14-Oct-2013)" />
+	<INFO ID="Ref" name="-ref" value="VIZ60097b26a189" />
+	<INFO ID="MaxTuples" name="-out.max" value="10" />
+	<INFO name="queryParameters" value="15">
+-oc.form=dec
+-out.max=10
+-nav=cat:IX/57&amp;tab:{IX/57/csc2master}&amp;key:source=IX/57&amp;HTTPPRM:&amp;
+-c.eq=J2000
+-c.r=  2
+-c.u=arcmin
+-c.geom=r
+-source=IX/57/csc2master
+-order=I
+-out.orig=standard
+-out=2CXO
+-out=RAICRS
+-out=DEICRS
+-out=GLON
+-out=GLAT
+</INFO>
+
+	<!-- Execution Reports -->
+
+	<RESOURCE ID="yCat_9057" name="IX/57">
+		<DESCRIPTION>The Chandra Source Catalog (CSC), Release 2.0 (Evans+, 2019)</DESCRIPTION>
+		<COOSYS ID="H" system="ICRS" />
+		<TABLE ID="Results" name="IX/57/csc2master">
+			<DESCRIPTION>Chandra Source Catalog, V2.0; master sources</DESCRIPTION>
+			<!-- Chandra Source Catalog, V2.0; master sources (\originalcolumnnames) -->
+
+			<!-- Definitions of GROUPs and FIELDs -->
+
+			<!-- +++No column could be found to attach a LINK in table: IX/57/csc2master -->
+			<FIELD name="2CXO" ucd="meta.id;meta.main" datatype="char" arraysize="18"><!-- ucd="ID_MAIN" -->
+				<DESCRIPTION>Source name (Jhhmmss.s+ddmmssX) (name)</DESCRIPTION>
+			</FIELD>
+			<FIELD name="RAICRS" ucd="pos.eq.ra;meta.main" ref="H" datatype="double" width="11" precision="7" unit="deg"><!-- ucd="POS_EQ_RA_MAIN" -->
+				<DESCRIPTION>Source position, ICRS right ascension (ra)</DESCRIPTION>
+			</FIELD>
+			<FIELD name="DEICRS" ucd="pos.eq.dec;meta.main" ref="H" datatype="double" width="11" precision="7" unit="deg"><!-- ucd="POS_EQ_DEC_MAIN" -->
+				<DESCRIPTION>Source position, ICRS declination (dec)</DESCRIPTION>
+			</FIELD>
+			<FIELD name="GLON" ucd="pos.galactic.lon" datatype="double" width="12" precision="E5" unit="deg"><!-- ucd="POS_GAL_LON" -->
+				<DESCRIPTION>[-90/90] Source position, Galactic latitude (equinox J2000, epoch J2000) (gal_b)</DESCRIPTION>
+			</FIELD>
+			<FIELD name="GLAT" ucd="pos.galactic.lat" datatype="double" width="12" precision="E5" unit="deg"><!-- ucd="POS_GAL_LAT" -->
+				<DESCRIPTION>[0/360] Source position, Galactic longitude (gal_l)</DESCRIPTION>
+			</FIELD>
+			<DATA>
+				<TABLEDATA>
+					<TR>
+						<TD> J165541.6-424937</TD>
+						<TD>253.9235440</TD>
+						<TD>-42.8271581</TD>
+						<TD>3.34360e-01</TD>
+						<TD>3.42863e+02</TD>
+					</TR>
+					<TR>
+						<TD> J165643.7-424532</TD>
+						<TD>254.1822020</TD>
+						<TD>-42.7589867</TD>
+						<TD>2.29009e-01</TD>
+						<TD>3.43035e+02</TD>
+					</TR>
+					<TR>
+						<TD> J165650.6-423812</TD>
+						<TD>254.2110170</TD>
+						<TD>-42.6366900</TD>
+						<TD>2.88859e-01</TD>
+						<TD>3.43143e+02</TD>
+					</TR>
+					<TR>
+						<TD> J165655.8-423816</TD>
+						<TD>254.2327631</TD>
+						<TD>-42.6379642</TD>
+						<TD>2.75568e-01</TD>
+						<TD>3.43152e+02</TD>
+					</TR>
+					<TR>
+						<TD> J165649.7-423849</TD>
+						<TD>254.2074791</TD>
+						<TD>-42.6470446</TD>
+						<TD>2.84426e-01</TD>
+						<TD>3.43134e+02</TD>
+					</TR>
+					<TR>
+						<TD> J165659.9-423630</TD>
+						<TD>254.2496619</TD>
+						<TD>-42.6083618</TD>
+						<TD>2.84331e-01</TD>
+						<TD>3.43183e+02</TD>
+					</TR>
+					<TR>
+						<TD> J165658.8-423732</TD>
+						<TD>254.2452153</TD>
+						<TD>-42.6257554</TD>
+						<TD>2.76031e-01</TD>
+						<TD>3.43168e+02</TD>
+					</TR>
+					<TR>
+						<TD> J165703.7-425442</TD>
+						<TD>254.2655991</TD>
+						<TD>-42.9116713</TD>
+						<TD>8.59080e-02</TD>
+						<TD>3.42954e+02</TD>
+					</TR>
+					<TR>
+						<TD> J165719.8-425620</TD>
+						<TD>254.3329099</TD>
+						<TD>-42.9390771</TD>
+						<TD>3.02880e-02</TD>
+						<TD>3.42963e+02</TD>
+					</TR>
+					<TR>
+						<TD> J170103.4-404053</TD>
+						<TD>255.2642189</TD>
+						<TD>-40.6814190</TD>
+						<TD>8.82591e-01</TD>
+						<TD>3.45166e+02</TD>
+					</TR>
+				</TABLEDATA>
+			</DATA>
+		</TABLE>
+		<INFO name="matches" value="10">matching records</INFO>
+
+		<INFO name="Warning" value="No center provided++++" />
+		<INFO name="Warning" value="+++No column for LINK to a row in table: IX/57/csc2master" />
+		<INFO name="Warning" value="truncated result (maxtup=10)" />
+		<INFO name="QUERY_STATUS" value="OVERFLOW">truncated result (maxtup=10)</INFO>
+
+	</RESOURCE>
+</VOTABLE>

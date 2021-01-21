@@ -1,4 +1,4 @@
-# `Precise Astrometry` Use case
+PySimpleGUIPySimpleGUI# `Precise Astrometry` Use case
 
 Client authors want to recognise all information in catalogues relevant to
 precision astrometry (e.g., distances or radial velocities as necessary in foreshortening

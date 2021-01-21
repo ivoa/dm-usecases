@@ -18,5 +18,5 @@
 - Some class names can differ from the last MANGO proposal
 - It is to be noted that the semantic fields are not properly set
 
-The demo client (`ModelInstanceInVot/python_workflow/python/client/demo/4xmm_detections.py`) can generate one JSON serialization for each data row. These MANGO instance can be processed as dictionaries by any language. 
+The demo client (`ModelInstanceInVot/python_workflow/python/client/demo/4xmm_detections.py`) can generate one JSON serialization for each data row. These MANGO instances can be processed as dictionaries by any language. 
         

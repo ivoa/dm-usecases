@@ -2,7 +2,7 @@
 
 ## `4xmm_lite.xml`
 
-VOTable with to tables
+VOTable with two tables
 - `Results` : 5 sources with positions,names and identifiers
 - `spectra` : 3 spectra URL all linked to the first source.
 

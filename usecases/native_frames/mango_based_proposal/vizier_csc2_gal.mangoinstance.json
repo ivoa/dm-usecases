@@ -1,0 +1,151 @@
+{
+  "@dmtype": "mango:MangoObject",
+  "mango:MangoObject.associatedData": [],
+  "mango:MangoObject.identifier": {
+    "@dmtype": "ivoa:string",
+    "@ref": "2CXO",
+    "@value": "J165643.7-424532"
+  },
+  "mango:MangoObject.parameters": [
+    {
+      "@dmrole": "mango:MangoObject.parameters",
+      "@dmtype": "mango:Parameter",
+      "mango:Parameter.description": {
+        "@dmtype": "ivoa:string",
+        "@value": "position"
+      },
+      "mango:Parameter.measure": {
+        "@dmtype": "mango:stcextend.LonLatSkyPosition",
+        "mango:stcextend.LonLatSkyPosition.coord": {
+          "@dmtype": "mango:stcextend.LonLatPoint",
+          "coords:Coordinate.coordSys": {
+            "@dmref": "SpaceFrame_ICRS"
+          },
+          "mango:stcextend.LonLatPoint.latitude": {
+            "@dmtype": "ivoa:real",
+            "@ref": "DEICRS",
+            "@value": -42.7589867
+          },
+          "mango:stcextend.LonLatPoint.longitude": {
+            "@dmtype": "ivoa:real",
+            "@ref": "RAICRS",
+            "@value": 254.182202
+          }
+        },
+        "meas:Measure.error": {
+          "@dmtype": "meas:Error",
+          "meas:Error.statError": {
+            "@dmtype": "meas:Symmetrical",
+            "meas:Symmetrical.radius": {
+              "@dmtype": "ivoa:RealQuantity",
+              "ivoa:Quantity.unit": {
+                "@dmtype": "ivoa:Unit",
+                "@value": "NotSet"
+              },
+              "ivoa:RealQuantity.value": {
+                "@dmtype": "ivoa:real",
+                "@value": "NotSet"
+              }
+            }
+          },
+          "meas:Error.sysError": {
+            "@dmtype": "meas:Symmetrical",
+            "meas:Symmetrical.radius": {
+              "@dmtype": "ivoa:RealQuantity",
+              "ivoa:Quantity.unit": {
+                "@dmtype": "ivoa:Unit",
+                "@value": "NotSet"
+              },
+              "ivoa:RealQuantity.value": {
+                "@dmtype": "ivoa:real",
+                "@value": "NotSet"
+              }
+            }
+          }
+        }
+      },
+      "mango:Parameter.reductionStatus": {
+        "@dmtype": "ivoa:string",
+        "@value": "Computed"
+      },
+      "mango:Parameter.semantic": {
+        "@dmtype": "ivoa:string",
+        "@value": "#position"
+      },
+      "mango:Parameter.ucd": {
+        "@dmtype": "ivoa:string",
+        "@value": "pos.eq;meta.main"
+      }
+    },
+    {
+      "@dmrole": "mango:MangoObject.parameters",
+      "@dmtype": "mango:Parameter",
+      "mango:Parameter.description": {
+        "@dmtype": "ivoa:string",
+        "@value": "position"
+      },
+      "mango:Parameter.measure": {
+        "@dmtype": "mango:stcextend.LonLatSkyPosition",
+        "mango:stcextend.LonLatSkyPosition.coord": {
+          "@dmtype": "mango:stcextend.LonLatPoint",
+          "coords:Coordinate.coordSys": {
+            "@dmref": "SpaceFrame_Galactic"
+          },
+          "mango:stcextend.LonLatPoint.latitude": {
+            "@dmtype": "ivoa:real",
+            "@ref": "GLAT",
+            "@value": 343.035
+          },
+          "mango:stcextend.LonLatPoint.longitude": {
+            "@dmtype": "ivoa:real",
+            "@ref": "GLON",
+            "@value": 0.229009
+          }
+        },
+        "meas:Measure.error": {
+          "@dmtype": "meas:Error",
+          "meas:Error.statError": {
+            "@dmtype": "meas:Symmetrical",
+            "meas:Symmetrical.radius": {
+              "@dmtype": "ivoa:RealQuantity",
+              "ivoa:Quantity.unit": {
+                "@dmtype": "ivoa:Unit",
+                "@value": "NotSet"
+              },
+              "ivoa:RealQuantity.value": {
+                "@dmtype": "ivoa:real",
+                "@value": "NotSet"
+              }
+            }
+          },
+          "meas:Error.sysError": {
+            "@dmtype": "meas:Symmetrical",
+            "meas:Symmetrical.radius": {
+              "@dmtype": "ivoa:RealQuantity",
+              "ivoa:Quantity.unit": {
+                "@dmtype": "ivoa:Unit",
+                "@value": "NotSet"
+              },
+              "ivoa:RealQuantity.value": {
+                "@dmtype": "ivoa:real",
+                "@value": "NotSet"
+              }
+            }
+          }
+        }
+      },
+      "mango:Parameter.reductionStatus": {
+        "@dmtype": "ivoa:string",
+        "@value": "Computed"
+      },
+      "mango:Parameter.semantic": {
+        "@dmtype": "ivoa:string",
+        "@value": "#position"
+      },
+      "mango:Parameter.ucd": {
+        "@dmtype": "ivoa:string",
+        "@value": "pos.eq"
+      }
+    }
+  ]
+}

@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- modif Mireille : for each Tag , dmrole should stand on the same line
+allow easier extraction of model classes using a awk script
+
+the goal is to extract from the mapping a tree representing the classes used from the diff models   -->
 <VOTABLE xmlns="http://www.ivoa.net/xml/VOTable/v1.3"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.3">
 	<MODEL_INSTANCE>
@@ -37,44 +41,46 @@
 					<INSTANCE dmrole="root" dmtype="mango:MangoObject">
 						<ATTRIBUTE dmrole="mango:MangoObject.identifier"
 							dmtype="ivoa:string" ref="namesaada" />
-						<COLLECTION size="-1"
-							dmrole="mango:MangoObject.associatedData">
+						<COLLECTION size="-1" dmrole="mango:MangoObject.associatedData">
 							<JOIN tableref="Spectra" primary="oidsaada"
 								foreign="oidsaada">
 								<INSTANCE dmrole="mango:MangoObject.associatedData" dmtype="mango:WebEndpoint">
+									<!--Question Mireille : why do we have a mapping here of the second table which will be described below? -->
+									<!-- we would only need the Join condition here , no? -->
+
+							<!--update Mireille same as in the spectra table below:
+								all attributes below belong to WebEndPoint
+								no Parameter in the game here -->
+
 									<ATTRIBUTE dmrole="mango:WebEndpoint.semantic"
 										dmtype="ivoa:string" value="#spectrum.raw" />
-									<ATTRIBUTE dmrole="mango:Parameter.description"
+									<ATTRIBUTE dmrole="mango:WebEndpoint.description"
 										dmtype="ivoa:string" value="Raw Spectrum" />
-									<ATTRIBUTE dmrole="mango:Parameter.contentType"
+									<ATTRIBUTE dmrole="mango:WebEndpoint.contentType"
 										dmtype="ivoa:string" ref="product_type" />
-									<ATTRIBUTE dmrole="mango:Parameter.uri"
+									<ATTRIBUTE dmrole="mango:WebEndpoint.url"
 										dmtype="ivoa:string" ref="data_access" />
 								</INSTANCE>
 							</JOIN>
 						</COLLECTION>
-						<COLLECTION size="-1"
-							dmrole="mango:MangoObject.parameters">
-							<INSTANCE dmrole="mango:MangoObject.parameters"
+						<COLLECTION size="-1" dmrole="mango:MangoObject.parameters">
+								<INSTANCE dmrole="mango:MangoObject.parameters"
 								dmtype="mango:Parameter">
-								<ATTRIBUTE dmrole="mango:Parameter.semantic"
+									<ATTRIBUTE dmrole="mango:Parameter.semantic"
 									dmtype="ivoa:string" value="#postion.corrected" />
-								<ATTRIBUTE dmrole="mango:Parameter.ucd"
+									<ATTRIBUTE dmrole="mango:Parameter.ucd"
 									dmtype="ivoa:string" value="pos" />
-								<ATTRIBUTE dmrole="mango:Parameter.description"
+									<ATTRIBUTE dmrole="mango:Parameter.description"
 									dmtype="ivoa:string" value="Corrected position" />
-								<ATTRIBUTE dmrole="mango:Parameter.reductionStatus"
+									<ATTRIBUTE dmrole="mango:Parameter.reductionStatus"
 									dmtype="ivoa:string" value="Corrected" />
 								<INSTANCE dmrole="mango:Parameter.measure"
 									dmtype="mango:stcextend.LonLatSkyPosition">
-									<INSTANCE
-										dmrole="mango:stcextend.LonLatSkyPosition.coord"
+									<INSTANCE dmrole="mango:stcextend.LonLatSkyPosition.coord"
 										dmtype="mango:stcextend.LonLatPoint">
-										<ATTRIBUTE
-											dmrole="mango:stcextend.LonLatPoint.longitude"
+										<ATTRIBUTE dmrole="mango:stcextend.LonLatPoint.longitude"
 											dmtype="ivoa:real" ref="pos_ra_csa" />
-										<ATTRIBUTE
-											dmrole="mango:stcextend.LonLatPoint.latitude"
+										<ATTRIBUTE dmrole="mango:stcextend.LonLatPoint.latitude"
 											dmtype="ivoa:real" ref="pos_dec_csa" />
 										<INSTANCE dmrole="coords:Coordinate.coordSys"
 											dmref="SpaceFrame_ICRS" />
@@ -109,24 +115,26 @@
 				</TABLE_ROW_TEMPLATE>
 			</COLLECTION>
 		</TABLE_MAPPING>
-        <TABLE_MAPPING tableref="Spectra">
+    <TABLE_MAPPING tableref="Spectra">
             <COLLECTION dmrole="root">
                 <TABLE_ROW_TEMPLATE>
-                    <INSTANCE dmrole="root" dmtype="mango:WebEndpointXXX">
-                        <ATTRIBUTE dmrole="mango:WebEndpoint.semantic"
+                    <INSTANCE dmrole="root" dmtype="mango:WebEndpoint">
+											<!--update Mireille   all attributes below belong to WebEndPoint
+											no Parameter in the game here -->
+									      <ATTRIBUTE dmrole="mango:WebEndpoint.semantic"
                             dmtype="ivoa:string" value="#spectrum.raw" />
-                        <ATTRIBUTE dmrole="mango:Parameter.description"
+                        <ATTRIBUTE dmrole="mango:WebEndPoint.description"
                             dmtype="ivoa:string" value="Raw Spectrum" />
-                        <ATTRIBUTE dmrole="mango:Parameter.contentType"
+                        <ATTRIBUTE dmrole="mango:WebEndPoint.contentType"
                             dmtype="ivoa:string" ref="product_type" />
-                        <ATTRIBUTE dmrole="mango:Parameter.uri"
+                        <ATTRIBUTE dmrole="mango:WebEndPoint.url"
                             dmtype="ivoa:string" ref="data_access" />
                     </INSTANCE>
                 </TABLE_ROW_TEMPLATE>
             </COLLECTION>
-        </TABLE_MAPPING>
+    </TABLE_MAPPING>
 	</MODEL_INSTANCE>
-	
+
 	<DESCRIPTION><![CDATA[
 SaadaDB:
    name : FourXMMdr9

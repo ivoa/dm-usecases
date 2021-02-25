@@ -1,7 +1,7 @@
 
 The table below summarize the connection betzeen porject and use-cases
 
-* *P* Provided raw_data
+* *P* Raw data provided
 * *C* Concerned by the use-case
 
 | Usecase vs Project | XMM | Chandra | Vizier | GLAST | LSST | GAVO | Gaia | Simbad | Other project | Mock data |

@@ -16,3 +16,15 @@ The table below summarize the connection betzeen porject and use-cases
 | complex-shaped-object|        |       |       | P C   |      |     |     |       |       |       |
 | orbital-system     |        |         |       |  P C  |      |     |     |       |       |       |
 | time-series        |  C     | C       | C     |       | C    | P C |     |       |       |       |
+
+| Usecase vs proposal  | mango-proposal | md-proposal |
+| identity             |  yes           |             |
+| native_frames        |  yes           |             |
+| simple_position      |  yes           |             |
+| standard_properties  |  yes           |             |
+| precise_astrometry   |  yes           |             |
+| column_grouping      |  yes           |             |
+| combined_data        |  yes           |             |
+| complex-shaped-object|  yes           |             |
+| orbital-system       |  yes           |             |
+| time-series          |                | yes         |

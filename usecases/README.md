@@ -18,6 +18,7 @@ The table below summarize the connection betzeen porject and use-cases
 | time-series        |  C     | C       | C     |       | C    | P C |     |       |       |       |
 
 | Usecase vs proposal  | mango-proposal | md-proposal |
+| ---------------------| -------------- | ----------- |
 | identity             |  yes           |             |
 | native_frames        |  yes           |             |
 | simple_position      |  yes           |             |

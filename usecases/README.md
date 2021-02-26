@@ -17,6 +17,8 @@ The table below summarize the connection betzeen porject and use-cases
 | orbital-system     |        |         |       |  P C  |      |     |     |       |       |       |
 | time-series        |  C     | C       | C     |       | C    | P C |     |       |       |       |
 
+Use case proposal coverage 
+
 | Usecase vs proposal  | mango-proposal | md-proposal |
 | ---------------------| -------------- | ----------- |
 | identity             |  yes           |             |
@@ -26,6 +28,8 @@ The table below summarize the connection betzeen porject and use-cases
 | precise_astrometry   |  yes           |             |
 | column_grouping      |  yes           |             |
 | combined_data        |  yes           |             |
-| complex-shaped-object|  yes           |             |
-| orbital-system       |  yes           |             |
+| complex-shaped-object|  niy           |             |
+| orbital-system       |  niy           |             |
 | time-series          |                | yes         |
+
+* *niy* supported by not implemented yet

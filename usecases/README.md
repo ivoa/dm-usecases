@@ -32,8 +32,8 @@
 | precise_astrometry   |  yes           |             |
 | column_grouping      |  yes           |             |
 | combined_data        |  yes           |             |
-| complex-shaped-object|  niy           |             |
-| orbital-system       |  niy           |             |
+| complex-shaped-object|  sbniy         |             |
+| orbital-system       |  sbniy         |             |
 | time-series          |                | yes         |
 
-* *niy* supported by not implemented yet
+* *sbniy* supported bu not implemented yet

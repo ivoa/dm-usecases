@@ -1,5 +1,9 @@
+## Contributor Guide
+- Please have a look at that [guide](https://github.com/ivoa/dm-usecases/wiki/guide) to contribute
 
-The table below summarize the connection betzeen porject and use-cases
+## Contribution Summary
+
+### Connections between projects and use-cases
 
 * *P* Raw data provided
 * *C* Concerned by the use-case
@@ -17,7 +21,7 @@ The table below summarize the connection betzeen porject and use-cases
 | orbital-system     |        |         |       |  P C  |      |     |     |       |       |       |
 | time-series        |  C     | C       | C     |       | C    | P C |     |       |       |       |
 
-Use case proposal coverage 
+### Use case proposal coverage 
 
 | Usecase vs proposal  | mango-proposal | md-proposal |
 | ---------------------| -------------- | ----------- |

@@ -25,15 +25,16 @@
 
 | Usecase vs proposal  | mango-proposal | md-proposal |
 | ---------------------| -------------- | ----------- |
-| identity             |  yes           |             |
-| native_frames        |  yes           |             |
-| simple_position      |  yes           |             |
-| standard_properties  |  yes           |             |
-| precise_astrometry   |  yes           |             |
-| column_grouping      |  yes           |             |
-| combined_data        |  yes           |             |
-| complex-shaped-object|  sbniy         |             |
-| orbital-system       |  sbniy         |             |
-| time-series          |                | yes         |
+| identity             |  SI            |             |
+| native_frames        |  SI            |             |
+| simple_position      |  SI            |             |
+| standard_properties  |  SI            |             |
+| precise_astrometry   |  SI            |             |
+| column_grouping      |  SI            |             |
+| combined_data        |  SI            |             |
+| complex-shaped-object|  S             |             |
+| orbital-system       |  S             |             |
+| time-series          |                | SI          |
 
-* *sbniy* supported bu not implemented yet
+* *S* supported
+* *I* implemented

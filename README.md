@@ -38,4 +38,7 @@
     - One sub-directory for each proposal
         - The content of the proposal sub-dirs is left to the discrepancy of the author.
         - It must however contain data and text (`README`) only.
-         
+
+## Contributor Guide
+
+- Please have a look at that [guide](https://github.com/ivoa/dm-usecases/wiki/guide) to contribute

@@ -83,9 +83,8 @@
     o Target name/id: 1866721434011386240  
     o Target position: (315.0185 [], 35.3014 []) frame=ICRS epoch=J2015.5  
 
-* **Bonus - Plot the data**
-  
-      - rama has added plotter decorators to certain classes, like NDPoint
+* **Bonus - Plot the data**  
+      - rama has added plotter decorators to certain classes, like NDPoint  
     ```
     ndpoint.plot( 'time', 'flux' )
     ```  

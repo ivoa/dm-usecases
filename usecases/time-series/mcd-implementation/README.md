@@ -18,60 +18,57 @@
   data model content.
 
 ## Resources Used
-
-  Mapping Syntax
+* Mapping Syntax
+  + Working Draft document:  
     https://volute.g-vo.org/svn/trunk/projects/dm/vo-dml-mapping/doc/VO-DML_mapping_WD.pdf
 
-  Jovial Library
-    version used in this project
-      https://github.com/mcdittmar/jovial
-    master repository
-      https://github.com/olaurino/jovial
+* Jovial Library
+  + version used in this project:  
+    https://github.com/mcdittmar/jovial
+  + master repository:  
+    https://github.com/olaurino/jovial
 
-  Rama module
-    version used in this project
-      https://github.com/mcdittmar/rama
-    master repository
-      https://github.com/olaurino/rama
+* Rama module
+  + version used in this project:  
+    https://github.com/mcdittmar/rama
+  + master repository:  
+    https://github.com/olaurino/rama
 
-# Details
-
-    * Load file
+## Details
+* Load file
     ```
     doc = Reader( Votable(infile) )
     ```
-    
-    * Goal: Identify the whole thing as a time series
+
+* Goal: Identify the whole thing as a time series
     ```
     dataset = doc.find_instances(ObsDataset)[0]
     sys.stdout.write("  o Data Product Type: %s\n"%dataset.data_product_type)
     sys.stdout.write("  o Data Product SubType: %s\n"%dataset.data_product_subtype)
-    ```
-    o Data Product Type: TIMESERIES
-    o Data Product SubType: lightcurve
-    
+    ```  
+  o Data Product Type: TIMESERIES  
+  o Data Product SubType: lightcurve  
 
-    * Goal: Identify independent/dependent axes
+* Goal: Identify independent/dependent axes
     ```
     ndpoint = doc.find_instances(NDPoint)[0]
     sys.stdout.write("   o Independent Axes: %s\n"%str(ndpoint.independent) )
     sys.stdout.write("   o Dependent Axes: %s\n"%str(ndpoint.dependent) )
-    ```
-    o Independent Axes: ['time']
-    o Dependent Axes: ['phot', 'flux']
+    ```  
+  o Independent Axes: ['time']  
+  o Dependent Axes: ['phot', 'flux']  
 
-
-    * Goal: Associate values and errors
+* Goal: Associate values and errors
     ```
     for axis in ( ndpoint.axes ):
         sys.stdout.write("    o Axis '%s' has error? %s\n"%(axis.name,"no" if (axis.stat_error is None) else "yes" ) )
-    ```
-    o Axis 'time' has error? no
-    o Axis 'phot' has error? no
-    o Axis 'flux' has error? yes
+    ```  
+  o Axis 'time' has error? no  
+  o Axis 'phot' has error? no  
+  o Axis 'flux' has error? yes  
 
-    * Goal: Find target object and position
-          NOTE - rama's attempt to auto-convert Position to AstroPy SkyCoord fails due to missing units in serialization.. so the meas:Position instance is returned.
+* Goal: Find target object and position  
+  NOTE - rama's attempt to auto-convert Position to AstroPy SkyCoord fails due to missing units in serialization.. so the meas:Position instance is returned.
     ```
     target = doc.find_instances(Target)[0]
     sys.stdout.write("  o Target name/id: %s\n"%(target.name) )
@@ -82,11 +79,11 @@
                                                                                             target.position.coord.coord_sys.frame.space_ref_frame,
                                                                                             target.position.coord.coord_sys.frame.equinox
                                                                                             ) )
-    ```
-    o Target name/id: 1866721434011386240
-    o Target position: (315.0185 [], 35.3014 []) frame=ICRS epoch=J2015.5
+    ```  
+    o Target name/id: 1866721434011386240  
+    o Target position: (315.0185 [], 35.3014 []) frame=ICRS epoch=J2015.5  
 
-    * Bonus - Plot the data
+* Bonus - Plot the data  
       - rama has added plotter decorators to certain classes, like NDPoint
     ```
     ndpoint.plot( 'time', 'flux' )

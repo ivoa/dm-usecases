@@ -15,12 +15,228 @@ or derived from Gaia data release 2:
 	used in preference to simple parallax operations.
 * The gdr2mock schema, which contains a virtual Gaia catalog
 	generated from a carefully built model of the Galaxy.</DESCRIPTION>
+  <VODML>
+    <MODEL>
+      <NAME>cube</NAME>
+      <URL>https://volute.g-vo.org/svn/trunk/projects/dm/Cube/vo-dml/Cube-1.0.vo-dml.xml</URL>
+    </MODEL>
+    <MODEL>
+      <NAME>ds</NAME>
+      <URL>https://volute.g-vo.org/svn/trunk/projects/dm/DatasetMetadata/vo-dml/DatasetMetadata-1.0.vo-dml.xml</URL>
+    </MODEL>
+    <MODEL>
+      <NAME>meas</NAME>
+      <URL>https://www.ivoa.net/xml/Meas/20200908/Meas-v1.0.vo-dml.xml</URL>
+    </MODEL>
+    <MODEL>
+      <NAME>coords</NAME>
+      <URL>https://www.ivoa.net/xml/STC/20200908/Coords-v1.0.vo-dml.xml</URL>
+    </MODEL>
+    <MODEL>
+      <NAME>ivoa</NAME>
+      <URL>https://www.ivoa.net/xml/VODML/IVOA-v1.vo-dml.xml</URL>
+    </MODEL>
+    <GLOBALS>
+      <INSTANCE dmtype="coords:TimeSys" ID="ndupgogudgda">
+        <COMPOSITION dmrole="coords:PhysicalCoordSys.frame">
+          <INSTANCE dmtype="coords:TimeFrame">
+            <ATTRIBUTE dmrole="coords:TimeFrame.timescale">
+              <LITERAL value="TCB" dmtype="ivoa:string"/>
+            </ATTRIBUTE>
+            <ATTRIBUTE dmrole="coords:TimeFrame.refPosition">
+              <INSTANCE dmtype="coords:StdRefLocation">
+                <ATTRIBUTE dmrole="coords:StdRefLocation.position">
+                  <LITERAL value="BARYCENTER" dmtype="ivoa:string"/>
+                </ATTRIBUTE>
+              </INSTANCE>
+            </ATTRIBUTE>
+          </INSTANCE>
+        </COMPOSITION>
+      </INSTANCE>
+      <INSTANCE dmtype="coords:SpaceSys" ID="ndupgoguduna">
+        <COMPOSITION dmrole="coords:PhysicalCoordSys.frame">
+          <INSTANCE dmtype="coords:SpaceFrame">
+            <ATTRIBUTE dmrole="coords:SpaceFrame.spaceRefFrame">
+              <LITERAL value="ICRS" dmtype="ivoa:string"/>
+            </ATTRIBUTE>
+            <ATTRIBUTE dmrole="coords:SpaceFrame.equinox">
+              <LITERAL value="J2015.5" dmtype="coords:Epoch"/>
+            </ATTRIBUTE>
+          </INSTANCE>
+        </COMPOSITION>
+      </INSTANCE>
+      <INSTANCE dmtype="meas:Position" ID="ndupgogudnea">
+        <ATTRIBUTE dmrole="meas:Position.coord">
+          <INSTANCE dmtype="coords:Point">
+            <ATTRIBUTE dmrole="coords:Point.axis1">
+              <CONSTANT ref="ndupgttbwuga" dmtype="ivoa:RealQuantity"/>
+            </ATTRIBUTE>
+            <ATTRIBUTE dmrole="coords:Point.axis2">
+              <CONSTANT ref="ndupgttbwltt" dmtype="ivoa:RealQuantity"/>
+            </ATTRIBUTE>
+            <REFERENCE dmrole="coords:Coordinate.coordSys">
+              <IDREF>ndupgoguduna</IDREF>
+            </REFERENCE>
+          </INSTANCE>
+        </ATTRIBUTE>
+      </INSTANCE>
+      <INSTANCE dmtype="photdm-alt:PhotometryFilter" ID="ndupgbaamxyz">
+        <ATTRIBUTE dmrole="photdm-alt:PhotometryFilter.identifier">
+          <LITERAL value="GAIA/GAIA2.G" dmtype="ivoa:string"/>
+        </ATTRIBUTE>
+        <ATTRIBUTE dmrole="photdm-alt:PhotometryFilter.spectralLocation">
+          <LITERAL value="6.23e-7" dmtype="ivoa:RealQuantity"/>
+        </ATTRIBUTE>
+      </INSTANCE>
+      <INSTANCE dmtype="photdm-alt:PhotCal" ID="ndupgbaameit">
+        <ATTRIBUTE dmrole="photdm-alt:PhotCal.zeroPoint">
+          <INSTANCE dmtype="photdm-alt:LinearFlux">
+            <ATTRIBUTE dmrole="photdm-alt:ZeroPoint.flux">
+              <LITERAL value="2836.53" dmtype="ivoa:RealQuantity"/>
+            </ATTRIBUTE>
+          </INSTANCE>
+        </ATTRIBUTE>
+        <ATTRIBUTE dmrole="photdm-alt:PhotCal.magnitudeSystem">
+          <INSTANCE dmtype="photdm-alt:MagnidtudeSystem">
+            <ATTRIBUTE dmrole="photdm-alt:MagnitudeSystem.type">
+              <LITERAL value="Vega" dmtype="ivoa:string"/>
+            </ATTRIBUTE>
+          </INSTANCE>
+        </ATTRIBUTE>
+        <REFERENCE dmrole="photdm-alt:PhotCal.photometryFilter">
+          <IDREF>ndupgbaamxyz</IDREF>
+        </REFERENCE>
+      </INSTANCE>
+      <INSTANCE dmtype="photdm-alt:PhotCal" ID="ndupgttnahba">
+        <REFERENCE dmrole="photdm-alt:PhotCal.photometryFilter">
+          <IDREF>ndupgbaamxyz</IDREF>
+        </REFERENCE>
+      </INSTANCE>
+      <INSTANCE dmtype="ds:experiment.ObsDataset">
+        <ATTRIBUTE dmrole="ds:dataset.Dataset.dataProductType">
+          <LITERAL value="TIMESERIES" dmtype="ds:dataset.DataProductType"/>
+        </ATTRIBUTE>
+        <ATTRIBUTE dmrole="ds:dataset.Dataset.dataProductSubtype">
+          <LITERAL value="lightcurve" dmtype="ivoa:string"/>
+        </ATTRIBUTE>
+        <ATTRIBUTE dmrole="ds:experiment.ObsDataset.calibLevel">
+          <LITERAL value="1" dmtype="ivoa:integer"/>
+        </ATTRIBUTE>
+        <ATTRIBUTE dmrole="ds:experiment.ObsDataset.target">
+          <INSTANCE dmtype="ds:experiment.Target">
+	    <ATTRIBUTE dmrole="ds:experiment.BaseTarget.name">
+              <LITERAL value="1866721434011386240" dmtype="ivoa:string"/>
+            </ATTRIBUTE>
+            <REFERENCE dmrole="ds:experiment.BaseTarget.position">
+              <IDREF>ndupgogudnea</IDREF>
+            </REFERENCE>
+          </INSTANCE>
+        </ATTRIBUTE>
+        <COMPOSITION dmrole="ds:dataset.Dataset.dataID">
+          <INSTANCE dmtype="ds:dataset.DataID">
+            <ATTRIBUTE dmrole="ds:dataset.DataID.title">
+              <CONSTANT ref="ndupgttbwtit" dmtype="ivoa:string"/>
+            </ATTRIBUTE>
+          </INSTANCE>
+        </COMPOSITION>
+        <COMPOSITION dmrole="ds:dataset.Dataset.curation">
+          <INSTANCE dmtype="ds:dataset.Curation">
+            <COMPOSITION dmrole="ds:dataset.Curation.publisher">
+              <INSTANCE dmtype="ds:dataset.Publisher">
+                <ATTRIBUTE dmrole="ds:party.Role.party">
+                  <INSTANCE dmtype="ds:party.Organization">
+                    <ATTRIBUTE dmrole="ds:party.Party.name">
+                      <LITERAL value="GAVO Data Center" dmtype="ivoa:string"/>
+                    </ATTRIBUTE>
+                  </INSTANCE>
+                </ATTRIBUTE>
+                <ATTRIBUTE dmrole="ds:dataset.Publisher.publisherID">
+                  <LITERAL value="ivo://org.gavo.dc" dmtype="ivoa:anyURI"/>
+                </ATTRIBUTE>
+              </INSTANCE>
+            </COMPOSITION>
+          </INSTANCE>
+        </COMPOSITION>
+      </INSTANCE>
+      <INSTANCE dmtype="cube:SparseCube">
+        <COMPOSITION dmrole="cube:SparseCube.data">
+          <EXTINSTANCES>_cube1_data</EXTINSTANCES>
+        </COMPOSITION>
+      </INSTANCE>
+    </GLOBALS>
+    <TEMPLATES tableref="_cube1">
+      <INSTANCE dmtype="cube:NDPoint" ID="_cube1_data">
+        <COMPOSITION dmrole="cube:NDPoint.observable">
+          <INSTANCE dmtype="cube:Observable">
+            <ATTRIBUTE dmrole="cube:DataAxis.dependent">
+              <LITERAL value="False" dmtype="ivoa:boolean"/>
+            </ATTRIBUTE>
+            <COMPOSITION dmrole="cube:MeasurementAxis.measure">
+              <INSTANCE dmtype="meas:Time">
+                <ATTRIBUTE dmrole="meas:Time.coord">
+                  <INSTANCE dmtype="coords:JD">
+                    <ATTRIBUTE dmrole="coords:JD.date">
+                      <COLUMN dmtype="ivoa:real" ref="obs_time"/>
+                    </ATTRIBUTE>
+                    <REFERENCE dmrole="coords:Coordinate.coordSys">
+                      <IDREF>ndupgogudgda</IDREF>
+                    </REFERENCE>
+                  </INSTANCE>
+                </ATTRIBUTE>
+              </INSTANCE>
+            </COMPOSITION>
+          </INSTANCE>
+          <INSTANCE dmtype="cube:Observable">
+            <ATTRIBUTE dmrole="cube:DataAxis.dependent">
+              <LITERAL value="True" dmtype="ivoa:boolean"/>
+            </ATTRIBUTE>
+            <COMPOSITION dmrole="cube:MeasurementAxis.measure">
+              <INSTANCE dmtype="meas:GenericMeasure">
+                <ATTRIBUTE dmrole="meas:GenericMeasure.coord">
+                  <INSTANCE dmtype="coords:PhysicalCoordinate">
+                    <ATTRIBUTE dmrole="coords:PhysicalCoordinate.cval">
+                      <COLUMN dmtype="ivoa:RealQuantity" ref="phot"/>
+                    </ATTRIBUTE>
+                  </INSTANCE>
+                </ATTRIBUTE>
+              </INSTANCE>
+            </COMPOSITION>
+          </INSTANCE>
+          <INSTANCE dmtype="cube:Observable">
+            <ATTRIBUTE dmrole="cube:DataAxis.dependent">
+              <LITERAL value="True" dmtype="ivoa:boolean"/>
+            </ATTRIBUTE>
+            <COMPOSITION dmrole="cube:MeasurementAxis.measure">
+              <INSTANCE dmtype="meas:GenericMeasure">
+                <ATTRIBUTE dmrole="meas:GenericMeasure.coord">
+                  <INSTANCE dmtype="coords:PhysicalCoordinate">
+                    <ATTRIBUTE dmrole="coords:PhysicalCoordinate.cval">
+                      <COLUMN dmtype="ivoa:RealQuantity" ref="flux"/>
+                    </ATTRIBUTE>
+                  </INSTANCE>
+                </ATTRIBUTE>
+                <COMPOSITION dmrole="meas:Measure.error">
+                  <INSTANCE dmtype="meas:Error">
+                    <ATTRIBUTE dmrole="meas:Error.statError">
+                      <INSTANCE dmtype="meas:Symmetrical">
+                        <ATTRIBUTE dmrole="meas:Symmetrical.radius">
+                          <COLUMN dmtype="ivoa:RealQuantity" ref="flux_error"/>
+                        </ATTRIBUTE>
+                      </INSTANCE>
+                    </ATTRIBUTE>
+                  </INSTANCE>
+                </COMPOSITION>
+              </INSTANCE>
+            </COMPOSITION>
+          </INSTANCE>
+        </COMPOSITION>
+      </INSTANCE>
+    </TEMPLATES>
+  </VODML>
   <INFO name="legal" value=" If you use public Gaia DR2 data in a paper, please take note of  `ESAC's guide`_ on how to acknowledge and cite it.  .. _ESAC's guide: http://gea.esac.esa.int/archive/documentation/GDR2/Miscellaneous/sec_credit_and_citation_instructions/"/>
   <RESOURCE>
     <COOSYS ID="system" epoch="J2015.5" system="ICRS"/>
-    <COOSYS ID="system0" epoch="J2015.5" system="ICRS"/>
     <TIMESYS ID="ts" refposition="BARYCENTER" timeorigin="0" timescale="TCB"/>
-    <TIMESYS ID="ts0" refposition="BARYCENTER" timeorigin="0" timescale="TCB"/>
     <GROUP ID="phot_def" name="photcal">
       <PARAM arraysize="*" datatype="char" name="filterIdentifier" ucd="meta.id;instr.filter" utype="photDM:PhotometryFilter.identifier" value="GAIA/GAIA2.G"/>
       <PARAM datatype="double" name="zeroPointFlux" ucd="phot.mag;arith.zp" unit="Jy" utype="photDM:PhotCal.zeroPoint.flux.value" value="2836.53"/>
@@ -30,12 +246,10 @@ or derived from Gaia data release 2:
     </GROUP>
     <GROUP ID="phot_def0" name="photcal">
       <PARAM arraysize="*" datatype="char" name="filterIdentifier" ucd="meta.id;instr.filter" utype="photDM:PhotometryFilter.identifier" value="GAIA/GAIA2.G"/>
-      <PARAM datatype="double" name="zeroPointFlux" ucd="phot.mag;arith.zp" unit="Jy" utype="photDM:PhotCal.zeroPoint.flux.value" value="2836.53"/>
-      <PARAM arraysize="*" datatype="char" name="magnitudeSystem" ucd="meta.code" utype="photDM:PhotCal.magnitudeSystem.type" value="Vega"/>
       <PARAM datatype="double" name="effectiveWavelength" ucd="em.wl.effective" unit="m" utype="photDM:PhotometryFilter.spectralLocation.value" value="6.23e-7"/>
       <FIELDref ref="flux" utype="adhoc:location"/>
     </GROUP>
-    <TABLE name="instance_G">
+    <TABLE ID="_lightcurve_G" name="instance_G">
       <DESCRIPTION> With data relase 2, the Gaia DPAC released lightcurves for objects
 considered variable. This is such a lightcurve (with invalid points
 removed), for the GAIA/GAIA2.G band.
@@ -65,17 +279,14 @@ filter profile service.</DESCRIPTION>
       <PARAM arraysize="*" datatype="char" name="source_id" ucd="meta.id;meta.main" value="1866721434011386240">
         <DESCRIPTION>Gaia DR2 source_id of the object</DESCRIPTION>
       </PARAM>
-      <PARAM ID="title" arraysize="*" datatype="char" name="title" ucd="meta.title;obs" value="Gaia DR2 G photometry time series for star 1866721434011386240">
+      <PARAM ID="ndupgttbwtit" arraysize="*" datatype="char" name="title" ucd="meta.title;obs" value="Gaia DR2 G photometry time series for star 1866721434011386240">
         <DESCRIPTION>Publisher-assigned title of the data set</DESCRIPTION>
       </PARAM>
-      <PARAM ID="ra" datatype="double" name="ra" ref="system" ucd="pos.eq.ra" value="315.018457397759">
+      <PARAM ID="ndupgttbwuga" datatype="double" name="ra" ref="system" ucd="pos.eq.ra" value="315.018457397759">
         <DESCRIPTION>Gaia DR2 RA of source object</DESCRIPTION>
       </PARAM>
-      <PARAM ID="dec" datatype="double" name="dec" ref="system" ucd="pos.eq.dec" value="35.3014389949649">
+      <PARAM ID="ndupgttbwltt" datatype="double" name="dec" ref="system" ucd="pos.eq.dec" value="35.3014389949649">
         <DESCRIPTION>Gaia DR2 Dec of source object</DESCRIPTION>
-      </PARAM>
-      <PARAM ID="ssa_location" arraysize="2" datatype="double" name="ssa_location" ref="system0" ucd="pos.eq" value="315.018457397759 35.3014389949649" xtype="point">
-        <DESCRIPTION>Target position as per SSA (a DALI point)</DESCRIPTION>
       </PARAM>
       <DATA>
         <TABLEDATA>

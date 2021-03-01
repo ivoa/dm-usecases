@@ -41,11 +41,11 @@ or derived from Gaia data release 2:
       <URL>http://www.ivoa.net/dm/VO-DML.vo-dml.xml</URL>
     </MODEL>
     <TEMPLATES>
-      <INSTANCE ID="ndupgwotpost" dmtype="stc2:Coords">
+      <INSTANCE ID="ndhunnmsbset" dmtype="stc2:Coords">
         <ATTRIBUTE dmrole="time">
-          <INSTANCE ID="ndupgogudgda" dmtype="stc2:TimeCoordinate">
+          <INSTANCE ID="ndhunnmsbhba" dmtype="stc2:TimeCoordinate">
             <ATTRIBUTE dmrole="frame">
-              <INSTANCE ID="ndupgogudoia" dmtype="stc2:TimeFrame">
+              <INSTANCE ID="ndhunnmsbmmt" dmtype="stc2:TimeFrame">
                 <ATTRIBUTE dmrole="timescale">
                   <LITERAL dmtype="ivoa:string">TCB</LITERAL>
                 </ATTRIBUTE>
@@ -63,9 +63,9 @@ or derived from Gaia data release 2:
           </INSTANCE>
         </ATTRIBUTE>
         <ATTRIBUTE dmrole="space">
-          <INSTANCE ID="ndupgogudnea" dmtype="stc2:SphericalCoordinate">
+          <INSTANCE ID="ndhunnmsbaut" dmtype="stc2:SphericalCoordinate">
             <ATTRIBUTE dmrole="frame">
-              <INSTANCE ID="ndupgoguduna" dmtype="stc2:SpaceFrame">
+              <INSTANCE ID="ndhunnmnonut" dmtype="stc2:SpaceFrame">
                 <ATTRIBUTE dmrole="orientation">
                   <LITERAL dmtype="ivoa:string">ICRS</LITERAL>
                 </ATTRIBUTE>
@@ -75,23 +75,24 @@ or derived from Gaia data release 2:
               </INSTANCE>
             </ATTRIBUTE>
             <ATTRIBUTE dmrole="longitude">
-              <CONSTANT ref="ndupgttbwuga"/>
+              <CONSTANT ref="ra"/>
             </ATTRIBUTE>
             <ATTRIBUTE dmrole="latitude">
-              <CONSTANT ref="ndupgttbwltt"/>
+              <CONSTANT ref="dec"/>
             </ATTRIBUTE>
           </INSTANCE>
         </ATTRIBUTE>
       </INSTANCE>
-      <INSTANCE ID="nduppompmgea" dmtype="ndcube:Cube">
+      <INSTANCE ID="ndhunnomdstt" dmtype="ndcube:Cube">
         <ATTRIBUTE dmrole="independent_axes">
           <COLUMN ref="obs_time"/>
         </ATTRIBUTE>
         <ATTRIBUTE dmrole="dependent_axes">
           <COLUMN ref="phot"/>
+          <COLUMN ref="flux"/>
         </ATTRIBUTE>
       </INSTANCE>
-      <INSTANCE ID="ndupgbaameit" dmtype="phot:PhotCal">
+      <INSTANCE ID="ndhunnomdpwa" dmtype="phot:PhotCal">
         <ATTRIBUTE dmrole="filterIdentifier">
           <LITERAL dmtype="ivoa:string">GAIA/GAIA2.G</LITERAL>
         </ATTRIBUTE>
@@ -108,9 +109,15 @@ or derived from Gaia data release 2:
           <COLUMN ref="phot"/>
         </ATTRIBUTE>
       </INSTANCE>
-      <INSTANCE ID="ndupgttnahba" dmtype="phot:PhotCal">
+      <INSTANCE ID="ndhunnomddma" dmtype="phot:PhotCal">
         <ATTRIBUTE dmrole="filterIdentifier">
           <LITERAL dmtype="ivoa:string">GAIA/GAIA2.G</LITERAL>
+        </ATTRIBUTE>
+        <ATTRIBUTE dmrole="zeroPointFlux">
+          <LITERAL dmtype="ivoa:string">2836.53</LITERAL>
+        </ATTRIBUTE>
+        <ATTRIBUTE dmrole="magnitudeSystem">
+          <LITERAL dmtype="ivoa:string">Vega</LITERAL>
         </ATTRIBUTE>
         <ATTRIBUTE dmrole="effectiveWavelength">
           <LITERAL dmtype="ivoa:string">6.23e-7</LITERAL>
@@ -119,7 +126,7 @@ or derived from Gaia data release 2:
           <COLUMN ref="flux"/>
         </ATTRIBUTE>
       </INSTANCE>
-      <INSTANCE ID="ndugetimobna" dmtype="ivoa:Measurement">
+      <INSTANCE ID="ndhunnomdolt" dmtype="ivoa:Measurement">
         <ATTRIBUTE dmrole="value">
           <COLUMN ref="flux"/>
         </ATTRIBUTE>
@@ -127,20 +134,20 @@ or derived from Gaia data release 2:
           <COLUMN ref="flux_error"/>
         </ATTRIBUTE>
       </INSTANCE>
-      <INSTANCE ID="ndupgwwmloia" dmtype="ds:Dataset">
+      <INSTANCE ID="ndhunnmsbstt" dmtype="ds:Dataset">
         <ATTRIBUTE dmrole="dataProductType">
           <LITERAL dmtype="ivoa:string">TIMESERIES</LITERAL>
         </ATTRIBUTE>
         <ATTRIBUTE dmrole="title">
-          <CONSTANT ref="ndupgttbwtit"/>
+          <CONSTANT ref="title"/>
         </ATTRIBUTE>
         <ATTRIBUTE dmrole="curation">
-          <INSTANCE ID="ndupgwotpset" dmtype="ds:Curation">
+          <INSTANCE ID="ndhunnmsbtpa" dmtype="ds:Curation">
             <ATTRIBUTE dmrole="calibLevel">
               <LITERAL dmtype="ivoa:string">1</LITERAL>
             </ATTRIBUTE>
             <ATTRIBUTE dmrole="publisher">
-              <INSTANCE ID="ndupgwotpgea" dmtype="ds:Publisher">
+              <INSTANCE ID="ndhunnmsbiba" dmtype="ds:Publisher">
                 <ATTRIBUTE dmrole="name">
                   <LITERAL dmtype="ivoa:string">GAVO Data Center</LITERAL>
                 </ATTRIBUTE>
@@ -151,14 +158,53 @@ or derived from Gaia data release 2:
             </ATTRIBUTE>
           </INSTANCE>
         </ATTRIBUTE>
-      </INSTANCE>
-      <INSTANCE ID="ndupgbsgtpoa" dmtype="ndcube:Cube">
-        <ATTRIBUTE dmrole="independent_axes">
-          <COLUMN ref="obs_time"/>
+        <ATTRIBUTE dmrole="target">
+          <INSTANCE ID="ndhunnmsbwha" dmtype="ds:AstroTarget">
+            <ATTRIBUTE dmrole="position">
+              <CONSTANT ref="ra"/>
+              <CONSTANT ref="dec"/>
+              <CONSTANT ref="ssa_location"/>
+            </ATTRIBUTE>
+          </INSTANCE>
         </ATTRIBUTE>
-        <ATTRIBUTE dmrole="dependent_axes">
-          <COLUMN ref="flux"/>
-          <COLUMN ref="phot"/>
+      </INSTANCE>
+      <INSTANCE ID="ndhunntgpeht" dmtype="stc2:Coords">
+        <ATTRIBUTE dmrole="time">
+          <INSTANCE ID="ndhunntgphua" dmtype="stc2:TimeCoordinate">
+            <ATTRIBUTE dmrole="frame">
+              <INSTANCE ID="ndhunnmnmada" dmtype="stc2:TimeFrame">
+                <ATTRIBUTE dmrole="timescale">
+                  <LITERAL dmtype="ivoa:string">TCB</LITERAL>
+                </ATTRIBUTE>
+                <ATTRIBUTE dmrole="refPosition">
+                  <LITERAL dmtype="ivoa:string">BARYCENTER</LITERAL>
+                </ATTRIBUTE>
+                <ATTRIBUTE dmrole="time0">
+                  <LITERAL dmtype="ivoa:string">0</LITERAL>
+                </ATTRIBUTE>
+              </INSTANCE>
+            </ATTRIBUTE>
+            <ATTRIBUTE dmrole="location">
+              <COLUMN ref="obs_time"/>
+            </ATTRIBUTE>
+          </INSTANCE>
+        </ATTRIBUTE>
+        <ATTRIBUTE dmrole="space">
+          <INSTANCE ID="ndhunnmnmoia" dmtype="stc2:SphericalCoordinate">
+            <ATTRIBUTE dmrole="frame">
+              <INSTANCE ID="ndhunmbbthua" dmtype="stc2:SpaceFrame">
+                <ATTRIBUTE dmrole="orientation">
+                  <LITERAL dmtype="ivoa:string">ICRS</LITERAL>
+                </ATTRIBUTE>
+                <ATTRIBUTE dmrole="epoch">
+                  <LITERAL dmtype="ivoa:string">J2015.5</LITERAL>
+                </ATTRIBUTE>
+              </INSTANCE>
+            </ATTRIBUTE>
+            <ATTRIBUTE dmrole="value">
+              <CONSTANT ref="ssa_location"/>
+            </ATTRIBUTE>
+          </INSTANCE>
         </ATTRIBUTE>
       </INSTANCE>
     </TEMPLATES>
@@ -166,7 +212,9 @@ or derived from Gaia data release 2:
   <INFO name="legal" value=" If you use public Gaia DR2 data in a paper, please take note of  `ESAC's guide`_ on how to acknowledge and cite it.  .. _ESAC's guide: http://gea.esac.esa.int/archive/documentation/GDR2/Miscellaneous/sec_credit_and_citation_instructions/"/>
   <RESOURCE>
     <COOSYS ID="system" epoch="J2015.5" system="ICRS"/>
+    <COOSYS ID="system0" epoch="J2015.5" system="ICRS"/>
     <TIMESYS ID="ts" refposition="BARYCENTER" timeorigin="0" timescale="TCB"/>
+    <TIMESYS ID="ts0" refposition="BARYCENTER" timeorigin="0" timescale="TCB"/>
     <GROUP ID="phot_def" name="photcal">
       <PARAM arraysize="*" datatype="char" name="filterIdentifier" ucd="meta.id;instr.filter" utype="photDM:PhotometryFilter.identifier" value="GAIA/GAIA2.G"/>
       <PARAM datatype="double" name="zeroPointFlux" ucd="phot.mag;arith.zp" unit="Jy" utype="photDM:PhotCal.zeroPoint.flux.value" value="2836.53"/>
@@ -176,6 +224,8 @@ or derived from Gaia data release 2:
     </GROUP>
     <GROUP ID="phot_def0" name="photcal">
       <PARAM arraysize="*" datatype="char" name="filterIdentifier" ucd="meta.id;instr.filter" utype="photDM:PhotometryFilter.identifier" value="GAIA/GAIA2.G"/>
+      <PARAM datatype="double" name="zeroPointFlux" ucd="phot.mag;arith.zp" unit="Jy" utype="photDM:PhotCal.zeroPoint.flux.value" value="2836.53"/>
+      <PARAM arraysize="*" datatype="char" name="magnitudeSystem" ucd="meta.code" utype="photDM:PhotCal.magnitudeSystem.type" value="Vega"/>
       <PARAM datatype="double" name="effectiveWavelength" ucd="em.wl.effective" unit="m" utype="photDM:PhotometryFilter.spectralLocation.value" value="6.23e-7"/>
       <FIELDref ref="flux" utype="adhoc:location"/>
     </GROUP>
@@ -209,14 +259,17 @@ filter profile service.</DESCRIPTION>
       <PARAM arraysize="*" datatype="char" name="source_id" ucd="meta.id;meta.main" value="1866721434011386240">
         <DESCRIPTION>Gaia DR2 source_id of the object</DESCRIPTION>
       </PARAM>
-      <PARAM ID="ndupgttbwtit" arraysize="*" datatype="char" name="title" ucd="meta.title;obs" value="Gaia DR2 G photometry time series for star 1866721434011386240">
+      <PARAM ID="title" arraysize="*" datatype="char" name="title" ucd="meta.title;obs" value="Gaia DR2 G photometry time series for star 1866721434011386240">
         <DESCRIPTION>Publisher-assigned title of the data set</DESCRIPTION>
       </PARAM>
-      <PARAM ID="ndupgttbwuga" datatype="double" name="ra" ref="system" ucd="pos.eq.ra" value="315.018457397759">
+      <PARAM ID="ra" datatype="double" name="ra" ref="system" ucd="pos.eq.ra" value="315.018457397759">
         <DESCRIPTION>Gaia DR2 RA of source object</DESCRIPTION>
       </PARAM>
-      <PARAM ID="ndupgttbwltt" datatype="double" name="dec" ref="system" ucd="pos.eq.dec" value="35.3014389949649">
+      <PARAM ID="dec" datatype="double" name="dec" ref="system" ucd="pos.eq.dec" value="35.3014389949649">
         <DESCRIPTION>Gaia DR2 Dec of source object</DESCRIPTION>
+      </PARAM>
+      <PARAM ID="ssa_location" arraysize="2" datatype="double" name="ssa_location" ref="system0" ucd="pos.eq" value="315.018457397759 35.3014389949649" xtype="point">
+        <DESCRIPTION>Target position as per SSA (a DALI point)</DESCRIPTION>
       </PARAM>
       <DATA>
         <TABLEDATA>

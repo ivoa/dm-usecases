@@ -18,7 +18,9 @@ or derived from Gaia data release 2:
   <INFO name="legal" value=" If you use public Gaia DR2 data in a paper, please take note of  `ESAC's guide`_ on how to acknowledge and cite it.  .. _ESAC's guide: http://gea.esac.esa.int/archive/documentation/GDR2/Miscellaneous/sec_credit_and_citation_instructions/"/>
   <RESOURCE>
     <COOSYS ID="system" epoch="J2015.5" system="ICRS"/>
+    <COOSYS ID="system0" epoch="J2015.5" system="ICRS"/>
     <TIMESYS ID="ts" refposition="BARYCENTER" timeorigin="0" timescale="TCB"/>
+    <TIMESYS ID="ts0" refposition="BARYCENTER" timeorigin="0" timescale="TCB"/>
     <GROUP ID="phot_def" name="photcal">
       <PARAM arraysize="*" datatype="char" name="filterIdentifier" ucd="meta.id;instr.filter" utype="photDM:PhotometryFilter.identifier" value="GAIA/GAIA2.G"/>
       <PARAM datatype="double" name="zeroPointFlux" ucd="phot.mag;arith.zp" unit="Jy" utype="photDM:PhotCal.zeroPoint.flux.value" value="2836.53"/>
@@ -28,6 +30,8 @@ or derived from Gaia data release 2:
     </GROUP>
     <GROUP ID="phot_def0" name="photcal">
       <PARAM arraysize="*" datatype="char" name="filterIdentifier" ucd="meta.id;instr.filter" utype="photDM:PhotometryFilter.identifier" value="GAIA/GAIA2.G"/>
+      <PARAM datatype="double" name="zeroPointFlux" ucd="phot.mag;arith.zp" unit="Jy" utype="photDM:PhotCal.zeroPoint.flux.value" value="2836.53"/>
+      <PARAM arraysize="*" datatype="char" name="magnitudeSystem" ucd="meta.code" utype="photDM:PhotCal.magnitudeSystem.type" value="Vega"/>
       <PARAM datatype="double" name="effectiveWavelength" ucd="em.wl.effective" unit="m" utype="photDM:PhotometryFilter.spectralLocation.value" value="6.23e-7"/>
       <FIELDref ref="flux" utype="adhoc:location"/>
     </GROUP>
@@ -61,14 +65,17 @@ filter profile service.</DESCRIPTION>
       <PARAM arraysize="*" datatype="char" name="source_id" ucd="meta.id;meta.main" value="1866721434011386240">
         <DESCRIPTION>Gaia DR2 source_id of the object</DESCRIPTION>
       </PARAM>
-      <PARAM ID="ndupgttbwtit" arraysize="*" datatype="char" name="title" ucd="meta.title;obs" value="Gaia DR2 G photometry time series for star 1866721434011386240">
+      <PARAM ID="title" arraysize="*" datatype="char" name="title" ucd="meta.title;obs" value="Gaia DR2 G photometry time series for star 1866721434011386240">
         <DESCRIPTION>Publisher-assigned title of the data set</DESCRIPTION>
       </PARAM>
-      <PARAM ID="ndupgttbwuga" datatype="double" name="ra" ref="system" ucd="pos.eq.ra" value="315.018457397759">
+      <PARAM ID="ra" datatype="double" name="ra" ref="system" ucd="pos.eq.ra" value="315.018457397759">
         <DESCRIPTION>Gaia DR2 RA of source object</DESCRIPTION>
       </PARAM>
-      <PARAM ID="ndupgttbwltt" datatype="double" name="dec" ref="system" ucd="pos.eq.dec" value="35.3014389949649">
+      <PARAM ID="dec" datatype="double" name="dec" ref="system" ucd="pos.eq.dec" value="35.3014389949649">
         <DESCRIPTION>Gaia DR2 Dec of source object</DESCRIPTION>
+      </PARAM>
+      <PARAM ID="ssa_location" arraysize="2" datatype="double" name="ssa_location" ref="system0" ucd="pos.eq" value="315.018457397759 35.3014389949649" xtype="point">
+        <DESCRIPTION>Target position as per SSA (a DALI point)</DESCRIPTION>
       </PARAM>
       <DATA>
         <TABLEDATA>

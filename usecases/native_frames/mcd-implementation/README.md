@@ -8,10 +8,11 @@
   * Illustrate that the model allows for >1 instance of any given Property
     + Positions in multiple reference frames
     + Flux in multiple bands
+  * Illustrate ability to reconcile Positions in different Frames 
 
   The data has been annotated using IVOA VO-DML Mapping syntax
   * one Position using the Measurment model Position with Point coordinate,
-    which rama automatically converts to an astroPy SkyCoord.
+    which rama automatically converts to an AstroPy SkyCoord.
   * one Position using the Mango model LonLatSkyPosition with LonLatPoint coordinate.
 
   Annotation was produced using the 'Jovial' modeling toolset (Java).  Jovial
@@ -66,11 +67,10 @@
             sys.stdout.write("  + coord type = %s\n"%str(type(param.measure.coord) ))
             positions.append(param.measure)
     ```  
-    o Found Position in 'icrs' frame
-      + coord type = <class 'astropy.coordinates.sky_coordinate.SkyCoord'>
-    o Found Position in 'GALACTIC' frame
-      + coord type = <class 'rama.models.mango.LonLatPoint'>
-
+    o Found Position in 'icrs' frame  
+        + coord type = <class 'astropy.coordinates.sky_coordinate.SkyCoord'>  
+    o Found Position in 'GALACTIC' frame  
+        + coord type = <class 'rama.models.mango.LonLatPoint'>  
 
 * **Goal: Create AstroPy SkyCoord from LonLatPosition**  
     Note:  - the following can form an adapter on LonLatPoint to enable auto-convertion
@@ -84,8 +84,8 @@
     sys.stdout.write("o coords1: type=%s, frame=%s\n"%(str(type(coords1)), coords1.frame.name ))
     sys.stdout.write("o coords2: type=%s, frame=%s\n"%(str(type(coords2)), coords2.frame.name ))
     ```  
-    o coords1: type=<class 'astropy.coordinates.sky_coordinate.SkyCoord'>, frame=icrs
-    o coords2: type=<class 'astropy.coordinates.sky_coordinate.SkyCoord'>, frame=galactic
+    o coords1: type=<class 'astropy.coordinates.sky_coordinate.SkyCoord'>, frame=icrs  
+    o coords2: type=<class 'astropy.coordinates.sky_coordinate.SkyCoord'>, frame=galactic  
 
 * **Goal: Convert both to common Frame - client's preferred frame**
     ```
@@ -94,8 +94,8 @@
     sys.stdout.write("o coords1: type=%s, frame=%s\n"%(str(type(coords1_user)), coords1_user.frame.name ))
     sys.stdout.write("o coords2: type=%s, frame=%s\n"%(str(type(coords2_user)), coords2_user.frame.name ))
     ```  
-    o coords1: type=<class 'astropy.coordinates.sky_coordinate.SkyCoord'>, frame=fk5
-    o coords2: type=<class 'astropy.coordinates.sky_coordinate.SkyCoord'>, frame=fk5
+    o coords1: type=<class 'astropy.coordinates.sky_coordinate.SkyCoord'>, frame=fk5  
+    o coords2: type=<class 'astropy.coordinates.sky_coordinate.SkyCoord'>, frame=fk5  
 
 * **Goal: Plot the data**  
     Note: Since the original data are positions of the same source in different frames, these should overlap.
@@ -122,3 +122,4 @@
     plt.show()
 
     ```  
+    ![Figure_1](https://user-images.githubusercontent.com/14201994/109700688-1be4fa00-7b60-11eb-9ea0-a34e46b386b1.png)

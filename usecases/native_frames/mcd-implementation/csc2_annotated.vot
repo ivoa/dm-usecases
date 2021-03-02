@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?><VOTABLE xmlns="http://www.ivoa.net/xml/VOTable/v1.4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<DESCRIPTION>
+		VizieR Astronomical Server vizier.u-strasbg.fr
+		Date: 2021-01-21T13:05:40 [V1.99+ (14-Oct-2013)]
+		Explanations and Statistics of UCDs: See LINK below
+		In case of problem, please report to: cds-question@unistra.fr
+		In this version, NULL integer columns are written as an empty string
+		&lt;TD&gt;&lt;/TD&gt;, explicitely possible from VOTable-1.3
+	</DESCRIPTION>
+	<!-- VOTable description at http://www.ivoa.net/Documents/latest/VOT.html -->
+	<INFO ID="VERSION" name="votable-version" value="1.99+ (14-Oct-2013)" />
+	<INFO ID="Ref" name="-ref" value="VIZ60097b26a189" />
+	<INFO ID="MaxTuples" name="-out.max" value="10" />
+	<INFO name="queryParameters" value="15">
+-oc.form=dec
+-out.max=10
+-nav=cat:IX/57&amp;tab:{IX/57/csc2master}&amp;key:source=IX/57&amp;HTTPPRM:&amp;
+-c.eq=J2000
+-c.r=  2
+-c.u=arcmin
+-c.geom=r
+-source=IX/57/csc2master
+-order=I
+-out.orig=standard
+-out=2CXO
+-out=RAICRS
+-out=DEICRS
+-out=GLON
+-out=GLAT
+</INFO>
+
+  <VODML>
+    <MODEL>
+      <NAME>mango</NAME>
+      <URL>file:/Users/sao/Documents/IVOA/GitHub/ivoa-dm-examples/tmp/Mango-v1.0.vo-dml.xml</URL>
+    </MODEL>
+    <MODEL>
+      <NAME>meas</NAME>
+      <URL>https://www.ivoa.net/xml/Meas/20200908/Meas-v1.0.vo-dml.xml</URL>
+    </MODEL>
+    <MODEL>
+      <NAME>coords</NAME>
+      <URL>https://www.ivoa.net/xml/STC/20200908/Coords-v1.0.vo-dml.xml</URL>
+    </MODEL>
+    <MODEL>
+      <NAME>ivoa</NAME>
+      <URL>https://www.ivoa.net/xml/VODML/IVOA-v1.vo-dml.xml</URL>
+    </MODEL>
+    <GLOBALS>
+      <INSTANCE dmtype="coords:SpaceSys" ID="_coosys1">
+        <COMPOSITION dmrole="coords:PhysicalCoordSys.frame">
+          <INSTANCE dmtype="coords:SpaceFrame">
+            <ATTRIBUTE dmrole="coords:SpaceFrame.spaceRefFrame">
+              <LITERAL value="ICRS" dmtype="ivoa:string"/>
+            </ATTRIBUTE>
+          </INSTANCE>
+        </COMPOSITION>
+      </INSTANCE>
+      <INSTANCE dmtype="mango:coordinates.LonLatCoordSys" ID="_coosys2">
+        <COMPOSITION dmrole="coords:PhysicalCoordSys.frame">
+          <INSTANCE dmtype="coords:SpaceFrame">
+            <ATTRIBUTE dmrole="coords:SpaceFrame.spaceRefFrame">
+              <LITERAL value="GALACTIC" dmtype="ivoa:string"/>
+            </ATTRIBUTE>
+            <ATTRIBUTE dmrole="coords:SpaceFrame.equinox">
+              <LITERAL value="J2000" dmtype="coords:Epoch"/>
+            </ATTRIBUTE>
+          </INSTANCE>
+        </COMPOSITION>
+      </INSTANCE>
+    </GLOBALS>
+    <TEMPLATES tableref="Results">
+      <INSTANCE dmtype="mango:Source">
+        <ATTRIBUTE dmrole="mango:Source.identifier">
+          <COLUMN dmtype="ivoa:string" ref="_col1"/>
+        </ATTRIBUTE>
+        <COMPOSITION dmrole="mango:Source.parameterDock">
+          <INSTANCE dmtype="mango:Parameter">
+            <ATTRIBUTE dmrole="mango:Parameter.ucd">
+              <LITERAL value="pos.eq" dmtype="ivoa:string"/>
+            </ATTRIBUTE>
+            <COMPOSITION dmrole="mango:Parameter.measure">
+              <INSTANCE dmtype="meas:Position">
+                <ATTRIBUTE dmrole="meas:Position.coord">
+                  <INSTANCE dmtype="coords:Point">
+                    <ATTRIBUTE dmrole="coords:Point.axis1">
+                      <COLUMN dmtype="ivoa:RealQuantity" ref="_col2"/>
+                    </ATTRIBUTE>
+                    <ATTRIBUTE dmrole="coords:Point.axis2">
+                      <COLUMN dmtype="ivoa:RealQuantity" ref="_col3"/>
+                    </ATTRIBUTE>
+                    <REFERENCE dmrole="coords:Coordinate.coordSys">
+                      <IDREF>_coosys1</IDREF>
+                    </REFERENCE>
+                  </INSTANCE>
+                </ATTRIBUTE>
+              </INSTANCE>
+            </COMPOSITION>
+          </INSTANCE>
+          <INSTANCE dmtype="mango:Parameter">
+            <ATTRIBUTE dmrole="mango:Parameter.ucd">
+              <LITERAL value="pos.galactic" dmtype="ivoa:string"/>
+            </ATTRIBUTE>
+            <COMPOSITION dmrole="mango:Parameter.measure">
+              <INSTANCE dmtype="mango:measures.LonLatSkyPosition">
+                <ATTRIBUTE dmrole="mango:measures.LonLatSkyPosition.coord">
+                  <INSTANCE dmtype="mango:coordinates.LonLatPoint">
+                    <ATTRIBUTE dmrole="mango:coordinates.LonLatPoint.longitude">
+                      <COLUMN dmtype="ivoa:RealQuantity" ref="_col5"/>
+                    </ATTRIBUTE>
+                    <ATTRIBUTE dmrole="mango:coordinates.LonLatPoint.latitude">
+                      <COLUMN dmtype="ivoa:RealQuantity" ref="_col4"/>
+                    </ATTRIBUTE>
+                    <REFERENCE dmrole="coords:Coordinate.coordSys">
+                      <IDREF>_coosys2</IDREF>
+                    </REFERENCE>
+                  </INSTANCE>
+                </ATTRIBUTE>
+              </INSTANCE>
+            </COMPOSITION>
+          </INSTANCE>
+        </COMPOSITION>
+      </INSTANCE>
+    </TEMPLATES>
+  </VODML>
+
+	<!-- Execution Reports -->
+
+	<RESOURCE ID="yCat_9057" name="IX/57">
+		<DESCRIPTION>The Chandra Source Catalog (CSC), Release 2.0 (Evans+, 2019)</DESCRIPTION>
+		<COOSYS ID="H" system="ICRS" />
+		<TABLE ID="Results" name="IX/57/csc2master">
+			<DESCRIPTION>Chandra Source Catalog, V2.0; master sources</DESCRIPTION>
+			<!-- Chandra Source Catalog, V2.0; master sources (\originalcolumnnames) -->
+
+			<!-- Definitions of GROUPs and FIELDs -->
+
+			<!-- +++No column could be found to attach a LINK in table: IX/57/csc2master -->
+			<FIELD ID="_col1" name="2CXO" ucd="meta.id;meta.main" datatype="char" arraysize="18"><!-- ucd="ID_MAIN" -->
+				<DESCRIPTION>Source name (Jhhmmss.s+ddmmssX) (name)</DESCRIPTION>
+			</FIELD>
+			<FIELD ID="_col2"  name="RAICRS" ucd="pos.eq.ra;meta.main" ref="H" datatype="double" width="11" precision="7" unit="deg"><!-- ucd="POS_EQ_RA_MAIN" -->
+				<DESCRIPTION>Source position, ICRS right ascension (ra)</DESCRIPTION>
+			</FIELD>
+			<FIELD ID="_col3"  name="DEICRS" ucd="pos.eq.dec;meta.main" ref="H" datatype="double" width="11" precision="7" unit="deg"><!-- ucd="POS_EQ_DEC_MAIN" -->
+				<DESCRIPTION>Source position, ICRS declination (dec)</DESCRIPTION>
+			</FIELD>
+			<FIELD ID="_col4"  name="GLON" ucd="pos.galactic.lon" datatype="double" width="12" precision="E5" unit="deg"><!-- ucd="POS_GAL_LON" -->
+				<DESCRIPTION>[-90/90] Source position, Galactic latitude (equinox J2000, epoch J2000) (gal_b)</DESCRIPTION>
+			</FIELD>
+			<FIELD ID="_col5"  name="GLAT" ucd="pos.galactic.lat" datatype="double" width="12" precision="E5" unit="deg"><!-- ucd="POS_GAL_LAT" -->
+				<DESCRIPTION>[0/360] Source position, Galactic longitude (gal_l)</DESCRIPTION>
+			</FIELD>
+			<DATA>
+				<TABLEDATA>
+					<TR>
+						<TD> J165541.6-424937</TD>
+						<TD>253.9235440</TD>
+						<TD>-42.8271581</TD>
+						<TD>3.34360e-01</TD>
+						<TD>3.42863e+02</TD>
+					</TR>
+					<TR>
+						<TD> J165643.7-424532</TD>
+						<TD>254.1822020</TD>
+						<TD>-42.7589867</TD>
+						<TD>2.29009e-01</TD>
+						<TD>3.43035e+02</TD>
+					</TR>
+					<TR>
+						<TD> J165650.6-423812</TD>
+						<TD>254.2110170</TD>
+						<TD>-42.6366900</TD>
+						<TD>2.88859e-01</TD>
+						<TD>3.43143e+02</TD>
+					</TR>
+					<TR>
+						<TD> J165655.8-423816</TD>
+						<TD>254.2327631</TD>
+						<TD>-42.6379642</TD>
+						<TD>2.75568e-01</TD>
+						<TD>3.43152e+02</TD>
+					</TR>
+					<TR>
+						<TD> J165649.7-423849</TD>
+						<TD>254.2074791</TD>
+						<TD>-42.6470446</TD>
+						<TD>2.84426e-01</TD>
+						<TD>3.43134e+02</TD>
+					</TR>
+					<TR>
+						<TD> J165659.9-423630</TD>
+						<TD>254.2496619</TD>
+						<TD>-42.6083618</TD>
+						<TD>2.84331e-01</TD>
+						<TD>3.43183e+02</TD>
+					</TR>
+					<TR>
+						<TD> J165658.8-423732</TD>
+						<TD>254.2452153</TD>
+						<TD>-42.6257554</TD>
+						<TD>2.76031e-01</TD>
+						<TD>3.43168e+02</TD>
+					</TR>
+					<TR>
+						<TD> J165703.7-425442</TD>
+						<TD>254.2655991</TD>
+						<TD>-42.9116713</TD>
+						<TD>8.59080e-02</TD>
+						<TD>3.42954e+02</TD>
+					</TR>
+					<TR>
+						<TD> J165719.8-425620</TD>
+						<TD>254.3329099</TD>
+						<TD>-42.9390771</TD>
+						<TD>3.02880e-02</TD>
+						<TD>3.42963e+02</TD>
+					</TR>
+					<TR>
+						<TD> J170103.4-404053</TD>
+						<TD>255.2642189</TD>
+						<TD>-40.6814190</TD>
+						<TD>8.82591e-01</TD>
+						<TD>3.45166e+02</TD>
+					</TR>
+				</TABLEDATA>
+			</DATA>
+		</TABLE>
+		<INFO name="matches" value="10">matching records</INFO>
+
+		<INFO name="Warning" value="No center provided++++" />
+		<INFO name="Warning" value="+++No column for LINK to a row in table: IX/57/csc2master" />
+		<INFO name="Warning" value="truncated result (maxtup=10)" />
+		<INFO name="QUERY_STATUS" value="OVERFLOW">truncated result (maxtup=10)</INFO>
+
+	</RESOURCE>
+</VOTABLE>

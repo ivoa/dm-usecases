@@ -1,0 +1,132 @@
+MangoObject
+      identifier : "GAIA source 6680733225618222592"
+      associatedData : "VOMOdelInstance"   # dock an instance of timeseries data  
+         semantic : TimeDependantAssociatedData
+         description : "Instance of TimeSeriesData atttached to the source
+         ivoid : ivo://......
+         modelURL : http://lien/vers/vodml-xml/tsd.xml
+         modelName : TimeSeriesData
+         modelDoc : http://lien/vers/vodml-html/tsd.html
+         modelInstance: "TSdata"    # ModelInstance   remplacée (ou remplie ) par une instance de TimeSeries
+            - Parameter : Point # instance d'un Mango Parameter complexe contenant tous les Parameter pour un point
+               ucd : NotSet
+               reductionStatus : Calibrated
+               semantic : TimeSeriesPoint
+               description : Individual Point Parameter in the TimeSeries
+               - Parameter :
+                   ucd: time.epoch
+                   reductionStatus : Calibrated
+                   semantic: independantTime
+                   description : "This is the time main stamp in JD"
+                   Measure : "Time"
+                              Coord : "JD"
+                                 date : 2456914.6976151103
+                                 coordSys : *timesystem
+                              Error : NotSet 
+               - Parameter :
+                   ucd :  phot.flux;em.opt.R
+                   reductionStatus : Calibrated
+                   semantic : RedBandFlux
+                   description : "This is the RP flux of the object for a given Time Stamp"
+                   Measure : "Flux"
+                              Coord : "Spectrum.Data.FluxAxis"
+                                   value :70494.1
+                                   coordSys : *photsystem
+                              Error : 
+                                   statError : 264.852
+               - Parameter :
+                   ucd :  phot.mag;em.opt.R
+                   reduc : ?
+                   semantic : RedBandMagnitude
+                   description : "This is the RP magnitude in the VEga system for the object for a given Time Stamp"
+                   Measure : "Magnitude"
+                              Coord : "Spectrum.Data.FluxAxis"
+                                 value :12.641518
+                                 coordSys : *photsystem
+                              Error : NotSet 
+                       
+             - Point : # instance d'un Mango Parameter complexe contenant tous les Parameter pour un point
+               - Parameter :
+                   ucd: time.epoch
+                   reductionStatus : Calibrated
+                   semantic: independantTime
+                   description : "This is the time main stamp in JD"
+                   Measure : "Time"
+                             Coord : "JD"
+                                 date : 2456914.7716157604
+                                 coordSys : *timesystem
+                             Error : NotSet
+               - Parameter :
+                   ucd :  phot.flux;em.opt.R
+                   reductionStatus : Calibrated 
+                   semantic : RedBandFlux
+                   description : "This is the RP flux of the object for a given Time Stamp"
+                   Measure : "Flux"
+                              Coord : "Spectrum.Data.FluxAxis"
+                                value : 69736.7
+                                coordSys : *photsystem
+                              Error : 
+                                statError :268.145
+               - Parameter :
+                   ucd :  phot.mag;em.opt.R
+                   reductionStatus : Calibrated
+                   semantic : RedBandMagnitude
+                   description : "This is the RP magnitude in the VEga system for the object for a given Time Stamp"
+                   Measure : "Magnitude"
+                              Coord : "Spectrum.Data.FluxAxis"
+                                value: 12.653247
+                                coordSys : *photsystem
+                              Error : NotSet
+             - Point : # instance d'un Mango Parameter complexe contenant tous les Parameter pour un point
+               - Parameter :
+                   ucd: time.epoch
+                   reduc : ?
+                   semantic: independantTime
+                   description : "This is the time main stamp in JD"
+                   Measure : "Time"
+                              Coord : "JD"
+                                 date : 2456948.579190581
+                                 coordSys : *timesystem
+                              Error : NotSet 
+               - Parameter :
+                   ucd :  phot.flux;em.opt.R
+                   reduc : ?
+                   semantic : RedBandFlux
+                   description : "This is the RP flux of the object for a given Time Stamp"
+                   Measure : "Flux"
+                              Coord : "Spectrum.Data.FluxAxis"  
+                                value : 69990.5
+                                coordSys : *photsystem
+                             Error : 
+                                statError :253.0
+               - Parameter :
+                   ucd :  phot.mag;em.opt.R
+                   reduc : ?
+                   semantic : RedBandMagnitude
+                   description : "This is the RP magnitude in the VEga system for the object for a given Time Stamp"
+                   Measure : "Magnitude"
+                              Coord : "Spectrum.Data.FluxAxis" 
+                                value 12.6493025
+                                coordSys : *photsystem
+                              Error :  NotSet                     *
+TimeSys : &timesystem
+          TimeFrame :
+                     timescale : TCB
+                     refposition : BARYCENTER
+                     refdirection: NotSet                       
+PhotSys : &photsystem
+          PhotFrame :
+                     Photcal : 
+                              
+                              zeroPoint :
+                                         magnituteSystem :
+                                                           type : "Vega"
+                                         flux :
+                                               value : "4257.3"
+                                               unit : Jy 
+                     PhotometryFilter :
+                                       identifier : "GAIA/GAIA.RP/RP"
+                                       spectralLocation :
+                                                         value : "656.23"
+                                                         unit : nm
+                     

@@ -1,4 +1,4 @@
-# Implementation of 'Native-Frame' case
+# Implementation of 'Column Grouping' case
 
 # Overview
   This case involves Vizier data with a variety of columns, some of which 
@@ -61,16 +61,18 @@
                 inst = item.referenced_instance
                 sys.stdout.write("    + Associated Parameter: ucd='%s'\n"%(inst.ucd) )
     ```
-    o Source:
-        o Parameter: ucd='pos.eq'
-            o no Associated Parameters
-        o Parameter: ucd='spect.dopplerVeloc'
-            o Associated Parameter: ucd='meta.code.qual'
-            o Associated Parameter: ucd='meta.number'
-            o Associated Parameter: ucd='meta.ref'
-        o Parameter: ucd='meta.code.qual'
-            o no Associated Parameters
-        o Parameter: ucd='meta.number'
-            o no Associated Parameters
-        o Parameter: ucd='meta.ref'
-            o no Associated Parameters
+   Source:  
+    + Parameter: ucd='pos.eq'  
+        + no Associated Parameters  
+    + Parameter: ucd='spect.dopplerVeloc'  
+        + Associated Parameter: ucd='meta.code.qual'  
+        + Associated Parameter: ucd='meta.number'  
+        + Associated Parameter: ucd='meta.ref'  
+    + Parameter: ucd='meta.code.qual'  
+        + no Associated Parameters  
+    + Parameter: ucd='meta.number'  
+        + no Associated Parameters  
+    + Parameter: ucd='meta.ref'  
+        + no Associated Parameters  
+ 
+ 

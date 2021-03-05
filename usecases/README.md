@@ -5,9 +5,6 @@
 
 ### Connections between projects and use-cases
 
-* **P** Raw data provided
-* **C** Concerned by the use-case
-
 | Usecase vs Project | XMM | Chandra | Vizier | GLAST | LSST | GAVO | Gaia | Simbad | Other project | Mock data |
 | -------------------| ------ | -----| -----  | ----- | ---- | ---- | ---- | ------ | ------------- | --------- |
 | identity           |  C     | C    | C      | C     | C    | C    | C    | P C    |               |           |
@@ -20,6 +17,10 @@
 | complex-shaped-object|      |      |        | P C   |      |      |      |        |               |           |
 | orbital-system     |        |      |        |  P C  |      |      |      |        |               |           |
 | time-series        |  C     | C    | C      |       | C    | P C  |      |        |               |           |
+
+* **P** Raw data provided
+* **C** Concerned by the use-case
+
 
 ### Use case proposal coverage 
 

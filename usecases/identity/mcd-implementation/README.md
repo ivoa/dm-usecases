@@ -1,4 +1,4 @@
-# Implementation of 'Column Grouping' case
+# Implementation of 'Identity' case
 
 # Overview
   This case involves data extracted from a SIMBAD TAP service.
@@ -60,6 +60,6 @@
         matches = [rec for rec in catalog.unroll() if rec.identifier == srcid]
         sys.stdout.write("o Match Source records with id='%s': # matches = %d\n"%(str(srcid), len(matches)) )
     ```
-o Match Source records with id='11237005': # matches = 1
-o Match Source records with id='99999999': # matches = 0
-o Match Source records with id='11237005': # matches = 1
+o Match Source records with id='11237005': # matches = 1  
+o Match Source records with id='99999999': # matches = 0  
+o Match Source records with id='11237005': # matches = 1  

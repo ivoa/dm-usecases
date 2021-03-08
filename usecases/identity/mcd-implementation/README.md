@@ -56,10 +56,10 @@
 * **Goal: Extract Source records matching a particular Identity.
     ```
     catalog = doc.find_instances(Source)[0]
-    for srcid in [ 11237005, 99999999, 11237005 ]:
+    for srcid in [ 11237005, 99999999, 11173790 ]:
         matches = [rec for rec in catalog.unroll() if rec.identifier == srcid]
         sys.stdout.write("o Match Source records with id='%s': # matches = %d\n"%(str(srcid), len(matches)) )
     ```
 o Match Source records with id='11237005': # matches = 1  
 o Match Source records with id='99999999': # matches = 0  
-o Match Source records with id='11237005': # matches = 1  
+o Match Source records with id='11173790': # matches = 1  

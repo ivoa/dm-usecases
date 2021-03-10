@@ -26,7 +26,7 @@
 
 | Usecase vs proposal  | mango-proposal | md-proposal | mcd-implementation | modelinstanceinvot |
 | ---------------------| -------------- | ----------- | ------------------ |--------------------|
-| identity             |  S I           |             |                    |                    |
+| identity             |  S I           |             | S I                |                    |
 | native_frames        |  S I           |             | S I                |                    |
 | simple_position      |  S I           |             |                    |                    |
 | standard_properties  |  S I           |             |                    |                    |

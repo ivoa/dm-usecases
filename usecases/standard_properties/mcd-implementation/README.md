@@ -9,6 +9,7 @@ This case involves data from several Catalogs
 The primary goal of is to annotate common Properties from each.
 * There appears to be no 'action' goal involved with this case yet.  
 So, will start with using the same script to extract and summarize the contents of each.. illustrating that the model concepts are facilitating the identification/extraction of the relevant data.
+* Special Note: The Chandra data serializes Obs. Start using ISO8601 format, while serializes in MJD.  The annotations identify the particular type for interpretation.  These are auto-converted to astropy:Time instances.
 
 Annotation was produced using the 'Jovial' modeling toolset (Java).  Jovial
   was written by Omar Laurino, and updated by me to the current data model content.
@@ -110,8 +111,8 @@ Uses the 'rama' python package to parse annotated data file and instantiate
 
 * Chandra Catalog Results
     * High Level content summary
-        *o Number of records: 1000
-        *o Number of unique Sources: 326
+        * Number of records: 1000
+        * Number of unique Sources: 326
 
     * Detail Level content summary
         * Source number: 3

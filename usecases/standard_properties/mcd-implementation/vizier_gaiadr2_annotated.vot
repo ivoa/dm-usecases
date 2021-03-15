@@ -176,7 +176,7 @@
                       <INSTANCE dmtype="meas:Ellipse">
                         <ATTRIBUTE dmrole="meas:Ellipse.semiAxis">
                           <COLUMN dmtype="ivoa:RealQuantity" ref="_e_pos_maj"/>
-                          <COLUMN dmtype="ivoa:RealQuantity" ref="e_pos_min"/>
+                          <COLUMN dmtype="ivoa:RealQuantity" ref="_e_pos_min"/>
                         </ATTRIBUTE>
                       </INSTANCE>
                     </ATTRIBUTE>

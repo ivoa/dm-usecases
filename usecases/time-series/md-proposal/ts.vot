@@ -168,7 +168,12 @@ or derived from Gaia data release 2:
           </INSTANCE>
         </ATTRIBUTE>
       </INSTANCE>
-      <INSTANCE ID="ndhunntgpeht" dmtype="stc2:Coords">
+      <INSTANCE ID="ndhunntgpeht" dmtype="stc3:Coords">
+      	<!-- this annotation doesn't make a lot of sense here (it only
+      	differs in the representation of the position.  It is here
+      	to show how annotations for a future STC data model could
+      	coexist with legacy ("stc2") annotations without impacting
+      	other annotations -->
         <ATTRIBUTE dmrole="time">
           <INSTANCE ID="ndhunntgphua" dmtype="stc2:TimeCoordinate">
             <ATTRIBUTE dmrole="frame">

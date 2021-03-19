@@ -24,18 +24,20 @@
 
 ### Use case proposal coverage 
 
-| Usecase vs proposal  | mango-proposal | md-proposal | mcd-implementation | modelinstanceinvot |
-| ---------------------| -------------- | ----------- | ------------------ |--------------------|
-| identity             |  S I           |             | S I                |                    |
-| native_frames        |  S I           |             | S I                |                    |
-| simple_position      |  S I           |             |                    |                    |
-| standard_properties  |  S I           |             | S I                |                    |
-| precise_astrometry   |  S I           |             |                    |                    |
-| column_grouping      |  S I           |             |                    |                    |
-| combined_data        |  S I           |             |                    |                    |
-| complex-shaped-object|  S             |             |                    |                    |
-| orbital-system       |  S             |             |                    |                    |
-| time-series          |                | S I         | S I                |  S I               |
+| Usecase vs proposal  | mango-proposal (*)| md-proposal | mcd-implementation | modelinstanceinvot |
+| ---------------------| ----------------- | ----------- | ------------------ |--------------------|
+| identity             |  S I              |             | S I                |                    |
+| native_frames        |  S I              |             | S I                |                    |
+| simple_position      |  S I              |             |                    |                    |
+| standard_properties  |  S I              |             | S I                |                    |
+| precise_astrometry   |  S I              |             |                    |                    |
+| column_grouping      |  S I              |             |                    |                    |
+| combined_data        |  S I              |             |                    |                    |
+| complex-shaped-object|  S                |             |                    |                    |
+| orbital-system       |  S                |             |                    |                    |
+| time-series          |                   | S I         | S I                |  S I               |
 
 * **S** supported
 * **I** implemented
+
+(*) Serialized with modelinstanceinvot

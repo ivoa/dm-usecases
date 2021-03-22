@@ -2,8 +2,9 @@
 <VOTABLE version="1.4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns="http://www.ivoa.net/xml/VOTable/v1.3"
 	xsi:schemaLocation="http://www.ivoa.net/xml/VOTable/v1.3 http://www.ivoa.net/xml/VOTable/v1.3">
-	<MODEL_INSTANCE name="MANGO" syntax="ModelInstanceInVot" >
-		<GLOBALS>
+    <MODEL_INSTANCE name="Mango" syntax="ModelInstanceInVot"
+        uri="https://github.com/ivoa-std/MANGO/blob/master/vo-dml/mango.vo-dml.xml">
+     		<GLOBALS>
 			<INSTANCE ID="SpaceSys_ICRS_Spherical" dmtype="coords:SpaceSys">
 				<INSTANCE dmrole="coords:PhysicalCoordSys.coordSpace" dmtype="coords:SphericalCoordSpace">
 					<COLLECTION size="-1" dmrole="coords:CoordSpace.axis">
@@ -38,7 +39,6 @@
 								<ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="#position" />
 								<ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="pos.eq;meta.main" />
 								<ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string" value="position" />
-								<ATTRIBUTE dmrole="mango:Parameter.reductionStatus" dmtype="ivoa:string" value="Computed" />
 								<INSTANCE dmrole="mango:Parameter.measure" dmtype="coords:Point">
 									<INSTANCE dmrole="coords:Point.axis1" dmtype="ivoa:RealQuantity">
 										<ATTRIBUTE dmrole="ivoa:RealQuantity.value" dmtype="ivoa:real" ref="pos_RA" />
@@ -110,7 +110,6 @@
 								<ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="#propermotion" />
 								<ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="pos.pm" />
 								<ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string" value="Proper Motion" />
-								<ATTRIBUTE dmrole="mango:Parameter.reductionStatus" dmtype="ivoa:string" value="Calibrated" />
 								<INSTANCE dmrole="mango:Parameter.measure" dmtype="meas:ProperMotion">
 									<INSTANCE dmrole="meas:ProperMotion.lon" dmtype="coords:PhysicalCoordinate">
 										<INSTANCE dmrole="coords:PhysicalCoordinate.cval" dmtype="ivoa:RealQuantity">
@@ -145,7 +144,6 @@
 								<ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="#radial velocity" />
 								<ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="spect.dopplerVeloc" />
 								<ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string" value="Radial velocity" />
-								<ATTRIBUTE dmrole="mango:Parameter.reductionStatus" dmtype="ivoa:string" value="Calibrated" />
 								<INSTANCE dmrole="mango:Parameter.measure" dmtype="meas:GenericMeasure">
 									<INSTANCE dmrole="meas:GenericMeasure.coord" dmtype="coords:PhysicalCoordinate">
 										<INSTANCE dmrole="coords:PhysicalCoordinate.cval" dmtype="ivoa:RealQuantity">
@@ -168,7 +166,6 @@
 								<ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="#parallax" />
 								<ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="pos.parallax" />
 								<ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string" value="Parallax" />
-								<ATTRIBUTE dmrole="mango:Parameter.reductionStatus" dmtype="ivoa:string" value="Calibrated" />
 								<INSTANCE dmrole="mango:Parameter.measure" dmtype="meas:GenericMeasure">
 									<INSTANCE dmrole="meas:GenericMeasure.coord" dmtype="coords:PhysicalCoordinate">
 										<INSTANCE dmrole="coords:PhysicalCoordinate.cval" dmtype="ivoa:RealQuantity">

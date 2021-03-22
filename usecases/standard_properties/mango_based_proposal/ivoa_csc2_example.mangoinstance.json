@@ -64,10 +64,6 @@
           }
         }
       },
-      "mango:Parameter.reductionStatus": {
-        "@dmtype": "ivoa:string",
-        "@value": "Corrected"
-      },
       "mango:Parameter.semantic": {
         "@dmtype": "ivoa:string",
         "@value": "#position.corrected"
@@ -114,10 +110,6 @@
             }
           }
         }
-      },
-      "mango:Parameter.reductionStatus": {
-        "@dmtype": "ivoa:string",
-        "@value": "Corrected"
       },
       "mango:Parameter.semantic": {
         "@dmtype": "ivoa:string",
@@ -166,10 +158,6 @@
           }
         }
       },
-      "mango:Parameter.reductionStatus": {
-        "@dmtype": "ivoa:string",
-        "@value": "Computed"
-      },
       "mango:Parameter.semantic": {
         "@dmtype": "ivoa:string",
         "@value": "#hardnessratio.computed"
@@ -217,10 +205,6 @@
           }
         }
       },
-      "mango:Parameter.reductionStatus": {
-        "@dmtype": "ivoa:string",
-        "@value": "Computed"
-      },
       "mango:Parameter.semantic": {
         "@dmtype": "ivoa:string",
         "@value": "#hardnessratio.computed"
@@ -267,10 +251,6 @@
             }
           }
         }
-      },
-      "mango:Parameter.reductionStatus": {
-        "@dmtype": "ivoa:string",
-        "@value": "Computed"
       },
       "mango:Parameter.semantic": {
         "@dmtype": "ivoa:string",

@@ -63,10 +63,6 @@
           }
         }
       },
-      "mango:Parameter.reductionStatus": {
-        "@dmtype": "ivoa:string",
-        "@value": "Calibrated"
-      },
       "mango:Parameter.semantic": {
         "@dmtype": "ivoa:string",
         "@value": "#radial velocity"
@@ -118,10 +114,6 @@
           }
         }
       },
-      "mango:Parameter.reductionStatus": {
-        "@dmtype": "ivoa:string",
-        "@value": "Computed"
-      },
       "mango:Parameter.semantic": {
         "@dmtype": "ivoa:string",
         "@value": "#Number.of.plates"
@@ -172,10 +164,6 @@
             }
           }
         }
-      },
-      "mango:Parameter.reductionStatus": {
-        "@dmtype": "ivoa:string",
-        "@value": "Computed"
       },
       "mango:Parameter.semantic": {
         "@dmtype": "ivoa:string",

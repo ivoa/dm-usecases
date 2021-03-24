@@ -5,17 +5,22 @@ At the GAVO data Center, we hold several data collections part of
 or derived from Gaia data release 2:
 
 * A version of GDR2's gaia_source table with just enough columns
-	to allow basic science (but therefore a bit faster and simpler to
-	deal with than the full gaia_source table).  This table also
-	has Lindegren's RUWE measure for filtering out marginal solutions.
+  to allow basic science (but therefore a bit faster and simpler to
+  deal with than the full gaia_source table).  This table also
+  has Lindegren's RUWE measure for filtering out marginal solutions.
 * The light curves released with DR2 as both a TAP-queriable table
-	(light curves as arrays) and an SSA service.
+  (light curves as arrays) and an SSA service.
 * The gdr2dist.main table with distances estimates computed by 
-	Bailer-Jones et al (:bibcode:`2018AJ....156...58B`) that should be
-	used in preference to simple parallax operations.
+  Bailer-Jones et al (:bibcode:`2018AJ....156...58B`) that should be
+  used in preference to simple parallax operations.
 * The gdr2mock schema, which contains a virtual Gaia catalog
-	generated from a carefully built model of the Galaxy.</DESCRIPTION>
+  generated from a carefully built model of the Galaxy.</DESCRIPTION>
   <VODML>
+
+   <!-- NOTE: this uses a streamlined version of the provisional Shanghai
+   annotation.  It's not really formally defined yet but discussed
+   on https://github.com/msdemlei/astropy -->
+
     <MODEL>
       <NAME version="0.x">stc2</NAME>
       <URL>http://www.ivoa.net/dm/STC.vo-dml.xml</URL>
@@ -37,178 +42,131 @@ or derived from Gaia data release 2:
       <URL>http://www.ivoa.net/dm/DatasetMetadata-1.0.vo-dml.xml</URL>
     </MODEL>
     <MODEL>
+      <NAME version="invalid">stc3</NAME>
+      <URL>urn:dachsjunk:not-model:stc3</URL>
+    </MODEL>
+    <MODEL>
       <NAME version="0.x">vo-dml</NAME>
       <URL>http://www.ivoa.net/dm/VO-DML.vo-dml.xml</URL>
     </MODEL>
     <TEMPLATES>
-      <INSTANCE ID="ndhunnmsbset" dmtype="stc2:Coords">
+      <INSTANCE ID="ndwibspapabt" dmtype="stc2:Coords">
         <ATTRIBUTE dmrole="time">
-          <INSTANCE ID="ndhunnmsbhba" dmtype="stc2:TimeCoordinate">
+          <INSTANCE ID="ndwibspapint" dmtype="stc2:TimeCoordinate">
             <ATTRIBUTE dmrole="frame">
-              <INSTANCE ID="ndhunnmsbmmt" dmtype="stc2:TimeFrame">
-                <ATTRIBUTE dmrole="timescale">
-                  <LITERAL dmtype="ivoa:string">TCB</LITERAL>
-                </ATTRIBUTE>
-                <ATTRIBUTE dmrole="refPosition">
-                  <LITERAL dmtype="ivoa:string">BARYCENTER</LITERAL>
-                </ATTRIBUTE>
-                <ATTRIBUTE dmrole="time0">
-                  <LITERAL dmtype="ivoa:string">0</LITERAL>
-                </ATTRIBUTE>
+              <INSTANCE ID="ndwibspapigt" dmtype="stc2:TimeFrame">
+                <ATTRIBUTE dmrole="timescale" dmtype="ivoa:string" value="TCB"/>
+                <ATTRIBUTE dmrole="refPosition" dmtype="ivoa:string" value="BARYCENTER"/>
+                <ATTRIBUTE dmrole="time0" dmtype="ivoa:string" value="0"/>
               </INSTANCE>
             </ATTRIBUTE>
-            <ATTRIBUTE dmrole="location">
-              <COLUMN ref="obs_time"/>
-            </ATTRIBUTE>
+            <ATTRIBUTE dmrole="location" ref="obs_time"/>
           </INSTANCE>
         </ATTRIBUTE>
         <ATTRIBUTE dmrole="space">
-          <INSTANCE ID="ndhunnmsbaut" dmtype="stc2:SphericalCoordinate">
+          <INSTANCE ID="ndwibspapiba" dmtype="stc2:SphericalCoordinate">
             <ATTRIBUTE dmrole="frame">
-              <INSTANCE ID="ndhunnmnonut" dmtype="stc2:SpaceFrame">
-                <ATTRIBUTE dmrole="orientation">
-                  <LITERAL dmtype="ivoa:string">ICRS</LITERAL>
-                </ATTRIBUTE>
-                <ATTRIBUTE dmrole="epoch">
-                  <LITERAL dmtype="ivoa:string">J2015.5</LITERAL>
-                </ATTRIBUTE>
+              <INSTANCE ID="ndwibspapuna" dmtype="stc2:SpaceFrame">
+                <ATTRIBUTE dmrole="orientation" dmtype="ivoa:string" value="ICRS"/>
+                <ATTRIBUTE dmrole="epoch" dmtype="ivoa:string" value="J2015.5"/>
               </INSTANCE>
             </ATTRIBUTE>
-            <ATTRIBUTE dmrole="longitude">
-              <CONSTANT ref="ra"/>
-            </ATTRIBUTE>
-            <ATTRIBUTE dmrole="latitude">
-              <CONSTANT ref="dec"/>
-            </ATTRIBUTE>
+            <ATTRIBUTE dmrole="longitude" ref="ra"/>
+            <ATTRIBUTE dmrole="latitude" ref="dec"/>
           </INSTANCE>
         </ATTRIBUTE>
       </INSTANCE>
-      <INSTANCE ID="ndhunnomdstt" dmtype="ndcube:Cube">
+      <INSTANCE ID="ndwibspodost" dmtype="ndcube:Cube">
         <ATTRIBUTE dmrole="independent_axes">
-          <COLUMN ref="obs_time"/>
+          <COLLECTION>
+            <ITEM ref="obs_time"/>
+          </COLLECTION>
         </ATTRIBUTE>
         <ATTRIBUTE dmrole="dependent_axes">
-          <COLUMN ref="phot"/>
-          <COLUMN ref="flux"/>
+          <COLLECTION>
+            <ITEM ref="phot"/>
+            <ITEM ref="flux"/>
+          </COLLECTION>
         </ATTRIBUTE>
       </INSTANCE>
-      <INSTANCE ID="ndhunnomdpwa" dmtype="phot:PhotCal">
-        <ATTRIBUTE dmrole="filterIdentifier">
-          <LITERAL dmtype="ivoa:string">GAIA/GAIA2.G</LITERAL>
-        </ATTRIBUTE>
-        <ATTRIBUTE dmrole="zeroPointFlux">
-          <LITERAL dmtype="ivoa:string">2836.53</LITERAL>
-        </ATTRIBUTE>
-        <ATTRIBUTE dmrole="magnitudeSystem">
-          <LITERAL dmtype="ivoa:string">Vega</LITERAL>
-        </ATTRIBUTE>
-        <ATTRIBUTE dmrole="effectiveWavelength">
-          <LITERAL dmtype="ivoa:string">6.23e-7</LITERAL>
-        </ATTRIBUTE>
-        <ATTRIBUTE dmrole="value">
-          <COLUMN ref="phot"/>
-        </ATTRIBUTE>
+      <INSTANCE ID="ndwibspodnta" dmtype="phot:PhotCal">
+        <ATTRIBUTE dmrole="filterIdentifier" dmtype="ivoa:string" value="GAIA/GAIA2.G"/>
+        <ATTRIBUTE dmrole="zeroPointFlux" dmtype="ivoa:string" value="2836.53"/>
+        <ATTRIBUTE dmrole="magnitudeSystem" dmtype="ivoa:string" value="Vega"/>
+        <ATTRIBUTE dmrole="effectiveWavelength" dmtype="ivoa:string" value="6.23e-7"/>
+        <ATTRIBUTE dmrole="value" ref="phot"/>
       </INSTANCE>
-      <INSTANCE ID="ndhunnomddma" dmtype="phot:PhotCal">
-        <ATTRIBUTE dmrole="filterIdentifier">
-          <LITERAL dmtype="ivoa:string">GAIA/GAIA2.G</LITERAL>
-        </ATTRIBUTE>
-        <ATTRIBUTE dmrole="zeroPointFlux">
-          <LITERAL dmtype="ivoa:string">2836.53</LITERAL>
-        </ATTRIBUTE>
-        <ATTRIBUTE dmrole="magnitudeSystem">
-          <LITERAL dmtype="ivoa:string">Vega</LITERAL>
-        </ATTRIBUTE>
-        <ATTRIBUTE dmrole="effectiveWavelength">
-          <LITERAL dmtype="ivoa:string">6.23e-7</LITERAL>
-        </ATTRIBUTE>
-        <ATTRIBUTE dmrole="value">
-          <COLUMN ref="flux"/>
-        </ATTRIBUTE>
+      <INSTANCE ID="ndwibspodhgt" dmtype="phot:PhotCal">
+        <ATTRIBUTE dmrole="filterIdentifier" dmtype="ivoa:string" value="GAIA/GAIA2.G"/>
+        <ATTRIBUTE dmrole="zeroPointFlux" dmtype="ivoa:string" value="2836.53"/>
+        <ATTRIBUTE dmrole="magnitudeSystem" dmtype="ivoa:string" value="Vega"/>
+        <ATTRIBUTE dmrole="effectiveWavelength" dmtype="ivoa:string" value="6.23e-7"/>
+        <ATTRIBUTE dmrole="value" ref="flux"/>
       </INSTANCE>
-      <INSTANCE ID="ndhunnomdolt" dmtype="ivoa:Measurement">
-        <ATTRIBUTE dmrole="value">
-          <COLUMN ref="flux"/>
-        </ATTRIBUTE>
-        <ATTRIBUTE dmrole="statError">
-          <COLUMN ref="flux_error"/>
-        </ATTRIBUTE>
+      <INSTANCE ID="ndwibspodmmt" dmtype="ivoa:Measurement">
+        <ATTRIBUTE dmrole="value" ref="flux"/>
+        <ATTRIBUTE dmrole="statError" ref="flux_error"/>
       </INSTANCE>
-      <INSTANCE ID="ndhunnmsbstt" dmtype="ds:Dataset">
-        <ATTRIBUTE dmrole="dataProductType">
-          <LITERAL dmtype="ivoa:string">TIMESERIES</LITERAL>
-        </ATTRIBUTE>
-        <ATTRIBUTE dmrole="title">
-          <CONSTANT ref="title"/>
-        </ATTRIBUTE>
+      <INSTANCE ID="ndwibspapwlt" dmtype="ds:Dataset">
+        <ATTRIBUTE dmrole="dataProductType" dmtype="ivoa:string" value="TIMESERIES"/>
+        <ATTRIBUTE dmrole="title" ref="title"/>
         <ATTRIBUTE dmrole="curation">
-          <INSTANCE ID="ndhunnmsbtpa" dmtype="ds:Curation">
-            <ATTRIBUTE dmrole="calibLevel">
-              <LITERAL dmtype="ivoa:string">1</LITERAL>
-            </ATTRIBUTE>
+          <INSTANCE ID="ndwibspapltt" dmtype="ds:Curation">
+            <ATTRIBUTE dmrole="calibLevel" dmtype="ivoa:string" value="1"/>
             <ATTRIBUTE dmrole="publisher">
-              <INSTANCE ID="ndhunnmsbiba" dmtype="ds:Publisher">
-                <ATTRIBUTE dmrole="name">
-                  <LITERAL dmtype="ivoa:string">GAVO Data Center</LITERAL>
-                </ATTRIBUTE>
-                <ATTRIBUTE dmrole="publisherId">
-                  <LITERAL dmtype="ivoa:string">ivo://org.gavo.dc</LITERAL>
-                </ATTRIBUTE>
+              <INSTANCE ID="ndwibspappmt" dmtype="ds:Publisher">
+                <ATTRIBUTE dmrole="name" dmtype="ivoa:string" value="GAVO Data Center"/>
+                <ATTRIBUTE dmrole="publisherId" dmtype="ivoa:string" value="ivo://org.gavo.dc"/>
               </INSTANCE>
             </ATTRIBUTE>
           </INSTANCE>
         </ATTRIBUTE>
         <ATTRIBUTE dmrole="target">
-          <INSTANCE ID="ndhunnmsbwha" dmtype="ds:AstroTarget">
+          <INSTANCE ID="ndwibspapldt" dmtype="ds:AstroTarget">
             <ATTRIBUTE dmrole="position">
-              <CONSTANT ref="ra"/>
-              <CONSTANT ref="dec"/>
-              <CONSTANT ref="ssa_location"/>
+              <COLLECTION>
+                <ITEM ref="ra"/>
+                <ITEM ref="dec"/>
+                <ITEM ref="ssa_location"/>
+              </COLLECTION>
             </ATTRIBUTE>
           </INSTANCE>
         </ATTRIBUTE>
       </INSTANCE>
-      <INSTANCE ID="ndhunntgpeht" dmtype="stc2:Coords">
+      <INSTANCE ID="ndwibslwpbna" dmtype="stc3:Coords">
+         <!-- this annotation doesn't make a lot of sense here (it only
+        differs in the representation of the position.  It is here
+        to show how annotations for a future STC data model could
+        coexist with legacy ("stc2") annotations without impacting
+        other annotations -->
+
         <ATTRIBUTE dmrole="time">
-          <INSTANCE ID="ndhunntgphua" dmtype="stc2:TimeCoordinate">
+          <INSTANCE ID="ndwibspapnbt" dmtype="stc2:TimeCoordinate">
             <ATTRIBUTE dmrole="frame">
-              <INSTANCE ID="ndhunnmnmada" dmtype="stc2:TimeFrame">
-                <ATTRIBUTE dmrole="timescale">
-                  <LITERAL dmtype="ivoa:string">TCB</LITERAL>
-                </ATTRIBUTE>
-                <ATTRIBUTE dmrole="refPosition">
-                  <LITERAL dmtype="ivoa:string">BARYCENTER</LITERAL>
-                </ATTRIBUTE>
-                <ATTRIBUTE dmrole="time0">
-                  <LITERAL dmtype="ivoa:string">0</LITERAL>
-                </ATTRIBUTE>
+              <INSTANCE ID="ndwibslwpiba" dmtype="stc2:TimeFrame">
+                <ATTRIBUTE dmrole="timescale" dmtype="ivoa:string" value="TCB"/>
+                <ATTRIBUTE dmrole="refPosition" dmtype="ivoa:string" value="BARYCENTER"/>
+                <ATTRIBUTE dmrole="time0" dmtype="ivoa:string" value="0"/>
               </INSTANCE>
             </ATTRIBUTE>
-            <ATTRIBUTE dmrole="location">
-              <COLUMN ref="obs_time"/>
-            </ATTRIBUTE>
+            <ATTRIBUTE dmrole="location" ref="obs_time"/>
           </INSTANCE>
         </ATTRIBUTE>
         <ATTRIBUTE dmrole="space">
-          <INSTANCE ID="ndhunnmnmoia" dmtype="stc2:SphericalCoordinate">
+          <INSTANCE ID="ndwibslwpmoa" dmtype="stc2:SphericalCoordinate">
             <ATTRIBUTE dmrole="frame">
-              <INSTANCE ID="ndhunmbbthua" dmtype="stc2:SpaceFrame">
-                <ATTRIBUTE dmrole="orientation">
-                  <LITERAL dmtype="ivoa:string">ICRS</LITERAL>
-                </ATTRIBUTE>
-                <ATTRIBUTE dmrole="epoch">
-                  <LITERAL dmtype="ivoa:string">J2015.5</LITERAL>
-                </ATTRIBUTE>
+              <INSTANCE ID="ndwibslwpgea" dmtype="stc2:SpaceFrame">
+                <ATTRIBUTE dmrole="orientation" dmtype="ivoa:string" value="ICRS"/>
+                <ATTRIBUTE dmrole="epoch" dmtype="ivoa:string" value="J2015.5"/>
               </INSTANCE>
             </ATTRIBUTE>
-            <ATTRIBUTE dmrole="value">
-              <CONSTANT ref="ssa_location"/>
-            </ATTRIBUTE>
+            <ATTRIBUTE dmrole="value" ref="ssa_location"/>
           </INSTANCE>
         </ATTRIBUTE>
       </INSTANCE>
     </TEMPLATES>
   </VODML>
+
   <INFO name="legal" value=" If you use public Gaia DR2 data in a paper, please take note of  `ESAC's guide`_ on how to acknowledge and cite it.  .. _ESAC's guide: http://gea.esac.esa.int/archive/documentation/GDR2/Miscellaneous/sec_credit_and_citation_instructions/"/>
   <RESOURCE>
     <COOSYS ID="system" epoch="J2015.5" system="ICRS"/>

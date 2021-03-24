@@ -194,3 +194,204 @@ print(instance.get_flatten_data_head())
   457.4692077636719
 ]
 ```
+
+# `gaia_multiband.annot.xml` serialization
+
+- The purpose of the proposal is to show up the capacity of the `ModelInstanceInVot` mapping syntax to map a VOTable where the photometric points in different filters are mixed in one table.
+- This implementation is based on an hadoc model developed on purpose and named `mock_ts`.
+
+###  `mock_ts` Model
+
+- **Time Series** : data set metadata (name + position) + collection of **light curves**
+- **Light Curve**: meta data (name + filter) + collection of photometric **Points**
+- **Points**: The model for the photometric points uses the `mango:Parameter` class
+  - A photometric point is a `mango:Parameter` instance. 
+  - This is **the** independent axis (the time here).
+  - Dependent axes are not explicitly defined by the model.
+  - Dependent axes (the magnitude here) are represented by the parameters associated through the  `mango:Parameter.associatedParameter` relation. This association allows the model to support any parameter set as dependent axes.
+
+### `ModelInstanceInVot` mapping
+
+- The mapping is commented within the VOTABLE
+
+### Test tools
+
+- `gaia_multiband.annot.xml` can be processed by [gaia_multiband.py](https://github.com/ivoa/modelinstanceinvot-code/modelinstanceinvot-code/python/client/demo/gaia_multiband.py)
+- The code shown below is not a real public API. This the code is developed to both build and validate `ModelInstanceInVot`. 
+- A science friendly API is planed.
+- The validation consists in serializing model instances as Python dictionaries. Using such dictionaries allow to browse instances just by using data model identifiers (e.g. dm roles). There is no longer references to the original meta-data. 
+
+```python
+    votable_path = os.path.join(data_dir,
+                                "annotated_data",
+                                "gaia_multiband.annot.xml"
+                                )
+    # Serialize the model instace as a {}
+    vodml_instance = VodmlInstance(votable_path)
+    vodml_instance.populate_templates()
+    vodml_instance.connect_join_iterators()
+    instance = vodml_instance.get_root_element("mock_ts:TimeSeries")
+    if instance is None:
+        raise Exception("No root element found")
+    table_mapper = vodml_instance.table_mappers["Results"]
+    
+    # Show the list of table iterators (one per filter)
+    print(">>> tables iterators"  + str(table_mapper.table_iterators.keys()))
+    
+    # Extract the dictionary subset that correspond to the TS instance
+    instance_browser = InstanceBrowser(instance.json)
+    ts_instance = instance_browser.get_root_element()  
+      
+    # Print out the column mapping
+    print("=== Mapping of the columns")
+    print(instance.get_flatten_data_head())
+
+    print("=== TS Name : " + DictUtils.get_pretty_json(ts_instance["mock_ts:TimeSeries.dataSet"]["mock_ts:TimeSeries.dataSet.dataProductName"]["@value"]))
+    
+    # Print out the 3 light curves (stored in a list as stated by the model)
+    suffix = ""
+    cpt = 1
+    for lc in ts_instance["mock_ts:TimeSeries.lightCurves"]:
+        filter_id = lc["mock_ts:LightCurve.filter"]["@dmref"]
+        print("=== LC NAME   : " + lc["mock_ts:LightCurve.name"]["@value"])
+        print("=== LC FILTER : " + DictUtils.get_pretty_json(instance_browser.get_globals_by_ID(filter_id)))
+
+        print("=== Flatten rows")
+        inst = None
+        while True:
+            inst = instance._get_next_flatten_row(data_subset=('mock_ts:LightCurve.points' + suffix))
+            if inst != None:
+                print(DictUtils.get_pretty_json(inst))
+            else:
+                break
+        instance.rewind()
+        suffix = "_" + str(cpt)
+        cpt += 1
+
+```
+
+- Parsing output
+  - Printing `@dmtypes` is not required, this is for debug purpose.
+
+```
+=== Mapping of the columns
+['mango:stcextend.Photometry.coord(mango:stcextend.PhotometryCoord.luminosity) [col#4 mag]', 'meas:Time.coord(coords:MJD.date) [col#3 time]']
+=== TS Name : "GAIA Time Series"
+=== LC NAME   : Light curve G band
+=== LC FILTER : {
+  "@ID": "PhotFrame_gaiaG",
+  "@dmtype": "mango:stcextend.PhotFilter",
+  "mango:stcextend.PhotFilter.bandWidth": {
+    "@dmtype": "ivoa:real",
+    "@value": "4578.32"
+  },
+  "mango:stcextend.PhotFilter.effectiveWavlength": {
+    "@dmtype": "ivoa:real",
+    "@value": "6246.77"
+  },
+  "mango:stcextend.PhotFilter.magnitudeSystem": {
+    "@dmtype": "ivoa:string",
+    "@value": "Vega"
+  },
+  "mango:stcextend.PhotFilter.name": {
+    "@dmtype": "ivoa:string",
+    "@value": "GAIA/GAIA2r.G"
+  },
+  "mango:stcextend.PhotFilter.unit": {
+    "@dmtype": "ivoa:string",
+    "@value": "Angstrom"
+  },
+  "mango:stcextend.PhotFilter.zeroPointFlux": {
+    "@dmtype": "ivoa:real",
+    "@value": "2.49524e-9"
+  }
+}
+=== Flatten rows
+[
+  15.216574668884277,
+  1705.9437360200984
+]
+.....
+[
+  15.067952156066895,
+  2320.202939518489
+]
+=== LC NAME   : Light curve RP band
+=== LC FILTER : {
+  "@ID": "PhotFrame_gaiaRP",
+  "@dmtype": "mango:stcextend.PhotFilter",
+  "mango:stcextend.PhotFilter.bandWidth": {
+    "@dmtype": "ivoa:real",
+    "@value": "2943.72"
+  },
+  "mango:stcextend.PhotFilter.effectiveWavlength": {
+    "@dmtype": "ivoa:real",
+    "@value": "7740.87"
+  },
+  "mango:stcextend.PhotFilter.magnitudeSystem": {
+    "@dmtype": "ivoa:string",
+    "@value": "Vega"
+  },
+  "mango:stcextend.PhotFilter.name": {
+    "@dmtype": "ivoa:string",
+    "@value": "GAIA/GAIA2r.Grp"
+  },
+  "mango:stcextend.PhotFilter.unit": {
+    "@dmtype": "ivoa:string",
+    "@value": "Angstrom"
+  },
+  "mango:stcextend.PhotFilter.zeroPointFlux": {
+    "@dmtype": "ivoa:real",
+    "@value": "1.29363e-9"
+  }
+}
+=== Flatten rows
+[
+  14.760566711425781,
+  1705.9441391177577
+]
+......
+[
+  14.616872787475586,
+  2320.203343019354
+]
+=== LC NAME   : Light curve BP band
+=== LC FILTER : {
+  "@ID": "PhotFrame_gaiaBP",
+  "@dmtype": "mango:stcextend.PhotFilter",
+  "mango:stcextend.PhotFilter.bandWidth": {
+    "@dmtype": "ivoa:real",
+    "@value": "2279.45"
+  },
+  "mango:stcextend.PhotFilter.effectiveWavlength": {
+    "@dmtype": "ivoa:real",
+    "@value": "5278.58"
+  },
+  "mango:stcextend.PhotFilter.magnitudeSystem": {
+    "@dmtype": "ivoa:string",
+    "@value": "Vega"
+  },
+  "mango:stcextend.PhotFilter.name": {
+    "@dmtype": "ivoa:string",
+    "@value": "GAIA/GAIA2r.Gbp"
+  },
+  "mango:stcextend.PhotFilter.unit": {
+    "@dmtype": "ivoa:string",
+    "@value": "Angstrom"
+  },
+  "mango:stcextend.PhotFilter.zeroPointFlux": {
+    "@dmtype": "ivoa:real",
+    "@value": "4.03528e-9"
+  }
+}
+=== Flatten rows
+[
+  15.645391464233398,
+  1705.9440504175118
+]
+......
+[
+  15.34991455078125,
+  2320.2032537866794
+]
+```

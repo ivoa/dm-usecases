@@ -144,10 +144,6 @@
           }
         }
       },
-      "mango:Parameter.reductionStatus": {
-        "@dmtype": "ivoa:string",
-        "@value": "Corrected"
-      },
       "mango:Parameter.semantic": {
         "@dmtype": "ivoa:string",
         "@value": "#postion.corrected"

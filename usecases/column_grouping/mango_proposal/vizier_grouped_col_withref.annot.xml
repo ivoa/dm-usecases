@@ -2,8 +2,8 @@
 <VOTABLE version="1.4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns="http://www.ivoa.net/xml/VOTable/v1.3"
     xsi:schemaLocation="http://www.ivoa.net/xml/VOTable/v1.3 http://www.ivoa.net/xml/VOTable/v1.3">
-    <MODEL_INSTANCE name="MANGO" syntax="ModelInstanceInVot">
-        <GLOBALS>
+    <MODEL_INSTANCE name="Mango" syntax="ModelInstanceInVot"
+        uri="https://github.com/ivoa-std/MANGO/blob/master/vo-dml/mango.vo-dml.xml">        <GLOBALS>
             <INSTANCE ID="StatusFrame_QRVFLAG" dmrole="" dmtype="cab_msd:STCStatusSys">
                 <COLLECTION size="5" dmrole="cab_msd:STCStatusSys.statusLabel">
                     <INSTANCE dmrole="cab_msd:STCStatusSys.statusLabel" dmtype="cab_msd:StatusLabel">
@@ -41,7 +41,6 @@
                                 <ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="spect.dopplerVeloc;pos.heliocentric" />
                                 <ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string"
                                     value="Radial velocity, derived from the shift of some spectral feature in Heliocentric position coordinate (solar system bodies)" />
-                                <ATTRIBUTE dmrole="mango:Parameter.reductionStatus" dmtype="ivoa:string" value="Calibrated" />
                                 <INSTANCE dmrole="mango:Parameter.measure" dmtype="meas:GenericMeasure">
                                     <INSTANCE dmrole="meas:GenericMeasure.coord" dmtype="coords:PhysicalCoordinate">
                                         <INSTANCE dmrole="coords:PhysicalCoordinate.cval" dmtype="ivoa:RealQuantity">
@@ -73,7 +72,6 @@
                                 <ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="meta.number" />
                                 <ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string"
                                     value="Number of plates used for radial velocity " />
-                                <ATTRIBUTE dmrole="mango:Parameter.reductionStatus" dmtype="ivoa:string" value="Computed" />
                                 <INSTANCE dmrole="mango:Parameter.measure" dmtype="meas:GenericMeasure">
                                     <INSTANCE dmrole="meas:GenericMeasure.coord" dmtype="coords:PhysicalCoordinate">
                                         <INSTANCE dmrole="coords:PhysicalCoordinate.cval" dmtype="ivoa:RealQuantity">
@@ -96,7 +94,6 @@
                                 <ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="meta.ref;pos.frame " />
                                 <ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string"
                                     value="the observatories contributing to the mean radial velocity  " />
-                                <ATTRIBUTE dmrole="mango:Parameter.reductionStatus" dmtype="ivoa:string" value="Computed" />
                                 <INSTANCE dmrole="mango:Parameter.measure" dmtype="meas:GenericMeasure">
                                     <INSTANCE dmrole="meas:GenericMeasure.coord" dmtype="coords:PhysicalCoordinate">
                                         <INSTANCE dmrole="coords:PhysicalCoordinate.cval" dmtype="ivoa:RealQuantity">

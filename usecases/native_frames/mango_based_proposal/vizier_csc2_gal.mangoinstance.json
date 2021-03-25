@@ -64,10 +64,6 @@
           }
         }
       },
-      "mango:Parameter.reductionStatus": {
-        "@dmtype": "ivoa:string",
-        "@value": "Computed"
-      },
       "mango:Parameter.semantic": {
         "@dmtype": "ivoa:string",
         "@value": "#position"
@@ -133,10 +129,6 @@
             }
           }
         }
-      },
-      "mango:Parameter.reductionStatus": {
-        "@dmtype": "ivoa:string",
-        "@value": "Computed"
       },
       "mango:Parameter.semantic": {
         "@dmtype": "ivoa:string",

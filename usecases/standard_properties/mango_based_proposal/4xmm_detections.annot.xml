@@ -157,7 +157,6 @@
 								<ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="#postion.corrected" />
 								<ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="pos" />
 								<ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string" value="Corrected position" />
-								<ATTRIBUTE dmrole="mango:Parameter.reductionStatus" dmtype="ivoa:string" value="Corrected" />
 								<INSTANCE dmrole="mango:Parameter.measure" dmtype="mango:stcextend.LonLatSkyPosition">
 									<INSTANCE dmrole="mango:stcextend.LonLatSkyPosition.coord" dmtype="mango:stcextend.LonLatPoint">
 										<ATTRIBUTE dmrole="mango:stcextend.LonLatPoint.longitude" dmtype="ivoa:real" ref="_ra_146" />
@@ -188,7 +187,6 @@
 								<ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="phot.flux" />
 								<ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string"
 									value="Flux in Energy band 1 0.2-0.5KeV (cameras merged)" />
-								<ATTRIBUTE dmrole="mango:Parameter.reductionStatus" dmtype="ivoa:string" value="Corrected" />
 								<INSTANCE dmrole="mango:Parameter.measure" dmtype="mango:stcextend.Photometry">
 									<INSTANCE dmrole="mango:stcextend.Photometry.coord" dmtype="mango:stcextend.PhotometryCoord">
 										<ATTRIBUTE dmrole="mango:stcextend.PhotometryCoord.luminosity" dmtype="ivoa:real" ref="_ep_1_flux_166" />
@@ -209,7 +207,6 @@
 								<ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="phot.flux" />
 								<ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string"
 									value="Flux in Energy band 2 0.5-1KeV (cameras merged)" />
-								<ATTRIBUTE dmrole="mango:Parameter.reductionStatus" dmtype="ivoa:string" value="Corrected" />
 								<INSTANCE dmrole="mango:Parameter.measure" dmtype="mango:stcextend.Photometry">
 									<INSTANCE dmrole="mango:stcextend.Photometry.coord" dmtype="mango:stcextend.PhotometryCoord">
 										<ATTRIBUTE dmrole="mango:stcextend.PhotometryCoord.luminosity" dmtype="ivoa:real" ref="_ep_2_flux_168" />
@@ -230,7 +227,6 @@
 								<ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="phot.flux" />
 								<ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string"
 									value="Flux in Energy band 2 1-2KeV (cameras merged)" />
-								<ATTRIBUTE dmrole="mango:Parameter.reductionStatus" dmtype="ivoa:string" value="Corrected" />
 								<INSTANCE dmrole="mango:Parameter.measure" dmtype="mango:stcextend.Photometry">
 									<INSTANCE dmrole="mango:stcextend.Photometry.coord" dmtype="mango:stcextend.PhotometryCoord">
 										<ATTRIBUTE dmrole="mango:stcextend.PhotometryCoord.luminosity" dmtype="ivoa:real" ref="_ep_3_flux_170" />
@@ -251,7 +247,6 @@
 								<ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="phot.flux" />
 								<ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string"
 									value="Flux in Energy band 2 2-4.5KeV (cameras merged)" />
-								<ATTRIBUTE dmrole="mango:Parameter.reductionStatus" dmtype="ivoa:string" value="Corrected" />
 								<INSTANCE dmrole="mango:Parameter.measure" dmtype="mango:stcextend.Photometry">
 									<INSTANCE dmrole="mango:stcextend.Photometry.coord" dmtype="mango:stcextend.PhotometryCoord">
 										<ATTRIBUTE dmrole="mango:stcextend.PhotometryCoord.luminosity" dmtype="ivoa:real" ref="_ep_4_flux_172" />
@@ -272,7 +267,6 @@
 								<ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="phot.flux" />
 								<ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string"
 									value="Flux in Energy band 2 4.5-12KeV (cameras merged)" />
-								<ATTRIBUTE dmrole="mango:Parameter.reductionStatus" dmtype="ivoa:string" value="Corrected" />
 								<INSTANCE dmrole="mango:Parameter.measure" dmtype="mango:stcextend.Photometry">
 									<INSTANCE dmrole="mango:stcextend.Photometry.coord" dmtype="mango:stcextend.PhotometryCoord">
 										<ATTRIBUTE dmrole="mango:stcextend.PhotometryCoord.luminosity" dmtype="ivoa:real" ref="_ep_5_flux_174" />
@@ -296,7 +290,6 @@
 								<ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="phot.flux;arith.ratio" />
 								<ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string"
 									value="Hardness Ratio in Energy band 1 and 2 (cameras merged)" />
-								<ATTRIBUTE dmrole="mango:Parameter.reductionStatus" dmtype="ivoa:string" value="computed" />
 								<INSTANCE dmrole="mango:Parameter.measure" dmtype="mango:stcextend.HardnessRatio">
 									<INSTANCE dmrole="mango:stcextend.HardnessRatio.coord" dmtype="mango:stcextend.HardnessRatioCoord">
 										<ATTRIBUTE dmrole="mango:stcextend.HardnessRatioCoord.hardnessRatio" dmtype="ivoa:real" ref="_ep_hr1_302" />
@@ -317,7 +310,6 @@
 								<ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="phot.flux;arith.ratio" />
 								<ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string"
 									value="Hardness Ratio in Energy band 2 and 3 (cameras merged)" />
-								<ATTRIBUTE dmrole="mango:Parameter.reductionStatus" dmtype="ivoa:string" value="computed" />
 								<INSTANCE dmrole="mango:Parameter.measure" dmtype="mango:stcextend.HardnessRatio">
 									<INSTANCE dmrole="mango:stcextend.HardnessRatio.coord" dmtype="mango:stcextend.HardnessRatioCoord">
 										<ATTRIBUTE dmrole="mango:stcextend.HardnessRatioCoord.hardnessRatio" dmtype="ivoa:real" ref="_ep_hr2_304" />
@@ -338,7 +330,6 @@
 								<ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="phot.flux;arith.ratio" />
 								<ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string"
 									value="Hardness Ratio in Energy band 3 and 4 (cameras merged)" />
-								<ATTRIBUTE dmrole="mango:Parameter.reductionStatus" dmtype="ivoa:string" value="computed" />
 								<INSTANCE dmrole="mango:Parameter.measure" dmtype="mango:stcextend.HardnessRatio">
 									<INSTANCE dmrole="mango:stcextend.HardnessRatio.coord" dmtype="mango:stcextend.HardnessRatioCoord">
 										<ATTRIBUTE dmrole="mango:stcextend.HardnessRatioCoord.hardnessRatio" dmtype="ivoa:real" ref="_ep_hr3_306" />
@@ -359,7 +350,6 @@
 								<ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="phot.flux;arith.ratio" />
 								<ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string"
 									value="Hardness Ratio in Energy band 4 and 5 (cameras merged)" />
-								<ATTRIBUTE dmrole="mango:Parameter.reductionStatus" dmtype="ivoa:string" value="computed" />
 								<INSTANCE dmrole="mango:Parameter.measure" dmtype="mango:stcextend.HardnessRatio">
 									<INSTANCE dmrole="mango:stcextend.HardnessRatio.coord" dmtype="mango:stcextend.HardnessRatioCoord">
 										<ATTRIBUTE dmrole="mango:stcextend.HardnessRatioCoord.hardnessRatio" dmtype="ivoa:real" ref="_ep_hr4_308" />
@@ -383,7 +373,6 @@
 								<ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="time.duration;obs.exposure" />
 								<ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string"
 									value="The ontime value, given in seconds, is the total good exposure time" />
-								<ATTRIBUTE dmrole="mango:Parameter.reductionStatus" dmtype="ivoa:string" value="calibrated" />
 								<INSTANCE dmrole="mango:Parameter.measure" dmtype="meas:GenericMeasure">
 									<INSTANCE dmrole="meas:GenericMeasure.coord" dmtype="coords:PhysicalCoordinate">
 										<INSTANCE dmrole="coords:PhysicalCoordinate.cval" dmtype="ivoa:RealQuantity">
@@ -400,7 +389,6 @@
 								<ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="#observation.starttime" />
 								<ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="time;obs.start" />
 								<ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string" value="Observation time" />
-								<ATTRIBUTE dmrole="mango:Parameter.reductionStatus" dmtype="ivoa:string" value="calibrated" />
 								<INSTANCE dmrole="mango:Parameter.measure" dmtype="meas:Time">
 									<INSTANCE dmrole="meas:Time.coord" dmtype="coords:MJD">
 										<ATTRIBUTE dmrole="coords:MJD.date" dmtype="ivoa:real" ref="_mjd_start_137" />

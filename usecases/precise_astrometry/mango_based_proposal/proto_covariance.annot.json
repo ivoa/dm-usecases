@@ -58,10 +58,6 @@
           }
         }
       },
-      "mango:Parameter.reductionStatus": {
-        "@dmtype": "ivoa:string",
-        "@value": "Computed"
-      },
       "mango:Parameter.semantic": {
         "@dmtype": "ivoa:string",
         "@value": "#position"
@@ -261,10 +257,6 @@
           }
         }
       },
-      "mango:Parameter.reductionStatus": {
-        "@dmtype": "ivoa:string",
-        "@value": "Calibrated"
-      },
       "mango:Parameter.semantic": {
         "@dmtype": "ivoa:string",
         "@value": "#propermotion"
@@ -317,10 +309,6 @@
             }
           }
         }
-      },
-      "mango:Parameter.reductionStatus": {
-        "@dmtype": "ivoa:string",
-        "@value": "Calibrated"
       },
       "mango:Parameter.semantic": {
         "@dmtype": "ivoa:string",
@@ -400,10 +388,6 @@
             }
           }
         }
-      },
-      "mango:Parameter.reductionStatus": {
-        "@dmtype": "ivoa:string",
-        "@value": "Calibrated"
       },
       "mango:Parameter.semantic": {
         "@dmtype": "ivoa:string",

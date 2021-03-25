@@ -194,3 +194,190 @@ print(instance.get_flatten_data_head())
   457.4692077636719
 ]
 ```
+
+## `gaia_multiband.anot.xml` serialization
+
+The data have been mapped on a model designed  on purpose (see the [diagram](gaia_multband.model.png))
+
+### Model
+
+- The model represents a time series as a collection of light curves (one per filter)
+
+### Annotation 
+
+- The VOTable has been annotated by using the **ModelInstanceInVot** syntax
+
+### Client
+
+- The annotated VOTable can be consumed by this [client](https://github.com/ivoa/modelinstanceinvot-code/blob/main/python/client/demo/gaia_multiband.py)
+- This API is not science friendly yet, it is design to develop and test the annotation scheme.
+
+- client code:
+
+```python
+
+   vodml_instance = VodmlInstance(votable_path)
+    vodml_instance.populate_templates()
+    vodml_instance.connect_join_iterators()
+
+    instance = vodml_instance.get_root_element("mock_ts:TimeSeries")
+    if instance is None:
+        raise Exception("No root element found")
+    table_mapper = vodml_instance.table_mappers["Results"]
+    print(">>> tables iterators"  + str(table_mapper.table_iterators.keys()))
+    
+    instance_browser = InstanceBrowser(instance.json)
+    ts_instance = instance_browser.get_root_element()    
+    
+    #print( DictUtils.get_pretty_json(ts_instance))
+    print("=== Mapping of the columns")
+    print(instance.get_flatten_data_head())
+
+    print("=== TS Name : " + DictUtils.get_pretty_json(ts_instance["mock_ts:TimeSeries.dataSet"]["mock_ts:TimeSeries.dataSet.dataProductName"]["@value"]))
+    suffix = ""
+    cpt = 1
+    for lc in ts_instance["mock_ts:TimeSeries.lightCurves"]:
+        filter_id = lc["mock_ts:LightCurve.filter"]["@dmref"]
+        print("=== LC NAME   : " + lc["mock_ts:LightCurve.name"]["@value"])
+        print("=== LC FILTER : " + DictUtils.get_pretty_json(instance_browser.get_globals_by_ID(filter_id)))
+
+        print("=== Flatten rows")
+        inst = None
+        while True:
+            inst = instance._get_next_flatten_row(data_subset=('mock_ts:LightCurve.points' + suffix))
+            if inst != None:
+                print(DictUtils.get_pretty_json(inst))
+            else:
+                break
+        instance.rewind()
+        suffix = "_" + str(cpt)
+        cpt += 1
+ ```
+        
+- Client output
+
+```
+>>> tables iteratorsdict_keys(['mock_ts:LightCurve.points', 'mock_ts:LightCurve.points_1', 'mock_ts:LightCurve.points_2'])
+=== Mapping of the columns
+['mango:stcextend.Photometry.coord(mango:stcextend.PhotometryCoord.luminosity) [col#4 mag]', 'meas:Time.coord(coords:MJD.date) [col#3 time]']
+=== TS Name : "GAIA Time Series"
+=== LC NAME   : Light curve G band
+=== LC FILTER : {
+  "@ID": "PhotFrame_gaiaG",
+  "@dmtype": "mango:stcextend.PhotFilter",
+  "mango:stcextend.PhotFilter.bandWidth": {
+    "@dmtype": "ivoa:real",
+    "@value": "4578.32"
+  },
+  "mango:stcextend.PhotFilter.effectiveWavlength": {
+    "@dmtype": "ivoa:real",
+    "@value": "6246.77"
+  },
+  "mango:stcextend.PhotFilter.magnitudeSystem": {
+    "@dmtype": "ivoa:string",
+    "@value": "Vega"
+  },
+  "mango:stcextend.PhotFilter.name": {
+    "@dmtype": "ivoa:string",
+    "@value": "GAIA/GAIA2r.G"
+  },
+  "mango:stcextend.PhotFilter.unit": {
+    "@dmtype": "ivoa:string",
+    "@value": "Angstrom"
+  },
+  "mango:stcextend.PhotFilter.zeroPointFlux": {
+    "@dmtype": "ivoa:real",
+    "@value": "2.49524e-9"
+  }
+}
+=== Flatten rows
+[
+  15.216574668884277,
+  1705.9437360200984
+]
+...
+[
+  15.067952156066895,
+  2320.202939518489
+]
+=== LC NAME   : Light curve RP band
+=== LC FILTER : {
+  "@ID": "PhotFrame_gaiaRP",
+  "@dmtype": "mango:stcextend.PhotFilter",
+  "mango:stcextend.PhotFilter.bandWidth": {
+    "@dmtype": "ivoa:real",
+    "@value": "2943.72"
+  },
+  "mango:stcextend.PhotFilter.effectiveWavlength": {
+    "@dmtype": "ivoa:real",
+    "@value": "7740.87"
+  },
+  "mango:stcextend.PhotFilter.magnitudeSystem": {
+    "@dmtype": "ivoa:string",
+    "@value": "Vega"
+  },
+  "mango:stcextend.PhotFilter.name": {
+    "@dmtype": "ivoa:string",
+    "@value": "GAIA/GAIA2r.Grp"
+  },
+  "mango:stcextend.PhotFilter.unit": {
+    "@dmtype": "ivoa:string",
+    "@value": "Angstrom"
+  },
+  "mango:stcextend.PhotFilter.zeroPointFlux": {
+    "@dmtype": "ivoa:real",
+    "@value": "1.29363e-9"
+  }
+}
+=== Flatten rows
+[
+  14.760566711425781,
+  1705.9441391177577
+]
+...
+[
+  14.616872787475586,
+  2320.203343019354
+]
+=== LC NAME   : Light curve BP band
+=== LC FILTER : {
+  "@ID": "PhotFrame_gaiaBP",
+  "@dmtype": "mango:stcextend.PhotFilter",
+  "mango:stcextend.PhotFilter.bandWidth": {
+    "@dmtype": "ivoa:real",
+    "@value": "2279.45"
+  },
+  "mango:stcextend.PhotFilter.effectiveWavlength": {
+    "@dmtype": "ivoa:real",
+    "@value": "5278.58"
+  },
+  "mango:stcextend.PhotFilter.magnitudeSystem": {
+    "@dmtype": "ivoa:string",
+    "@value": "Vega"
+  },
+  "mango:stcextend.PhotFilter.name": {
+    "@dmtype": "ivoa:string",
+    "@value": "GAIA/GAIA2r.Gbp"
+  },
+  "mango:stcextend.PhotFilter.unit": {
+    "@dmtype": "ivoa:string",
+    "@value": "Angstrom"
+  },
+  "mango:stcextend.PhotFilter.zeroPointFlux": {
+    "@dmtype": "ivoa:real",
+    "@value": "4.03528e-9"
+  }
+}
+=== Flatten rows
+[
+  15.645391464233398,
+  1705.9440504175118
+]
+...
+[
+  15.34991455078125,
+  2320.2032537866794
+]
+
+```
+

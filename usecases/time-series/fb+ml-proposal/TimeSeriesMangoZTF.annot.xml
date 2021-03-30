@@ -1,368 +1,367 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <VOTABLE version="1.3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.ivoa.net/xml/VOTable/v1.3" xmlns:stc="http://www.ivoa.net/xml/STC/v1.30">
 
- <MODEL_INSTANCE name="MANGO" syntax="ModelInstanceInVot">
-      
-	<GLOBALS>
-		<!-- 
+  <MODEL_INSTANCE name="Mango" syntax="ModelInstanceInVot"
+          uri="https://github.com/ivoa-std/MANGO/blob/master/vo-dml/mango.vo-dml.xml">
+  <!--    <MODELS_IMPORT>
+            <!-- PhotDM-->
+            <MODEL_INSTANCE_IMPORT name="photDM" syntax="ModelInstanceInVot"
+                    uri="https://github.com/ivoa-std/PhotDM/blob/master/vo-dml/PhotDM.vo-dml.xml"/>
+                    <!--dummy url   to be completed-->
+            <!-- SpectralDM -->
+            <MODEL_INSTANCE_IMPORT name="Spectrumv2.0" syntax="ModelInstanceInVot"
+                      uri="https://github.com/ivoa-std/Spectrum2/blob/master/vo-dml/Spectrum.vo-dml.xml"/>
+                      <!--dummy url   to be completed-->
+            <!-- TimeSeriesDM   to be developped as a template using Cube / or Mango -->
+      </MODELS_IMPORT>  -->
+<!-- Coords and Measure DM are included directly within MANGO ??-->
+
+  <MODEL_INSTANCE name="MANGO" syntax="ModelInstanceInVot">
+    <GLOBALS>
+      <!--
 			ZTF Photometric System zg filter
 		-->
-		<INSTANCE ID="PhotSystem" dmrole="tsd:PhotSys" dmtype="coords:CoordSys">
-			<INSTANCE dmrole="tsd:PhotFrame" dmtype="coords:CoordFrame">	      
-				<INSTANCE dmrole="coords:CoordFrame.cal" dmtype="PhotDM:Photcal">
-					<INSTANCE dmrole="PhotDM:Photcal.zeroPoint" dmtype="PhotDM:ZeroPoint"> 
-						<INSTANCE dmrole="PhotDM:Photcal.zeroPoint.magnitudeSystem" dmtype="PhotDM:MagnitudeSystem">
-							<ATTRIBUTE dmrole="PhotDM:Photcal.zeroPoint.magnitudeSystem.type" dmtype="ivoa:string" value="Vega"/>
-						</INSTANCE>
-						<INSTANCE dmrole="PhotDM:Photcal.zeroPoint.flux"  dmtype="PhotDM:Flux">
-							<ATTRIBUTE dmrole="PhotDM:Photcal.zeroPoint.flux.value" dmtype="ivoa:real" value="3963.97"/>		
-							<ATTRIBUTE dmrole="PhotDM:Photcal.zeroPoint.flux.unit" dmtype="ivoa:string" value="Jy"/>
-						</INSTANCE>
-					</INSTANCE>
-					<INSTANCE dmrole="PhotDM:Photcal.filter" dmtype="PhotDM:PhotometryFilter">
-						<ATTRIBUTE dmrole="PhotDM:PhotometryFilter.identifier" dmtype="ivoa:string" value="zg"/>
-						<INSTANCE dmrole="PhotDM:PhotometryFilter.spectralLocation" dmtype="PhotDM.SpectralLocation">
-							<ATTRIBUTE dmrole="PhotDM:PhotometryFilter.spectralLocation.value" dmtype="ivoa:real" value="472.4"/>
-							<ATTRIBUTE dmrole="PhotDM:PhotometryFilter.spectralLocation.unit" dmtype="ivoa:string" value="nm"/>
-						</INSTANCE>
-					</INSTANCE>
-				</INSTANCE> 
-			</INSTANCE>
-		</INSTANCE>
-		<!-- 
+      <INSTANCE ID="PhotSystem" dmrole="tsd:PhotSys" dmtype="coords:CoordSys">
+        <INSTANCE dmrole="tsd:PhotFrame" dmtype="coords:CoordFrame">
+          <INSTANCE dmrole="coords:CoordFrame.cal" dmtype="PhotDM:Photcal">
+            <INSTANCE dmrole="PhotDM:Photcal.zeroPoint" dmtype="PhotDM:ZeroPoint">
+              <INSTANCE dmrole="PhotDM:Photcal.zeroPoint.magnitudeSystem" dmtype="PhotDM:MagnitudeSystem">
+                <ATTRIBUTE dmrole="PhotDM:Photcal.zeroPoint.magnitudeSystem.type" dmtype="ivoa:string" value="Vega"/>
+              </INSTANCE>
+              <INSTANCE dmrole="PhotDM:Photcal.zeroPoint.flux"  dmtype="PhotDM:Flux">
+                <ATTRIBUTE dmrole="PhotDM:Photcal.zeroPoint.flux.value" dmtype="ivoa:real" value="3963.97"/>
+                <ATTRIBUTE dmrole="PhotDM:Photcal.zeroPoint.flux.unit" dmtype="ivoa:string" value="Jy"/>
+              </INSTANCE>
+            </INSTANCE>
+            <INSTANCE dmrole="PhotDM:Photcal.filter" dmtype="PhotDM:PhotometryFilter">
+              <ATTRIBUTE dmrole="PhotDM:PhotometryFilter.identifier" dmtype="ivoa:string" value="zg"/>
+              <INSTANCE dmrole="PhotDM:PhotometryFilter.spectralLocation" dmtype="PhotDM.SpectralLocation">
+                <ATTRIBUTE dmrole="PhotDM:PhotometryFilter.spectralLocation.value" dmtype="ivoa:real" value="472.4"/>
+                <ATTRIBUTE dmrole="PhotDM:PhotometryFilter.spectralLocation.unit" dmtype="ivoa:string" value="nm"/>
+              </INSTANCE>
+            </INSTANCE>
+          </INSTANCE>
+        </INSTANCE>
+      </INSTANCE>
+      <!--
 			Time System . There are two of them. TimeSys is Barycentric one while HelioTimeSys isthe heliocenrric one.
 		-->
-             
-		 <INSTANCE ID="TimeSys" dmrole="tsd:TimeSys" dmtype="coords:TimeSys">
-		 	<INSTANCE dmrole="coords:TimeSys.frame" dmtype="coords:TimeFrame">
-				<ATTRIBUTE dmrole="coords:TimeFrame.refPosition" dmtype="ivoa:string" value="BARYCENTER"/>
-				<ATTRIBUTE dmrole="coords:TimeFrame.timescale" dmtype="ivoa:string" value="TCB"/>
-				<ATTRIBUTE dmrole="coords:TimeFrame.refDirection" dmtype="ivoa:string" value="notSet"/>
-			</INSTANCE>
-		</INSTANCE>
-		<INSTANCE ID="HelioTimeSys" dmrole="tsd:TimeSys" dmtype="coords:TimeSys">
-		 	<INSTANCE dmrole="coords:TimeSys.frame" dmtype="coords:TimeFrame">
-				<ATTRIBUTE dmrole="coords:TimeFrame.refPosition" dmtype="ivoa:string" value="HELIOCENTER"/>
-				<ATTRIBUTE dmrole="coords:TimeFrame.timescale" dmtype="ivoa:string" value="TCB"/>
-				<ATTRIBUTE dmrole="coords:TimeFrame.refDirection" dmtype="ivoa:string" value="notSet"/>
-			</INSTANCE>
-		</INSTANCE>
-		            
-		<!--
+      <INSTANCE ID="TimeSys" dmrole="tsd:TimeSys" dmtype="coords:TimeSys">
+        <INSTANCE dmrole="coords:TimeSys.frame" dmtype="coords:TimeFrame">
+          <ATTRIBUTE dmrole="coords:TimeFrame.refPosition" dmtype="ivoa:string" value="BARYCENTER"/>
+          <ATTRIBUTE dmrole="coords:TimeFrame.timescale" dmtype="ivoa:string" value="TCB"/>
+          <ATTRIBUTE dmrole="coords:TimeFrame.refDirection" dmtype="ivoa:string" value="notSet"/>
+        </INSTANCE>
+      </INSTANCE>
+      <INSTANCE ID="HelioTimeSys" dmrole="tsd:TimeSys" dmtype="coords:TimeSys">
+        <INSTANCE dmrole="coords:TimeSys.frame" dmtype="coords:TimeFrame">
+          <ATTRIBUTE dmrole="coords:TimeFrame.refPosition" dmtype="ivoa:string" value="HELIOCENTER"/>
+          <ATTRIBUTE dmrole="coords:TimeFrame.timescale" dmtype="ivoa:string" value="TCB"/>
+          <ATTRIBUTE dmrole="coords:TimeFrame.refDirection" dmtype="ivoa:string" value="notSet"/>
+        </INSTANCE>
+      </INSTANCE>
+      <!--
 			Space System . Simply barycentric, ICRS
-		-->           
-		 <INSTANCE ID="SpaceSys" dmrole="tsd:SpaceSys" dmtype="coords:SpaceSys">
-		 	<INSTANCE dmrole="coords:SpaceSys.frame" dmtype="coords:TimeFrame">
-				<ATTRIBUTE dmrole="coords:SpaceFrame.refPosition" dmtype="ivoa:string" value="BARYCENTER"/>
-				<ATTRIBUTE dmrole="coords:SpaceFrame.spaceRefFrame" dmtype="ivoa:string" value="ICRS"/>
-
-			</INSTANCE>
-		</INSTANCE>
-	</GLOBALS>
-	<TABLE_MAPPING tableref="Results">
-	<!--
+		-->
+      <INSTANCE ID="SpaceSys" dmrole="tsd:SpaceSys" dmtype="coords:SpaceSys">
+        <INSTANCE dmrole="coords:SpaceSys.frame" dmtype="coords:TimeFrame">
+          <ATTRIBUTE dmrole="coords:SpaceFrame.refPosition" dmtype="ivoa:string" value="BARYCENTER"/>
+          <ATTRIBUTE dmrole="coords:SpaceFrame.spaceRefFrame" dmtype="ivoa:string" value="ICRS"/>
+        </INSTANCE>
+      </INSTANCE>
+    </GLOBALS>
+    <TABLE_MAPPING tableref="Results">
+      <!--
 		A mango object instance groups several rows sharing the same oid
 	-->
-		<GROUPBY ref="oid" >
- 			<INSTANCE dmrole="root" dmtype="mango:MangoObject">
- 			<!-- 
+      <GROUPBY ref="oid" >
+        <INSTANCE dmrole="root" dmtype="mango:MangoObject">
+          <!--
  				(mango) Object identifier. that's the source name
  			-->
-				<ATTRIBUTE dmrole="mango:MangoObject.identifier" dmtype="ivoa:string" ref="oid"/>
-				<!--
+          <ATTRIBUTE dmrole="mango:MangoObject.identifier" dmtype="ivoa:string" ref="oid"/>
+          <!--
 				 	WE associate a data structure to each mango object. Here it's a VOMOdelInstance. The Model here is a Toy tile series data model (tsd)
 				-->
-				<INSTANCE dmrole="mango:MangoObject.associatedData" dmtype="mango:VOModelInstance">
-				<!--
+          <INSTANCE dmrole="mango:MangoObject.associatedData" dmtype="mango:VOModelInstance">
+            <!--
 					Following attributes describes the model instance role and documents the model
 				-->
-					<ATTRIBUTE dmrole="mango:DataDock.semantic" dmtype="ivoa:string" value="ivo://"/>
-					<ATTRIBUTE dmrole="mango:DataDock.description" dmtype="ivoa:string" value="Instance of TimeSeriesData atttached to the source"/>
-					<ATTRIBUTE dmrole="mango:VOModelInstance.ivoid" dmtype="ivoa:string" value="NotSet"/>
-					<ATTRIBUTE dmrole="mango:VOModelInstance.modelUrl" dmtype="ivoa:anyURI" value="http://lien/vers/vodml-xml/tsd.xml"/>
-					<ATTRIBUTE dmrole="mango:VOModelInstance.modelName" dmtype="ivoa:string" value="TimeSeriesData"/>
-					<ATTRIBUTE dmrole="mango:VOModelInstance.modelDoc" dmtype="ivoa:anyURI" value="http://lien/vers/vodml-html/tsd.html"/>
-					<!--
+            <ATTRIBUTE dmrole="mango:DataDock.semantic" dmtype="ivoa:string" value="ivo://"/>
+            <ATTRIBUTE dmrole="mango:DataDock.description" dmtype="ivoa:string" value="Instance of TimeSeriesData atttached to the source"/>
+            <ATTRIBUTE dmrole="mango:VOModelInstance.ivoid" dmtype="ivoa:string" value="NotSet"/>
+            <ATTRIBUTE dmrole="mango:VOModelInstance.modelUrl" dmtype="ivoa:anyURI" value="http://lien/vers/vodml-xml/tsd.xml"/>
+            <ATTRIBUTE dmrole="mango:VOModelInstance.modelName" dmtype="ivoa:string" value="TimeSeriesData"/>
+            <ATTRIBUTE dmrole="mango:VOModelInstance.modelDoc" dmtype="ivoa:anyURI" value="http://lien/vers/vodml-html/tsd.html"/>
+            <!--
 						Everything below is an instance of the tsdata class of our Time series data toy model
 					-->
-					<INSTANCE dmrole="mango:VOModelInstance.modelInstance" dmtype="tsd:tsdata">
-					<!--
+            <INSTANCE dmrole="mango:VOModelInstance.modelInstance" dmtype="tsd:tsdata">
+              <!--
 						tsdata is a collection of Points.
 					-->
-						<COLLECTION dmrole="tsd:Point">
-						<!--
+              <COLLECTION dmrole="tsd:Point">
+                <!--
 							Each row is a tsd:Point
 						-->
-							<TABLE_ROW_TEMPLATE>
-								
-								<INSTANCE dmrole="tsd:Point" dmtype="mango:Parameter">
-								<!--
+                <TABLE_ROW_TEMPLATE>
+                  <INSTANCE dmrole="tsd:Point" dmtype="mango:Parameter">
+                    <!--
 									A Point is a Time Parameter with Associated Parameters. At least one. The Parameters structure is imported from Mango !!!!
-								-->		
-									<ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="IndependantTime"/>
-									<ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="time.epoch"/>
-									<ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string" value="Time Stamp Main and Independant Parameter"/>
-									
-									<!--
+								-->
+                    <ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="IndependantTime"/>
+                    <ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="time.epoch"/>
+                    <ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string" value="Time Stamp Main and Independant Parameter"/>
+                    <!--
 										Mango parameters is a composition of one meas Measure
-									-->					
-									<INSTANCE dmrole="mango:measure" dmtype="meas:Time">
-									<!--
-										Meas Measure is made of coord and error. Here error is missing 
 									-->
-										<INSTANCE dmrole="meas:Time.coord" dmtype="coords.MJD">
-										<!--
-											Coord has a value (here date) and a reference to a coordSys if available. a TimeSys instance for the time 
-										-->	
-											<ATTRIBUTE dmrole="coords:MJD.date" dmtype="ivoa:real" ref="mjd"/>
-											<INSTANCE dmrole="coords:Coordinate.coordSys" dmref="TimeSys"/>
-										</INSTANCE>
-									</INSTANCE>
-									<!--
+                    <INSTANCE dmrole="mango:measure" dmtype="meas:Time">
+                      <!--
+										Meas Measure is made of coord and error. Here error is missing
+									-->
+                      <INSTANCE dmrole="meas:Time.coord" dmtype="coords.MJD">
+                        <!--
+											Coord has a value (here date) and a reference to a coordSys if available. a TimeSys instance for the time
+										-->
+                        <ATTRIBUTE dmrole="coords:MJD.date" dmtype="ivoa:real" ref="mjd"/>
+                        <INSTANCE dmrole="coords:Coordinate.coordSys" dmref="TimeSys"/>
+                      </INSTANCE>
+                    </INSTANCE>
+                    <!--
 										The main Time Parameter has a lot of associated Parameters (at least one). They are all time dependant
 									-->
-									<COLLECTION size="-1" dmrole="associatedParameters">
-										<INSTANCE dmrole="associatedParameters" dmtype="mango:Parameter">
-										<!--
+                    <COLLECTION size="-1" dmrole="associatedParameters">
+                      <INSTANCE dmrole="associatedParameters" dmtype="mango:Parameter">
+                        <!--
 											This instance is another time. Heliocentric
-										-->										
-											<ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="dependantTime"/>
-											<ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="time.epoch"/>
-											<ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string" value="Time Stamp dependant Parameter"/>
-											
-										
-											<INSTANCE dmrole="mango:measure" dmtype="meas:Time">
-												<INSTANCE dmrole="meas:Time.coord" dmtype="coords.JD">
-													<ATTRIBUTE dmrole="coords:JD.date" dmtype="ivoa:real" ref="hjd"/>
-													<INSTANCE dmrole="coords:Coordinate.coordSys" dmref="HelioTimeSys"/>
-												</INSTANCE>
-											</INSTANCE>
-										</INSTANCE>
-										<INSTANCE dmrole="associatedParameters" dmtype="mango:Parameter">
-										<!--
+										-->
+                        <ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="dependantTime"/>
+                        <ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="time.epoch"/>
+                        <ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string" value="Time Stamp dependant Parameter"/>
+                        <INSTANCE dmrole="mango:measure" dmtype="meas:Time">
+                          <INSTANCE dmrole="meas:Time.coord" dmtype="coords.JD">
+                            <ATTRIBUTE dmrole="coords:JD.date" dmtype="ivoa:real" ref="hjd"/>
+                            <INSTANCE dmrole="coords:Coordinate.coordSys" dmref="HelioTimeSys"/>
+                          </INSTANCE>
+                        </INSTANCE>
+                      </INSTANCE>
+                      <INSTANCE dmrole="associatedParameters" dmtype="mango:Parameter">
+                        <!--
 											This is a "free format" ad hoc time
 										-->
-										
-											<ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="dependantTime"/>
-											<ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="time.epoch;obs.exposure"/>
-											<ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string" value="Exposure file timestamp, with decimal representation YYYYMMDDdddddd: year, month, day, and fractional day"/>
-											
-										
-											<INSTANCE dmrole="mango:measure" dmtype="meas:Time">
-												<INSTANCE dmrole="meas:Time.coord" dmtype="coords.TimeInstant">
-													<ATTRIBUTE dmrole="coords:TimeInstant.date" dmtype="ivoa:integer" ref="filefracday"/>
-													<INSTANCE dmrole="coords:Coordinate.coordSys" dmref="TimeSys"/>
-												</INSTANCE>
-											</INSTANCE>
-										</INSTANCE>
-										<INSTANCE dmrole="associatedParameters" dmtype="mango:Parameter">
-										<!--
+                        <ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="dependantTime"/>
+                        <ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="time.epoch;obs.exposure"/>
+                        <ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string" value="Exposure file timestamp, with decimal representation YYYYMMDDdddddd: year, month, day, and fractional day"/>
+                        <INSTANCE dmrole="mango:measure" dmtype="meas:Time">
+                          <INSTANCE dmrole="meas:Time.coord" dmtype="coords.TimeInstant">
+                            <ATTRIBUTE dmrole="coords:TimeInstant.date" dmtype="ivoa:integer" ref="filefracday"/>
+                            <INSTANCE dmrole="coords:Coordinate.coordSys" dmref="TimeSys"/>
+                          </INSTANCE>
+                        </INSTANCE>
+                      </INSTANCE>
+                      <INSTANCE dmrole="associatedParameters" dmtype="mango:Parameter">
+                        <!--
 											This parameter is no more a TimeStamp but an exposure Time
 										-->
-										
-											<ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="exposureTime"/>
-											<ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="time.duration;obs.exposure"/>
-											<ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string" value="Exposure Time"/>
-											
-										
-											<INSTANCE dmrole="mango:measure" dmtype="meas:GenericMeasure">
-												<INSTANCE dmrole="meas:GenericMeasure.coord" dmtype="coords:Coordinate">
-													<ATTRIBUTE dmrole="coords:Coordinate.cval" dmtype="ivoa:float" ref="exptime"/>
-													<INSTANCE dmrole="coords:Coordinate.coordSys" dmref="TimeSys"/>
-												</INSTANCE>
-											</INSTANCE>
-										</INSTANCE>
-										
-
-										<INSTANCE dmrole="associatedParameters" dmtype="mango:Parameter">
-										<!--
+                        <ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="exposureTime"/>
+                        <ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="time.duration;obs.exposure"/>
+                        <ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string" value="Exposure Time"/>
+                        <INSTANCE dmrole="mango:measure" dmtype="meas:GenericMeasure">
+                          <INSTANCE dmrole="meas:GenericMeasure.coord" dmtype="coords:Coordinate">
+                            <ATTRIBUTE dmrole="coords:Coordinate.cval" dmtype="ivoa:real" ref="exptime"/>
+                            <INSTANCE dmrole="coords:Coordinate.coordSys" dmref="TimeSys"/>
+                          </INSTANCE>
+                        </INSTANCE>
+                      </INSTANCE>
+                      <INSTANCE dmrole="associatedParameters" dmtype="mango:Parameter">
+                        <!--
 											This parameter is the magnitude. Our TimeSeries is basically a light curve with a lot more things varying
-		
+
 										-->
-											<ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="Magnitude"/>
-											<ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="phot.mag;"/>
-											<ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string" value="This is the magnitude in the ZTF system for the object for a given Time Stamp"/>
-											<!--
+                        <ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="Magnitude"/>
+                        <ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="phot.mag;"/>
+                        <ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string" value="This is the magnitude in the ZTF system for the object for a given Time Stamp"/>
+                        <!--
 												The magnitude Parameter is composed of a Generic Measure containig a Flux value
-											-->					
-											<INSTANCE dmrole="mango:measure" dmtype="meas:GenericMeasure">
-												<INSTANCE dmrole="GenericMeasure.coord" dmtype="spec:Spectrum.Data.FluxAxis">
-												<!--
+											-->
+                        <INSTANCE dmrole="mango:measure" dmtype="meas:GenericMeasure">
+                          <INSTANCE dmrole="GenericMeasure.coord" dmtype="spec:Spectrum.Data.FluxAxis">
+                            <!--
 													The coordinate type is borrowed from spectrum datamodel FluxAxis
 												-->
-													<ATTRIBUTE dmrole="spec:Spectrum.Data.FluxAxis.value" dmtype="ivoa:real" ref="mag"/>	
-													<INSTANCE dmrole="coords:Coordinate.coordSys" dmref="PhotSystem"/>
-												</INSTANCE>
-												<!--
+                            <ATTRIBUTE dmrole="spec:Spectrum.Data.FluxAxis.value" dmtype="ivoa:real" ref="mag"/>
+                            <INSTANCE dmrole="coords:Coordinate.coordSys" dmref="PhotSystem"/>
+                          </INSTANCE>
+                          <!--
 													Here the mag error is also in the table
 												-->
-												<INSTANCE dmrole="meas:Measure.error"  dmtype="meas:Symetrical" >
-													<ATTRIBUTE dmrole="meas:Error.statError" dmtype="ivoa:real" value="magerr"/>
-												</INSTANCE>
-											</INSTANCE>
-										</INSTANCE>
-										<INSTANCE dmrole="associatedParameters" dmtype="mango:Parameter">
-										<!--
+                          <INSTANCE dmrole="meas:Measure.error"  dmtype="meas:Symetrical" >
+                            <ATTRIBUTE dmrole="meas:Error.statError" dmtype="ivoa:real" value="magerr"/>
+                          </INSTANCE>
+                        </INSTANCE>
+                      </INSTANCE>
+                      <INSTANCE dmrole="associatedParameters" dmtype="mango:Parameter">
+                        <!--
 											Starting from here come a list of Parameters. The parameters attributes and content should be self explanatory. Note that ra and dec are also varying with time
 										-->
-											<ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="limitMagnitude"/>
-											<ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="phot.mag;em.opt;stat.max;instr.sensitivity;obs.exposure"/>
-											<ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string" value="Approximate 5-sigma limiting magnitude corresponding to epoch-based PSF-fit catalog"/>
-											
-											<INSTANCE dmrole="mango:measure" dmtype="meas:GenericMeasure">
-												<INSTANCE dmrole="GenericMeasure.coord" dmtype="spec:Spectrum.Data.FluxAxis">
-													<ATTRIBUTE dmrole="spec:Spectrum.Data.FluxAxis.value" dmtype="ivoa:real" ref="limitmag"/>
-													<INSTANCE dmrole="coords:Coordinate.coordSys" dmref="PhotSystem"/>
-												</INSTANCE>
-											</INSTANCE>
-										</INSTANCE>
-										<INSTANCE dmrole="associatedParameters" dmtype="mango:Parameter">
-											<ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="calibZeroPoint"/>
-											<ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="phot.mag;em.opt;phot.calib;arith.zp;obs.exposure"/>
-											<ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string" value="Magnitude zeropoint from photometric calibration"/>
-											
-											<INSTANCE dmrole="mango:measure" dmtype="meas:GenericMeasure">
-												<INSTANCE dmrole="GenericMeasure.coord" dmtype="spec:Spectrum.Data.FluxAxis">
-													<ATTRIBUTE dmrole="spec:Spectrum.Data.FluxAxis.value" dmtype="ivoa:real" ref="magzp"/>
-													<INSTANCE dmrole="coords:Coordinate.coordSys" dmref="PhotSystem"/>
-												</INSTANCE>
-												<INSTANCE dmrole="meas:Measure.error"  dmtype="meas:Symetrical">
-													<ATTRIBUTE dmrole="meas:Error.statError" dmtype="ivoa:real" ref="magzprms"/>
-												</INSTANCE>
-											</INSTANCE>
-										</INSTANCE>
-										<INSTANCE dmrole="associatedParameters" dmtype="mango:Parameter"> 																						 												<ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="colorCoefficient"/>
-											<ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="stat.fit.param;phot.calib;obs.exposure"/>
-											<ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string" value="Color coefficient from linear fit"/>
-											<INSTANCE dmrole="mango:measure" dmtype="meas:GenericMeasure">
-												<INSTANCE dmrole="meas:GenericMeasure.coord" dmtype="coords:Coordinate">
-													<ATTRIBUTE dmrole="spec:Spectrum.Data.FluxAxis.value" dmtype="ivoa:real" ref="clrcoeff"/>
-												</INSTANCE>
-												<INSTANCE dmrole="meas:Measure.error"  dmtype="meas:Symetrical">
-													<ATTRIBUTE dmrole="meas:Error.statError" dmtype="ivoa:real" ref="clrcounc"/>
-												</INSTANCE>
-											</INSTANCE>
-										</INSTANCE>
-										<INSTANCE dmrole="associatedParameters" dmtype="mango:Parameter">					 												<ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="catalogFlag"/>
-											<ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="meta.code"/>
-											<ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string" value="Flag in the catalog"/>
-											
-											<INSTANCE dmrole="mango:measure" dmtype="meas:GenericMeasure">
-												<INSTANCE dmrole="meas:GenericMeasure.coord" dmtype="coords:Coordinate">
-													<ATTRIBUTE dmrole="coords:Coordinate.cval" dmtype="ivoa:integer" ref="catflags"/>
-												</INSTANCE>
-											</INSTANCE>
-										</INSTANCE>
-										<INSTANCE dmrole="associatedParameters" dmtype="mango:Parameter">
-											<ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="chi2"/>
-											<ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="notSet"/>
-											<ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string" value="Chi-squared of source"/>
-											
-											<INSTANCE dmrole="mango:measure" dmtype="meas:GenericMeasure">
-												<INSTANCE dmrole="meas:GenericMeasure.coord" dmtype="coords:Coordinate">
-													<ATTRIBUTE dmrole="coords:Coordinate.cval" dmtype="ivoa:float" ref="chi"/>
-												</INSTANCE>
-											</INSTANCE>
-										</INSTANCE>
-										<INSTANCE dmrole="associatedParameters" dmtype="mango:Parameter">	
-														 												<ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="sharpness"/>
-											<ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="meta.code"/>
-											<ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string" value="Sharpness of source"/>
-											
-											<INSTANCE dmrole="mango:measure" dmtype="meas:GenericMeasure">
-												<INSTANCE dmrole="meas:GenericMeasure.coord" dmtype="coords:Coordinate">
-													<ATTRIBUTE dmrole="coords:Coordinate.cval" dmtype="ivoa:float" ref="sharp"/>
-												</INSTANCE>
-											</INSTANCE>
-										</INSTANCE>
-									
-										<INSTANCE dmrole="associatedParameters" dmtype="mango:Parameter">					 												<ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="airMass"/>
-											<ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="obs.airMass"/>
-											<ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string" value="Airmass at approximately the center of the focal plane at time of exposure"/>
-											
-											<INSTANCE dmrole="mango:measure" dmtype="meas:GenericMeasure">
-												<INSTANCE dmrole="meas:GenericMeasure.coord" dmtype="coords:Coordinate">
-													<ATTRIBUTE dmrole="spec:Spectrum.Data.FluxAxis.value" dmtype="ivoa:real" ref="airmass"/>
-												</INSTANCE>
-											</INSTANCE>
-										</INSTANCE>
-										<INSTANCE dmrole="associatedParameters" dmtype="mango:Parameter">					 												<ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="spacePosition"/>
-											<ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="eq.pos"/>
-											<ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string" value="Right Ascension and declination of source"/>
-											
-											<INSTANCE dmrole="mango:measure" dmtype="mango:LonLatPosition">
-												<INSTANCE dmrole="mango:LonLatSkyPosition.coord" dmtype="mango:LonLatPoint">
-													<ATTRIBUTE dmrole="LonLatPoint.longitude" dmtype="ivoa:real" ref="ra"/>
-													<ATTRIBUTE dmrole="LonLatPoint.latitude" dmtype="ivoa:real" ref="dec"/>
-													<INSTANCE dmrole="mango:LonLatPoint.spaceSys" dmref="SpaceSys"/>
-												</INSTANCE>
-											</INSTANCE>
-										</INSTANCE>
-										<INSTANCE dmrole="associatedParameters" dmtype="mango:Parameter">					 												<ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="exposureID"/>
-											<ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="meta.id;obs.exposure"/>
-											<ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string" value="exposure ID"/>
-											
-											<INSTANCE dmrole="mango:measure" dmtype="meas:GenericMeasure">
-												<INSTANCE dmrole="meas:GenericMeasure.coord" dmtype="coords:Coordinate">
-													<ATTRIBUTE dmrole="coords:Coordinate.cval" dmtype="ivoa:integer" ref="expid"/>
-												</INSTANCE>
-											</INSTANCE>
-										</INSTANCE>
-										<INSTANCE dmrole="associatedParameters" dmtype="mango:Parameter">					 												<ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="fieldID"/>
-											<ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="meta.id;obs.field"/>
-											<ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string" value="field Identifier"/>
-											
-											<INSTANCE dmrole="mango:measure" dmtype="meas:GenericMeasure">
-												<INSTANCE dmrole="meas:GenericMeasure.coord" dmtype="coords:Coordinate">
-													<ATTRIBUTE dmrole="coords:Coordinate.cval" dmtype="ivoa:integer" ref="field"/>
-												</INSTANCE>
-											</INSTANCE>
-										</INSTANCE>
-										<INSTANCE dmrole="associatedParameters" dmtype="mango:Parameter">					 												<ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="ccdNumber"/>
-											<ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="meta.id;instr.det"/>
-											<ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string" value="ccd number between 1 and 16"/>
-											
-											<INSTANCE dmrole="mango:measure" dmtype="meas:GenericMeasure">
-												<INSTANCE dmrole="meas:GenericMeasure.coord" dmtype="coords:Coordinate">
-													<ATTRIBUTE dmrole="coords:Coordinate.cval" dmtype="ivoa:integer" ref="ccdid"/>
-												</INSTANCE>
-											</INSTANCE>
-										</INSTANCE>
-										<INSTANCE dmrole="associatedParameters" dmtype="mango:Parameter">					 												<ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="quadrantID"/>
-											<ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="meta.id"/>
-											<ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string" value="Quadrant ID (1..4"/>
-											
-											<INSTANCE dmrole="mango:measure" dmtype="meas:GenericMeasure">
-												<INSTANCE dmrole="meas:GenericMeasure.coord" dmtype="coords:Coordinate">
-													<ATTRIBUTE dmrole="coords:Coordinate.cval" dmtype="ivoa:integer" ref="expid"/>
-												</INSTANCE>
-											</INSTANCE>
-										</INSTANCE>
-										<INSTANCE dmrole="associatedParameters" dmtype="mango:Parameter">					 												<ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="programID"/>
-											<ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="meta.code.member;obs.exposure"/>
-											<ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string" value="program ID"/>
-											
-											<INSTANCE dmrole="mango:measure" dmtype="meas:GenericMeasure">
-												<INSTANCE dmrole="meas:GenericMeasure.coord" dmtype="coords:Coordinate">
-													<ATTRIBUTE dmrole="coords:Coordinate.cval" dmtype="ivoa:integer" ref="programid"/>
-												</INSTANCE>
-											</INSTANCE>
-										</INSTANCE>
-									</COLLECTION> <!-- End of associated parameters -->
-								</INSTANCE> <!-- end of Point -->
-							</TABLE_ROW_TEMPLATE>
-						</COLLECTION>
-					</INSTANCE> <!-- end of tsdata -->
-				</INSTANCE> <!-- end of VOMODEL instance-->
-			</INSTANCE> <!-- end of Mango Object -->
-		</GROUPBY>
-	</TABLE_MAPPING>
-</MODEL_INSTANCE>
+                        <ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="limitMagnitude"/>
+                        <ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="phot.mag;em.opt;stat.max;instr.sensitivity;obs.exposure"/>
+                        <ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string" value="Approximate 5-sigma limiting magnitude corresponding to epoch-based PSF-fit catalog"/>
+                        <INSTANCE dmrole="mango:measure" dmtype="meas:GenericMeasure">
+                          <INSTANCE dmrole="GenericMeasure.coord" dmtype="spec:Spectrum.Data.FluxAxis">
+                            <ATTRIBUTE dmrole="spec:Spectrum.Data.FluxAxis.value" dmtype="ivoa:real" ref="limitmag"/>
+                            <INSTANCE dmrole="coords:Coordinate.coordSys" dmref="PhotSystem"/>
+                          </INSTANCE>
+                        </INSTANCE>
+                      </INSTANCE>
+                      <INSTANCE dmrole="associatedParameters" dmtype="mango:Parameter">
+                        <ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="calibZeroPoint"/>
+                        <ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="phot.mag;em.opt;phot.calib;arith.zp;obs.exposure"/>
+                        <ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string" value="Magnitude zeropoint from photometric calibration"/>
+                        <INSTANCE dmrole="mango:measure" dmtype="meas:GenericMeasure">
+                          <INSTANCE dmrole="GenericMeasure.coord" dmtype="spec:Spectrum.Data.FluxAxis">
+                            <ATTRIBUTE dmrole="spec:Spectrum.Data.FluxAxis.value" dmtype="ivoa:real" ref="magzp"/>
+                            <INSTANCE dmrole="coords:Coordinate.coordSys" dmref="PhotSystem"/>
+                          </INSTANCE>
+                          <INSTANCE dmrole="meas:Measure.error"  dmtype="meas:Symetrical">
+                            <ATTRIBUTE dmrole="meas:Error.statError" dmtype="ivoa:real" ref="magzprms"/>
+                          </INSTANCE>
+                        </INSTANCE>
+                      </INSTANCE>
+                      <INSTANCE dmrole="associatedParameters" dmtype="mango:Parameter">
+                        <ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="colorCoefficient"/>
+                        <ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="stat.fit.param;phot.calib;obs.exposure"/>
+                        <ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string" value="Color coefficient from linear fit"/>
+                        <INSTANCE dmrole="mango:measure" dmtype="meas:GenericMeasure">
+                          <INSTANCE dmrole="meas:GenericMeasure.coord" dmtype="coords:Coordinate">
+                            <ATTRIBUTE dmrole="spec:Spectrum.Data.FluxAxis.value" dmtype="ivoa:real" ref="clrcoeff"/>
+                          </INSTANCE>
+                          <INSTANCE dmrole="meas:Measure.error"  dmtype="meas:Symetrical">
+                            <ATTRIBUTE dmrole="meas:Error.statError" dmtype="ivoa:real" ref="clrcounc"/>
+                          </INSTANCE>
+                        </INSTANCE>
+                      </INSTANCE>
+                      <INSTANCE dmrole="associatedParameters" dmtype="mango:Parameter">
+                        <ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="catalogFlag"/>
+                        <ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="meta.code"/>
+                        <ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string" value="Flag in the catalog"/>
+                        <INSTANCE dmrole="mango:measure" dmtype="meas:GenericMeasure">
+                          <INSTANCE dmrole="meas:GenericMeasure.coord" dmtype="coords:Coordinate">
+                            <ATTRIBUTE dmrole="coords:Coordinate.cval" dmtype="ivoa:integer" ref="catflags"/>
+                          </INSTANCE>
+                        </INSTANCE>
+                      </INSTANCE>
+                      <INSTANCE dmrole="associatedParameters" dmtype="mango:Parameter">
+                        <ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="chi2"/>
+                        <ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="notSet"/>
+                        <ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string" value="Chi-squared of source"/>
+                        <INSTANCE dmrole="mango:measure" dmtype="meas:GenericMeasure">
+                          <INSTANCE dmrole="meas:GenericMeasure.coord" dmtype="coords:Coordinate">
+                            <ATTRIBUTE dmrole="coords:Coordinate.cval" dmtype="ivoa:real" ref="chi"/>
+                          </INSTANCE>
+                        </INSTANCE>
+                      </INSTANCE>
+                      <INSTANCE dmrole="associatedParameters" dmtype="mango:Parameter">
+                        <ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="sharpness"/>
+                        <ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="meta.code"/>
+                        <ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string" value="Sharpness of source"/>
+                        <INSTANCE dmrole="mango:measure" dmtype="meas:GenericMeasure">
+                          <INSTANCE dmrole="meas:GenericMeasure.coord" dmtype="coords:Coordinate">
+                            <ATTRIBUTE dmrole="coords:Coordinate.cval" dmtype="ivoa:real" ref="sharp"/>
+                          </INSTANCE>
+                        </INSTANCE>
+                      </INSTANCE>
+                      <INSTANCE dmrole="associatedParameters" dmtype="mango:Parameter">
+                        <ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="airMass"/>
+                        <ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="obs.airMass"/>
+                        <ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string" value="Airmass at approximately the center of the focal plane at time of exposure"/>
+                        <INSTANCE dmrole="mango:measure" dmtype="meas:GenericMeasure">
+                          <INSTANCE dmrole="meas:GenericMeasure.coord" dmtype="coords:Coordinate">
+                            <ATTRIBUTE dmrole="coords:Coordinate.cval" dmtype="ivoa:real" ref="airmass"/>
+                          </INSTANCE>
+                        </INSTANCE>
+                      </INSTANCE>
+                      <INSTANCE dmrole="associatedParameters" dmtype="mango:Parameter">
+                        <ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="spacePosition"/>
+                        <ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="pos.eq"/>
+                        <ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string" value="Right Ascension and declination of source"/>
+                        <INSTANCE dmrole="mango:measure" dmtype="mango:LonLatPosition">
+                          <INSTANCE dmrole="mango:LonLatSkyPosition.coord" dmtype="mango:LonLatPoint">
+                            <ATTRIBUTE dmrole="LonLatPoint.longitude" dmtype="ivoa:real" ref="ra"/>
+                            <ATTRIBUTE dmrole="LonLatPoint.latitude" dmtype="ivoa:real" ref="dec"/>
+                            <INSTANCE dmrole="mango:LonLatPoint.spaceSys" dmref="SpaceSys"/>
+                          </INSTANCE>
+                        </INSTANCE>
+                      </INSTANCE>
+                      <INSTANCE dmrole="associatedParameters" dmtype="mango:Parameter">
+                        <ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="exposureID"/>
+                        <ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="meta.id;obs.exposure"/>
+                        <ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string" value="exposure ID"/>
+                        <INSTANCE dmrole="mango:measure" dmtype="meas:GenericMeasure">
+                          <INSTANCE dmrole="meas:GenericMeasure.coord" dmtype="coords:Coordinate">
+                            <ATTRIBUTE dmrole="coords:Coordinate.cval" dmtype="ivoa:integer" ref="expid"/>
+                          </INSTANCE>
+                        </INSTANCE>
+                      </INSTANCE>
+                      <INSTANCE dmrole="associatedParameters" dmtype="mango:Parameter">
+                        <ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="fieldID"/>
+                        <ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="meta.id;obs.field"/>
+                        <ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string" value="field Identifier"/>
+                        <INSTANCE dmrole="mango:measure" dmtype="meas:GenericMeasure">
+                          <INSTANCE dmrole="meas:GenericMeasure.coord" dmtype="coords:Coordinate">
+                            <ATTRIBUTE dmrole="coords:Coordinate.cval" dmtype="ivoa:integer" ref="field"/>
+                          </INSTANCE>
+                        </INSTANCE>
+                      </INSTANCE>
+                      <INSTANCE dmrole="associatedParameters" dmtype="mango:Parameter">
+                        <ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="ccdNumber"/>
+                        <ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="meta.id;instr.det"/>
+                        <ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string" value="ccd number between 1 and 16"/>
+                        <INSTANCE dmrole="mango:measure" dmtype="meas:GenericMeasure">
+                          <INSTANCE dmrole="meas:GenericMeasure.coord" dmtype="coords:Coordinate">
+                            <ATTRIBUTE dmrole="coords:Coordinate.cval" dmtype="ivoa:integer" ref="ccdid"/>
+                          </INSTANCE>
+                        </INSTANCE>
+                      </INSTANCE>
+                      <INSTANCE dmrole="associatedParameters" dmtype="mango:Parameter">
+                        <ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="quadrantID"/>
+                        <ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="meta.id"/>
+                        <ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string" value="Quadrant ID (1..4"/>
+                        <INSTANCE dmrole="mango:measure" dmtype="meas:GenericMeasure">
+                          <INSTANCE dmrole="meas:GenericMeasure.coord" dmtype="coords:Coordinate">
+                            <ATTRIBUTE dmrole="coords:Coordinate.cval" dmtype="ivoa:integer" ref="expid"/>
+                          </INSTANCE>
+                        </INSTANCE>
+                      </INSTANCE>
+                      <INSTANCE dmrole="associatedParameters" dmtype="mango:Parameter">
+                        <ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="programID"/>
+                        <ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="meta.code.member;obs.exposure"/>
+                        <ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string" value="program ID"/>
+                        <INSTANCE dmrole="mango:measure" dmtype="meas:GenericMeasure">
+                          <INSTANCE dmrole="meas:GenericMeasure.coord" dmtype="coords:Coordinate">
+                            <ATTRIBUTE dmrole="coords:Coordinate.cval" dmtype="ivoa:integer" ref="programid"/>
+                          </INSTANCE>
+                        </INSTANCE>
+                      </INSTANCE>
+                    </COLLECTION>
+                    <!-- End of associated parameters -->
+                  </INSTANCE>
+                  <!-- end of Point -->
+                </TABLE_ROW_TEMPLATE>
+              </COLLECTION>
+            </INSTANCE>
+            <!-- end of tsdata -->
+          </INSTANCE>
+          <!-- end of VOMODEL instance-->
+        </INSTANCE>
+        <!-- end of Mango Object -->
+      </GROUPBY>
+    </TABLE_MAPPING>
+  </MODEL_INSTANCE>
   <RESOURCE>
-   <TIMESYS ID="time" refposition="BARYCENTER" timeorigin="" timescale="TCB"/>
-   <TIMESYS ID="htime" refposition="HELIOCENTER" timeorigin="" timescale="TCB"/>
-   <COOSYS ID="ICRS" system="ICRS" epoch="J2015"/>
- 
+    <TIMESYS ID="time" refposition="BARYCENTER" timeorigin="" timescale="TCB"/>
+    <TIMESYS ID="htime" refposition="HELIOCENTER" timeorigin="" timescale="TCB"/>
+    <COOSYS ID="ICRS" system="ICRS" epoch="J2015"/>
     <TABLE ID="Results">
       <FIELD name="oid" datatype="long" ucd="meta.id" utype="Source.identifier">
         <DESCRIPTION>Object ID</DESCRIPTION>
@@ -8165,4 +8164,4 @@
       </DATA>
     </TABLE>
   </RESOURCE>
-</VOTABLE>
+  </VOTABLE>

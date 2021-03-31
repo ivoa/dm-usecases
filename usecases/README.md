@@ -16,7 +16,7 @@
 | combined_data      |  P C   |   C  | C      | C     |  C   |  C   |      |        |               |           |
 | complex-shaped-object|      |      |        | P C   |      |      |      |        |               |           |
 | orbital-system     |        |      |        |  P C  |      |      |      |        |               |           |
-| time-series        |  C     | C    | C      |       | C    | P C  |      |        |               |           |
+| time-series        |  C     | C    | C      |       | C    | P C  |      |        |  ZTF: P C     |           |
 
 * **P** Raw data provided
 * **C** Concerned by the use-case
@@ -30,9 +30,9 @@
 | native_frames        |  S I              |             | S I                |                    |
 | simple_position      |  S I              |             |                    |                    |
 | standard_properties  |  S I              |             | S I                |                    |
-| precise_astrometry   |  S I              |             |                    |                    |
+| precise_astrometry   |  S I              |  S I        |                    |                    |
 | column_grouping      |  S I              |             |                    |                    |
-| combined_data        |  S I              |             |                    |                    |
+| combined_data        |  S I              |             | S I                |                    |
 | complex-shaped-object|  S                |             |                    |                    |
 | orbital-system       |  S                |             |                    |                    |
 | time-series          |                   | S I         | S I                |  S I               |

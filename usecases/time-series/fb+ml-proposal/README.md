@@ -58,6 +58,8 @@
    * The calibration details, reduction features, varying position of the detection, instrumental details are given
    * They are all considered as TimeDependant  parameters
    * So the structure of the instance is very similar to the previous one except than instead of having two associatedParameters (to the time) we have plenty of those now. 
+   * We have defined CoordinateSystems. TimeSys (and HelioTimeSys) are classical coords datamodel instances. PhotSys (actually PhotFrame inside it) encompass an instance of PhotDM "Photcal". 
+   * we have added two yml files which implement excerpt of our two xml examples in yaml : TimeSeriesGAVO-Gaia-RP-annot.xml  and 
 
 
 

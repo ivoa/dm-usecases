@@ -1,38 +1,39 @@
 ## Model Instance Summary:
 Input file: csc2_example_annotated.vot
 
-Goal: Find Primary Instances
-'''
-doc = Reader( Votable(infile) )
-masterSources = doc.find_instances(Source)[0]
-detections = doc.find_instances(Source)[1]
-lightcurves = doc.find_instances(SparseCube)[0]
-'''
+### Goal: Find Primary Instances
+    doc = Reader( Votable(infile) )
+    masterSources = doc.find_instances(Source)[0]
+    detections = doc.find_instances(Source)[1]
+    lightcurves = doc.find_instances(SparseCube)[0]
 
-Goal: High Level content summary
+### Goal: High Level content summary
+```
 Master Source List
-o Type: rama.models.mango.Source
-o Number of records: 326
-o Number of unique Sources: 326
-o Associated Parameters: 4
-o Associated Data: 8
+  o Type: rama.models.mango.Source
+  o Number of records: 326
+  o Number of unique Sources: 326
+  o Associated Parameters: 4
+  o Associated Data: 8
 
 Detections List = all detections
-o Type: rama.models.mango.Source
-o Number of records: 1000
-o Number of unique Sources: 326
-o Associated Parameters: 5
-o Associated Data: none
+  o Type: rama.models.mango.Source
+  o Number of records: 1000
+  o Number of unique Sources: 326
+  o Associated Parameters: 5
+  o Associated Data: none
 
 LightCurves - one per source
-o Type: rama.models.cube.SparseCube
-o Number of curves: 326
-o Independent Axis: ['time']
-o Dependent Axis: ['generic']
-o Length (max detections): 7
+  o Type: rama.models.cube.SparseCube
+  o Number of curves: 326
+  o Independent Axis: ['time']
+  o Dependent Axis: ['generic']
+  o Length (max detections): 7
+```
 
-Goal: Detailed content example
+### Goal: Detailed content example
 Source number: 4
+```
 rama.models.mango.Source:
   o identifier: 2CXO J004206.0-125512
   o Associated Parameters:
@@ -214,5 +215,4 @@ rama.models.mango.Source:
                        o measure: HardnessRatio:  0.195 range(low:-0.089, high: 0.452) [band_low: CHANDRA/ACIS.hard, band_high: CHANDRA/ACIS.medium]
                 o Associated Data:
                    0. none
-
-Done
+```

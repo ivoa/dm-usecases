@@ -55,4 +55,4 @@ Uses the 'rama' python package to parse annotated data file and instantiate
         * mango:Source.associatedDataDock contains n WebEndpoint instances from _spectra table
             * FOREIGNKEY|PRIMARYKEY on identifier columns associate WebEndpoints with appropriate Source record.
 * Consumption
-    * see [csc2_summary.md](csc2_summary.md) for a summary of the model instances generated from this annotated file.
+    * see [csc_summary.md](csc_summary.md) for a summary of the model instances generated from this annotated file.

@@ -1,25 +1,26 @@
 ## Model Instance Summary:
 Input file: 4xmm_lite_annotated.vot
 
-Goal: Find Source-s
-'''
-doc = Reader( Votable(infile) )
-catalog = doc.find_instances(Source)[0]
-'''
+### Goal: Find Source-s
+    doc = Reader( Votable(infile) )
+    catalog = doc.find_instances(Source)[0]
 
-Goal: High Level content summary
+### Goal: High Level content summary
+```
 Source List
-o Type: rama.models.mango.Source
-o Number of records: 5
-o Number of unique Sources: 5
-o Associated Parameters: 1
-o Associated Data: 3
+  o Type: rama.models.mango.Source
+  o Number of records: 5
+  o Number of unique Sources: 5
+  o Associated Parameters: 1
+  o Associated Data: 3
+```
 
-Goal: Source record detail
-'''
-for source in catalog.unroll():
-    print( source_toString( source ) )
-'''
+### Goal: Source record detail
+    for source in catalog.unroll():  
+        print( source_toString( source ) )
+
+results in
+```
 rama.models.mango.Source:
   o identifier: 581245887037857579
   o Associated Parameters:
@@ -79,3 +80,4 @@ rama.models.mango.Source:
          o measure: Position: ( 107.506608 [deg], -39.135986 [deg] ) +/- 3.702e-04 [ICRS]
   o Associated Data:
      0. none
+```

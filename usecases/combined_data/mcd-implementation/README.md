@@ -1,12 +1,11 @@
 # Implementation of 'Combined Data' case
 
 # Overview
-This case exercises the FOREIGNKEY feature to associate Spectra to each Source record.
-
-Data: 4XMM DR9
+This case exercises the PRIMARYKEY|FOREIGNKEY feature of the Mapping syntax to assocate data from
+the Detection table to the corresponding Master table record.
 
 The primary goals:
-* Exercise the assocated data feature.
+* Exercise the assocated data feature of the MANGO model.
 
 The data has been annotated using IVOA VO-DML Mapping syntax.
 The annotation was produced using the 'Jovial' modeling toolset (Java).  Jovial
@@ -39,45 +38,21 @@ Uses the 'rama' python package to parse annotated data file and instantiate
   + master repository:  
     https://github.com/olaurino/rama
 
-## Details
-* Goal: Find Source-s
-    ```
-    catalog = doc.find_instances(Source)[0]
-    ```
-* Goal: Summarize Source records
-    * Number of records: 5
-    * Number of unique Sources: 5
+# Details
+## Example 1:
+* Annotation: 4xmm_lite_annotated.vot
+    * mango:Source instance to _results table
+    * mango:Source.parameterDock contains 1 Parameter for Position + error
+        * mango:Source.associatedDataDock contains n WebEndpoint instances from _spectra table
+            * FOREIGNKEY|PRIMARYKEY on identifier columns associate WebEndpoints with appropriate Source record.
+* Consumption
+    * see [4xmm_summary.md](4xmm_summary.md) for a summary of the model instances generated from this annotated file.
 
-* Goal: Source record data
-    * Source record
-        * Souce ID:   581245887037857579
-        * Associated Properties: 
-            * Position: (340.910551, -17.071667) [deg] +/- 4.105e-04
-        * Associated Data: 
-            * WebEndpoint{ semantic=spectrum.raw content=application/fits url=http://spectrum/581245887037857579/MOS1 }
-            * WebEndpoint{ semantic=spectrum.raw content=application/fits url=http://spectrum/581245887037857579/MO2 }
-            * WebEndpoint{ semantic=spectrum.raw content=application/fits url=http://spectrum/581245887037857579/PN }
-    * Source record
-        * Souce ID:   581245887037857578
-        * Associated Properties: 
-            * Position: ( 52.616760, -27.720584) [deg] +/- 4.309e-04
-        * Associated Data: 
-            * none
-    * Source record
-        * Souce ID:   581245887037857577
-        * Associated Properties: 
-            * Position: (183.267881,  27.708168) [deg] +/- 3.517e-04
-        * Associated Data: 
-            * none
-    * Source record
-        * Souce ID:   581245887037857576
-        * Associated Properties: 
-            * Position: (126.308367, -77.837500) [deg] +/- 2.208e-04
-        * Associated Data: 
-            * none
-    * Source record
-        * Souce ID:   581245887037857575
-        * Associated Properties: 
-            * Position: (107.506608, -39.135986) [deg] +/- 3.702e-04
-        * Associated Data: 
-            * none
+## Example 2:
+* Annotation: csc2_example_annotated.vot
+    * mango:Source instance to _results table
+    * mango:Source.parameterDock contains 1 Parameter for Position + error
+        * mango:Source.associatedDataDock contains n WebEndpoint instances from _spectra table
+            * FOREIGNKEY|PRIMARYKEY on identifier columns associate WebEndpoints with appropriate Source record.
+* Consumption
+    * see [csc2_summary.md](csc2_summary.md) for a summary of the model instances generated from this annotated file.

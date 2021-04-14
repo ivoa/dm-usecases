@@ -40,8 +40,9 @@ Uses the 'rama' python package to parse annotated data file and instantiate
 
 # Details
 ## Example 1:
-* Annotation: ts_annotated.vot
-Provided by the GAVO Data Center, TimeSeries derived from GAIA DR2 data.
+* File:
+    * ts_annotated.vot - Provided by GAVO Data Center, TimeSeries derived from GAIA DR2 data.
+* Annotation:
     * cube:SparseCube instance
         * data (NDPoint) populated from '_cube1' TABLE.
     * Dataset and CoordSys/Frame objects defined mainly by LITERALs
@@ -49,19 +50,22 @@ Provided by the GAVO Data Center, TimeSeries derived from GAIA DR2 data.
     * see [ts_summary.md](4xmm_summary.md) for a summary of the model instances generated from this annotated file.
 
 ## Example 2:
+* Annotation: TimeSeriesZTF_annotated.vot - ZTF time series  
+    * TimeSeriesZTF_annotated.vot - ZTF time series
+    * TABLE includes measurements from multiple sources within the field.
 * File modifications:
     * added missing VOTABLE node start.
     * added IDs to FIELDs being referenced in annotation
     * changed type of FIELD used as KEYs to 'ivoa:string' type
         * JOVIAL hardcodes the type; RAMA does not convert the native values
-* Annotation: TimeSeriesZTF_annotated.vot  
-ZTF time series, TABLE includes measurements from multiple sources within the field.
-    * Added _SourceList TABLE containing 1 row per source in main TABLE, 1 column providing the source id.
+* Annotation: TimeSeriesZTF_annotated.vot - ZTF time series  
+TABLE includes measurements from multiple sources within the field.
+    * Added SourceList TABLE containing 1 row per source in main TABLE, 1 column providing the source id.
         * this enables compact annotation, using PRIMARYKEY|FOREIGNKEY to create 1 SparseCube per source.
     * GLOBALS for Coordinate systems
     * GLOBALS for ds:ObsDataset instances (1 per source for reference by SparseCube
     * GLOBALS for ds:Target instances (referenced by ObsDataset)
-    * TEMPLATES on _SourceList TABLE for cube:SparseCube (creates one per row/source)
+    * TEMPLATES on SourceList TABLE for cube:SparseCube (creates one per row/source)
     * TEMPLATES on RESULTS TABLE for cube:NDPoint
         * uses PRIMARYKEY|FOREIGNKEY to select appropriate rows for the current source.
     * Dataset and CoordSys/Frame objects defined mainly by LITERALs

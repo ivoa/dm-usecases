@@ -47,7 +47,7 @@ Uses the 'rama' python package to parse annotated data file and instantiate
         * data (NDPoint) populated from '_cube1' TABLE.
     * Dataset and CoordSys/Frame objects defined mainly by LITERALs
 * Consumption
-    * see [ts_summary.md](4xmm_summary.md) for a summary of the model instances generated from this annotated file.
+    * see [ts_summary.md](ts_summary.md) for a summary of the model instances generated from this annotated file.
 
 ## Example 2:
 * Annotation: TimeSeriesZTF_annotated.vot - ZTF time series  

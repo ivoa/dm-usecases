@@ -10,6 +10,7 @@ Input file: TimeSeriesZTF_annotated.vot
 for instance in ts:
     instance.dataset.data_product_type 
     instance.dataset.data_product_subtype 
+    instance.dataset.target.name
 ```
 Instance:  
   o Data Product Type: TIMESERIES  
@@ -74,4 +75,4 @@ rama.models.cube.SparseCube:
     plt.show()
 
 ```  
-PLACE FIGURE HERE.
+![ztf_timeseries](https://user-images.githubusercontent.com/14201994/114763077-6a291380-9d30-11eb-90f5-aebfc64972a1.png)

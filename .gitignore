@@ -37,6 +37,8 @@ MANIFEST
 pip-log.txt
 pip-delete-this-directory.txt
 
+Pipfile
+
 # Unit test / coverage reports
 htmlcov/
 .tox/
@@ -188,6 +190,6 @@ local.properties
 .worksheet
 
 # Typically, this file would be tracked if it contains build/dependency configurations:
+.project
 
 .DS*
-/.project

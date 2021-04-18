@@ -7,18 +7,18 @@
 
 | Usecase vs Project | XMM | Chandra | Vizier | GLAST | LSST | GAVO | Gaia | Simbad | Other project | Mock data |
 | -------------------| ------ | -----| -----  | ----- | ---- | ---- | ---- | ------ | ------------- | --------- |
-| identity           |  C     | C    | C      | C     | C    | C    | C    | P C    |               |           |
-| native_frames      |        |      | P C    |       |      |      |      |        |               |           |
+| identity           |  C     | C    | C      | C     | C    | C    | C    | R C    |               |           |
+| native_frames      |        |      | R C    |       |      |      |      |        |               |           |
 | simple_position    |  C     |  C   | C      | C     | C    | C    | C    | C      |               |           |
-| standard_properties|  P C   |  C   | C      | C     | C    | C    | C    | C      |               |           |
-| precise_astrometry |        |      | C      |       | C    |      | C    |        |               | P         |
-| column_grouping    |        |      | P C    |       |      |      |      |        |               |           |
-| combined_data      |  P C   |   C  | C      | C     |  C   |  C   |      |        |               |           |
-| complex-shaped-object|      |      |        | P C   |      |      |      |        |               |           |
-| orbital-system     |        |      |        |  P C  |      |      |      |        |               |           |
-| time-series        |  C     | C    | C      |       | C    | P C  |      |        |               |           |
+| standard_properties|  R C   |  C   | C      | C     | C    | C    | C    | C      |               |           |
+| precise_astrometry |        |      | C      |       | C    |      | C    |        |               | R         |
+| column_grouping    |        |      | R C    |       |      |      |      |        |               |           |
+| combined_data      |  R C   |   C  | C      | C     |  C   |  C   |      |        |               |           |
+| complex-shaped-object|      |      |        | R C   |      |      |      |        |               |           |
+| orbital-system     |        |      |        | R C   |      |      |      |        |               |           |
+| time-series        |  C     | C    | C      |       | C    | R C  |      |        |  ZTF: R C     |           |
 
-* **P** Raw data provided
+* **R** Raw data provided
 * **C** Concerned by the use-case
 
 
@@ -30,9 +30,9 @@
 | native_frames        |  S I              |             | S I                |                    |
 | simple_position      |  S I              |             |                    |                    |
 | standard_properties  |  S I              |             | S I                |                    |
-| precise_astrometry   |  S I              |             |                    |                    |
+| precise_astrometry   |  S I              |  S I        |                    |                    |
 | column_grouping      |  S I              |             |                    |                    |
-| combined_data        |  S I              |             |                    |                    |
+| combined_data        |  S I              |             | S I                |                    |
 | complex-shaped-object|  S                |             |                    |                    |
 | orbital-system       |  S                |             |                    |                    |
 | time-series          |                   | S I         | S I                |  S I               |

@@ -1,0 +1,303 @@
+<VOTABLE
+    xmlns="http://www.ivoa.net/xml/VOTable/v1.4_vodml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.ivoa.net/xml/VOTable/v1.4_vodml https://volute.g-vo.org/svn/trunk/projects/dm/vo-dml-org/xsd/ext/VOTable-1.4_vodml.xsd">
+    <VODML>
+        <MODEL>
+            <NAME>mango</NAME>
+            <URL>https://raw.githubusercontent.com/ivoa-std/MANGO/a46441f6fc498a6aeb33ed97e65689fee3d00f6c/vo-dml/mango.vo-dml.xml</URL>
+        </MODEL>
+        <MODEL>
+            <NAME>meas</NAME>
+            <URL>http://volute.g-vo.org/svn/trunk/projects/dm/STC/Meas/vo-dml/STC_meas-v1.0.vo-dml.xml</URL>
+        </MODEL>
+        <MODEL>
+            <NAME>coords</NAME>
+            <URL>http://volute.g-vo.org/svn/trunk/projects/dm/STC/Coords/vo-dml/STC_coords-v1.0.vo-dml.xml</URL>
+        </MODEL>
+        <MODEL>
+            <NAME>ivoa</NAME>
+            <URL>http://volute.g-vo.org/svn/trunk/projects/dm/vo-dml/models/ivoa/vo-dml/IVOA-v1.0.vo-dml.xml</URL>
+        </MODEL>
+        <GLOBALS>
+            <INSTANCE dmtype="coords:SpaceSys" ID="T1616959090495_54">
+                <COMPOSITION dmrole="coords:PhysicalCoordSys.coordSpace">
+                    <INSTANCE dmtype="coords:SphericalCoordSpace" ID="T1616959090495_71">
+                        <COMPOSITION dmrole="coords:CoordSpace.axis">
+                            <INSTANCE dmtype="coords:ContinuousAxis" ID="T1616959090495_86">
+                                <ATTRIBUTE dmrole="coords:Axis.name">
+                                    <LITERAL dmtype="ivoa:string" value="ra"/>
+                                </ATTRIBUTE>
+                            </INSTANCE>
+                            <INSTANCE dmtype="coords:ContinuousAxis" ID="T1616959090495_107">
+                                <ATTRIBUTE dmrole="coords:Axis.name">
+                                    <LITERAL dmtype="ivoa:string" value="dec"/>
+                                </ATTRIBUTE>
+                            </INSTANCE>
+                            <INSTANCE dmtype="coords:ContinuousAxis" ID="T1616959090495_128">
+                                <ATTRIBUTE dmrole="coords:Axis.name">
+                                    <LITERAL dmtype="ivoa:string" value="r"/>
+                                </ATTRIBUTE>
+                            </INSTANCE>
+                        </COMPOSITION>
+                    </INSTANCE>
+                </COMPOSITION>
+                <COMPOSITION dmrole="coords:PhysicalCoordSys.frame">
+                    <INSTANCE dmtype="coords:SpaceFrame" ID="T1616959090495_149">
+                        <ATTRIBUTE dmrole="coords:SpaceFrame.spaceRefFrame">
+                            <LITERAL dmtype="ivoa:string" value="ICRS"/>
+                        </ATTRIBUTE>
+                        <ATTRIBUTE dmrole="coords:SpaceFrame.equinox">
+                            <LITERAL dmtype="coords:Epoch" value="NoSet"/>
+                        </ATTRIBUTE>
+                        <ATTRIBUTE dmrole="coords:SpaceFrame.refPosition">
+                            <INSTANCE dmtype="coords:StdRefLocation">
+                                <ATTRIBUTE dmrole="coords:StdRefLocation.position">
+                                    <LITERAL dmtype="ivoa:string" value="NoSet"/>
+                                </ATTRIBUTE>
+                            </INSTANCE>
+                        </ATTRIBUTE>
+                    </INSTANCE>
+                </COMPOSITION>
+            </INSTANCE>
+        </GLOBALS>
+        <TEMPLATES tableref="T1616959090495_1">
+            <INSTANCE dmtype="mango:Source" ID="T1616959090495_177">
+                <PRIMARYKEY>
+                    <PKFIELD>
+                        <COLUMN dmtype="ivoa:string" ref="T1616959090495_1_F0"/>
+                    </PKFIELD>
+                </PRIMARYKEY>
+                <ATTRIBUTE dmrole="mango:Source.identifier">
+                    <COLUMN dmtype="ivoa:string" ref="T1616959090495_1_F0"/>
+                </ATTRIBUTE>
+                <COMPOSITION dmrole="mango:Source.parameterDock">
+                    <INSTANCE dmtype="mango:Parameter" ID="T1616959090495_196">
+                        <ATTRIBUTE dmrole="mango:Parameter.ucd">
+                            <LITERAL dmtype="ivoa:string" value="pos.eq;meta.main;"/>
+                        </ATTRIBUTE>
+                        <ATTRIBUTE dmrole="mango:Parameter.description">
+                            <LITERAL dmtype="ivoa:string" value="position"/>
+                        </ATTRIBUTE>
+                        <ATTRIBUTE dmrole="mango:Parameter.semantic">
+                            <INSTANCE dmtype="mango:VocabularyTerm">
+                                <ATTRIBUTE dmrole="mango:VocabularyTerm.label">
+                                    <LITERAL dmtype="ivoa:string" value="#position"/>
+                                </ATTRIBUTE>
+                            </INSTANCE>
+                        </ATTRIBUTE>
+                        <COMPOSITION dmrole="mango:Parameter.measure">
+                            <INSTANCE dmtype="meas:Position" ID="T1616959090495_228">
+                                <ATTRIBUTE dmrole="meas:Position.coord">
+                                    <INSTANCE dmtype="coords:Point">
+                                        <ATTRIBUTE dmrole="coords:Point.axis2">
+                                            <COLUMN dmtype="ivoa:Quantity" ref="T1616959090495_1_F2"/>
+                                        </ATTRIBUTE>
+                                        <ATTRIBUTE dmrole="coords:Point.axis1">
+                                            <COLUMN dmtype="ivoa:Quantity" ref="T1616959090495_1_F1"/>
+                                        </ATTRIBUTE>
+                                    </INSTANCE>
+                                </ATTRIBUTE>
+                                <COMPOSITION dmrole="meas:Measure.error">
+                                    <INSTANCE dmtype="mango:exterrors.MultParamErro2D" ID="T1616959090495_276">
+                                        <COMPOSITION dmrole="mango:exterrors.MultiParamError.correlatedErrors">
+                                            <INSTANCE dmtype="mango:exterrors.CorrelatedError2D2D" ID="T1616959090495_375">
+                                                <ATTRIBUTE dmrole="mango:exterrors.CorrelatedError.ucd">
+                                                    <LITERAL dmtype="ivoa:string" value="pos.pm"/>
+                                                </ATTRIBUTE>
+                                                <ATTRIBUTE dmrole="mango:exterrors.CorrelatedError1D2D.correlation1_1">
+                                                    <COLUMN dmtype="ivoa:real" ref="T1616959090495_1_F11"/>
+                                                </ATTRIBUTE>
+                                                <ATTRIBUTE dmrole="mango:exterrors.CorrelatedError1D2D.correlation1_2">
+                                                    <COLUMN dmtype="ivoa:real" ref="T1616959090495_1_F12"/>
+                                                </ATTRIBUTE>
+                                                <ATTRIBUTE dmrole="mango:exterrors.CorrelatedError2D2D.correlation2_1">
+                                                    <COLUMN dmtype="ivoa:real" ref="T1616959090495_1_F13"/>
+                                                </ATTRIBUTE>
+                                                <ATTRIBUTE dmrole="mango:exterrors.CorrelatedError2D2D.correlation2_2">
+                                                    <COLUMN dmtype="ivoa:real" ref="T1616959090495_1_F14"/>
+                                                </ATTRIBUTE>
+                                            </INSTANCE>
+                                            <INSTANCE dmtype="mango:exterrors.CorrelatedError1D2D" ID="T1616959090495_398">
+                                                <ATTRIBUTE dmrole="mango:exterrors.CorrelatedError.ucd">
+                                                    <LITERAL dmtype="ivoa:string" value="spect.dopplerVeloc"/>
+                                                </ATTRIBUTE>
+                                                <ATTRIBUTE dmrole="mango:exterrors.CorrelatedError1D2D.correlation1_1">
+                                                    <COLUMN dmtype="ivoa:real" ref="T1616959090495_1_F17"/>
+                                                </ATTRIBUTE>
+                                                <ATTRIBUTE dmrole="mango:exterrors.CorrelatedError1D2D.correlation1_2">
+                                                    <COLUMN dmtype="ivoa:real" ref="T1616959090495_1_F18"/>
+                                                </ATTRIBUTE>
+                                            </INSTANCE>
+                                            <INSTANCE dmtype="mango:exterrors.CorrelatedError1D2D" ID="T1616959090495_417">
+                                                <ATTRIBUTE dmrole="mango:exterrors.CorrelatedError.ucd">
+                                                    <LITERAL dmtype="ivoa:string" value="pos.parallax"/>
+                                                </ATTRIBUTE>
+                                                <ATTRIBUTE dmrole="mango:exterrors.CorrelatedError1D2D.correlation1_1">
+                                                    <COLUMN dmtype="ivoa:real" ref="T1616959090495_1_F22"/>
+                                                </ATTRIBUTE>
+                                                <ATTRIBUTE dmrole="mango:exterrors.CorrelatedError1D2D.correlation1_2">
+                                                    <COLUMN dmtype="ivoa:real" ref="T1616959090495_1_F21"/>
+                                                </ATTRIBUTE>
+                                            </INSTANCE>
+                                        </COMPOSITION>
+                                    </INSTANCE>
+                                </COMPOSITION>
+                            </INSTANCE>
+                        </COMPOSITION>
+                    </INSTANCE>
+                    <INSTANCE dmtype="mango:Parameter" ID="T1616959090495_436">
+                        <ATTRIBUTE dmrole="mango:Parameter.ucd">
+                            <LITERAL dmtype="ivoa:string" value="pos.pm"/>
+                        </ATTRIBUTE>
+                        <ATTRIBUTE dmrole="mango:Parameter.description">
+                            <LITERAL dmtype="ivoa:string" value="Proper Motion"/>
+                        </ATTRIBUTE>
+                        <ATTRIBUTE dmrole="mango:Parameter.semantic">
+                            <INSTANCE dmtype="mango:VocabularyTerm">
+                                <ATTRIBUTE dmrole="mango:VocabularyTerm.label">
+                                    <LITERAL dmtype="ivoa:string" value="#propermotion"/>
+                                </ATTRIBUTE>
+                            </INSTANCE>
+                        </ATTRIBUTE>
+                        <COMPOSITION dmrole="mango:Parameter.measure">
+                            <INSTANCE dmtype="meas:ProperMotion" ID="T1616959090495_468">
+                                <ATTRIBUTE dmrole="meas:ProperMotion.lon">
+                                    <INSTANCE dmtype="coords:PhysicalCoordinate">
+                                        <ATTRIBUTE dmrole="coords:PhysicalCoordinate.cval">
+                                            <COLUMN dmtype="ivoa:Quantity" ref="T1616959090495_1_F6"/>
+                                        </ATTRIBUTE>
+                                    </INSTANCE>
+                                </ATTRIBUTE>
+                                <ATTRIBUTE dmrole="meas:ProperMotion.lat">
+                                    <INSTANCE dmtype="coords:PhysicalCoordinate">
+                                        <ATTRIBUTE dmrole="coords:PhysicalCoordinate.cval">
+                                            <COLUMN dmtype="ivoa:Quantity" ref="T1616959090495_1_F7"/>
+                                        </ATTRIBUTE>
+                                    </INSTANCE>
+                                </ATTRIBUTE>
+                            </INSTANCE>
+                        </COMPOSITION>
+                    </INSTANCE>
+                    <INSTANCE dmtype="mango:Parameter" ID="T1616959090495_782">
+                        <ATTRIBUTE dmrole="mango:Parameter.ucd">
+                            <LITERAL dmtype="ivoa:string" value="spect.dopplerVeloc"/>
+                        </ATTRIBUTE>
+                        <ATTRIBUTE dmrole="mango:Parameter.description">
+                            <LITERAL dmtype="ivoa:string" value=""/>
+                        </ATTRIBUTE>
+                        <ATTRIBUTE dmrole="mango:Parameter.semantic">
+                            <INSTANCE dmtype="mango:VocabularyTerm">
+                                <ATTRIBUTE dmrole="mango:VocabularyTerm.label">
+                                    <LITERAL dmtype="ivoa:string" value="#radial_velocity"/>
+                                </ATTRIBUTE>
+                            </INSTANCE>
+                        </ATTRIBUTE>
+                        <COMPOSITION dmrole="mango:Parameter.measure">
+                            <INSTANCE dmtype="meas:GenericMeasure" ID="T1616959090495_814">
+                                <ATTRIBUTE dmrole="meas:GenericMeasure.coord">
+                                    <INSTANCE dmtype="coords:PhysicalCoordinate">
+                                        <ATTRIBUTE dmrole="coords:PhysicalCoordinate.cval">
+                                            <COLUMN dmtype="ivoa:Quantity" ref="T1616959090495_1_F15"/>
+                                        </ATTRIBUTE>
+                                    </INSTANCE>
+                                </ATTRIBUTE>
+                                <COMPOSITION dmrole="meas:Measure.error">
+                                    <INSTANCE dmtype="meas:Error" ID="T1616959090495_849">
+                                        <ATTRIBUTE dmrole="meas:Error.statError">
+                                            <INSTANCE dmtype="meas:Symmetrical">
+                                                <ATTRIBUTE dmrole="meas:Symmetrical.radius">
+                                                    <COLUMN dmtype="ivoa:RealQuantity" ref="T1616959090495_1_F16"/>
+                                                </ATTRIBUTE>
+                                            </INSTANCE>
+                                        </ATTRIBUTE>
+                                    </INSTANCE>
+                                </COMPOSITION>
+                            </INSTANCE>
+                        </COMPOSITION>
+                    </INSTANCE>
+                    <INSTANCE dmtype="mango:Parameter" ID="T1616959090495_882">
+                        <ATTRIBUTE dmrole="mango:Parameter.ucd">
+                            <LITERAL dmtype="ivoa:string" value="pos.parallax"/>
+                        </ATTRIBUTE>
+                        <ATTRIBUTE dmrole="mango:Parameter.description">
+                            <LITERAL dmtype="ivoa:string" value="Parallax"/>
+                        </ATTRIBUTE>
+                        <ATTRIBUTE dmrole="mango:Parameter.semantic">
+                            <INSTANCE dmtype="mango:VocabularyTerm">
+                                <ATTRIBUTE dmrole="mango:VocabularyTerm.label">
+                                    <LITERAL dmtype="ivoa:string" value="#parallax"/>
+                                </ATTRIBUTE>
+                            </INSTANCE>
+                        </ATTRIBUTE>
+                        <COMPOSITION dmrole="mango:Parameter.measure">
+                            <INSTANCE dmtype="meas:GenericMeasure" ID="T1616959090495_914">
+                                <ATTRIBUTE dmrole="meas:GenericMeasure.coord">
+                                    <INSTANCE dmtype="coords:PhysicalCoordinate">
+                                        <ATTRIBUTE dmrole="coords:PhysicalCoordinate.cval">
+                                            <COLUMN dmtype="ivoa:Quantity" ref="T1616959090495_1_F19"/>
+                                        </ATTRIBUTE>
+                                    </INSTANCE>
+                                </ATTRIBUTE>
+                                <COMPOSITION dmrole="meas:Measure.error">
+                                    <INSTANCE dmtype="mango:exterrors.MultParamErro2D" ID="T1616959090495_981">
+                                        <COMPOSITION dmrole="mango:exterrors.MultiParamError.correlatedErrors">
+                                            <INSTANCE dmtype="mango:exterrors.CorrelatedError1D2D" ID="T1616959090495_1004">
+                                                <ATTRIBUTE dmrole="mango:exterrors.CorrelatedError.ucd">
+                                                    <LITERAL dmtype="ivoa:string" value="pos.pm"/>
+                                                </ATTRIBUTE>
+                                                <ATTRIBUTE dmrole="mango:exterrors.CorrelatedError1D2D.correlation1_1">
+                                                    <COLUMN dmtype="ivoa:real" ref="T1616959090495_1_F24"/>
+                                                </ATTRIBUTE>
+                                                <ATTRIBUTE dmrole="mango:exterrors.CorrelatedError1D2D.correlation1_2">
+                                                    <COLUMN dmtype="ivoa:real" ref="T1616959090495_1_F23"/>
+                                                </ATTRIBUTE>
+                                            </INSTANCE>
+                                        </COMPOSITION>
+                                    </INSTANCE>
+                                </COMPOSITION>
+                            </INSTANCE>
+                        </COMPOSITION>
+                    </INSTANCE>
+                </COMPOSITION>
+            </INSTANCE>
+            <INSTANCE dmtype="meas:Symmetrical">
+                <ATTRIBUTE dmrole="meas:Symmetrical.radius">
+                    <COLUMN dmtype="ivoa:RealQuantity" ref="T1616959090495_1_F20"/>
+                </ATTRIBUTE>
+            </INSTANCE>
+        </TEMPLATES>
+    </VODML>
+    <RESOURCE>
+        <TABLE ID="T1616959090495_1" name="Result">
+            <INFO name="type" value="VOTABLE"/>
+            <INFO name="votable_url" value="https://raw.githubusercontent.com/ivoa/dm-usecases/main/usecases/precise_astrometry/raw_data/proto_covariance.xml"/>
+            <INFO name="table_rank" value="1"/>
+            <INFO name="ID" value="Results"/>
+            <FIELD name="name" datatype="char" ID="T1616959090495_1_F0"/>
+            <FIELD name="pos_RA" datatype="double" ID="T1616959090495_1_F1"/>
+            <FIELD name="pos_DEC" datatype="double" ID="T1616959090495_1_F2"/>
+            <FIELD name="pos_RA_err" datatype="double" ID="T1616959090495_1_F3"/>
+            <FIELD name="pos_DEC_err" datatype="double" ID="T1616959090495_1_F4"/>
+            <FIELD name="pos_RADEC_corr" datatype="double" ID="T1616959090495_1_F5"/>
+            <FIELD name="pm_RA" datatype="double" ID="T1616959090495_1_F6"/>
+            <FIELD name="pm_DEC" datatype="double" ID="T1616959090495_1_F7"/>
+            <FIELD name="pm_RA_err" datatype="double" ID="T1616959090495_1_F8"/>
+            <FIELD name="pm_DEC_err" datatype="double" ID="T1616959090495_1_F9"/>
+            <FIELD name="pm_RADEC_corr" datatype="double" ID="T1616959090495_1_F10"/>
+            <FIELD name="pm_RA_pos_RA_corr" datatype="double" ID="T1616959090495_1_F11"/>
+            <FIELD name="pm_RA_pos_DEC_corr" datatype="double" ID="T1616959090495_1_F12"/>
+            <FIELD name="pm_DEC_pos_RA_corr" datatype="double" ID="T1616959090495_1_F13"/>
+            <FIELD name="pm_DEC_pos_DEC_corr" datatype="double" ID="T1616959090495_1_F14"/>
+            <FIELD name="RV" datatype="double" ID="T1616959090495_1_F15"/>
+            <FIELD name="RV_err" datatype="double" ID="T1616959090495_1_F16"/>
+            <FIELD name="RV_pos_RA_corr" datatype="double" ID="T1616959090495_1_F17"/>
+            <FIELD name="RV_pos_DEC_corr" datatype="double" ID="T1616959090495_1_F18"/>
+            <FIELD name="PARALLAX" datatype="double" ID="T1616959090495_1_F19"/>
+            <FIELD name="PARALLAX_err" datatype="double" ID="T1616959090495_1_F20"/>
+            <FIELD name="PARALLAX_pos_DEC_corr" datatype="double" ID="T1616959090495_1_F21"/>
+            <FIELD name="PARALLAX_pos_RA_corr" datatype="double" ID="T1616959090495_1_F22"/>
+            <FIELD name="PARALLAX_pm_DEC_corr" datatype="double" ID="T1616959090495_1_F23"/>
+            <FIELD name="PARALLAX_pm_RA_corr" datatype="double" ID="T1616959090495_1_F24"/>
+        </TABLE>
+    </RESOURCE>
+</VOTABLE>

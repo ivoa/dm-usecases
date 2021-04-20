@@ -67,4 +67,4 @@ rama.models.cube.SparseCube:
     plt.show()
 
 ```  
-![gavo_timeseries](https://user-images.githubusercontent.com/14201994/109398334-505f7880-790a-11eb-93f1-2cef1a1a6eca.png)
+![gavo_timeseries](https://user-images.githubusercontent.com/14201994/115455695-45c9ad00-a1f0-11eb-9c58-813ed9310c16.png)

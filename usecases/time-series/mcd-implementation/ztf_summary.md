@@ -75,4 +75,4 @@ rama.models.cube.SparseCube:
     plt.show()
 
 ```  
-![ztf_timeseries](https://user-images.githubusercontent.com/14201994/115455293-c63bde00-a1ef-11eb-8173-b2c261d966cc.png)
+![ztf_timeseries](https://user-images.githubusercontent.com/14201994/115455480-0307d500-a1f0-11eb-94b5-bbd8d2393cac.png)

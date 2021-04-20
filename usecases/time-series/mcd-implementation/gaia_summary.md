@@ -83,3 +83,4 @@ rama.models.cube.SparseCube:
     plt.show()
 
 ```  
+![gaia_timeseries](https://user-images.githubusercontent.com/14201994/115455117-8bd24100-a1ef-11eb-9c20-54adfa187ba8.png)

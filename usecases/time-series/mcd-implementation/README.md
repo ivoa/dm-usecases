@@ -40,18 +40,17 @@ Uses the 'rama' python package to parse annotated data file and instantiate
 
 # Details
 ## Example 1:
-* File:
-    * ts_annotated.vot - Provided by GAVO Data Center, TimeSeries derived from GAIA DR2 data.
+* File: ts_annotated.vot  
+    * Provided by GAVO Data Center, TimeSeries derived from GAIA DR2 data.
 * Annotation:
     * cube:SparseCube instance
         * data (NDPoint) populated from '_cube1' TABLE.
     * Dataset and CoordSys/Frame objects defined mainly by LITERALs
 * Consumption
-    * see [ts_summary.md](ts_summary.md) for a summary of the model instances generated from this annotated file.
+    * see [gavo_summary.md](gavo_summary.md) for a summary of the model instances generated from this annotated file.
 
 ## Example 2:
-* Annotation: TimeSeriesZTF_annotated.vot - ZTF time series  
-    * TimeSeriesZTF_annotated.vot - ZTF time series
+* File: TimeSeriesZTF_annotated.vot - ZTF time series  
     * TABLE includes measurements from multiple sources within the field.
 * File modifications:
     * added missing VOTABLE node start.
@@ -59,7 +58,6 @@ Uses the 'rama' python package to parse annotated data file and instantiate
     * changed type of FIELD used as KEYs to 'ivoa:string' type
         * JOVIAL hardcodes the type; RAMA does not convert the native values
 * Annotation: TimeSeriesZTF_annotated.vot - ZTF time series  
-TABLE includes measurements from multiple sources within the field.
     * Added SourceList TABLE containing 1 row per source in main TABLE, 1 column providing the source id.
         * this enables compact annotation, using PRIMARYKEY|FOREIGNKEY to create 1 SparseCube per source.
     * GLOBALS for Coordinate systems
@@ -72,3 +70,26 @@ TABLE includes measurements from multiple sources within the field.
 * Consumption
     * see [ztf_summary.md](ztf_summary.md) for a summary of the model instances generated from this annotated file.
 
+## Example 3:  
+* Description: gaia_multiband_annotated.vot - GAIA Multiband time series  
+    * TABLE includes measurements from multiple photometric bands and potentially multiple sources.
+* File modifications:  
+    * Add ID to Results TABLE element
+    * FIELDs referenced in annotation need IDs added
+    * FIELDs used as KEYs need to be 'ivoa:string' type
+        * JOVIAL hardcodes the type; RAMA does not convert the values
+* Annotation:  
+    * Added _PKTable TABLE containing 1 row per source/filter combination in main TABLE
+        * column1="_pksrcid", column2="_pkband"
+        * this enables compact annotation, using PRIMARYKEY|FOREIGNKEY to create 1 SparseCube per.
+    * GLOBALS for Coordinate systems
+        * with PRIMARYKEY to associate photometric data with proper filter spec.
+    * GLOBALS for ds:ObsDataset instances (1 per source for reference by SparseCube
+        * with PRIMARYKEY to associate appropriate dataset metadata by source id.
+    * GLOBALS for ds:Target instances (referenced by ObsDataset)
+    * TEMPLATES on _PKTable TABLE for cube:SparseCube (creates one per unique source/filter combination)
+    * TEMPLATES on RESULTS TABLE for cube:NDPoint
+        * uses PRIMARYKEY|FOREIGNKEY to select appropriate rows for the current source.
+    * Dataset and CoordSys/Frame objects defined mainly by LITERALs
+* Consumption
+    * see [gaia_summary.md](gaia_summary.md) for a summary of the model instances generated from this annotated file.

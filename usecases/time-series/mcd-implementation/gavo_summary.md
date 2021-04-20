@@ -1,5 +1,5 @@
 ## Model Instance Summary:
-Input file: TimeSeriesZTF_annotated.vot
+Input file: ts_annotated.vot
 
 ### Goal: Load TimeSeries instances
     doc = Reader( Votable(infile) )
@@ -15,11 +15,7 @@ for instance in ts:
 Instance:  
   o Data Product Type: TIMESERIES  
   o Data Product SubType: lightcurve  
-  o Target Name: 686103400034440  
-Instance:  
-  o Data Product Type: TIMESERIES  
-  o Data Product SubType: lightcurve  
-  o Target Name: 686103400106565  
+  o Target Name: 1866721434011386240  
 
 ### Goal: High Level content summary
 ```
@@ -28,12 +24,8 @@ for instance in ts:
 ```
 rama.models.cube.SparseCube:  
   o Independent Axis: ['time']  
-  o Dependent Axis: ['magnitude', 'position']  
-  o Length: 150  
-rama.models.cube.SparseCube:  
-  o Independent Axis: ['time']  
-  o Dependent Axis: ['magnitude', 'position']  
-  o Length: 150  
+  o Dependent Axis: ['magnitude', 'generic']  
+  o Length: 38  
 
 ### Goal: Plot the data
 ```
@@ -75,4 +67,4 @@ rama.models.cube.SparseCube:
     plt.show()
 
 ```  
-![ztf_timeseries](https://user-images.githubusercontent.com/14201994/114763077-6a291380-9d30-11eb-90f5-aebfc64972a1.png)
+![gavo_timeseries](https://user-images.githubusercontent.com/14201994/109398334-505f7880-790a-11eb-93f1-2cef1a1a6eca.png)

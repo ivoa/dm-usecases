@@ -1,5 +1,5 @@
 ## Model Instance Summary:
-Input file: TimeSeriesZTF_annotated.vot
+Input file: gaia_multiband_annotated.vot
 
 ### Goal: Load TimeSeries instances
     doc = Reader( Votable(infile) )
@@ -14,12 +14,16 @@ for instance in ts:
 ```
 Instance:  
   o Data Product Type: TIMESERIES  
-  o Data Product SubType: lightcurve  
-  o Target Name: 686103400034440  
+  o Data Product SubType: GAIA Time Series  
+  o Target Name: 5813181197970338560  
 Instance:  
   o Data Product Type: TIMESERIES  
-  o Data Product SubType: lightcurve  
-  o Target Name: 686103400106565  
+  o Data Product SubType: GAIA Time Series  
+  o Target Name: 5813181197970338560  
+Instance:  
+  o Data Product Type: TIMESERIES  
+  o Data Product SubType: GAIA Time Series  
+  o Target Name: 5813181197970338560  
 
 ### Goal: High Level content summary
 ```
@@ -28,12 +32,16 @@ for instance in ts:
 ```
 rama.models.cube.SparseCube:  
   o Independent Axis: ['time']  
-  o Dependent Axis: ['magnitude', 'position']  
-  o Length: 150  
+  o Dependent Axis: ['magnitude', 'flux']  
+  o Length: 85  
 rama.models.cube.SparseCube:  
   o Independent Axis: ['time']  
-  o Dependent Axis: ['magnitude', 'position']  
-  o Length: 150  
+  o Dependent Axis: ['magnitude', 'flux']  
+  o Length: 85  
+rama.models.cube.SparseCube:  
+  o Independent Axis: ['time']  
+  o Dependent Axis: ['magnitude', 'flux']  
+  o Length: 85  
 
 ### Goal: Plot the data
 ```
@@ -75,4 +83,3 @@ rama.models.cube.SparseCube:
     plt.show()
 
 ```  
-![ztf_timeseries](https://user-images.githubusercontent.com/14201994/114763077-6a291380-9d30-11eb-90f5-aebfc64972a1.png)

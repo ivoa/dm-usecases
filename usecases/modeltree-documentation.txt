@@ -1,0 +1,5 @@
+M.Louys 2021-
+This simple awk script reads an annotated VOTable using ModelInVotable syntax.
+It writes a tag to design branches everytime a new model instance or attribute is presented in the annotation. 
+
+usage : awk -f listModelInstances.awk File-vot-annoted.xml > model-tree<num>.txt

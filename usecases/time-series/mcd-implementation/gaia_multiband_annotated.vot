@@ -184,6 +184,9 @@
       <INSTANCE dmtype="cube:SparseCube" ID="_TimeSeries">
         <PRIMARYKEY>
           <PKFIELD>
+            <COLUMN dmtype="ivoa:string" ref="_pksrcid"/>
+          </PKFIELD>
+          <PKFIELD>
             <COLUMN dmtype="ivoa:string" ref="_pkband"/>
           </PKFIELD>
         </PRIMARYKEY>
@@ -204,6 +207,9 @@
       <INSTANCE dmtype="cube:NDPoint" ID="_ts_data">
         <CONTAINER>
           <FOREIGNKEY>
+            <PKFIELD>
+              <COLUMN dmtype="ivoa:string" ref="_srcid"/>
+            </PKFIELD>
             <PKFIELD>
               <COLUMN dmtype="ivoa:string" ref="_band"/>
             </PKFIELD>

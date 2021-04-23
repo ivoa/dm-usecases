@@ -1,265 +1,370 @@
+======== Parameters 
 {
-  "@dmtype": "mango:MangoObject",
-  "mango:MangoObject.associatedData": [],
-  "mango:MangoObject.identifier": {
-    "@dmtype": "ivoa:string",
-    "@ref": "col0",
-    "@value": "2CXO J104656.5+123106"
+  "#0 meta.id;meta.main": {
+    "mango:MangoObject.identifier": {
+      "id": "col0",
+      "index": 6
+    },
+    "measure_type": "mango:MangoObject.identifier"
   },
-  "mango:MangoObject.parameters": [
-    {
-      "@dmrole": "mango:MangoObject.parameters",
-      "@dmtype": "mango:Parameter",
-      "mango:Parameter.description": {
-        "@dmtype": "ivoa:string",
-        "@value": "Corrected position"
+  "#1 pos": {
+    "coord_type": "mango:stcextend.LonLatPoint",
+    "coords:SpaceFrame": {
+      "@ID": "SpaceFrame_Galactic",
+      "@dmtype": "coords:SpaceFrame",
+      "coords:SpaceFrame.equinox": {
+        "@dmtype": "coords:Epoch",
+        "@value": "NoSet"
       },
-      "mango:Parameter.measure": {
-        "@dmtype": "mango:stcextend.LonLatSkyPosition",
-        "mango:stcextend.LonLatSkyPosition.coord": {
-          "@dmtype": "mango:stcextend.LonLatPoint",
-          "coords:Coordinate.coordSys": {
-            "@dmref": "SpaceFrame_Galactic"
-          },
-          "mango:stcextend.LonLatPoint.latitude": {
-            "@dmtype": "ivoa:real",
-            "@ref": "col10",
-            "@value": 57.415827
-          },
-          "mango:stcextend.LonLatPoint.longitude": {
-            "@dmtype": "ivoa:real",
-            "@ref": "col9",
-            "@value": 233.381751
-          }
-        },
-        "meas:Measure.error": {
-          "@dmtype": "meas:Error",
-          "meas:Error.statError": {
-            "@dmtype": "meas:Symmetrical",
-            "meas:Symmetrical.radius": {
-              "@dmtype": "ivoa:RealQuantity",
-              "ivoa:Quantity.unit": {
-                "@dmtype": "ivoa:Unit",
-                "@value": "NotSet"
-              },
-              "ivoa:RealQuantity.value": {
-                "@dmtype": "ivoa:real",
-                "@value": "NotSet"
-              }
-            }
-          },
-          "meas:Error.sysError": {
-            "@dmtype": "meas:Symmetrical",
-            "meas:Symmetrical.radius": {
-              "@dmtype": "ivoa:RealQuantity",
-              "ivoa:Quantity.unit": {
-                "@dmtype": "ivoa:Unit",
-                "@value": "NotSet"
-              },
-              "ivoa:RealQuantity.value": {
-                "@dmtype": "ivoa:real",
-                "@value": "NotSet"
-              }
-            }
-          }
+      "coords:SpaceFrame.refPosition": {
+        "@dmtype": "coords:StdRefLocation",
+        "coords:StdRefLocation.position": {
+          "@dmtype": "ivoa:string",
+          "@value": "NoSet"
         }
       },
-      "mango:Parameter.semantic": {
+      "coords:SpaceFrame.spaceRefFrame": {
         "@dmtype": "ivoa:string",
-        "@value": "#position.corrected"
-      },
-      "mango:Parameter.ucd": {
-        "@dmtype": "ivoa:string",
-        "@value": "pos"
+        "@value": "Galactic"
       }
     },
-    {
-      "@dmrole": "mango:MangoObject.parameters",
-      "@dmtype": "mango:Parameter",
-      "mango:Parameter.description": {
-        "@dmtype": "ivoa:string",
-        "@value": "Aperture-corrected detection net energy flux inferred from the source region aperture, calculated by counting X-ray events; ACIS broad (0.5-7.0 keV) energy band"
+    "coosys_type": "coords:SpaceFrame",
+    "description": "Corrected position",
+    "error_type": "meas:Error",
+    "mango:stcextend.LonLatSkyPosition": {
+      "field:latitude": {
+        "id": "col10",
+        "index": 1
       },
-      "mango:Parameter.measure": {
-        "@dmtype": "mango:stcextend.Photometry",
-        "mango:stcextend.Photometry.coord": {
-          "@dmtype": "mango:stcextend.PhotometryCoord",
-          "coords:Coordinate.coordSys": {
-            "@dmref": "PhotFrame_ACISBroad"
-          },
-          "mango:stcextend.PhotometryCoord.luminosity": {
-            "@dmtype": "ivoa:real",
-            "@ref": "col15",
-            "@value": 9.1619932960268e-15
-          }
-        },
-        "meas:Measure.error": {
-          "@dmtype": "meas:Error",
-          "meas:Error.statError": {
-            "@dmtype": "meas:Symmetrical",
-            "meas:Symmetrical.radius": {
-              "@dmtype": "ivoa:RealQuantity",
-              "ivoa:Quantity.unit": {
-                "@dmtype": "ivoa:Unit",
-                "@value": "NotSet"
-              },
-              "ivoa:RealQuantity.value": {
-                "@dmtype": "ivoa:real",
-                "@value": "NotSet"
-              }
-            }
-          }
-        }
-      },
-      "mango:Parameter.semantic": {
-        "@dmtype": "ivoa:string",
-        "@value": "#flux.corrected"
-      },
-      "mango:Parameter.ucd": {
-        "@dmtype": "ivoa:string",
-        "@value": "phot.flux"
+      "field:longitude": {
+        "id": "col9",
+        "index": 0
       }
     },
-    {
-      "@dmrole": "mango:MangoObject.parameters",
-      "@dmtype": "mango:Parameter",
-      "mango:Parameter.description": {
-        "@dmtype": "ivoa:string",
-        "@value": "ACIS hard - soft energy band hardness ratio"
+    "meas:Error": {
+      "meas:Symmetrical.radius": "NotSet",
+      "unit": "NotSet"
+    },
+    "measure_type": "mango:stcextend.LonLatSkyPosition",
+    "semantic": "#position.corrected",
+    "ucd": "pos"
+  },
+  "#2 phot.flux": {
+    "coord_type": "mango:stcextend.PhotometryCoord",
+    "coosys_type": "mango:stcextend.PhotFilter",
+    "description": "Aperture-corrected detection net energy flux inferred from the source region aperture, calculated by counting X-ray events; ACIS broad (0.5-7.0 keV) energy band",
+    "error_type": "meas:Error",
+    "mango:stcextend.PhotFilter": {
+      "@ID": "PhotFrame_ACISBroad",
+      "@dmtype": "mango:stcextend.PhotFilter",
+      "mango:stcextend.PhotFilter.bandWidth": {
+        "@dmtype": "ivoa:real",
+        "@value": "7.0"
       },
-      "mango:Parameter.measure": {
-        "@dmtype": "mango:stcextend.HardnessRatio",
-        "mango:stcextend.HardnessRatio.coord": {
-          "@dmtype": "mango:stcextend.HardnessRatioCoord",
-          "coords:Coordinate.coordSys": {
-            "@dmref": "PhotFrame_ACISHRSoftHard"
-          },
-          "mango:stcextend.HardnessRatioCoord.hardnessRatio": {
-            "@dmtype": "ivoa:real",
-            "@ref": "col16",
-            "@value": -0.16489693941287
-          }
-        },
-        "meas:Measure.error": {
-          "@dmtype": "meas:Error",
-          "meas:Error.statError": {
-            "@dmtype": "meas:Symmetrical",
-            "meas:Symmetrical.radius": {
-              "@dmtype": "ivoa:RealQuantity",
-              "ivoa:Quantity.unit": {
-                "@dmtype": "ivoa:Unit",
-                "@value": "NotSet"
-              },
-              "ivoa:RealQuantity.value": {
-                "@dmtype": "ivoa:real",
-                "@value": "NotSet"
-              }
-            }
-          }
-        }
+      "mango:stcextend.PhotFilter.effectiveWavlength": {
+        "@dmtype": "ivoa:real",
+        "@value": "0.5"
       },
-      "mango:Parameter.semantic": {
+      "mango:stcextend.PhotFilter.magnitudeSystem": {
         "@dmtype": "ivoa:string",
-        "@value": "#hardnessratio.computed"
+        "@value": "Chandra"
       },
-      "mango:Parameter.ucd": {
+      "mango:stcextend.PhotFilter.name": {
         "@dmtype": "ivoa:string",
-        "@value": "phot.flux"
+        "@value": "ACIS Broad"
+      },
+      "mango:stcextend.PhotFilter.unit": {
+        "@dmtype": "ivoa:string",
+        "@value": "KeV"
+      },
+      "mango:stcextend.PhotFilter.zeroPointFlux": {
+        "@dmtype": "ivoa:real",
+        "@value": "NoSet"
       }
     },
-    {
-      "@dmrole": "mango:MangoObject.parameters",
-      "@dmtype": "mango:Parameter",
-      "mango:Parameter.description": {
-        "@dmtype": "ivoa:string",
-        "@value": "ACIS medium - soft energy band hardness ratio"
-      },
-      "mango:Parameter.measure": {
-        "@dmtype": "mango:stcextend.HardnessRatio",
-        "mango:stcextend.HardnessRatio.coord": {
-          "@dmtype": "mango:stcextend.HardnessRatioCoord",
-          "coords:Coordinate.coordSys": {
-            "@dmref": "PhotFrame_ACISHRSoftMedium"
-          },
-          "mango:stcextend.HardnessRatioCoord.hardnessRatio": {
-            "@dmtype": "ivoa:real",
-            "@ref": "col19",
-            "@value": -0.44597126795753
-          }
-        },
-        "meas:Measure.error": {
-          "@dmtype": "meas:Error",
-          "meas:Error.statError": {
-            "@dmtype": "meas:Symmetrical",
-            "meas:Symmetrical.radius": {
-              "@dmtype": "ivoa:RealQuantity",
-              "ivoa:Quantity.unit": {
-                "@dmtype": "ivoa:Unit",
-                "@value": "NotSet"
-              },
-              "ivoa:RealQuantity.value": {
-                "@dmtype": "ivoa:real",
-                "@value": "NotSet"
-              }
-            }
-          }
-        }
-      },
-      "mango:Parameter.semantic": {
-        "@dmtype": "ivoa:string",
-        "@value": "#hardnessratio.computed"
-      },
-      "mango:Parameter.ucd": {
-        "@dmtype": "ivoa:string",
-        "@value": "phot.flux"
+    "mango:stcextend.Photometry": {
+      "field:luminosity": {
+        "id": "col15",
+        "index": 2
       }
     },
-    {
-      "@dmrole": "mango:MangoObject.parameters",
-      "@dmtype": "mango:Parameter",
-      "mango:Parameter.description": {
-        "@dmtype": "ivoa:string",
-        "@value": "ACIS medium - soft energy band hardness ratio"
-      },
-      "mango:Parameter.measure": {
-        "@dmtype": "mango:stcextend.HardnessRatio",
-        "mango:stcextend.HardnessRatio.coord": {
-          "@dmtype": "mango:stcextend.HardnessRatioCoord",
-          "coords:Coordinate.coordSys": {
-            "@dmref": "PhotFrame_ACISHRMediumHard"
-          },
-          "mango:stcextend.HardnessRatioCoord.hardnessRatio": {
-            "@dmtype": "ivoa:real",
-            "@ref": "col22",
-            "@value": 0.30605871330418
-          }
+    "meas:Error": {
+      "meas:Symmetrical.radius": "NotSet",
+      "unit": "NotSet"
+    },
+    "measure_type": "mango:stcextend.Photometry",
+    "semantic": "#flux.corrected",
+    "ucd": "phot.flux"
+  },
+  "#3 phot.flux": {
+    "coord_type": "mango:stcextend.HardnessRatioCoord",
+    "coosys_type": "mango:stcextend.HRFrame",
+    "description": "ACIS hard - soft energy band hardness ratio",
+    "error_type": "meas:Error",
+    "mango:stcextend.HRFrame": {
+      "@ID": "PhotFrame_ACISHRSoftHard",
+      "@dmtype": "mango:stcextend.HRFrame",
+      "mango:stcextend.HRFrame.high": {
+        "@ID": "PhotFrame_ACISHard",
+        "@dmtype": "mango:stcextend.PhotFilter",
+        "mango:stcextend.PhotFilter.bandWidth": {
+          "@dmtype": "ivoa:real",
+          "@value": "7.0"
         },
-        "meas:Measure.error": {
-          "@dmtype": "meas:Error",
-          "meas:Error.statError": {
-            "@dmtype": "meas:Symmetrical",
-            "meas:Symmetrical.radius": {
-              "@dmtype": "ivoa:RealQuantity",
-              "ivoa:Quantity.unit": {
-                "@dmtype": "ivoa:Unit",
-                "@value": "NotSet"
-              },
-              "ivoa:RealQuantity.value": {
-                "@dmtype": "ivoa:real",
-                "@value": "NotSet"
-              }
-            }
-          }
+        "mango:stcextend.PhotFilter.effectiveWavlength": {
+          "@dmtype": "ivoa:real",
+          "@value": "2.0"
+        },
+        "mango:stcextend.PhotFilter.magnitudeSystem": {
+          "@dmtype": "ivoa:string",
+          "@value": "Chandra"
+        },
+        "mango:stcextend.PhotFilter.name": {
+          "@dmtype": "ivoa:string",
+          "@value": "ACIS Broad"
+        },
+        "mango:stcextend.PhotFilter.unit": {
+          "@dmtype": "ivoa:string",
+          "@value": "KeV"
+        },
+        "mango:stcextend.PhotFilter.zeroPointFlux": {
+          "@dmtype": "ivoa:real",
+          "@value": "NoSet"
         }
       },
-      "mango:Parameter.semantic": {
-        "@dmtype": "ivoa:string",
-        "@value": "#hardnessratio.computed"
-      },
-      "mango:Parameter.ucd": {
-        "@dmtype": "ivoa:string",
-        "@value": "phot.flux"
+      "mango:stcextend.HRFrame.low": {
+        "@ID": "PhotFrame_ACISSoft",
+        "@dmtype": "mango:stcextend.PhotFilter",
+        "mango:stcextend.PhotFilter.bandWidth": {
+          "@dmtype": "ivoa:real",
+          "@value": "1.2"
+        },
+        "mango:stcextend.PhotFilter.effectiveWavlength": {
+          "@dmtype": "ivoa:real",
+          "@value": "0.5"
+        },
+        "mango:stcextend.PhotFilter.magnitudeSystem": {
+          "@dmtype": "ivoa:string",
+          "@value": "Chandra"
+        },
+        "mango:stcextend.PhotFilter.name": {
+          "@dmtype": "ivoa:string",
+          "@value": "ACIS Soft"
+        },
+        "mango:stcextend.PhotFilter.unit": {
+          "@dmtype": "ivoa:string",
+          "@value": "KeV"
+        },
+        "mango:stcextend.PhotFilter.zeroPointFlux": {
+          "@dmtype": "ivoa:real",
+          "@value": "NoSet"
+        }
       }
-    }
+    },
+    "mango:stcextend.HardnessRatio": {
+      "field:hardnessRatio": {
+        "id": "col16",
+        "index": 3
+      }
+    },
+    "meas:Error": {
+      "meas:Symmetrical.radius": "NotSet",
+      "unit": "NotSet"
+    },
+    "measure_type": "mango:stcextend.HardnessRatio",
+    "semantic": "#hardnessratio.computed",
+    "ucd": "phot.flux"
+  },
+  "#4 phot.flux": {
+    "coord_type": "mango:stcextend.HardnessRatioCoord",
+    "coosys_type": "mango:stcextend.HRFrame",
+    "description": "ACIS medium - soft energy band hardness ratio",
+    "error_type": "meas:Error",
+    "mango:stcextend.HRFrame": {
+      "@ID": "PhotFrame_ACISHRSoftMedium",
+      "@dmtype": "mango:stcextend.HRFrame",
+      "mango:stcextend.HRFrame.high": {
+        "@ID": "PhotFrame_ACISMedium",
+        "@dmtype": "mango:stcextend.PhotFilter",
+        "mango:stcextend.PhotFilter.bandWidth": {
+          "@dmtype": "ivoa:real",
+          "@value": "2.0"
+        },
+        "mango:stcextend.PhotFilter.effectiveWavlength": {
+          "@dmtype": "ivoa:real",
+          "@value": "1.2"
+        },
+        "mango:stcextend.PhotFilter.magnitudeSystem": {
+          "@dmtype": "ivoa:string",
+          "@value": "Chandra"
+        },
+        "mango:stcextend.PhotFilter.name": {
+          "@dmtype": "ivoa:string",
+          "@value": "ACIS Medium"
+        },
+        "mango:stcextend.PhotFilter.unit": {
+          "@dmtype": "ivoa:string",
+          "@value": "KeV"
+        },
+        "mango:stcextend.PhotFilter.zeroPointFlux": {
+          "@dmtype": "ivoa:real",
+          "@value": "NoSet"
+        }
+      },
+      "mango:stcextend.HRFrame.low": {
+        "@ID": "PhotFrame_ACISSoft",
+        "@dmtype": "mango:stcextend.PhotFilter",
+        "mango:stcextend.PhotFilter.bandWidth": {
+          "@dmtype": "ivoa:real",
+          "@value": "1.2"
+        },
+        "mango:stcextend.PhotFilter.effectiveWavlength": {
+          "@dmtype": "ivoa:real",
+          "@value": "0.5"
+        },
+        "mango:stcextend.PhotFilter.magnitudeSystem": {
+          "@dmtype": "ivoa:string",
+          "@value": "Chandra"
+        },
+        "mango:stcextend.PhotFilter.name": {
+          "@dmtype": "ivoa:string",
+          "@value": "ACIS Soft"
+        },
+        "mango:stcextend.PhotFilter.unit": {
+          "@dmtype": "ivoa:string",
+          "@value": "KeV"
+        },
+        "mango:stcextend.PhotFilter.zeroPointFlux": {
+          "@dmtype": "ivoa:real",
+          "@value": "NoSet"
+        }
+      }
+    },
+    "mango:stcextend.HardnessRatio": {
+      "field:hardnessRatio": {
+        "id": "col19",
+        "index": 4
+      }
+    },
+    "meas:Error": {
+      "meas:Symmetrical.radius": "NotSet",
+      "unit": "NotSet"
+    },
+    "measure_type": "mango:stcextend.HardnessRatio",
+    "semantic": "#hardnessratio.computed",
+    "ucd": "phot.flux"
+  },
+  "#5 phot.flux": {
+    "coord_type": "mango:stcextend.HardnessRatioCoord",
+    "coosys_type": "mango:stcextend.HRFrame",
+    "description": "ACIS medium - soft energy band hardness ratio",
+    "error_type": "meas:Error",
+    "mango:stcextend.HRFrame": {
+      "@ID": "PhotFrame_ACISHRMediumHard",
+      "@dmtype": "mango:stcextend.HRFrame",
+      "mango:stcextend.HRFrame.high": {
+        "@ID": "PhotFrame_ACISHard",
+        "@dmtype": "mango:stcextend.PhotFilter",
+        "mango:stcextend.PhotFilter.bandWidth": {
+          "@dmtype": "ivoa:real",
+          "@value": "7.0"
+        },
+        "mango:stcextend.PhotFilter.effectiveWavlength": {
+          "@dmtype": "ivoa:real",
+          "@value": "2.0"
+        },
+        "mango:stcextend.PhotFilter.magnitudeSystem": {
+          "@dmtype": "ivoa:string",
+          "@value": "Chandra"
+        },
+        "mango:stcextend.PhotFilter.name": {
+          "@dmtype": "ivoa:string",
+          "@value": "ACIS Broad"
+        },
+        "mango:stcextend.PhotFilter.unit": {
+          "@dmtype": "ivoa:string",
+          "@value": "KeV"
+        },
+        "mango:stcextend.PhotFilter.zeroPointFlux": {
+          "@dmtype": "ivoa:real",
+          "@value": "NoSet"
+        }
+      },
+      "mango:stcextend.HRFrame.low": {
+        "@ID": "PhotFrame_ACISMedium",
+        "@dmtype": "mango:stcextend.PhotFilter",
+        "mango:stcextend.PhotFilter.bandWidth": {
+          "@dmtype": "ivoa:real",
+          "@value": "2.0"
+        },
+        "mango:stcextend.PhotFilter.effectiveWavlength": {
+          "@dmtype": "ivoa:real",
+          "@value": "1.2"
+        },
+        "mango:stcextend.PhotFilter.magnitudeSystem": {
+          "@dmtype": "ivoa:string",
+          "@value": "Chandra"
+        },
+        "mango:stcextend.PhotFilter.name": {
+          "@dmtype": "ivoa:string",
+          "@value": "ACIS Medium"
+        },
+        "mango:stcextend.PhotFilter.unit": {
+          "@dmtype": "ivoa:string",
+          "@value": "KeV"
+        },
+        "mango:stcextend.PhotFilter.zeroPointFlux": {
+          "@dmtype": "ivoa:real",
+          "@value": "NoSet"
+        }
+      }
+    },
+    "mango:stcextend.HardnessRatio": {
+      "field:hardnessRatio": {
+        "id": "col22",
+        "index": 5
+      }
+    },
+    "meas:Error": {
+      "meas:Symmetrical.radius": "NotSet",
+      "unit": "NotSet"
+    },
+    "measure_type": "mango:stcextend.HardnessRatio",
+    "semantic": "#hardnessratio.computed",
+    "ucd": "phot.flux"
+  }
+}
+======== Associated data 
+{}
+======== 1st row data 
+{
+  "data": [
+    [
+      "2CXO J104656.5+123106",
+      233.381751,
+      57.415827,
+      1.7599881487057e-14,
+      -0.23360399750156,
+      -0.1211742660837,
+      -0.10868207370394
+    ]
+  ],
+  "head": [
+    "mango:MangoObject.identifier",
+    "field:longitude [#1 pos]",
+    "field:latitude [#1 pos]",
+    "field:luminosity [#2 phot.flux]",
+    "field:hardnessRatio [#3 phot.flux]",
+    "field:hardnessRatio [#4 phot.flux]",
+    "field:hardnessRatio [#5 phot.flux]"
+  ],
+  "selected_index": [
+    6,
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
   ]
 }

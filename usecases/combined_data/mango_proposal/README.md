@@ -22,7 +22,20 @@
 
 The demo client (`ModelInstanceInVot/python_workflow/python/client/demo/4xmm_litewithsp.py`) can generate one JSON serialization for each data row. These MANGO instance can be processed as dictionaries by any language. 
         
-`4xmm_litewithsp.mangoinstance.json` contains that serialization for the first row
-- Source parameters are in the `mango:MangoObject.parameters` block of the instance.
-- Spectra are in the `mango:MangoObject.associatedData` block of the instance.
-- This instance has been generated with the `resolve_refs` flag, the frame instances are copied into the row instance. 
+The client output is in  `4xmm_litewithsp.mangoinstance.josn`      
+```python
+
+    mango_browser = MangoBrowser(votable_path) 
+    
+    mango_parameters = mango_browser.get_parameters()
+    print("======== Parameters ")
+    DictUtils.print_pretty_json(mango_parameters)
+    
+    associated_data = mango_browser.get_associated_data()
+    print("======== Associated data ")
+    DictUtils.print_pretty_json(associated_data)
+    
+    print("======== 1st row data ")
+    mango_data = mango_browser.get_data()
+    DictUtils.print_pretty_json(mango_data)
+  ```

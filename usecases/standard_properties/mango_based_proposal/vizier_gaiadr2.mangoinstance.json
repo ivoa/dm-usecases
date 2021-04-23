@@ -1,391 +1,272 @@
+======== Parameters 
 {
-  "@dmtype": "mango:MangoObject",
-  "mango:MangoObject.associatedData": [],
-  "mango:MangoObject.identifier": {
-    "@dmtype": "ivoa:string",
-    "@ref": "Source",
-    "@value": 117548960702080
+  "#0 meta.id;meta.main": {
+    "mango:MangoObject.identifier": {
+      "id": "Source",
+      "index": 15
+    },
+    "measure_type": "mango:MangoObject.identifier"
   },
-  "mango:MangoObject.parameters": [
-    {
-      "@dmrole": "mango:MangoObject.parameters",
-      "@dmtype": "mango:Parameter",
-      "mango:Parameter.description": {
+  "#1 pos.eq;meta.main": {
+    "coord_type": null,
+    "coords:Point": {
+      "field:value": {
+        "id": "DE_ICRS",
+        "index": 1
+      },
+      "unit": "deg"
+    },
+    "description": "calibrated position",
+    "measure_type": "coords:Point",
+    "semantic": "#position.calibrated",
+    "ucd": "pos.eq;meta.main"
+  },
+  "#2 pos.pm": {
+    "coord_type": "coords:PhysicalCoordinate",
+    "description": "Proper Motion",
+    "error_type": "meas:Error",
+    "meas:Error": {
+      "#0 field:meas:Ellipse.semiAxis": {
+        "id": "e_pmRA",
+        "index": 6
+      },
+      "#0 unit": "mas/y",
+      "#1 field:meas:Ellipse.semiAxis": {
+        "id": "e_pmDE",
+        "index": 7
+      },
+      "#1 unit": "mas/y",
+      "meas:Ellipse.posAngle": "0.0",
+      "unit": "deg"
+    },
+    "meas:ProperMotion": {
+      "field:meas:ProperMotion.lat": {
+        "id": "pmDE",
+        "index": 5
+      },
+      "field:meas:ProperMotion.lon": {
+        "id": "pmRA",
+        "index": 4
+      },
+      "unit": "mas/y"
+    },
+    "measure_type": "meas:ProperMotion",
+    "semantic": "#propermotion",
+    "ucd": "pos.pm"
+  },
+  "#3 phot.mag;stat.mean;em.opt": {
+    "coord_type": "mango:stcextend.PhotometryCoord",
+    "coosys_type": "mango:stcextend.PhotFilter",
+    "description": "Magnitude in G band",
+    "error_type": "meas:Error",
+    "mango:stcextend.PhotFilter": {
+      "@ID": "PhotFrame_gaiaG",
+      "@dmtype": "mango:stcextend.PhotFilter",
+      "mango:stcextend.PhotFilter.bandWidth": {
+        "@dmtype": "ivoa:real",
+        "@value": "4578.32"
+      },
+      "mango:stcextend.PhotFilter.effectiveWavlength": {
+        "@dmtype": "ivoa:real",
+        "@value": "6246.77"
+      },
+      "mango:stcextend.PhotFilter.magnitudeSystem": {
         "@dmtype": "ivoa:string",
-        "@value": "calibrated position"
+        "@value": "Vega"
       },
-      "mango:Parameter.measure": {
-        "@dmtype": "coords:Point",
-        "coords:Coordinate.coordSys": {
-          "@dmref": "SpaceFrame_ICRSSpherical"
-        },
-        "coords:Point.axis1": {
-          "@dmtype": "ivoa:RealQuantity",
-          "ivoa:Quantity.unit": {
-            "@dmtype": "ivoa:Unit",
-            "@value": "deg"
-          },
-          "ivoa:RealQuantity.value": {
-            "@dmtype": "ivoa:real",
-            "@ref": "RA_ICRS",
-            "@value": 45.32650522484
-          }
-        },
-        "coords:Point.axis2": {
-          "@dmtype": "ivoa:RealQuantity",
-          "ivoa:Quantity.unit": {
-            "@dmtype": "ivoa:Unit",
-            "@value": "deg"
-          },
-          "ivoa:RealQuantity.value": {
-            "@dmtype": "ivoa:real",
-            "@ref": "DE_ICRS",
-            "@value": 0.91251673336
-          }
-        }
-      },
-      "mango:Parameter.semantic": {
+      "mango:stcextend.PhotFilter.name": {
         "@dmtype": "ivoa:string",
-        "@value": "#position.calibrated"
+        "@value": "GAIA/GAIA2r.G"
       },
-      "mango:Parameter.ucd": {
+      "mango:stcextend.PhotFilter.unit": {
         "@dmtype": "ivoa:string",
-        "@value": "pos.eq;meta.main"
+        "@value": "Angstrom"
       },
-      "meas:Measure.error": {
-        "@dmtype": "meas:Error",
-        "meas:Error.statError": {
-          "@dmtype": "meas:Ellipse",
-          "meas:Ellipse.posAngle": {
-            "@dmtype": "ivoa:RealQuantity",
-            "ivoa:Quantity.unit": {
-              "@dmtype": "ivoa:Unit",
-              "@value": "deg"
-            },
-            "ivoa:RealQuantity.value": {
-              "@dmtype": "ivoa:real",
-              "@value": "0.0"
-            }
-          },
-          "meas:Ellipse.semiAxis": [
-            {
-              "@dmrole": "meas:Ellipse.semiAxis",
-              "@dmtype": "ivoa:RealQuantity",
-              "ivoa:Quantity.unit": {
-                "@dmtype": "ivoa:Unit",
-                "@value": "mas"
-              },
-              "ivoa:RealQuantity.value": {
-                "@dmtype": "ivoa:real",
-                "@ref": "e_RA_ICRS",
-                "@value": 0.2236
-              }
-            },
-            {
-              "@dmrole": "meas:Ellipse.semiAxis",
-              "@dmtype": "ivoa:RealQuantity",
-              "ivoa:Quantity.unit": {
-                "@dmtype": "ivoa:Unit",
-                "@value": "mas"
-              },
-              "ivoa:RealQuantity.value": {
-                "@dmtype": "ivoa:real",
-                "@ref": "e_DE_ICRS",
-                "@value": 0.193
-              }
-            }
-          ]
-        }
+      "mango:stcextend.PhotFilter.zeroPointFlux": {
+        "@dmtype": "ivoa:real",
+        "@value": "2.49524e-9"
       }
     },
-    {
-      "@dmrole": "mango:MangoObject.parameters",
-      "@dmtype": "mango:Parameter",
-      "mango:Parameter.description": {
-        "@dmtype": "ivoa:string",
-        "@value": "Proper Motion"
-      },
-      "mango:Parameter.measure": {
-        "@dmtype": "meas:ProperMotion",
-        "meas:Measure.error": {
-          "@dmtype": "meas:Error",
-          "meas:Error.statError": {
-            "@dmtype": "Ellipse",
-            "meas:Ellipse.posAngle": {
-              "@dmtype": "ivoa:RealQuantity",
-              "ivoa:Quantity.unit": {
-                "@dmtype": "ivoa:Unit",
-                "@value": "NotSet"
-              },
-              "ivoa:RealQuantity.value": {
-                "@dmtype": "ivoa:real",
-                "@value": "0.0"
-              }
-            },
-            "meas:Ellipse.semiAxis": [
-              {
-                "@dmrole": "meas:Ellipse.semiAxis",
-                "@dmtype": "ivoa:RealQuantity",
-                "ivoa:Quantity.unit": {
-                  "@dmtype": "ivoa:Unit",
-                  "@value": "mas/y"
-                },
-                "ivoa:RealQuantity.value": {
-                  "@dmtype": "ivoa:real",
-                  "@ref": "e_pmRA",
-                  "@value": 0.5189999938011169
-                }
-              },
-              {
-                "@dmrole": "meas:Ellipse.semiAxis",
-                "@dmtype": "ivoa:RealQuantity",
-                "ivoa:Quantity.unit": {
-                  "@dmtype": "ivoa:Unit",
-                  "@value": "mas/y"
-                },
-                "ivoa:RealQuantity.value": {
-                  "@dmtype": "ivoa:real",
-                  "@ref": "e_pmDE",
-                  "@value": 0.4059999883174896
-                }
-              }
-            ]
-          }
-        },
-        "meas:ProperMotion.lat": {
-          "@dmtype": "coords:PhysicalCoordinate",
-          "coords:PhysicalCoordinate.cval": {
-            "@dmtype": "ivoa:RealQuantity",
-            "ivoa:Quantity.unit": {
-              "@dmtype": "ivoa:Unit",
-              "@value": "mas/y"
-            },
-            "ivoa:RealQuantity.value": {
-              "@dmtype": "ivoa:real",
-              "@ref": "pmDE",
-              "@value": -2.737
-            }
-          }
-        },
-        "meas:ProperMotion.lon": {
-          "@dmtype": "coords:PhysicalCoordinate",
-          "coords:PhysicalCoordinate.cval": {
-            "@dmtype": "ivoa:RealQuantity",
-            "ivoa:Quantity.unit": {
-              "@dmtype": "ivoa:Unit",
-              "@value": "mas/y"
-            },
-            "ivoa:RealQuantity.value": {
-              "@dmtype": "ivoa:real",
-              "@ref": "pmRA",
-              "@value": -4.607
-            }
-          }
-        }
-      },
-      "mango:Parameter.semantic": {
-        "@dmtype": "ivoa:string",
-        "@value": "#propermotion"
-      },
-      "mango:Parameter.ucd": {
-        "@dmtype": "ivoa:string",
-        "@value": "pos.pm"
+    "mango:stcextend.Photometry": {
+      "field:luminosity": {
+        "id": "Gmag",
+        "index": 8
       }
     },
-    {
-      "@dmrole": "mango:MangoObject.parameters",
-      "@dmtype": "mango:Parameter",
-      "mango:Parameter.description": {
-        "@dmtype": "ivoa:string",
-        "@value": "Magnitude in G band"
+    "meas:Error": {
+      "field:meas:Symmetrical.radius": {
+        "id": "e_Gmag",
+        "index": 9
       },
-      "mango:Parameter.measure": {
-        "@dmtype": "mango:stcextend.Photometry",
-        "mango:stcextend.Photometry.coord": {
-          "@dmtype": "mango:stcextend.PhotometryCoord",
-          "coords:Coordinate.coordSys": {
-            "@dmref": "PhotFrame_gaiaG"
-          },
-          "mango:stcextend.PhotometryCoord.luminosity": {
-            "@dmtype": "ivoa:real",
-            "@ref": "Gmag",
-            "@value": 18.7965
-          }
-        },
-        "meas:Measure.error": {
-          "@dmtype": "meas:Error",
-          "meas:Error.statError": {
-            "@dmtype": "meas:Symmetrical",
-            "meas:Symmetrical.radius": {
-              "@dmtype": "ivoa:RealQuantity",
-              "ivoa:Quantity.unit": {
-                "@dmtype": "ivoa:Unit",
-                "@value": "NotSet"
-              },
-              "ivoa:RealQuantity.value": {
-                "@dmtype": "ivoa:real",
-                "@ref": "e_Gmag",
-                "@value": 0.0038
-              }
-            }
-          }
-        }
+      "unit": "NotSet"
+    },
+    "measure_type": "mango:stcextend.Photometry",
+    "semantic": "#magnitude",
+    "ucd": "phot.mag;stat.mean;em.opt"
+  },
+  "#4 phot.mag;stat.mean;em.opt": {
+    "coord_type": "mango:stcextend.PhotometryCoord",
+    "coosys_type": "mango:stcextend.PhotFilter",
+    "description": "Magnitude in BP band",
+    "error_type": "meas:Error",
+    "mango:stcextend.PhotFilter": {
+      "@ID": "PhotFrame_gaiaBP",
+      "@dmtype": "mango:stcextend.PhotFilter",
+      "mango:stcextend.PhotFilter.bandWidth": {
+        "@dmtype": "ivoa:real",
+        "@value": "2279.45"
       },
-      "mango:Parameter.semantic": {
-        "@dmtype": "ivoa:string",
-        "@value": "#magnitude"
+      "mango:stcextend.PhotFilter.effectiveWavlength": {
+        "@dmtype": "ivoa:real",
+        "@value": "5278.58"
       },
-      "mango:Parameter.ucd": {
+      "mango:stcextend.PhotFilter.magnitudeSystem": {
         "@dmtype": "ivoa:string",
-        "@value": "phot.mag;stat.mean;em.opt"
+        "@value": "Vega"
+      },
+      "mango:stcextend.PhotFilter.name": {
+        "@dmtype": "ivoa:string",
+        "@value": "GAIA/GAIA2r.Gbp"
+      },
+      "mango:stcextend.PhotFilter.unit": {
+        "@dmtype": "ivoa:string",
+        "@value": "Angstrom"
+      },
+      "mango:stcextend.PhotFilter.zeroPointFlux": {
+        "@dmtype": "ivoa:real",
+        "@value": "4.03528e-9"
       }
     },
-    {
-      "@dmrole": "mango:MangoObject.parameters",
-      "@dmtype": "mango:Parameter",
-      "mango:Parameter.description": {
-        "@dmtype": "ivoa:string",
-        "@value": "Magnitude in BP band"
-      },
-      "mango:Parameter.measure": {
-        "@dmtype": "mango:stcextend.Photometry",
-        "mango:stcextend.Photometry.coord": {
-          "@dmtype": "mango:stcextend.PhotometryCoord",
-          "coords:Coordinate.coordSys": {
-            "@dmref": "PhotFrame_gaiaBP"
-          },
-          "mango:stcextend.PhotometryCoord.luminosity": {
-            "@dmtype": "ivoa:real",
-            "@ref": "BPmag",
-            "@value": 20.3723
-          }
-        },
-        "meas:Measure.error": {
-          "@dmtype": "meas:Error",
-          "meas:Error.statError": {
-            "@dmtype": "meas:Symmetrical",
-            "meas:Symmetrical.radius": {
-              "@dmtype": "ivoa:RealQuantity",
-              "ivoa:Quantity.unit": {
-                "@dmtype": "ivoa:Unit",
-                "@value": "NotSet"
-              },
-              "ivoa:RealQuantity.value": {
-                "@dmtype": "ivoa:real",
-                "@ref": "e_BPmag",
-                "@value": 0.0711
-              }
-            }
-          }
-        }
-      },
-      "mango:Parameter.semantic": {
-        "@dmtype": "ivoa:string",
-        "@value": "#magnitude"
-      },
-      "mango:Parameter.ucd": {
-        "@dmtype": "ivoa:string",
-        "@value": "phot.mag;stat.mean;em.opt"
+    "mango:stcextend.Photometry": {
+      "field:luminosity": {
+        "id": "BPmag",
+        "index": 10
       }
     },
-    {
-      "@dmrole": "mango:MangoObject.parameters",
-      "@dmtype": "mango:Parameter",
-      "mango:Parameter.description": {
-        "@dmtype": "ivoa:string",
-        "@value": "Magnitude in RP band"
+    "meas:Error": {
+      "field:meas:Symmetrical.radius": {
+        "id": "e_BPmag",
+        "index": 11
       },
-      "mango:Parameter.measure": {
-        "@dmtype": "mango:stcextend.Photometry",
-        "mango:stcextend.Photometry.coord": {
-          "@dmtype": "mango:stcextend.PhotometryCoord",
-          "coords:Coordinate.coordSys": {
-            "@dmref": "PhotFrame_gaiaRP"
-          },
-          "mango:stcextend.PhotometryCoord.luminosity": {
-            "@dmtype": "ivoa:real",
-            "@ref": "RPmag",
-            "@value": 17.5317
-          }
-        },
-        "meas:Measure.error": {
-          "@dmtype": "meas:Error",
-          "meas:Error.statError": {
-            "@dmtype": "meas:Symmetrical",
-            "meas:Symmetrical.radius": {
-              "@dmtype": "ivoa:RealQuantity",
-              "ivoa:Quantity.unit": {
-                "@dmtype": "ivoa:Unit",
-                "@value": "NotSet"
-              },
-              "ivoa:RealQuantity.value": {
-                "@dmtype": "ivoa:real",
-                "@ref": "e_RPmag",
-                "@value": 0.0124
-              }
-            }
-          }
-        }
+      "unit": "NotSet"
+    },
+    "measure_type": "mango:stcextend.Photometry",
+    "semantic": "#magnitude",
+    "ucd": "phot.mag;stat.mean;em.opt"
+  },
+  "#5 phot.mag;stat.mean;em.opt": {
+    "coord_type": "mango:stcextend.PhotometryCoord",
+    "coosys_type": "mango:stcextend.PhotFilter",
+    "description": "Magnitude in RP band",
+    "error_type": "meas:Error",
+    "mango:stcextend.PhotFilter": {
+      "@ID": "PhotFrame_gaiaRP",
+      "@dmtype": "mango:stcextend.PhotFilter",
+      "mango:stcextend.PhotFilter.bandWidth": {
+        "@dmtype": "ivoa:real",
+        "@value": "2943.72"
       },
-      "mango:Parameter.semantic": {
-        "@dmtype": "ivoa:string",
-        "@value": "#magnitude"
+      "mango:stcextend.PhotFilter.effectiveWavlength": {
+        "@dmtype": "ivoa:real",
+        "@value": "7740.87"
       },
-      "mango:Parameter.ucd": {
+      "mango:stcextend.PhotFilter.magnitudeSystem": {
         "@dmtype": "ivoa:string",
-        "@value": "phot.mag;stat.mean;em.opt"
+        "@value": "Vega"
+      },
+      "mango:stcextend.PhotFilter.name": {
+        "@dmtype": "ivoa:string",
+        "@value": "GAIA/GAIA2r.Grp"
+      },
+      "mango:stcextend.PhotFilter.unit": {
+        "@dmtype": "ivoa:string",
+        "@value": "Angstrom"
+      },
+      "mango:stcextend.PhotFilter.zeroPointFlux": {
+        "@dmtype": "ivoa:real",
+        "@value": "1.29363e-9"
       }
     },
-    {
-      "@dmrole": "mango:MangoObject.parameters",
-      "@dmtype": "mango:Parameter",
-      "mango:Parameter.description": {
-        "@dmtype": "ivoa:string",
-        "@value": "Parallax"
-      },
-      "mango:Parameter.measure": {
-        "@dmtype": "meas:GenericMeasure",
-        "meas:GenericMeasure.coord": {
-          "@dmtype": "coords:PhysicalCoordinate",
-          "coords:PhysicalCoordinate.cval": {
-            "@dmtype": "ivoa:RealQuantity",
-            "ivoa:RealQuantity.unit": {
-              "@dmtype": "ivoa:Unit",
-              "@value": "mas"
-            },
-            "ivoa:RealQuantity.value": {
-              "@dmtype": "ivoa:real",
-              "@ref": "Plx",
-              "@value": 2.3129
-            }
-          },
-          "meas:Measure.error": {
-            "@dmtype": "meas:Error",
-            "meas:Error.statError": {
-              "@dmtype": "meas:Symmetrical",
-              "meas:Symmetrical.radius": {
-                "@dmtype": "ivoa:RealQuantity",
-                "ivoa:Quantity.unit": {
-                  "@dmtype": "ivoa:Unit",
-                  "@value": "NotSet"
-                },
-                "ivoa:RealQuantity.value": {
-                  "@dmtype": "ivoa:real",
-                  "@value": "NotSet"
-                }
-              }
-            }
-          }
-        }
-      },
-      "mango:Parameter.semantic": {
-        "@dmtype": "ivoa:string",
-        "@value": "#parallax"
-      },
-      "mango:Parameter.ucd": {
-        "@dmtype": "ivoa:string",
-        "@value": "pos.parallax"
+    "mango:stcextend.Photometry": {
+      "field:luminosity": {
+        "id": "RPmag",
+        "index": 12
       }
-    }
+    },
+    "meas:Error": {
+      "field:meas:Symmetrical.radius": {
+        "id": "e_RPmag",
+        "index": 13
+      },
+      "unit": "NotSet"
+    },
+    "measure_type": "mango:stcextend.Photometry",
+    "semantic": "#magnitude",
+    "ucd": "phot.mag;stat.mean;em.opt"
+  },
+  "#6 pos.parallax": {
+    "coord_type": "coords:PhysicalCoordinate",
+    "description": "Parallax",
+    "meas:GenericMeasure": {
+      "field:meas:GenericMeasure.coord": {
+        "id": "Plx",
+        "index": 14
+      }
+    },
+    "measure_type": "meas:GenericMeasure",
+    "semantic": "#parallax",
+    "ucd": "pos.parallax"
+  }
+}
+======== Associated data 
+{}
+======== 1st row data 
+{
+  "data": [
+    [
+      117510305781248,
+      0.90868213178,
+      8.354,
+      -4.737,
+      1.159000039100647,
+      1.0509999990463257,
+      19.8354,
+      0.007,
+      21.3162,
+      0.168,
+      18.5249,
+      0.0231,
+      1.7032
+    ]
+  ],
+  "head": [
+    "mango:MangoObject.identifier",
+    "field:value [#1 pos.eq;meta.main]",
+    "field:meas:ProperMotion.lon [#2 pos.pm]",
+    "field:meas:ProperMotion.lat [#2 pos.pm]",
+    "error: #0 field:meas:Ellipse.semiAxis [#2 pos.pm]",
+    "error: #1 field:meas:Ellipse.semiAxis [#2 pos.pm]",
+    "field:luminosity [#3 phot.mag;stat.mean;em.opt]",
+    "error: field:meas:Symmetrical.radius [#3 phot.mag;stat.mean;em.opt]",
+    "field:luminosity [#4 phot.mag;stat.mean;em.opt]",
+    "error: field:meas:Symmetrical.radius [#4 phot.mag;stat.mean;em.opt]",
+    "field:luminosity [#5 phot.mag;stat.mean;em.opt]",
+    "error: field:meas:Symmetrical.radius [#5 phot.mag;stat.mean;em.opt]",
+    "field:meas:GenericMeasure.coord [#6 pos.parallax]"
+  ],
+  "selected_index": [
+    15,
+    1,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
   ]
 }

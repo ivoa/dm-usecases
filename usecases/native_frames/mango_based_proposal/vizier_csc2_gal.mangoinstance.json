@@ -1,143 +1,112 @@
+======== Parameters 
 {
-  "@dmtype": "mango:MangoObject",
-  "mango:MangoObject.associatedData": [],
-  "mango:MangoObject.identifier": {
-    "@dmtype": "ivoa:string",
-    "@ref": "2CXO",
-    "@value": "J165643.7-424532"
+  "#0 meta.id;meta.main": {
+    "mango:MangoObject.identifier": {
+      "id": "2CXO",
+      "index": 4
+    },
+    "measure_type": "mango:MangoObject.identifier"
   },
-  "mango:MangoObject.parameters": [
-    {
-      "@dmrole": "mango:MangoObject.parameters",
-      "@dmtype": "mango:Parameter",
-      "mango:Parameter.description": {
-        "@dmtype": "ivoa:string",
-        "@value": "position"
+  "#1 pos.eq;meta.main": {
+    "coord_type": "mango:stcextend.LonLatPoint",
+    "coords:SpaceFrame": {
+      "@ID": "SpaceFrame_ICRS",
+      "@dmtype": "coords:SpaceFrame",
+      "coords:SpaceFrame.equinox": {
+        "@dmtype": "coords:Epoch",
+        "@value": "NoSet"
       },
-      "mango:Parameter.measure": {
-        "@dmtype": "mango:stcextend.LonLatSkyPosition",
-        "mango:stcextend.LonLatSkyPosition.coord": {
-          "@dmtype": "mango:stcextend.LonLatPoint",
-          "coords:Coordinate.coordSys": {
-            "@dmref": "SpaceFrame_ICRS"
-          },
-          "mango:stcextend.LonLatPoint.latitude": {
-            "@dmtype": "ivoa:real",
-            "@ref": "DEICRS",
-            "@value": -42.7589867
-          },
-          "mango:stcextend.LonLatPoint.longitude": {
-            "@dmtype": "ivoa:real",
-            "@ref": "RAICRS",
-            "@value": 254.182202
-          }
-        },
-        "meas:Measure.error": {
-          "@dmtype": "meas:Error",
-          "meas:Error.statError": {
-            "@dmtype": "meas:Symmetrical",
-            "meas:Symmetrical.radius": {
-              "@dmtype": "ivoa:RealQuantity",
-              "ivoa:Quantity.unit": {
-                "@dmtype": "ivoa:Unit",
-                "@value": "NotSet"
-              },
-              "ivoa:RealQuantity.value": {
-                "@dmtype": "ivoa:real",
-                "@value": "NotSet"
-              }
-            }
-          },
-          "meas:Error.sysError": {
-            "@dmtype": "meas:Symmetrical",
-            "meas:Symmetrical.radius": {
-              "@dmtype": "ivoa:RealQuantity",
-              "ivoa:Quantity.unit": {
-                "@dmtype": "ivoa:Unit",
-                "@value": "NotSet"
-              },
-              "ivoa:RealQuantity.value": {
-                "@dmtype": "ivoa:real",
-                "@value": "NotSet"
-              }
-            }
-          }
+      "coords:SpaceFrame.refPosition": {
+        "@dmtype": "coords:StdRefLocation",
+        "coords:StdRefLocation.position": {
+          "@dmtype": "ivoa:string",
+          "@value": "NoSet"
         }
       },
-      "mango:Parameter.semantic": {
+      "coords:SpaceFrame.spaceRefFrame": {
         "@dmtype": "ivoa:string",
-        "@value": "#position"
-      },
-      "mango:Parameter.ucd": {
-        "@dmtype": "ivoa:string",
-        "@value": "pos.eq;meta.main"
+        "@value": "ICRS"
       }
     },
-    {
-      "@dmrole": "mango:MangoObject.parameters",
-      "@dmtype": "mango:Parameter",
-      "mango:Parameter.description": {
-        "@dmtype": "ivoa:string",
-        "@value": "position"
+    "coosys_type": "coords:SpaceFrame",
+    "description": "position",
+    "mango:stcextend.LonLatSkyPosition": {
+      "field:latitude": {
+        "id": "DEICRS",
+        "index": 1
       },
-      "mango:Parameter.measure": {
-        "@dmtype": "mango:stcextend.LonLatSkyPosition",
-        "mango:stcextend.LonLatSkyPosition.coord": {
-          "@dmtype": "mango:stcextend.LonLatPoint",
-          "coords:Coordinate.coordSys": {
-            "@dmref": "SpaceFrame_Galactic"
-          },
-          "mango:stcextend.LonLatPoint.latitude": {
-            "@dmtype": "ivoa:real",
-            "@ref": "GLAT",
-            "@value": 343.035
-          },
-          "mango:stcextend.LonLatPoint.longitude": {
-            "@dmtype": "ivoa:real",
-            "@ref": "GLON",
-            "@value": 0.229009
-          }
-        },
-        "meas:Measure.error": {
-          "@dmtype": "meas:Error",
-          "meas:Error.statError": {
-            "@dmtype": "meas:Symmetrical",
-            "meas:Symmetrical.radius": {
-              "@dmtype": "ivoa:RealQuantity",
-              "ivoa:Quantity.unit": {
-                "@dmtype": "ivoa:Unit",
-                "@value": "NotSet"
-              },
-              "ivoa:RealQuantity.value": {
-                "@dmtype": "ivoa:real",
-                "@value": "NotSet"
-              }
-            }
-          },
-          "meas:Error.sysError": {
-            "@dmtype": "meas:Symmetrical",
-            "meas:Symmetrical.radius": {
-              "@dmtype": "ivoa:RealQuantity",
-              "ivoa:Quantity.unit": {
-                "@dmtype": "ivoa:Unit",
-                "@value": "NotSet"
-              },
-              "ivoa:RealQuantity.value": {
-                "@dmtype": "ivoa:real",
-                "@value": "NotSet"
-              }
-            }
-          }
+      "field:longitude": {
+        "id": "RAICRS",
+        "index": 0
+      }
+    },
+    "measure_type": "mango:stcextend.LonLatSkyPosition",
+    "semantic": "#position",
+    "ucd": "pos.eq;meta.main"
+  },
+  "#2 pos.eq": {
+    "coord_type": "mango:stcextend.LonLatPoint",
+    "coords:SpaceFrame": {
+      "@ID": "SpaceFrame_Galactic",
+      "@dmtype": "coords:SpaceFrame",
+      "coords:SpaceFrame.equinox": {
+        "@dmtype": "coords:Epoch",
+        "@value": "NoSet"
+      },
+      "coords:SpaceFrame.refPosition": {
+        "@dmtype": "coords:StdRefLocation",
+        "coords:StdRefLocation.position": {
+          "@dmtype": "ivoa:string",
+          "@value": "NoSet"
         }
       },
-      "mango:Parameter.semantic": {
+      "coords:SpaceFrame.spaceRefFrame": {
         "@dmtype": "ivoa:string",
-        "@value": "#position"
-      },
-      "mango:Parameter.ucd": {
-        "@dmtype": "ivoa:string",
-        "@value": "pos.eq"
+        "@value": "Galactic"
       }
-    }
+    },
+    "coosys_type": "coords:SpaceFrame",
+    "description": "position",
+    "mango:stcextend.LonLatSkyPosition": {
+      "field:latitude": {
+        "id": "GLAT",
+        "index": 3
+      },
+      "field:longitude": {
+        "id": "GLON",
+        "index": 2
+      }
+    },
+    "measure_type": "mango:stcextend.LonLatSkyPosition",
+    "semantic": "#position",
+    "ucd": "pos.eq"
+  }
+}
+======== Associated data 
+{}
+======== 1st row data 
+{
+  "data": [
+    [
+      "J165541.6-424937",
+      253.923544,
+      -42.8271581,
+      0.33436,
+      342.863
+    ]
+  ],
+  "head": [
+    "mango:MangoObject.identifier",
+    "field:longitude (pos.eq;meta.main #position)",
+    "field:latitude (pos.eq;meta.main #position)",
+    "field:longitude (pos.eq #position)",
+    "field:latitude (pos.eq #position)"
+  ],
+  "selected_index": [
+    4,
+    0,
+    1,
+    2,
+    3
   ]
 }

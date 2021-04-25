@@ -29,7 +29,7 @@
 | identity             |  S I              |             | S I                |                    |  S I             |
 | native_frames        |  S I              |             | S I                |                    |  S I             |
 | simple_position      |  S I              |             |                    |                    |                  |
-| standard_properties  |  S I              |             | S I                |                    |                  |
+| standard_properties  |  S I              |             | S I                |                    |  S I             |
 | precise_astrometry   |  S I              |  S I        |                    |                    |  S I             |
 | column_grouping      |  S I              |             |                    |                    |  S I             |
 | combined_data        |  S I              |             | S I                |                    |  S I             |

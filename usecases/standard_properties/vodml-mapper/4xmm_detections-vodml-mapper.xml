@@ -70,6 +70,20 @@
                     </INSTANCE>
                 </COMPOSITION>
             </INSTANCE>
+            <INSTANCE dmtype="coords:TimeSys" ID="T1618666881285_3087">
+                <COMPOSITION dmrole="coords:PhysicalCoordSys.frame">
+                    <INSTANCE dmtype="coords:TimeFrame" ID="T1618666881285_3104">
+                        <ATTRIBUTE dmrole="coords:TimeFrame.refPosition">
+                            <INSTANCE dmtype="coords:StdRefLocation">
+                                <ATTRIBUTE dmrole="coords:StdRefLocation.position">
+                                    <LITERAL dmtype="ivoa:string" value="GEOCENTER"/>
+                                </ATTRIBUTE>
+                            </INSTANCE>
+                        </ATTRIBUTE>
+                    </INSTANCE>
+                </COMPOSITION>
+            </INSTANCE>
+            <INSTANCE dmtype="mango:extcoords.FlagSys" ID="T1618666881285_3179"/>
         </GLOBALS>
         <TEMPLATES tableref="T1618666881285_1">
             <INSTANCE dmtype="mango:Source" ID="T1618666881285_721">
@@ -184,6 +198,48 @@
                                         </ATTRIBUTE>
                                     </INSTANCE>
                                 </COMPOSITION>
+                            </INSTANCE>
+                        </COMPOSITION>
+                    </INSTANCE>
+                    <INSTANCE dmtype="mango:Parameter" ID="T1618666881285_3038">
+                        <COMPOSITION dmrole="mango:Parameter.measure">
+                            <INSTANCE dmtype="meas:Time" ID="T1618666881285_3061">
+                                <ATTRIBUTE dmrole="meas:Time.coord">
+                                    <INSTANCE dmtype="coords:MJD">
+                                        <ATTRIBUTE dmrole="coords:MJD.date">
+                                            <COLUMN dmtype="ivoa:real" ref="_mjd_start_137"/>
+                                        </ATTRIBUTE>
+                                        <REFERENCE dmrole="coords:Coordinate.coordSys">
+                                            <IDREF>T1618666881285_3087</IDREF>
+                                        </REFERENCE>
+                                    </INSTANCE>
+                                </ATTRIBUTE>
+                            </INSTANCE>
+                        </COMPOSITION>
+                    </INSTANCE>
+                    <INSTANCE dmtype="mango:Parameter" ID="T1618666881285_3130">
+                        <ATTRIBUTE dmrole="mango:Parameter.ucd">
+                            <LITERAL dmtype="ivoa:string" value="meta.code.qual"/>
+                        </ATTRIBUTE>
+                        <ATTRIBUTE dmrole="mango:Parameter.semantic">
+                            <INSTANCE dmtype="mango:VocabularyTerm">
+                                <ATTRIBUTE dmrole="mango:VocabularyTerm.label">
+                                    <LITERAL dmtype="ivoa:string" value="quality"/>
+                                </ATTRIBUTE>
+                            </INSTANCE>
+                        </ATTRIBUTE>
+                        <COMPOSITION dmrole="mango:Parameter.measure">
+                            <INSTANCE dmtype="mango:extmeas.Flag" ID="T1618666881285_3153">
+                                <ATTRIBUTE dmrole="mango:extmeas.Flag.coord">
+                                    <INSTANCE dmtype="mango:extcoords.FlagCoord">
+                                        <ATTRIBUTE dmrole="mango:extcoords.FlagCoord.status">
+                                            <COLUMN dmtype="ivoa:integer" ref="_sum_flag_394"/>
+                                        </ATTRIBUTE>
+                                        <REFERENCE dmrole="coords:Coordinate.coordSys">
+                                            <IDREF>T1618666881285_3179</IDREF>
+                                        </REFERENCE>
+                                    </INSTANCE>
+                                </ATTRIBUTE>
                             </INSTANCE>
                         </COMPOSITION>
                     </INSTANCE>

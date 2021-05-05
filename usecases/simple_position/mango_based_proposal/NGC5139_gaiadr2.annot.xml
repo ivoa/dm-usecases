@@ -44,7 +44,7 @@
                         <COLLECTION size="-1" dmrole="mango:MangoObject.associatedData" />
                         <COLLECTION size="-1" dmrole="mango:MangoObject.parameters">
                             <INSTANCE dmrole="mango:MangoObject.parameters" dmtype="mango:Parameter">
-                                <ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="#position.calibrated" />
+                                <ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="http://www.ivoa.net/rdf/uat#astronomical-location" />
                                 <ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="pos.eq" />
                                 <ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string" value="calibrated position" />
                                 <ATTRIBUTE dmrole="mango:Parameter.reductionStatus" dmtype="ivoa:string" value="Calibrated" />
@@ -80,7 +80,7 @@
 
 
                             <INSTANCE dmrole="mango:MangoObject.parameters" dmtype="mango:Parameter">
-                                <ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="#propermotion" />
+                                <ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="http://www.ivoa.net/rdf/uat#proper-motion" />
                                 <ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="pos.pm" />
                                 <ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string" value="Proper Motion" />
                                 <ATTRIBUTE dmrole="mango:Parameter.reductionStatus" dmtype="ivoa:string" value="Calibrated" />
@@ -118,7 +118,7 @@
                                 </INSTANCE>
                             </INSTANCE>
                             <INSTANCE dmrole="mango:MangoObject.parameters" dmtype="mango:Parameter">
-                                <ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="#magnitude" />
+                                <ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="http://www.ivoa.net/rdf/uat#photometry" />
                                 <ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="phot.mag;stat.mean;em.opt" />
                                 <ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string" value="Magnitude in G band" />
                                 <ATTRIBUTE dmrole="mango:Parameter.reductionStatus" dmtype="ivoa:string" value="Calibrated" />
@@ -138,7 +138,7 @@
                                 </INSTANCE>
                             </INSTANCE>
                             <INSTANCE dmrole="mango:MangoObject.parameters" dmtype="mango:Parameter">
-                                <ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="#magnitude" />
+                                <ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="http://www.ivoa.net/rdf/uat#photometry" />
                                 <ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="phot.mag;stat.mean;em.opt" />
                                 <ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string" value="Magnitude in BP band" />
                                 <ATTRIBUTE dmrole="mango:Parameter.reductionStatus" dmtype="ivoa:string" value="Calibrated" />
@@ -158,7 +158,7 @@
                                 </INSTANCE>
                             </INSTANCE>
                             <INSTANCE dmrole="mango:MangoObject.parameters" dmtype="mango:Parameter">
-                                <ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="#magnitude" />
+                                <ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="http://www.ivoa.net/rdf/uat#photometry" />
                                 <ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="phot.mag;stat.mean;em.opt" />
                                 <ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string" value="Magnitude in RP band" />
                                 <ATTRIBUTE dmrole="mango:Parameter.reductionStatus" dmtype="ivoa:string" value="Calibrated" />
@@ -178,7 +178,7 @@
                                 </INSTANCE>
                             </INSTANCE>
                             <INSTANCE dmrole="mango:MangoObject.parameters" dmtype="mango:Parameter">
-                                <ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="#parallax" />
+                                <ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="http://www.ivoa.net/rdf/uat#parallax" />
                                 <ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="pos.parallax" />
                                 <ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string" value="Parallax" />
                                 <ATTRIBUTE dmrole="mango:Parameter.reductionStatus" dmtype="ivoa:string" value="Computed" />

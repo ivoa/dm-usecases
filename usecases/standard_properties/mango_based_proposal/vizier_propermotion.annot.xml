@@ -35,7 +35,7 @@
           <COLLECTION size="-1" dmrole="mango:MangoObject.associatedData"/>
           <COLLECTION size="-1" dmrole="mango:MangoObject.parameters">
             <INSTANCE dmrole="mango:MangoObject.parameters" dmtype="mango:Parameter">
-              <ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="#position"/>
+              <ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="http://www.ivoa.net/rdf/uat#astronomical-location"/>
               <ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="pos.eq;meta.main"/>
               <ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string" value="position"/>
               <ATTRIBUTE dmrole="mango:Parameter.reductionStatus" dmtype="ivoa:string" value="Computed"/>
@@ -74,7 +74,7 @@
               </INSTANCE>
             </INSTANCE>
             <INSTANCE dmrole="mango:MangoObject.parameters" dmtype="mango:Parameter">
-              <ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="#propermotion"/>
+              <ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="http://www.ivoa.net/rdf/uat#proper-motion"/>
               <ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="pos.pm"/>
               <ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string" value="Proper Motion"/>
               <ATTRIBUTE dmrole="mango:Parameter.reductionStatus" dmtype="ivoa:string" value="Calibrated"/>

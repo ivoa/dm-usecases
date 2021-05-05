@@ -41,7 +41,7 @@
 								foreign="oidsaada">
 								<INSTANCE dmrole="mango:MangoObject.associatedData" dmtype="mango:WebEndpoint">
 									<ATTRIBUTE dmrole="mango:WebEndpoint.semantic"
-										dmtype="ivoa:string" value="#spectrum.raw" />
+										dmtype="ivoa:string" value="http://www.ivoa.net/rdf/product-type#spectrum" />
 									<ATTRIBUTE dmrole="mango:WebEndpoint.description"
 										dmtype="ivoa:string" value="Raw Spectrum" />
 									<ATTRIBUTE dmrole="mango:WebEndpoint.contentType"
@@ -56,7 +56,7 @@
 							<INSTANCE dmrole="mango:MangoObject.parameters"
 								dmtype="mango:Parameter">
 								<ATTRIBUTE dmrole="mango:Parameter.semantic"
-									dmtype="ivoa:string" value="#postion.corrected" />
+									dmtype="ivoa:string" value="http://www.ivoa.net/rdf/uat#astronomical-location" />
 								<ATTRIBUTE dmrole="mango:Parameter.ucd"
 									dmtype="ivoa:string" value="pos" />
 								<ATTRIBUTE dmrole="mango:Parameter.description"
@@ -112,7 +112,7 @@
                 <TABLE_ROW_TEMPLATE>
                     <INSTANCE dmrole="root" dmtype="mango:WebEndpointXXX">
                         <ATTRIBUTE dmrole="mango:WebEndpoint.semantic"
-                            dmtype="ivoa:string" value="#spectrum.raw" />
+                            dmtype="ivoa:string" value="http://www.ivoa.net/rdf/product-type#spectrum" />
                         <ATTRIBUTE dmrole="mango:Parameter.description"
                             dmtype="ivoa:string" value="Raw Spectrum" />
                         <ATTRIBUTE dmrole="mango:Parameter.contentType"

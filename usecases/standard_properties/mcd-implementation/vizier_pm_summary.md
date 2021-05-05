@@ -11,13 +11,13 @@ Number of Records: 50
   o Position - type = rama.models.measurements.Position  
   o ProperMotion - type = rama.models.measurements.ProperMotion  
 
-Position Coordinate auto-converted to AstroPy SkyCoord.
+Position Coordinate auto-converted to AstroPy SkyCoord.  
   o Position.coord - type = astropy.coordinates.sky_coordinate.SkyCoord  
   o Position.coord - frame = ICRS  
   o Position.coord - equinox = None  
   o Position.coord - unit = deg  
 
-Proper Motion.
+Proper Motion.  
   o ProperMotion.lon - type = rama.models.coordinates.PhysicalCoordinate  
   o ProperMotion.lon.cval - type = astropy.units.quantity.Quantity  
   o ProperMotion.lon.cval.unit = arcsec / yr  
@@ -30,8 +30,8 @@ Proper Motion.
 print( measure_toString(positions.unroll()[0])) )
 print( measure_toString(motions.unroll()[0])) )
 ```
-Position: (   0.019192 [deg],  83.105303 [deg] ) ellipse(major:1.100e+01, minor:1.200e+01, angle:   nan) [ICRS]
-Proper Motion: (   0.003600 [arcsec / yr],  -0.022000 [arcsec / yr] ) ellipse(major:4.900e+00, minor:5.400e+00, angle:   nan) [ICRS]
+Position: (   0.019192 [deg],  83.105303 [deg] ) ellipse(major:1.100e+01, minor:1.200e+01, angle:   nan) [ICRS]  
+Proper Motion: (   0.003600 [arcsec / yr],  -0.022000 [arcsec / yr] ) ellipse(major:4.900e+00, minor:5.400e+00, angle:   nan) [ICRS]  
   
 
 ## Plot - Postion with ProperMotions

@@ -1,0 +1,614 @@
+<VOTABLE
+    xmlns="http://www.ivoa.net/xml/VOTable/v1.4_vodml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.ivoa.net/xml/VOTable/v1.4_vodml https://volute.g-vo.org/svn/trunk/projects/dm/vo-dml-org/xsd/ext/VOTable-1.4_vodml.xsd">
+    <VODML>
+        <MODEL>
+            <NAME>mango</NAME>
+            <URL>https://raw.githubusercontent.com/ivoa-std/MANGO/a46441f6fc498a6aeb33ed97e65689fee3d00f6c/vo-dml/mango.vo-dml.xml</URL>
+        </MODEL>
+        <MODEL>
+            <NAME>meas</NAME>
+            <URL>http://volute.g-vo.org/svn/trunk/projects/dm/STC/Meas/vo-dml/STC_meas-v1.0.vo-dml.xml</URL>
+        </MODEL>
+        <MODEL>
+            <NAME>coords</NAME>
+            <URL>http://volute.g-vo.org/svn/trunk/projects/dm/STC/Coords/vo-dml/STC_coords-v1.0.vo-dml.xml</URL>
+        </MODEL>
+        <MODEL>
+            <NAME>ivoa</NAME>
+            <URL>http://volute.g-vo.org/svn/trunk/projects/dm/vo-dml/models/ivoa/vo-dml/IVOA-v1.0.vo-dml.xml</URL>
+        </MODEL>
+        <GLOBALS>
+            <INSTANCE dmtype="mango:extcoords.LonLatCoordSys" ID="T1618666881285_1643">
+                <COMPOSITION dmrole="coords:PhysicalCoordSys.frame">
+                    <INSTANCE dmtype="coords:SpaceFrame" ID="T1618666881285_1669">
+                        <ATTRIBUTE dmrole="coords:SpaceFrame.spaceRefFrame">
+                            <LITERAL dmtype="ivoa:string" value="ICRS"/>
+                        </ATTRIBUTE>
+                    </INSTANCE>
+                </COMPOSITION>
+            </INSTANCE>
+            <INSTANCE dmtype="mango:extcoords.PhotometryCoordSys" ID="T1618666881285_1807">
+                <COMPOSITION dmrole="coords:PhysicalCoordSys.frame">
+                    <INSTANCE dmtype="mango:extcoords.PhotFilter" ID="T1618666881285_1824">
+                        <ATTRIBUTE dmrole="mango:extcoords.PhotFilter.name">
+                            <LITERAL dmtype="ivoa:string" value="XMM_EB1"/>
+                        </ATTRIBUTE>
+                        <ATTRIBUTE dmrole="mango:extcoords.PhotFilter.magnitudeSystem">
+                            <LITERAL dmtype="ivoa:string" value="XMM"/>
+                        </ATTRIBUTE>
+                        <ATTRIBUTE dmrole="mango:extcoords.PhotFilter.effectiveWavelength">
+                            <LITERAL dmtype="ivoa:real" value="0.35"/>
+                        </ATTRIBUTE>
+                        <ATTRIBUTE dmrole="mango:extcoords.PhotFilter.unit">
+                            <LITERAL dmtype="ivoa:Unit" value="KeV"/>
+                        </ATTRIBUTE>
+                        <ATTRIBUTE dmrole="mango:extcoords.PhotFilter.bandWidth">
+                            <LITERAL dmtype="ivoa:real" value="0.3"/>
+                        </ATTRIBUTE>
+                    </INSTANCE>
+                </COMPOSITION>
+            </INSTANCE>
+            <INSTANCE dmtype="mango:extcoords.PhotometryCoordSys" ID="T1618666881285_1915">
+                <COMPOSITION dmrole="coords:PhysicalCoordSys.frame">
+                    <INSTANCE dmtype="mango:extcoords.PhotFilter" ID="T1618666881285_1939">
+                        <ATTRIBUTE dmrole="mango:extcoords.PhotFilter.name">
+                            <LITERAL dmtype="ivoa:string" value="XMM_EB2"/>
+                        </ATTRIBUTE>
+                        <ATTRIBUTE dmrole="mango:extcoords.PhotFilter.magnitudeSystem">
+                            <LITERAL dmtype="ivoa:string" value="XMM"/>
+                        </ATTRIBUTE>
+                        <ATTRIBUTE dmrole="mango:extcoords.PhotFilter.effectiveWavelength">
+                            <LITERAL dmtype="ivoa:real" value="0.75"/>
+                        </ATTRIBUTE>
+                        <ATTRIBUTE dmrole="mango:extcoords.PhotFilter.unit">
+                            <LITERAL dmtype="ivoa:Unit" value="KeV"/>
+                        </ATTRIBUTE>
+                        <ATTRIBUTE dmrole="mango:extcoords.PhotFilter.bandWidth">
+                            <LITERAL dmtype="ivoa:real" value="0.5"/>
+                        </ATTRIBUTE>
+                    </INSTANCE>
+                </COMPOSITION>
+            </INSTANCE>
+            <INSTANCE dmtype="coords:TimeSys" ID="T1618666881285_3087">
+                <COMPOSITION dmrole="coords:PhysicalCoordSys.frame">
+                    <INSTANCE dmtype="coords:TimeFrame" ID="T1618666881285_3104">
+                        <ATTRIBUTE dmrole="coords:TimeFrame.refPosition">
+                            <INSTANCE dmtype="coords:StdRefLocation">
+                                <ATTRIBUTE dmrole="coords:StdRefLocation.position">
+                                    <LITERAL dmtype="ivoa:string" value="GEOCENTER"/>
+                                </ATTRIBUTE>
+                            </INSTANCE>
+                        </ATTRIBUTE>
+                    </INSTANCE>
+                </COMPOSITION>
+            </INSTANCE>
+            <INSTANCE dmtype="mango:extcoords.FlagSys" ID="T1618666881285_3179"/>
+        </GLOBALS>
+        <TEMPLATES tableref="T1618666881285_1">
+            <INSTANCE dmtype="mango:Source" ID="T1618666881285_721">
+                <PRIMARYKEY>
+                    <PKFIELD>
+                        <COLUMN dmtype="ivoa:string" ref="oidsaada_100"/>
+                    </PKFIELD>
+                </PRIMARYKEY>
+                <COMPOSITION dmrole="mango:Source.parameterDock">
+                    <INSTANCE dmtype="mango:Parameter" ID="T1618666881285_740">
+                        <ATTRIBUTE dmrole="mango:Parameter.ucd">
+                            <LITERAL dmtype="ivoa:string" value="pos"/>
+                        </ATTRIBUTE>
+                        <ATTRIBUTE dmrole="mango:Parameter.semantic">
+                            <INSTANCE dmtype="mango:VocabularyTerm">
+                                <ATTRIBUTE dmrole="mango:VocabularyTerm.label">
+                                    <LITERAL dmtype="ivoa:string" value="position"/>
+                                </ATTRIBUTE>
+                            </INSTANCE>
+                        </ATTRIBUTE>
+                        <COMPOSITION dmrole="mango:Parameter.measure">
+                            <INSTANCE dmtype="mango:extmeas.LonLatSkyPosition" ID="T1618666881285_1615">
+                                <ATTRIBUTE dmrole="mango:extmeas.LonLatSkyPosition.coord">
+                                    <INSTANCE dmtype="mango:extcoords.LonLatPoint">
+                                        <ATTRIBUTE dmrole="mango:extcoords.LonLatPoint.longitude">
+                                            <COLUMN dmtype="ivoa:real" ref="pos_ra_csa_102"/>
+                                        </ATTRIBUTE>
+                                        <ATTRIBUTE dmrole="mango:extcoords.LonLatPoint.latitude">
+                                            <COLUMN dmtype="ivoa:real" ref="pos_dec_csa_103"/>
+                                        </ATTRIBUTE>
+                                        <REFERENCE dmrole="coords:Coordinate.coordSys">
+                                            <IDREF>T1618666881285_1643</IDREF>
+                                        </REFERENCE>
+                                    </INSTANCE>
+                                </ATTRIBUTE>
+                                <COMPOSITION dmrole="meas:Measure.error">
+                                    <INSTANCE dmtype="meas:Error" ID="T1618666881285_1690">
+                                        <ATTRIBUTE dmrole="meas:Error.statError">
+                                            <INSTANCE dmtype="meas:Ellipse">
+                                                <ATTRIBUTE dmrole="meas:Ellipse.semiAxis">
+                                                    <COLUMN dmtype="ivoa:RealQuantity" ref="error_maj_csa_105"/>
+                                                    <COLUMN dmtype="ivoa:RealQuantity" ref="error_min_csa_106"/>
+                                                </ATTRIBUTE>
+                                                <ATTRIBUTE dmrole="meas:Ellipse.posAngle">
+                                                    <COLUMN dmtype="ivoa:RealQuantity" ref="error_angle_csa_107"/>
+                                                </ATTRIBUTE>
+                                            </INSTANCE>
+                                        </ATTRIBUTE>
+                                    </INSTANCE>
+                                </COMPOSITION>
+                            </INSTANCE>
+                        </COMPOSITION>
+                    </INSTANCE>
+                    <INSTANCE dmtype="mango:Parameter" ID="T1618666881285_1725">
+                        <ATTRIBUTE dmrole="mango:Parameter.ucd">
+                            <LITERAL dmtype="ivoa:string" value="phot.flux"/>
+                        </ATTRIBUTE>
+                        <ATTRIBUTE dmrole="mango:Parameter.semantic">
+                            <INSTANCE dmtype="mango:VocabularyTerm">
+                                <ATTRIBUTE dmrole="mango:VocabularyTerm.label">
+                                    <LITERAL dmtype="ivoa:string" value="flux"/>
+                                </ATTRIBUTE>
+                            </INSTANCE>
+                        </ATTRIBUTE>
+                        <COMPOSITION dmrole="mango:Parameter.measure">
+                            <INSTANCE dmtype="mango:extmeas.Photometry" ID="T1618666881285_1748">
+                                <ATTRIBUTE dmrole="mango:extmeas.Photometry.coord">
+                                    <INSTANCE dmtype="mango:extcoords.PhotometryCoord">
+                                        <ATTRIBUTE dmrole="mango:extcoords.PhotometryCoord.luminosity">
+                                            <COLUMN dmtype="ivoa:real" ref="_ep_1_flux_166"/>
+                                        </ATTRIBUTE>
+                                        <REFERENCE dmrole="coords:Coordinate.coordSys">
+                                            <IDREF>T1618666881285_1807</IDREF>
+                                        </REFERENCE>
+                                    </INSTANCE>
+                                </ATTRIBUTE>
+                                <COMPOSITION dmrole="meas:Measure.error">
+                                    <INSTANCE dmtype="meas:Error" ID="T1618666881285_1783">
+                                        <ATTRIBUTE dmrole="meas:Error.statError">
+                                            <INSTANCE dmtype="meas:Symmetrical">
+                                                <ATTRIBUTE dmrole="meas:Symmetrical.radius">
+                                                    <COLUMN dmtype="ivoa:RealQuantity" ref="_ep_1_flux_err_167"/>
+                                                </ATTRIBUTE>
+                                            </INSTANCE>
+                                        </ATTRIBUTE>
+                                    </INSTANCE>
+                                </COMPOSITION>
+                            </INSTANCE>
+                        </COMPOSITION>
+                    </INSTANCE>
+                    <INSTANCE dmtype="mango:Parameter" ID="T1618666881285_1849">
+                        <COMPOSITION dmrole="mango:Parameter.measure">
+                            <INSTANCE dmtype="mango:extmeas.Photometry" ID="T1618666881285_1872">
+                                <ATTRIBUTE dmrole="mango:extmeas.Photometry.coord">
+                                    <INSTANCE dmtype="mango:extcoords.PhotometryCoord">
+                                        <ATTRIBUTE dmrole="mango:extcoords.PhotometryCoord.luminosity">
+                                            <COLUMN dmtype="ivoa:real" ref="_ep_2_flux_168"/>
+                                        </ATTRIBUTE>
+                                        <REFERENCE dmrole="coords:Coordinate.coordSys">
+                                            <IDREF>T1618666881285_1915</IDREF>
+                                        </REFERENCE>
+                                    </INSTANCE>
+                                </ATTRIBUTE>
+                                <COMPOSITION dmrole="meas:Measure.error">
+                                    <INSTANCE dmtype="meas:Error" ID="T1618666881285_1889">
+                                        <ATTRIBUTE dmrole="meas:Error.statError">
+                                            <INSTANCE dmtype="meas:Symmetrical">
+                                                <ATTRIBUTE dmrole="meas:Symmetrical.radius">
+                                                    <COLUMN dmtype="ivoa:RealQuantity" ref="_ep_2_flux_err_169"/>
+                                                </ATTRIBUTE>
+                                            </INSTANCE>
+                                        </ATTRIBUTE>
+                                    </INSTANCE>
+                                </COMPOSITION>
+                            </INSTANCE>
+                        </COMPOSITION>
+                    </INSTANCE>
+                    <INSTANCE dmtype="mango:Parameter" ID="T1618666881285_3038">
+                        <COMPOSITION dmrole="mango:Parameter.measure">
+                            <INSTANCE dmtype="meas:Time" ID="T1618666881285_3061">
+                                <ATTRIBUTE dmrole="meas:Time.coord">
+                                    <INSTANCE dmtype="coords:MJD">
+                                        <ATTRIBUTE dmrole="coords:MJD.date">
+                                            <COLUMN dmtype="ivoa:real" ref="_mjd_start_137"/>
+                                        </ATTRIBUTE>
+                                        <REFERENCE dmrole="coords:Coordinate.coordSys">
+                                            <IDREF>T1618666881285_3087</IDREF>
+                                        </REFERENCE>
+                                    </INSTANCE>
+                                </ATTRIBUTE>
+                            </INSTANCE>
+                        </COMPOSITION>
+                    </INSTANCE>
+                    <INSTANCE dmtype="mango:Parameter" ID="T1618666881285_3130">
+                        <ATTRIBUTE dmrole="mango:Parameter.ucd">
+                            <LITERAL dmtype="ivoa:string" value="meta.code.qual"/>
+                        </ATTRIBUTE>
+                        <ATTRIBUTE dmrole="mango:Parameter.semantic">
+                            <INSTANCE dmtype="mango:VocabularyTerm">
+                                <ATTRIBUTE dmrole="mango:VocabularyTerm.label">
+                                    <LITERAL dmtype="ivoa:string" value="quality"/>
+                                </ATTRIBUTE>
+                            </INSTANCE>
+                        </ATTRIBUTE>
+                        <COMPOSITION dmrole="mango:Parameter.measure">
+                            <INSTANCE dmtype="mango:extmeas.Flag" ID="T1618666881285_3153">
+                                <ATTRIBUTE dmrole="mango:extmeas.Flag.coord">
+                                    <INSTANCE dmtype="mango:extcoords.FlagCoord">
+                                        <ATTRIBUTE dmrole="mango:extcoords.FlagCoord.status">
+                                            <COLUMN dmtype="ivoa:integer" ref="_sum_flag_394"/>
+                                        </ATTRIBUTE>
+                                        <REFERENCE dmrole="coords:Coordinate.coordSys">
+                                            <IDREF>T1618666881285_3179</IDREF>
+                                        </REFERENCE>
+                                    </INSTANCE>
+                                </ATTRIBUTE>
+                            </INSTANCE>
+                        </COMPOSITION>
+                    </INSTANCE>
+                </COMPOSITION>
+            </INSTANCE>
+        </TEMPLATES>
+    </VODML>
+    <RESOURCE>
+        <TABLE ID="T1618666881285_1" name="Results">
+            <INFO name="type" value="VOTABLE"/>
+            <INFO name="votable_url" value="https://raw.githubusercontent.com/ivoa/dm-usecases/main/usecases/standard_properties/raw_data/4xmm_detections.xml"/>
+            <INFO name="table_rank" value="1"/>
+            <FIELD name="oidsaada" datatype="long" ID="oidsaada_100"/>
+            <FIELD name="namesaada" datatype="char" ID="namesaada_101"/>
+            <FIELD name="pos_ra_csa" datatype="double" ID="pos_ra_csa_102"/>
+            <FIELD name="pos_dec_csa" datatype="double" ID="pos_dec_csa_103"/>
+            <FIELD name="healpix_csa" datatype="long" ID="healpix_csa_104"/>
+            <FIELD name="error_maj_csa" datatype="double" ID="error_maj_csa_105"/>
+            <FIELD name="error_min_csa" datatype="double" ID="error_min_csa_106"/>
+            <FIELD name="error_angle_csa" datatype="double" ID="error_angle_csa_107"/>
+            <FIELD name="XCAT_OBSID" datatype="char" ID="XCAT_OBSID_108"/>
+            <FIELD name="XCAT_INSTRUME" datatype="char" ID="XCAT_INSTRUME_109"/>
+            <FIELD name="XCAT_OBSERVER" datatype="char" ID="XCAT_OBSERVER_110"/>
+            <FIELD name="XCAT_SEQID" datatype="int" ID="XCAT_SEQID_111"/>
+            <FIELD name="EPIC_IMAGE" datatype="long" ID="EPIC_IMAGE_112"/>
+            <FIELD name="XCAT_SRCNUM" datatype="int" ID="XCAT_SRCNUM_113"/>
+            <FIELD name="VIZIER_KW" datatype="long" ID="VIZIER_KW_114"/>
+            <FIELD name="E_BminusV" datatype="double" ID="E_BminusV_115"/>
+            <FIELD name="NH" datatype="double" ID="NH_116"/>
+            <FIELD name="XCAT_EBAND" datatype="int" ID="XCAT_EBAND_117"/>
+            <FIELD name="XCAT_FLUX" datatype="double" ID="XCAT_FLUX_118"/>
+            <FIELD name="VARIAB_FLAG" datatype="double" ID="VARIAB_FLAG_119"/>
+            <FIELD name="DATALINK" datatype="char" ID="DATALINK_120"/>
+            <FIELD name="_detid" datatype="long" ID="_detid_121"/>
+            <FIELD name="_srcid" datatype="long" ID="_srcid_122"/>
+            <FIELD name="_dr3srcid" datatype="int" ID="_dr3srcid_123"/>
+            <FIELD name="_dr3detid" datatype="int" ID="_dr3detid_124"/>
+            <FIELD name="_dr3detdist" datatype="char" ID="_dr3detdist_125"/>
+            <FIELD name="_dr3srcdist" datatype="char" ID="_dr3srcdist_126"/>
+            <FIELD name="_dr3mult" datatype="char" ID="_dr3mult_127"/>
+            <FIELD name="_dr4srcid" datatype="int" ID="_dr4srcid_128"/>
+            <FIELD name="_dr4detid" datatype="int" ID="_dr4detid_129"/>
+            <FIELD name="_dr4detdist" datatype="char" ID="_dr4detdist_130"/>
+            <FIELD name="_dr4srcdist" datatype="char" ID="_dr4srcdist_131"/>
+            <FIELD name="_dr4mult" datatype="char" ID="_dr4mult_132"/>
+            <FIELD name="_iauname" datatype="char" ID="_iauname_133"/>
+            <FIELD name="_src_num" datatype="char" ID="_src_num_134"/>
+            <FIELD name="_obs_id" datatype="char" ID="_obs_id_135"/>
+            <FIELD name="_revolut" datatype="char" ID="_revolut_136"/>
+            <FIELD name="_mjd_start" datatype="double" ID="_mjd_start_137"/>
+            <FIELD name="_mjd_stop" datatype="double" ID="_mjd_stop_138"/>
+            <FIELD name="_obs_class" datatype="char" ID="_obs_class_139"/>
+            <FIELD name="_pn_filter" datatype="char" ID="_pn_filter_140"/>
+            <FIELD name="_m1_filter" datatype="char" ID="_m1_filter_141"/>
+            <FIELD name="_m2_filter" datatype="char" ID="_m2_filter_142"/>
+            <FIELD name="_pn_submode" datatype="char" ID="_pn_submode_143"/>
+            <FIELD name="_m1_submode" datatype="char" ID="_m1_submode_144"/>
+            <FIELD name="_m2_submode" datatype="char" ID="_m2_submode_145"/>
+            <FIELD name="_ra" datatype="double" ID="_ra_146"/>
+            <FIELD name="_dec" datatype="double" ID="_dec_147"/>
+            <FIELD name="_poserr" datatype="double" ID="_poserr_148"/>
+            <FIELD name="_lii" datatype="double" ID="_lii_149"/>
+            <FIELD name="_bii" datatype="double" ID="_bii_150"/>
+            <FIELD name="_radec_err" datatype="char" ID="_radec_err_151"/>
+            <FIELD name="_syserrcc" datatype="char" ID="_syserrcc_152"/>
+            <FIELD name="_refcat" datatype="char" ID="_refcat_153"/>
+            <FIELD name="_poscorok" datatype="boolean" ID="_poscorok_154"/>
+            <FIELD name="_ra_unc" datatype="double" ID="_ra_unc_155"/>
+            <FIELD name="_dec_unc" datatype="double" ID="_dec_unc_156"/>
+            <FIELD name="_ccdpn" datatype="char" ID="_ccdpn_157"/>
+            <FIELD name="_pn_rawx" datatype="char" ID="_pn_rawx_158"/>
+            <FIELD name="_pn_rawy" datatype="char" ID="_pn_rawy_159"/>
+            <FIELD name="_ccdm1" datatype="char" ID="_ccdm1_160"/>
+            <FIELD name="_m1_rawx" datatype="char" ID="_m1_rawx_161"/>
+            <FIELD name="_m1_rawy" datatype="char" ID="_m1_rawy_162"/>
+            <FIELD name="_ccdm2" datatype="char" ID="_ccdm2_163"/>
+            <FIELD name="_m2_rawx" datatype="char" ID="_m2_rawx_164"/>
+            <FIELD name="_m2_rawy" datatype="char" ID="_m2_rawy_165"/>
+            <FIELD name="_ep_1_flux" datatype="double" ID="_ep_1_flux_166"/>
+            <FIELD name="_ep_1_flux_err" datatype="double" ID="_ep_1_flux_err_167"/>
+            <FIELD name="_ep_2_flux" datatype="double" ID="_ep_2_flux_168"/>
+            <FIELD name="_ep_2_flux_err" datatype="double" ID="_ep_2_flux_err_169"/>
+            <FIELD name="_ep_3_flux" datatype="double" ID="_ep_3_flux_170"/>
+            <FIELD name="_ep_3_flux_err" datatype="double" ID="_ep_3_flux_err_171"/>
+            <FIELD name="_ep_4_flux" datatype="double" ID="_ep_4_flux_172"/>
+            <FIELD name="_ep_4_flux_err" datatype="double" ID="_ep_4_flux_err_173"/>
+            <FIELD name="_ep_5_flux" datatype="double" ID="_ep_5_flux_174"/>
+            <FIELD name="_ep_5_flux_err" datatype="double" ID="_ep_5_flux_err_175"/>
+            <FIELD name="_ep_8_flux" datatype="double" ID="_ep_8_flux_176"/>
+            <FIELD name="_ep_8_flux_err" datatype="double" ID="_ep_8_flux_err_177"/>
+            <FIELD name="_ep_9_flux" datatype="double" ID="_ep_9_flux_178"/>
+            <FIELD name="_ep_9_flux_err" datatype="double" ID="_ep_9_flux_err_179"/>
+            <FIELD name="_pn_1_flux" datatype="double" ID="_pn_1_flux_180"/>
+            <FIELD name="_pn_1_flux_err" datatype="double" ID="_pn_1_flux_err_181"/>
+            <FIELD name="_pn_2_flux" datatype="double" ID="_pn_2_flux_182"/>
+            <FIELD name="_pn_2_flux_err" datatype="double" ID="_pn_2_flux_err_183"/>
+            <FIELD name="_pn_3_flux" datatype="double" ID="_pn_3_flux_184"/>
+            <FIELD name="_pn_3_flux_err" datatype="double" ID="_pn_3_flux_err_185"/>
+            <FIELD name="_pn_4_flux" datatype="double" ID="_pn_4_flux_186"/>
+            <FIELD name="_pn_4_flux_err" datatype="double" ID="_pn_4_flux_err_187"/>
+            <FIELD name="_pn_5_flux" datatype="double" ID="_pn_5_flux_188"/>
+            <FIELD name="_pn_5_flux_err" datatype="double" ID="_pn_5_flux_err_189"/>
+            <FIELD name="_pn_8_flux" datatype="double" ID="_pn_8_flux_190"/>
+            <FIELD name="_pn_8_flux_err" datatype="double" ID="_pn_8_flux_err_191"/>
+            <FIELD name="_pn_9_flux" datatype="double" ID="_pn_9_flux_192"/>
+            <FIELD name="_pn_9_flux_err" datatype="double" ID="_pn_9_flux_err_193"/>
+            <FIELD name="_m1_1_flux" datatype="double" ID="_m1_1_flux_194"/>
+            <FIELD name="_m1_1_flux_err" datatype="double" ID="_m1_1_flux_err_195"/>
+            <FIELD name="_m1_2_flux" datatype="double" ID="_m1_2_flux_196"/>
+            <FIELD name="_m1_2_flux_err" datatype="double" ID="_m1_2_flux_err_197"/>
+            <FIELD name="_m1_3_flux" datatype="double" ID="_m1_3_flux_198"/>
+            <FIELD name="_m1_3_flux_err" datatype="double" ID="_m1_3_flux_err_199"/>
+            <FIELD name="_m1_4_flux" datatype="double" ID="_m1_4_flux_200"/>
+            <FIELD name="_m1_4_flux_err" datatype="double" ID="_m1_4_flux_err_201"/>
+            <FIELD name="_m1_5_flux" datatype="double" ID="_m1_5_flux_202"/>
+            <FIELD name="_m1_5_flux_err" datatype="double" ID="_m1_5_flux_err_203"/>
+            <FIELD name="_m1_8_flux" datatype="double" ID="_m1_8_flux_204"/>
+            <FIELD name="_m1_8_flux_err" datatype="double" ID="_m1_8_flux_err_205"/>
+            <FIELD name="_m1_9_flux" datatype="double" ID="_m1_9_flux_206"/>
+            <FIELD name="_m1_9_flux_err" datatype="double" ID="_m1_9_flux_err_207"/>
+            <FIELD name="_m2_1_flux" datatype="double" ID="_m2_1_flux_208"/>
+            <FIELD name="_m2_1_flux_err" datatype="double" ID="_m2_1_flux_err_209"/>
+            <FIELD name="_m2_2_flux" datatype="double" ID="_m2_2_flux_210"/>
+            <FIELD name="_m2_2_flux_err" datatype="double" ID="_m2_2_flux_err_211"/>
+            <FIELD name="_m2_3_flux" datatype="double" ID="_m2_3_flux_212"/>
+            <FIELD name="_m2_3_flux_err" datatype="double" ID="_m2_3_flux_err_213"/>
+            <FIELD name="_m2_4_flux" datatype="double" ID="_m2_4_flux_214"/>
+            <FIELD name="_m2_4_flux_err" datatype="double" ID="_m2_4_flux_err_215"/>
+            <FIELD name="_m2_5_flux" datatype="double" ID="_m2_5_flux_216"/>
+            <FIELD name="_m2_5_flux_err" datatype="double" ID="_m2_5_flux_err_217"/>
+            <FIELD name="_m2_8_flux" datatype="double" ID="_m2_8_flux_218"/>
+            <FIELD name="_m2_8_flux_err" datatype="double" ID="_m2_8_flux_err_219"/>
+            <FIELD name="_m2_9_flux" datatype="double" ID="_m2_9_flux_220"/>
+            <FIELD name="_m2_9_flux_err" datatype="double" ID="_m2_9_flux_err_221"/>
+            <FIELD name="_ep_8_rate" datatype="double" ID="_ep_8_rate_222"/>
+            <FIELD name="_ep_8_rate_err" datatype="double" ID="_ep_8_rate_err_223"/>
+            <FIELD name="_ep_9_rate" datatype="double" ID="_ep_9_rate_224"/>
+            <FIELD name="_ep_9_rate_err" datatype="double" ID="_ep_9_rate_err_225"/>
+            <FIELD name="_pn_1_rate" datatype="double" ID="_pn_1_rate_226"/>
+            <FIELD name="_pn_1_rate_err" datatype="char" ID="_pn_1_rate_err_227"/>
+            <FIELD name="_pn_2_rate" datatype="char" ID="_pn_2_rate_228"/>
+            <FIELD name="_pn_2_rate_err" datatype="double" ID="_pn_2_rate_err_229"/>
+            <FIELD name="_pn_3_rate" datatype="double" ID="_pn_3_rate_230"/>
+            <FIELD name="_pn_3_rate_err" datatype="double" ID="_pn_3_rate_err_231"/>
+            <FIELD name="_pn_4_rate" datatype="double" ID="_pn_4_rate_232"/>
+            <FIELD name="_pn_4_rate_err" datatype="double" ID="_pn_4_rate_err_233"/>
+            <FIELD name="_pn_5_rate" datatype="double" ID="_pn_5_rate_234"/>
+            <FIELD name="_pn_5_rate_err" datatype="double" ID="_pn_5_rate_err_235"/>
+            <FIELD name="_pn_8_rate" datatype="double" ID="_pn_8_rate_236"/>
+            <FIELD name="_pn_8_rate_err" datatype="double" ID="_pn_8_rate_err_237"/>
+            <FIELD name="_pn_9_rate" datatype="double" ID="_pn_9_rate_238"/>
+            <FIELD name="_pn_9_rate_err" datatype="double" ID="_pn_9_rate_err_239"/>
+            <FIELD name="_m1_1_rate" datatype="double" ID="_m1_1_rate_240"/>
+            <FIELD name="_m1_1_rate_err" datatype="double" ID="_m1_1_rate_err_241"/>
+            <FIELD name="_m1_2_rate" datatype="double" ID="_m1_2_rate_242"/>
+            <FIELD name="_m1_2_rate_err" datatype="double" ID="_m1_2_rate_err_243"/>
+            <FIELD name="_m1_3_rate" datatype="double" ID="_m1_3_rate_244"/>
+            <FIELD name="_m1_3_rate_err" datatype="double" ID="_m1_3_rate_err_245"/>
+            <FIELD name="_m1_4_rate" datatype="double" ID="_m1_4_rate_246"/>
+            <FIELD name="_m1_4_rate_err" datatype="double" ID="_m1_4_rate_err_247"/>
+            <FIELD name="_m1_5_rate" datatype="double" ID="_m1_5_rate_248"/>
+            <FIELD name="_m1_5_rate_err" datatype="double" ID="_m1_5_rate_err_249"/>
+            <FIELD name="_m1_8_rate" datatype="double" ID="_m1_8_rate_250"/>
+            <FIELD name="_m1_8_rate_err" datatype="double" ID="_m1_8_rate_err_251"/>
+            <FIELD name="_m1_9_rate" datatype="double" ID="_m1_9_rate_252"/>
+            <FIELD name="_m1_9_rate_err" datatype="double" ID="_m1_9_rate_err_253"/>
+            <FIELD name="_m2_1_rate" datatype="double" ID="_m2_1_rate_254"/>
+            <FIELD name="_m2_1_rate_err" datatype="double" ID="_m2_1_rate_err_255"/>
+            <FIELD name="_m2_2_rate" datatype="double" ID="_m2_2_rate_256"/>
+            <FIELD name="_m2_2_rate_err" datatype="double" ID="_m2_2_rate_err_257"/>
+            <FIELD name="_m2_3_rate" datatype="double" ID="_m2_3_rate_258"/>
+            <FIELD name="_m2_3_rate_err" datatype="double" ID="_m2_3_rate_err_259"/>
+            <FIELD name="_m2_4_rate" datatype="double" ID="_m2_4_rate_260"/>
+            <FIELD name="_m2_4_rate_err" datatype="double" ID="_m2_4_rate_err_261"/>
+            <FIELD name="_m2_5_rate" datatype="double" ID="_m2_5_rate_262"/>
+            <FIELD name="_m2_5_rate_err" datatype="double" ID="_m2_5_rate_err_263"/>
+            <FIELD name="_m2_8_rate" datatype="double" ID="_m2_8_rate_264"/>
+            <FIELD name="_m2_8_rate_err" datatype="double" ID="_m2_8_rate_err_265"/>
+            <FIELD name="_m2_9_rate" datatype="double" ID="_m2_9_rate_266"/>
+            <FIELD name="_m2_9_rate_err" datatype="double" ID="_m2_9_rate_err_267"/>
+            <FIELD name="_ep_8_cts" datatype="double" ID="_ep_8_cts_268"/>
+            <FIELD name="_ep_8_cts_err" datatype="double" ID="_ep_8_cts_err_269"/>
+            <FIELD name="_pn_8_cts" datatype="double" ID="_pn_8_cts_270"/>
+            <FIELD name="_pn_8_cts_err" datatype="double" ID="_pn_8_cts_err_271"/>
+            <FIELD name="_m1_8_cts" datatype="double" ID="_m1_8_cts_272"/>
+            <FIELD name="_m1_8_cts_err" datatype="double" ID="_m1_8_cts_err_273"/>
+            <FIELD name="_m2_8_cts" datatype="double" ID="_m2_8_cts_274"/>
+            <FIELD name="_m2_8_cts_err" datatype="double" ID="_m2_8_cts_err_275"/>
+            <FIELD name="_ep_8_det_ml" datatype="double" ID="_ep_8_det_ml_276"/>
+            <FIELD name="_ep_9_det_ml" datatype="double" ID="_ep_9_det_ml_277"/>
+            <FIELD name="_pn_1_det_ml" datatype="double" ID="_pn_1_det_ml_278"/>
+            <FIELD name="_pn_2_det_ml" datatype="double" ID="_pn_2_det_ml_279"/>
+            <FIELD name="_pn_3_det_ml" datatype="double" ID="_pn_3_det_ml_280"/>
+            <FIELD name="_pn_4_det_ml" datatype="double" ID="_pn_4_det_ml_281"/>
+            <FIELD name="_pn_5_det_ml" datatype="double" ID="_pn_5_det_ml_282"/>
+            <FIELD name="_pn_8_det_ml" datatype="double" ID="_pn_8_det_ml_283"/>
+            <FIELD name="_pn_9_det_ml" datatype="double" ID="_pn_9_det_ml_284"/>
+            <FIELD name="_m1_1_det_ml" datatype="double" ID="_m1_1_det_ml_285"/>
+            <FIELD name="_m1_2_det_ml" datatype="double" ID="_m1_2_det_ml_286"/>
+            <FIELD name="_m1_3_det_ml" datatype="double" ID="_m1_3_det_ml_287"/>
+            <FIELD name="_m1_4_det_ml" datatype="double" ID="_m1_4_det_ml_288"/>
+            <FIELD name="_m1_5_det_ml" datatype="double" ID="_m1_5_det_ml_289"/>
+            <FIELD name="_m1_8_det_ml" datatype="double" ID="_m1_8_det_ml_290"/>
+            <FIELD name="_m1_9_det_ml" datatype="double" ID="_m1_9_det_ml_291"/>
+            <FIELD name="_m2_1_det_ml" datatype="double" ID="_m2_1_det_ml_292"/>
+            <FIELD name="_m2_2_det_ml" datatype="double" ID="_m2_2_det_ml_293"/>
+            <FIELD name="_m2_3_det_ml" datatype="double" ID="_m2_3_det_ml_294"/>
+            <FIELD name="_m2_4_det_ml" datatype="double" ID="_m2_4_det_ml_295"/>
+            <FIELD name="_m2_5_det_ml" datatype="double" ID="_m2_5_det_ml_296"/>
+            <FIELD name="_m2_8_det_ml" datatype="double" ID="_m2_8_det_ml_297"/>
+            <FIELD name="_m2_9_det_ml" datatype="double" ID="_m2_9_det_ml_298"/>
+            <FIELD name="_ep_extent" datatype="double" ID="_ep_extent_299"/>
+            <FIELD name="_ep_extent_err" datatype="double" ID="_ep_extent_err_300"/>
+            <FIELD name="_ep_extent_ml" datatype="double" ID="_ep_extent_ml_301"/>
+            <FIELD name="_ep_hr1" datatype="double" ID="_ep_hr1_302"/>
+            <FIELD name="_ep_hr1_err" datatype="double" ID="_ep_hr1_err_303"/>
+            <FIELD name="_ep_hr2" datatype="double" ID="_ep_hr2_304"/>
+            <FIELD name="_ep_hr2_err" datatype="double" ID="_ep_hr2_err_305"/>
+            <FIELD name="_ep_hr3" datatype="double" ID="_ep_hr3_306"/>
+            <FIELD name="_ep_hr3_err" datatype="double" ID="_ep_hr3_err_307"/>
+            <FIELD name="_ep_hr4" datatype="double" ID="_ep_hr4_308"/>
+            <FIELD name="_ep_hr4_err" datatype="double" ID="_ep_hr4_err_309"/>
+            <FIELD name="_pn_hr1" datatype="double" ID="_pn_hr1_310"/>
+            <FIELD name="_pn_hr1_err" datatype="double" ID="_pn_hr1_err_311"/>
+            <FIELD name="_pn_hr2" datatype="double" ID="_pn_hr2_312"/>
+            <FIELD name="_pn_hr2_err" datatype="double" ID="_pn_hr2_err_313"/>
+            <FIELD name="_pn_hr3" datatype="double" ID="_pn_hr3_314"/>
+            <FIELD name="_pn_hr3_err" datatype="double" ID="_pn_hr3_err_315"/>
+            <FIELD name="_pn_hr4" datatype="double" ID="_pn_hr4_316"/>
+            <FIELD name="_pn_hr4_err" datatype="double" ID="_pn_hr4_err_317"/>
+            <FIELD name="_m1_hr1" datatype="double" ID="_m1_hr1_318"/>
+            <FIELD name="_m1_hr1_err" datatype="double" ID="_m1_hr1_err_319"/>
+            <FIELD name="_m1_hr2" datatype="double" ID="_m1_hr2_320"/>
+            <FIELD name="_m1_hr2_err" datatype="double" ID="_m1_hr2_err_321"/>
+            <FIELD name="_m1_hr3" datatype="double" ID="_m1_hr3_322"/>
+            <FIELD name="_m1_hr3_err" datatype="double" ID="_m1_hr3_err_323"/>
+            <FIELD name="_m1_hr4" datatype="double" ID="_m1_hr4_324"/>
+            <FIELD name="_m1_hr4_err" datatype="double" ID="_m1_hr4_err_325"/>
+            <FIELD name="_m2_hr1" datatype="double" ID="_m2_hr1_326"/>
+            <FIELD name="_m2_hr1_err" datatype="double" ID="_m2_hr1_err_327"/>
+            <FIELD name="_m2_hr2" datatype="double" ID="_m2_hr2_328"/>
+            <FIELD name="_m2_hr2_err" datatype="double" ID="_m2_hr2_err_329"/>
+            <FIELD name="_m2_hr3" datatype="double" ID="_m2_hr3_330"/>
+            <FIELD name="_m2_hr3_err" datatype="double" ID="_m2_hr3_err_331"/>
+            <FIELD name="_m2_hr4" datatype="double" ID="_m2_hr4_332"/>
+            <FIELD name="_m2_hr4_err" datatype="double" ID="_m2_hr4_err_333"/>
+            <FIELD name="_pn_1_exp" datatype="double" ID="_pn_1_exp_334"/>
+            <FIELD name="_pn_2_exp" datatype="char" ID="_pn_2_exp_335"/>
+            <FIELD name="_pn_3_exp" datatype="char" ID="_pn_3_exp_336"/>
+            <FIELD name="_pn_4_exp" datatype="char" ID="_pn_4_exp_337"/>
+            <FIELD name="_pn_5_exp" datatype="char" ID="_pn_5_exp_338"/>
+            <FIELD name="_m1_1_exp" datatype="char" ID="_m1_1_exp_339"/>
+            <FIELD name="_m1_2_exp" datatype="char" ID="_m1_2_exp_340"/>
+            <FIELD name="_m1_3_exp" datatype="char" ID="_m1_3_exp_341"/>
+            <FIELD name="_m1_4_exp" datatype="char" ID="_m1_4_exp_342"/>
+            <FIELD name="_m1_5_exp" datatype="char" ID="_m1_5_exp_343"/>
+            <FIELD name="_m2_1_exp" datatype="char" ID="_m2_1_exp_344"/>
+            <FIELD name="_m2_2_exp" datatype="char" ID="_m2_2_exp_345"/>
+            <FIELD name="_m2_3_exp" datatype="char" ID="_m2_3_exp_346"/>
+            <FIELD name="_m2_4_exp" datatype="char" ID="_m2_4_exp_347"/>
+            <FIELD name="_m2_5_exp" datatype="char" ID="_m2_5_exp_348"/>
+            <FIELD name="_pn_1_bg" datatype="char" ID="_pn_1_bg_349"/>
+            <FIELD name="_pn_2_bg" datatype="char" ID="_pn_2_bg_350"/>
+            <FIELD name="_pn_3_bg" datatype="char" ID="_pn_3_bg_351"/>
+            <FIELD name="_pn_4_bg" datatype="char" ID="_pn_4_bg_352"/>
+            <FIELD name="_pn_5_bg" datatype="char" ID="_pn_5_bg_353"/>
+            <FIELD name="_m1_1_bg" datatype="char" ID="_m1_1_bg_354"/>
+            <FIELD name="_m1_2_bg" datatype="char" ID="_m1_2_bg_355"/>
+            <FIELD name="_m1_3_bg" datatype="char" ID="_m1_3_bg_356"/>
+            <FIELD name="_m1_4_bg" datatype="char" ID="_m1_4_bg_357"/>
+            <FIELD name="_m1_5_bg" datatype="char" ID="_m1_5_bg_358"/>
+            <FIELD name="_m2_1_bg" datatype="char" ID="_m2_1_bg_359"/>
+            <FIELD name="_m2_2_bg" datatype="char" ID="_m2_2_bg_360"/>
+            <FIELD name="_m2_3_bg" datatype="char" ID="_m2_3_bg_361"/>
+            <FIELD name="_m2_4_bg" datatype="char" ID="_m2_4_bg_362"/>
+            <FIELD name="_m2_5_bg" datatype="char" ID="_m2_5_bg_363"/>
+            <FIELD name="_pn_pileup" datatype="char" ID="_pn_pileup_364"/>
+            <FIELD name="_m1_pileup" datatype="char" ID="_m1_pileup_365"/>
+            <FIELD name="_m2_pileup" datatype="char" ID="_m2_pileup_366"/>
+            <FIELD name="_pn_1_vig" datatype="char" ID="_pn_1_vig_367"/>
+            <FIELD name="_pn_2_vig" datatype="char" ID="_pn_2_vig_368"/>
+            <FIELD name="_pn_3_vig" datatype="char" ID="_pn_3_vig_369"/>
+            <FIELD name="_pn_4_vig" datatype="char" ID="_pn_4_vig_370"/>
+            <FIELD name="_pn_5_vig" datatype="char" ID="_pn_5_vig_371"/>
+            <FIELD name="_m1_1_vig" datatype="char" ID="_m1_1_vig_372"/>
+            <FIELD name="_m1_2_vig" datatype="char" ID="_m1_2_vig_373"/>
+            <FIELD name="_m1_3_vig" datatype="char" ID="_m1_3_vig_374"/>
+            <FIELD name="_m1_4_vig" datatype="char" ID="_m1_4_vig_375"/>
+            <FIELD name="_m1_5_vig" datatype="char" ID="_m1_5_vig_376"/>
+            <FIELD name="_m2_1_vig" datatype="char" ID="_m2_1_vig_377"/>
+            <FIELD name="_m2_2_vig" datatype="char" ID="_m2_2_vig_378"/>
+            <FIELD name="_m2_3_vig" datatype="char" ID="_m2_3_vig_379"/>
+            <FIELD name="_m2_4_vig" datatype="char" ID="_m2_4_vig_380"/>
+            <FIELD name="_m2_5_vig" datatype="char" ID="_m2_5_vig_381"/>
+            <FIELD name="_pn_ontime" datatype="char" ID="_pn_ontime_382"/>
+            <FIELD name="_m1_ontime" datatype="char" ID="_m1_ontime_383"/>
+            <FIELD name="_m2_ontime" datatype="char" ID="_m2_ontime_384"/>
+            <FIELD name="_ep_ontime" datatype="char" ID="_ep_ontime_385"/>
+            <FIELD name="_pn_offax" datatype="char" ID="_pn_offax_386"/>
+            <FIELD name="_m1_offax" datatype="char" ID="_m1_offax_387"/>
+            <FIELD name="_m2_offax" datatype="char" ID="_m2_offax_388"/>
+            <FIELD name="_ep_offax" datatype="char" ID="_ep_offax_389"/>
+            <FIELD name="_pn_maskfrac" datatype="char" ID="_pn_maskfrac_390"/>
+            <FIELD name="_m1_maskfrac" datatype="char" ID="_m1_maskfrac_391"/>
+            <FIELD name="_m2_maskfrac" datatype="char" ID="_m2_maskfrac_392"/>
+            <FIELD name="_dist_nn" datatype="char" ID="_dist_nn_393"/>
+            <FIELD name="_sum_flag" datatype="int" ID="_sum_flag_394"/>
+            <FIELD name="_ep_flag" datatype="char" ID="_ep_flag_395"/>
+            <FIELD name="_pn_flag" datatype="char" ID="_pn_flag_396"/>
+            <FIELD name="_m1_flag" datatype="char" ID="_m1_flag_397"/>
+            <FIELD name="_m2_flag" datatype="char" ID="_m2_flag_398"/>
+            <FIELD name="_tseries" datatype="boolean" ID="_tseries_399"/>
+            <FIELD name="_spectra" datatype="boolean" ID="_spectra_400"/>
+            <FIELD name="_ep_chi2prob" datatype="double" ID="_ep_chi2prob_401"/>
+            <FIELD name="_pn_chi2prob" datatype="double" ID="_pn_chi2prob_402"/>
+            <FIELD name="_m1_chi2prob" datatype="double" ID="_m1_chi2prob_403"/>
+            <FIELD name="_m2_chi2prob" datatype="double" ID="_m2_chi2prob_404"/>
+            <FIELD name="_pn_fvar" datatype="double" ID="_pn_fvar_405"/>
+            <FIELD name="_pn_fvarerr" datatype="double" ID="_pn_fvarerr_406"/>
+            <FIELD name="_m1_fvar" datatype="double" ID="_m1_fvar_407"/>
+            <FIELD name="_m1_fvarerr" datatype="double" ID="_m1_fvarerr_408"/>
+            <FIELD name="_m2_fvar" datatype="double" ID="_m2_fvar_409"/>
+            <FIELD name="_m2_fvarerr" datatype="double" ID="_m2_fvarerr_410"/>
+            <FIELD name="_var_flag" datatype="boolean" ID="_var_flag_411"/>
+            <FIELD name="_var_exp_id" datatype="char" ID="_var_exp_id_412"/>
+            <FIELD name="_var_inst_id" datatype="char" ID="_var_inst_id_413"/>
+            <FIELD name="_sc_ra" datatype="double" ID="_sc_ra_414"/>
+            <FIELD name="_sc_dec" datatype="double" ID="_sc_dec_415"/>
+            <FIELD name="_sc_poserr" datatype="char" ID="_sc_poserr_416"/>
+            <FIELD name="_sc_det_ml" datatype="char" ID="_sc_det_ml_417"/>
+            <FIELD name="_sc_ep_1_flux" datatype="char" ID="_sc_ep_1_flux_418"/>
+            <FIELD name="_sc_ep_1_flux_err" datatype="char" ID="_sc_ep_1_flux_err_419"/>
+            <FIELD name="_sc_ep_2_flux" datatype="char" ID="_sc_ep_2_flux_420"/>
+            <FIELD name="_sc_ep_2_flux_err" datatype="char" ID="_sc_ep_2_flux_err_421"/>
+            <FIELD name="_sc_ep_3_flux" datatype="char" ID="_sc_ep_3_flux_422"/>
+            <FIELD name="_sc_ep_3_flux_err" datatype="char" ID="_sc_ep_3_flux_err_423"/>
+            <FIELD name="_sc_ep_4_flux" datatype="char" ID="_sc_ep_4_flux_424"/>
+            <FIELD name="_sc_ep_4_flux_err" datatype="char" ID="_sc_ep_4_flux_err_425"/>
+            <FIELD name="_sc_ep_5_flux" datatype="char" ID="_sc_ep_5_flux_426"/>
+            <FIELD name="_sc_ep_5_flux_err" datatype="char" ID="_sc_ep_5_flux_err_427"/>
+            <FIELD name="_sc_ep_8_flux" datatype="char" ID="_sc_ep_8_flux_428"/>
+            <FIELD name="_sc_ep_8_flux_err" datatype="char" ID="_sc_ep_8_flux_err_429"/>
+            <FIELD name="_sc_ep_9_flux" datatype="char" ID="_sc_ep_9_flux_430"/>
+            <FIELD name="_sc_ep_9_flux_err" datatype="char" ID="_sc_ep_9_flux_err_431"/>
+            <FIELD name="_sc_hr1" datatype="char" ID="_sc_hr1_432"/>
+            <FIELD name="_sc_hr1_err" datatype="char" ID="_sc_hr1_err_433"/>
+            <FIELD name="_sc_hr2" datatype="char" ID="_sc_hr2_434"/>
+            <FIELD name="_sc_hr2_err" datatype="char" ID="_sc_hr2_err_435"/>
+            <FIELD name="_sc_hr3" datatype="char" ID="_sc_hr3_436"/>
+            <FIELD name="_sc_hr3_err" datatype="char" ID="_sc_hr3_err_437"/>
+            <FIELD name="_sc_hr4" datatype="char" ID="_sc_hr4_438"/>
+            <FIELD name="_sc_hr4_err" datatype="char" ID="_sc_hr4_err_439"/>
+            <FIELD name="_sc_extent" datatype="char" ID="_sc_extent_440"/>
+            <FIELD name="_sc_ext_err" datatype="char" ID="_sc_ext_err_441"/>
+            <FIELD name="_sc_ext_ml" datatype="char" ID="_sc_ext_ml_442"/>
+            <FIELD name="_sc_chi2prob" datatype="double" ID="_sc_chi2prob_443"/>
+            <FIELD name="_sc_fvar" datatype="double" ID="_sc_fvar_444"/>
+            <FIELD name="_sc_fvarerr" datatype="double" ID="_sc_fvarerr_445"/>
+            <FIELD name="_sc_var_flag" datatype="boolean" ID="_sc_var_flag_446"/>
+            <FIELD name="_sc_sum_flag" datatype="char" ID="_sc_sum_flag_447"/>
+            <FIELD name="_sc_ep_8_fmin" datatype="char" ID="_sc_ep_8_fmin_448"/>
+            <FIELD name="_sc_ep_8_fmin_err" datatype="char" ID="_sc_ep_8_fmin_err_449"/>
+            <FIELD name="_sc_ep_8_fmax" datatype="char" ID="_sc_ep_8_fmax_450"/>
+            <FIELD name="_sc_ep_8_fmax_err" datatype="char" ID="_sc_ep_8_fmax_err_451"/>
+            <FIELD name="_mjd_first" datatype="double" ID="_mjd_first_452"/>
+            <FIELD name="_mjd_last" datatype="double" ID="_mjd_last_453"/>
+            <FIELD name="_n_detections" datatype="char" ID="_n_detections_454"/>
+            <FIELD name="_confused" datatype="boolean" ID="_confused_455"/>
+            <FIELD name="_high_background" datatype="boolean" ID="_high_background_456"/>
+        </TABLE>
+    </RESOURCE>
+</VOTABLE>

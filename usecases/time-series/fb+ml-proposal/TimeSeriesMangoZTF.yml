@@ -1,0 +1,595 @@
+---
+TimeSys:    &timesystem
+      frame : #"Coords:TimeFrame"
+         timescale: "TCB"
+         refposition: "BARYCENTER"
+         refdirection: "NotSet "  
+TimeSys:    &heliotimesystem
+      TimeFrame : # "Coords:TimeFrame"
+         timescale: "TCB"
+         refposition: "HELIOCENTER"
+         refdirection: "NotSet"
+PhotSys:    &photsystem
+       Photframe : #   #"coords:CoordFrame"// "ZT" 
+         cal :  #"PhotDM:Photcal"
+             zeroPoint  : #"PhotDM:ZeroPoint"P
+                 magnituteSystem :
+                     type : "Vega"
+                     flux :
+                         value : 3963.97
+                         unit : "Jy"
+             PhotometryFilter: #"PhotDM:PhotometryFilter"
+                 identifier : "zg"
+                 spectralLocation :
+                     value : 472.274
+                     unit : "nm"
+SpaceSystem:    &spacesys
+      frame:  #"Coords: SpaceFrame"
+         refPosition : "BARYCENTER"
+         spaceFrame : "ICRS"
+MangoObject    :
+      identifier: "686103400034440"
+      associatedData: #"mango:VOMOdelInstance"   // dock an instance of timeseries data  
+         semantic: "TimeDependantAssociatedData"
+         description: "Instance of TimeSeriesData atttached to the source"
+         ivoid: "ivo://......"
+         modelURL: "http://lien/vers/vodml-xml/tsd.xml"
+         modelName: "TimeSeriesData"
+         modelDoc: "http://lien/vers/vodml-html/tsd.html"
+         modelInstance: #"tsd:Tsdata"  //  ModelInstance   remplacée (ou remplie ) par une instance de TimeSeries
+           - Point : # "mango:Parameter" // instance d'un Mango Parameter complexe contenant tous les Parameter pour un point
+                 ucd: "time.epoch"
+                 semantic: "independantTime"
+                 description: "This is the time main stamp in MJD"
+                 Measure: #"Time"
+                    Coord: # "MJD"
+                        date: 58204.513900500002
+                        coordSys: *timesystem
+                 associatedParameters : # "mango:Parameter"
+                     ucd: "time.epoch"
+                     semantic: "dependantTime"
+                     description: "This is another (dependant) time  stamp in JD"
+                     Measure: # "Time"
+                        Coord: # "JD"
+                           date: 2458205.0119003966 
+                           coordSys: *heliotimesystem
+                 associatedParameters : # "mango:Parameter"
+                     ucd: "time.epoch"
+                     semantic: "dependantTime"
+                     description: "exposure file time stamp"
+                     Measure: # "Time"
+                     Coord: #"coords:TimeStamp"
+                           date: 20180327513854
+                           coordSys: *timesystem
+                 associatedParameters : # "mango:Parameter"
+                     ucd: "time.duration"
+                     semantic: "exposureTime"
+                     description : "Exposure time from scheduler"
+                     Measure : #"meas:GenericMeasure"
+                     Coord : # "coords:Coordinate"
+                           cval : 30
+                           coordSys : *timesystem 
+                 associatedParameters : # "mango:Parameter"
+                     ucd :  "phot.mag"
+                     semantic : "Magnitude"
+                     description : "This is the magnitude in the ZTF system for the object for a given Time Stamp"
+                     Measure : # "meas:GenericMeasure"
+                        Coord : # "spec:Spectrum.Data.FluxAxis"
+                           value : 17.7203445
+                           coordSys : *photsystem
+                        Error : 
+                           statError : 0.0312394332
+                 associatedParameters : # "mango:Parameter"
+                     ucd :  "phot.mag;em.opt;stat.max;instr.sensitivity;obs.exposure"
+                     semantic : "limitMagnitude"
+                     description : "Approximate 5-sigma limiting magnitude corresponding to epoch-based PSF-fit catalog"
+                     Measure : # "meas:GenericMeasure"
+                        Coord : # # "spec:Spectrum.Data.FluxAxis"
+                           value : 20.5799999
+                           coordSys : *photsystem
+                 associatedParameters : # "mango:Parameter"
+                     ucd :  "phot.mag;em.opt;phot.calib;arith.zp;obs.exposure"
+                     semantic : 
+                     description : "Magnitude zeropoint from photometric calibration"
+                     Measure : # "meas:GenericMeasure"
+                        Coord : # # "spec:Spectrum.Data.FluxAxis"
+                           value : 26.3803444
+                           coordSys : *photsystem
+                        Error : 
+                           statError : 0.0242190044 
+                 associatedParameters : # "mango:Parameter"
+                     ucd: "stat.fit.param;phot.calib;obs.exposure"
+                     semantic: "colorCoefficient"
+                     description : "Color coefficient from linear fit"
+                     Measure : # # "meas:GenericMeasure"
+                        Coord : # "coords:Coordinate"
+                           value: -0.109299645
+                           coordSys : *photsystem
+                        Error : 
+                           statError : 1.11619411e-05
+                 associatedParameters : # "mango:Parameter"
+                     ucd: "obs.airMass"
+                     semantic: "airMass"
+                     description : "Airmass at approximately the center of the focal plane at time of exposure"
+                     Measure : # # "meas:GenericMeasure"
+                        Coord : # "coords:Coordinate"
+                           value: 1.26100004
+                           coordSys : *photsystem
+                 associatedParameters : # "mango:Parameter"
+                     ucd: "pos.eq"
+                     semantic: "equatorialPosition"
+                     description: "This is the equatorial position"
+                     Measure: # "mango:LonLatSkyPosition"
+                        Coord : # "mango:lonLatPoint"
+                           longitude : 298.00252119999999
+                           latitude : 29.871491800000001
+                             LonLatCoordSys : *spacesys 
+                 associatedParameters : # "mango:Parameter"
+                     ucd: 
+                     semantic: "chi2"
+                     description: "Chi-squared of source"
+                     Measure: # "meas:GenericMeasure"
+                        Coord : # "coords:Coordinate"
+                           cval : 0.47299999
+                 associatedParameters : # "mango:Parameter"
+                     ucd: 
+                     semantic: "sharpness"
+                     description: "Sharpness of source"
+                     Measure: # "meas:GenericMeasure"
+                        Coord : # "coords:Coordinate"
+                           cval : -0.00400000019
+                 associatedParameters : # "mango:Parameter"
+                     ucd: "meta.code"
+                     semantic: "catalogFlag"
+                     description: "Flag in the catalog"
+                     Measure: # "meas:GenericMeasure"
+                        Coord : # "coords:Coordinate"
+                           cval : 0
+                 associatedParameters : # "mango:Parameter"
+                     ucd: meta.id
+                     semantic: fieldIdentifier
+                     description: "Field ID"
+                     Measure: # "meas:GenericMeasure"
+                        Coord : # "coords:Coordinate"
+                           cval : 686  
+                 associatedParameters : # "mango:Parameter"
+                     ucd: meta.id
+                     semantic: ccdNumber
+                     description: "CCD number"
+                     Measure: # "meas:GenericMeasure"
+                        Coord : # "coords:Coordinate"
+                           cval : 0x3
+                 associatedParameters : # "mango:Parameter"
+                     ucd: meta.id
+                     semantic: quadrantID
+                     description: "CCD quadrant ID"
+                     Measure: # "meas:GenericMeasure"
+                        Coord : # "coords:Coordinate"
+                           cval : 0x4
+                 associatedParameters : # "mango:Parameter"
+                     ucd: meta.id
+                     semantic: programID
+                     description: "Flag in the catalog"
+                     Measure: # "meas:GenericMeasure"
+                        Coord : # "coords:Coordinate"
+                           cval : 1
+           - Point : # "mango:Parameter" // instance d'un Mango Parameter complexe contenant tous les Parameter pour un point
+                 ucd: "time.epoch"
+                 semantic: "independantTime"
+                 description: "This is the time main stamp in MJD"
+                 Measure: #"Time"
+                    Coord: # "MJD"
+                        date: 58205.514027800004 
+                        coordSys: *timesystem
+                 associatedParameters : # "mango:Parameter"
+                     ucd: "time.epoch"
+                     semantic: "dependantTime"
+                     description: "This is another (dependant) time  stamp in JD"
+                     Measure: # "Time"
+                        Coord: # "JD"
+                           date: 2458206.0120819123   
+                           coordSys: *heliotimesystem
+                 associatedParameters : # "mango:Parameter"
+                     ucd: "time.epoch"
+                     semantic: "dependantTime"
+                     description: "exposure file time stamp"
+                     Measure: # "Time"
+                     Coord: #"coords:TimeStamp"
+                           date: 20180328514028 
+                           coordSys: *timesystem
+                 associatedParameters : # "mango:Parameter"
+                     ucd: "time.duration"
+                     semantic: "exposureTime"
+                     description : "Exposure time from scheduler"
+                     Measure : #"meas:GenericMeasure"
+                     Coord : # "coords:Coordinate"
+                           cval : 
+                           coordSys : *timesystem 
+                 associatedParameters : # "mango:Parameter"
+                     ucd :  "phot.mag"
+                     semantic : "Magnitude"
+                     description : "This is the magnitude in the ZTF system for the object for a given Time Stamp"
+                     Measure : # "meas:GenericMeasure"
+                        Coord : # "spec:Spectrum.Data.FluxAxis"
+                           value : 17.6563911 
+                           coordSys : *photsystem
+                        Error : 
+                           statError : 0.0305987112
+                 associatedParameters : # "mango:Parameter"
+                     ucd :  "phot.mag;em.opt;stat.max;instr.sensitivity;obs.exposure"
+                     semantic : "limitMagnitude"
+                     description : "Approximate 5-sigma limiting magnitude corresponding to epoch-based PSF-fit catalog"
+                     Measure : # "meas:GenericMeasure"
+                        Coord : # # "spec:Spectrum.Data.FluxAxis"
+                           value : 20.9699993
+                           coordSys : *photsystem
+                 associatedParameters : # "mango:Parameter"
+                     ucd :  "phot.mag;em.opt;phot.calib;arith.zp;obs.exposure"
+                     semantic : 
+                     description : "Magnitude zeropoint from photometric calibration"
+                     Measure : # "meas:GenericMeasure"
+                        Coord : # # "spec:Spectrum.Data.FluxAxis"
+                           value : 26.3073921
+                           coordSys : *photsystem
+                        Error : 
+                           statError : 0.0181296617  
+                 associatedParameters : # "mango:Parameter"
+                     ucd: "stat.fit.param;phot.calib;obs.exposure"
+                     semantic: "colorCoefficient"
+                     description : "Color coefficient from linear fit"
+                     Measure : # # "meas:GenericMeasure"
+                        Coord : # "coords:Coordinate"
+                           value: -0.0608760379
+                           coordSys : *photsystem
+                        Error : 
+                           statError : 6.216374e-06
+                 associatedParameters : # "mango:Parameter"
+                     ucd: "obs.airMass"
+                     semantic: "airMass"
+                     description : "Airmass at approximately the center of the focal plane at time of exposure"
+                     Measure : # # "meas:GenericMeasure"
+                        Coord : # "coords:Coordinate"
+                           value: 1.24699998 
+                           coordSys : *photsystem
+                 associatedParameters : # "mango:Parameter"
+                     ucd: "pos.eq"
+                     semantic: "equatorialPosition"
+                     description: "This is the equatorial position"
+                     Measure: # "mango:LonLatSkyPosition"
+                        Coord : # "mango:lonLatPoint"
+                           longitude : 298.00255520000002
+                           latitude : 29.8714631
+                             LonLatCoordSys : *spacesys 
+                 associatedParameters : # "mango:Parameter"
+                     ucd: 
+                     semantic: "chi2"
+                     description: "Chi-squared of source"
+                     Measure: # "meas:GenericMeasure"
+                        Coord : # "coords:Coordinate"
+                           cval : 1.023 
+                 associatedParameters : # "mango:Parameter"
+                     ucd: 
+                     semantic: "sharpness"
+                     description: "Sharpness of source"
+                     Measure: # "meas:GenericMeasure"
+                        Coord : # "coords:Coordinate"
+                           cval : -0.063000001
+                 associatedParameters : # "mango:Parameter"
+                     ucd: "meta.code"
+                     semantic: "catalogFlag"
+                     description: "Flag in the catalog"
+                     Measure: # "meas:GenericMeasure"
+                        Coord : # "coords:Coordinate"
+                           cval : 0
+                 associatedParameters : # "mango:Parameter"
+                     ucd: meta.id
+                     semantic: fieldIdentifier
+                     description: "Field ID"
+                     Measure: # "meas:GenericMeasure"
+                        Coord : # "coords:Coordinate"
+                           cval : 686   
+                 associatedParameters : # "mango:Parameter"
+                     ucd: meta.id
+                     semantic: ccdNumber
+                     description: "CCD number"
+                     Measure: # "meas:GenericMeasure"
+                        Coord : # "coords:Coordinate"
+                           cval : 0x3
+                 associatedParameters : # "mango:Parameter"
+                     ucd: meta.id
+                     semantic: quadrantID
+                     description: "CCD quadrant ID"
+                     Measure: # "meas:GenericMeasure"
+                        Coord : # "coords:Coordinate"
+                           cval : 0x4 
+                 associatedParameters : # "mango:Parameter"
+                     ucd: meta.id
+                     semantic: programID
+                     description: "Flag in the catalog"
+                     Measure: # "meas:GenericMeasure"
+                        Coord : # "coords:Coordinate"
+                           cval : 1                           
+MangoObject    :
+      identifier: "686103400106565"
+      associatedData: #"mango:VOMOdelInstance"   // dock an instance of timeseries data  
+         semantic: "TimeDependantAssociatedData"
+         description: "Instance of TimeSeriesData atttached to the source"
+         ivoid: "ivo://......"
+         modelURL: "http://lien/vers/vodml-xml/tsd.xml"
+         modelName: "TimeSeriesData"
+         modelDoc: "http://lien/vers/vodml-html/tsd.html"
+         modelInstance: #"tsd:Tsdata"  //  ModelInstance   remplacée (ou remplie ) par une instance de TimeSeries
+           - Point : # "mango:Parameter" // instance d'un Mango Parameter complexe contenant tous les Parameter pour un point
+                 ucd: "time.epoch"
+                 semantic: "independantTime"
+                 description: "This is the time main stamp in MJD"
+                 Measure: #"Time"
+                    Coord: # "MJD"
+                        date: 58436.158425900001
+                        coordSys: *timesystem
+                 associatedParameters : # "mango:Parameter"
+                     ucd: "time.epoch"
+                     semantic: "dependantTime"
+                     description: "This is another (dependant) time  stamp in JD"
+                     Measure: # "Time"
+                        Coord: # "JD"
+                           date: 2458436.6576212491  
+                           coordSys: *heliotimesystem
+                 associatedParameters : # "mango:Parameter"
+                     ucd: "time.epoch"
+                     semantic: "dependantTime"
+                     description: "exposure file time stamp"
+                     Measure: # "Time"
+                     Coord: #"coords:TimeStamp"
+                           date: 20181114158391
+                           coordSys: *timesystem
+                 associatedParameters : # "mango:Parameter"
+                     ucd: "time.duration"
+                     semantic: "exposureTime"
+                     description : "Exposure time from scheduler"
+                     Measure : #"meas:GenericMeasure"
+                     Coord : # "coords:Coordinate"
+                           cval : 30
+                           coordSys : *timesystem 
+                 associatedParameters : # "mango:Parameter"
+                     ucd :  "phot.mag"
+                     semantic : "Magnitude"
+                     description : "This is the magnitude in the ZTF system for the object for a given Time Stamp"
+                     Measure : # "meas:GenericMeasure"
+                        Coord : # "spec:Spectrum.Data.FluxAxis"
+                           value : 16.9269352
+                           coordSys : *photsystem
+                        Error : 
+                           statError : 0.0251016878 
+                 associatedParameters : # "mango:Parameter"
+                     ucd :  "phot.mag;em.opt;stat.max;instr.sensitivity;obs.exposure"
+                     semantic : "limitMagnitude"
+                     description : "Approximate 5-sigma limiting magnitude corresponding to epoch-based PSF-fit catalog"
+                     Measure : # "meas:GenericMeasure"
+                        Coord : # # "spec:Spectrum.Data.FluxAxis"
+                           value : 18.9200001
+                           coordSys : *photsystem
+                 associatedParameters : # "mango:Parameter"
+                     ucd :  "phot.mag;em.opt;phot.calib;arith.zp;obs.exposure"
+                     semantic : 
+                     description : "Magnitude zeropoint from photometric calibration"
+                     Measure : # "meas:GenericMeasure"
+                        Coord : # # "spec:Spectrum.Data.FluxAxis"
+                           value : 26.3049355
+                           coordSys : *photsystem
+                        Error : 
+                           statError :  0.0632516444
+                 associatedParameters : # "mango:Parameter"
+                     ucd: "stat.fit.param;phot.calib;obs.exposure"
+                     semantic: "colorCoefficient"
+                     description : "Color coefficient from linear fit"
+                     Measure : # # "meas:GenericMeasure"
+                        Coord : # "coords:Coordinate"
+                           value: -0.0710356906
+                           coordSys : *photsystem
+                        Error : 
+                           statError : 8.56498154e-05
+                 associatedParameters : # "mango:Parameter"
+                     ucd: "obs.airMass"
+                     semantic: "airMass"
+                     description : "Airmass at approximately the center of the focal plane at time of exposure"
+                     Measure : # # "meas:GenericMeasure"
+                        Coord : # "coords:Coordinate"
+                           value: 1.42900002
+                           coordSys : *photsystem
+                 associatedParameters : # "mango:Parameter"
+                     ucd: "pos.eq"
+                     semantic: "equatorialPosition"
+                     description: "This is the equatorial position"
+                     Measure: # "mango:LonLatSkyPosition"
+                        Coord : # "mango:lonLatPoint"
+                           longitude : 298.00343459999999
+                           latitude : 29.870647300000002
+                             LonLatCoordSys : *spacesys 
+                 associatedParameters : # "mango:Parameter"
+                     ucd: 
+                     semantic: "chi2"
+                     description: "Chi-squared of source"
+                     Measure: # "meas:GenericMeasure"
+                        Coord : # "coords:Coordinate"
+                           cval : 1.38399994
+                 associatedParameters : # "mango:Parameter"
+                     ucd: 
+                     semantic: "sharpness"
+                     description: "Sharpness of source"
+                     Measure: # "meas:GenericMeasure"
+                        Coord : # "coords:Coordinate"
+                           cval : 0.0610000007
+                 associatedParameters : # "mango:Parameter"
+                     ucd: "meta.code"
+                     semantic: "catalogFlag"
+                     description: "Flag in the catalog"
+                     Measure: # "meas:GenericMeasure"
+                        Coord : # "coords:Coordinate"
+                           cval : 32768
+                 associatedParameters : # "mango:Parameter"
+                     ucd: meta.id
+                     semantic: fieldIdentifier
+                     description: "Field ID"
+                     Measure: # "meas:GenericMeasure"
+                        Coord : # "coords:Coordinate"
+                           cval :   686
+                 associatedParameters : # "mango:Parameter"
+                     ucd: meta.id
+                     semantic: ccdNumber
+                     description: "CCD number"
+                     Measure: # "meas:GenericMeasure"
+                        Coord : # "coords:Coordinate"
+                           cval : 0x3
+                 associatedParameters : # "mango:Parameter"
+                     ucd: meta.id
+                     semantic: quadrantID
+                     description: "CCD quadrant ID"
+                     Measure: # "meas:GenericMeasure"
+                        Coord : # "coords:Coordinate"
+                           cval : 0x4
+                 associatedParameters : # "mango:Parameter"
+                     ucd: meta.id
+                     semantic: programID
+                     description: "Flag in the catalog"
+                     Measure: # "meas:GenericMeasure"
+                        Coord : # "coords:Coordinate"
+                           cval : 1
+           - Point : # "mango:Parameter" // instance d'un Mango Parameter complexe contenant tous les Parameter pour un point
+                 ucd: "time.epoch"
+                 semantic: "independantTime"
+                 description: "This is the time main stamp in MJD"
+                 Measure: #"Time"
+                    Coord: # "MJD"
+                        date:  58469.119490700003
+                        coordSys: *timesystem
+                 associatedParameters : # "mango:Parameter"
+                     ucd: "time.epoch"
+                     semantic: "dependantTime"
+                     description: "This is another (dependant) time  stamp in JD"
+                     Measure: # "Time"
+                        Coord: # "JD"
+                           date:    2458469.6168436748
+                           coordSys: *heliotimesystem
+                 associatedParameters : # "mango:Parameter"
+                     ucd: "time.epoch"
+                     semantic: "dependantTime"
+                     description: "exposure file time stamp"
+                     Measure: # "Time"
+                     Coord: #"coords:TimeStamp"
+                           date:  20181217119491
+                           coordSys: *timesystem
+                 associatedParameters : # "mango:Parameter"
+                     ucd: "time.duration"
+                     semantic: "exposureTime"
+                     description : "Exposure time from scheduler"
+                     Measure : #"meas:GenericMeasure"
+                     Coord : # "coords:Coordinate"
+                           cval : 30
+                           coordSys : *timesystem 
+                 associatedParameters : # "mango:Parameter"
+                     ucd :  "phot.mag"
+                     semantic : "Magnitude"
+                     description : "This is the magnitude in the ZTF system for the object for a given Time Stamp"
+                     Measure : # "meas:GenericMeasure"
+                        Coord : # "spec:Spectrum.Data.FluxAxis"
+                           value :  16.9838467
+                           coordSys : *photsystem
+                        Error : 
+                           statError : 0.0254338346
+                 associatedParameters : # "mango:Parameter"
+                     ucd :  "phot.mag;em.opt;stat.max;instr.sensitivity;obs.exposure"
+                     semantic : "limitMagnitude"
+                     description : "Approximate 5-sigma limiting magnitude corresponding to epoch-based PSF-fit catalog"
+                     Measure : # "meas:GenericMeasure"
+                        Coord : # # "spec:Spectrum.Data.FluxAxis"
+                           value : 19.6800003
+                           coordSys : *photsystem
+                 associatedParameters : # "mango:Parameter"
+                     ucd :  "phot.mag;em.opt;phot.calib;arith.zp;obs.exposure"
+                     semantic : 
+                     description : "Magnitude zeropoint from photometric calibration"
+                     Measure : # "meas:GenericMeasure"
+                        Coord : # # "spec:Spectrum.Data.FluxAxis"
+                           value : 25.8978462
+                           coordSys : *photsystem
+                        Error : 
+                           statError : 0.0301127695  
+                 associatedParameters : # "mango:Parameter"
+                     ucd: "stat.fit.param;phot.calib;obs.exposure"
+                     semantic: "colorCoefficient"
+                     description : "Color coefficient from linear fit"
+                     Measure : # # "meas:GenericMeasure"
+                        Coord : # "coords:Coordinate"
+                           value: -0.0629272684
+                           coordSys : *photsystem
+                        Error : 
+                           statError : 1.62205833e-05
+                 associatedParameters : # "mango:Parameter"
+                     ucd: "obs.airMass"
+                     semantic: "airMass"
+                     description : "Airmass at approximately the center of the focal plane at time of exposure"
+                     Measure : # # "meas:GenericMeasure"
+                        Coord : # "coords:Coordinate"
+                           value: 2.01399994
+                           coordSys : *photsystem
+                 associatedParameters : # "mango:Parameter"
+                     ucd: "pos.eq"
+                     semantic: "equatorialPosition"
+                     description: "This is the equatorial position"
+                     Measure: # "mango:LonLatSkyPosition"
+                        Coord : # "mango:lonLatPoint"
+                           longitude : 298.00373380000002
+                           latitude : 29.870633099999999
+                             LonLatCoordSys : *spacesys 
+                 associatedParameters : # "mango:Parameter"
+                     ucd: 
+                     semantic: "chi2"
+                     description: "Chi-squared of source"
+                     Measure: # "meas:GenericMeasure"
+                        Coord : # "coords:Coordinate"
+                           cval :  0.514999986
+                 associatedParameters : # "mango:Parameter"
+                     ucd: 
+                     semantic: "sharpness"
+                     description: "Sharpness of source"
+                     Measure: # "meas:GenericMeasure"
+                        Coord : # "coords:Coordinate"
+                           cval : 0.0179999992
+                 associatedParameters : # "mango:Parameter"
+                     ucd: "meta.code"
+                     semantic: "catalogFlag"
+                     description: "Flag in the catalog"
+                     Measure: # "meas:GenericMeasure"
+                        Coord : # "coords:Coordinate"
+                           cval : 0
+                 associatedParameters : # "mango:Parameter"
+                     ucd: meta.id
+                     semantic: fieldIdentifier
+                     description: "Field ID"
+                     Measure: # "meas:GenericMeasure"
+                        Coord : # "coords:Coordinate"
+                           cval : 686   
+                 associatedParameters : # "mango:Parameter"
+                     ucd: meta.id
+                     semantic: ccdNumber
+                     description: "CCD number"
+                     Measure: # "meas:GenericMeasure"
+                        Coord : # "coords:Coordinate"
+                           cval : 0x3
+                 associatedParameters : # "mango:Parameter"
+                     ucd: meta.id
+                     semantic: quadrantID
+                     description: "CCD quadrant ID"
+                     Measure: # "meas:GenericMeasure"
+                        Coord : # "coords:Coordinate"
+                           cval :  0x4
+                 associatedParameters : # "mango:Parameter"
+                     ucd: meta.id
+                     semantic: programID
+                     description: "Flag in the catalog"
+                     Measure: # "meas:GenericMeasure"
+                        Coord : # "coords:Coordinate"
+                           cval : 1  
+
+

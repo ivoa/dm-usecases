@@ -53,22 +53,22 @@ Uses the 'rama' python package to parse annotated data file and instantiate
 * Annotation
     * 4xmm_detections_annotated.vot
         * Position (ICRS) with Ellipse Error
-	* Photometry (flux) with Symmetrical Error; per band
-	* HardnessRatio with Symmetrical Error; x4
-	* Observation Duration
-	* Observation Start Time (MJD)
-	* Detection Flag
+        * Photometry (flux) with Symmetrical Error; per band
+        * HardnessRatio with Symmetrical Error; x4
+        * Observation Duration
+        * Observation Start Time (MJD)
+        * Detection Flag
     * ivoa_csc2_example_annotated.vot
         * Position (Galactic)
         * Photometry (flux); 1 band
-	* HardnessRatio with Bounds Error; x3
-	* Observation Start Time (ISOTime)
-	* Extended Flag
-	* Variability Flag
+        * HardnessRatio with Bounds Error; x3
+        * Observation Start Time (ISOTime)
+        * Extended Flag
+        * Variability Flag
     * vizier_gaiadr2_annotated.vot
         * Position (ICRS) with Box Error
         * Photometry (flux); 3 bands
-	* HardnessRatio; x1
+        * HardnessRatio; x1
 	
 * Consumption
     * see [sp_summary.md](sp_summary.md) for a summary of the model instances generated from the annotated files.

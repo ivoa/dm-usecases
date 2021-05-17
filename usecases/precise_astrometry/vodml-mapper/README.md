@@ -32,5 +32,5 @@ Find mapping named "MAPPING usecases precise_astrometry" and click green downloa
 
 The mapping shown is similar to this image:
 
-<img src="precise_astrometry.png"></img>
+<img src="precise-astrometry.png"></img>
 Note that many of the elements have been collapsed, which leaves only those roles engaged in some mapping in the image.

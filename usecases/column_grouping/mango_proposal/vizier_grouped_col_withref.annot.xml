@@ -37,7 +37,7 @@
 						<COLLECTION size="-1" dmrole="mango:MangoObject.associatedData" />
 						<COLLECTION size="-1" dmrole="mango:MangoObject.parameters">
 							<INSTANCE dmrole="mango:MangoObject.parameters" dmtype="mango:Parameter">
-								<ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="#radial velocity" />
+								<ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="http://www.ivoa.net/rdf/uat#radial-velocity" />
 								<ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="spect.dopplerVeloc;pos.heliocentric" />
 								<ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string"
 									value="Radial velocity, derived from the shift of some spectral feature in Heliocentric position coordinate (solar system bodies)" />
@@ -69,7 +69,7 @@
 								</COLLECTION>
 							</INSTANCE>
 							<INSTANCE ID="_plate_number" dmrole="mango:MangoObject.parameters" dmtype="mango:Parameter">
-								<ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="#Number.of.plates" />
+								<ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="http://www.ivoa.net/rdf/uat#astrostatistics" />
 								<ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="meta.number" />
 								<ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string"
 									value="Number of plates used for radial velocity " />
@@ -92,7 +92,7 @@
 								</INSTANCE>
 							</INSTANCE>
 							<INSTANCE ID="_observatory" dmrole="mango:MangoObject.parameters" dmtype="mango:Parameter">
-								<ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="#observatory" />
+								<ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="http://www.ivoa.net/rdf/uat#observatories" />
 								<ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="meta.ref;pos.frame " />
 								<ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string"
 									value="the observatories contributing to the mean radial velocity  " />

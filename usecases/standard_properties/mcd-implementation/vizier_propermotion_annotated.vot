@@ -1,123 +1,101 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<VOTABLE version="1.4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xmlns="http://www.ivoa.net/xml/VOTable/v1.3"
-  xsi:schemaLocation="http://www.ivoa.net/xml/VOTable/v1.3 http://www.ivoa.net/xml/VOTable/v1.3">
-<MODEL_INSTANCE name="MANGO" syntax="ModelInstanceInVot">
-  <GLOBALS>
-    <INSTANCE ID="SpaceSys_ICRS_Spherical" dmtype="coords:SpaceSys">
-      <INSTANCE dmrole="coords:PhysicalCoordSys.coordSpace" dmtype="coords:SphericalCoordSpace">
-        <COLLECTION size="-1" dmrole="coords:CoordSpace.axis">
-          <INSTANCE dmrole="coords:CoordSpace.axis" dmtype="coords:ContinuousAxis">
-            <ATTRIBUTE dmrole="coords:Axis.name" dmtype="ivoa:string" value="ra"/>
+<?xml version='1.0' encoding='UTF-8'?>
+<VOTABLE xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.ivoa.net/xml/VOTable/v1.3" version="1.4" xsi:schemaLocation="http://www.ivoa.net/xml/VOTable/v1.3 http://www.ivoa.net/xml/VOTable/v1.3">
+ <VODML>
+    <MODEL>
+      <NAME>meas</NAME>
+      <URL>https://www.ivoa.net/xml/Meas/20200908/Meas-v1.0.vo-dml.xml</URL>
+    </MODEL>
+    <MODEL>
+      <NAME>coords</NAME>
+      <URL>https://www.ivoa.net/xml/STC/20200908/Coords-v1.0.vo-dml.xml</URL>
+    </MODEL>
+    <MODEL>
+      <NAME>ivoa</NAME>
+      <URL>https://www.ivoa.net/xml/VODML/IVOA-v1.vo-dml.xml</URL>
+    </MODEL>
+    <GLOBALS>
+      <INSTANCE dmtype="coords:SpaceSys" ID="_coosys">
+        <COMPOSITION dmrole="coords:PhysicalCoordSys.frame">
+          <INSTANCE dmtype="coords:SpaceFrame">
+            <ATTRIBUTE dmrole="coords:SpaceFrame.spaceRefFrame">
+              <LITERAL value="ICRS" dmtype="ivoa:string"/>
+            </ATTRIBUTE>
+            <ATTRIBUTE dmrole="coords:SpaceFrame.refPosition">
+              <INSTANCE dmtype="coords:StdRefLocation">
+                <ATTRIBUTE dmrole="coords:StdRefLocation.position">
+                  <LITERAL value="BARYCENTER" dmtype="ivoa:string"/>
+                </ATTRIBUTE>
+              </INSTANCE>
+            </ATTRIBUTE>
           </INSTANCE>
-          <INSTANCE dmrole="coords:CoordSpace.axis" dmtype="coords:ContinuousAxis">
-            <ATTRIBUTE dmrole="coords:Axis.name" dmtype="ivoa:string" value="dec"/>
-          </INSTANCE>
-          <INSTANCE dmrole="coords:CoordSpace.axis" dmtype="coords:ContinuousAxis">
-            <ATTRIBUTE dmrole="coords:Axis.name" dmtype="ivoa:string" value="r"/>
-          </INSTANCE>
-        </COLLECTION>
+        </COMPOSITION>
       </INSTANCE>
-      <INSTANCE dmrole="coords:PhysicalCoordSys.frame" dmtype="coords:SpaceFrame">
-        <INSTANCE dmrole="coords:SpaceFrame.refPosition" dmtype="coords:StdRefLocation">
-          <ATTRIBUTE dmrole="coords:StdRefLocation.position" dmtype="ivoa:string" value="NoSet"/>
-        </INSTANCE>
-        <ATTRIBUTE dmrole="coords:SpaceFrame.spaceRefFrame" dmtype="ivoa:string" value="ICRS"/>
-        <ATTRIBUTE dmrole="coords:SpaceFrame.equinox" dmtype="coords:Epoch" value="NoSet"/>
+    </GLOBALS>
+    <TEMPLATES tableref="Results">
+      <INSTANCE dmtype="meas:Position">
+        <ATTRIBUTE dmrole="meas:Position.coord">
+          <INSTANCE dmtype="coords:Point">
+            <ATTRIBUTE dmrole="coords:Point.axis1">
+              <COLUMN dmtype="ivoa:RealQuantity" ref="_pos_ra"/>
+            </ATTRIBUTE>
+            <ATTRIBUTE dmrole="coords:Point.axis2">
+              <COLUMN dmtype="ivoa:RealQuantity" ref="_pos_dec"/>
+            </ATTRIBUTE>
+            <REFERENCE dmrole="coords:Coordinate.coordSys">
+              <IDREF>_coosys</IDREF>
+            </REFERENCE>
+          </INSTANCE>
+        </ATTRIBUTE>
+        <COMPOSITION dmrole="meas:Measure.error">
+          <INSTANCE dmtype="meas:Error">
+            <ATTRIBUTE dmrole="meas:Error.statError">
+              <INSTANCE dmtype="meas:Ellipse">
+                <ATTRIBUTE dmrole="meas:Ellipse.semiAxis">
+                  <COLUMN dmtype="ivoa:RealQuantity" ref="_e_pos_maj"/>
+                  <COLUMN dmtype="ivoa:RealQuantity" ref="_e_pos_min"/>
+                </ATTRIBUTE>
+              </INSTANCE>
+            </ATTRIBUTE>
+          </INSTANCE>
+        </COMPOSITION>
       </INSTANCE>
-    </INSTANCE>
-  </GLOBALS>
-  <TABLE_MAPPING tableref="Results">
-    <COLLECTION dmrole="root">
-      <TABLE_ROW_TEMPLATE>
-        <INSTANCE dmrole="root" dmtype="mango:MangoObject">
-          <ATTRIBUTE dmrole="mango:MangoObject.identifier" dmtype="ivoa:string" ref="PPM"/>
-          <COLLECTION size="-1" dmrole="mango:MangoObject.associatedData"/>
-          <COLLECTION size="-1" dmrole="mango:MangoObject.parameters">
-            <INSTANCE dmrole="mango:MangoObject.parameters" dmtype="mango:Parameter">
-              <ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="http://www.ivoa.net/rdf/uat#astronomical-location"/>
-              <ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="pos.eq;meta.main"/>
-              <ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string" value="position"/>
-              <ATTRIBUTE dmrole="mango:Parameter.reductionStatus" dmtype="ivoa:string" value="Computed"/>
-              
-              <INSTANCE dmrole="mango:Parameter.measure" dmtype="meas:Position">
-              <INSTANCE dmrole="meas:Measure.coord" dmtype="coords:Point">
-                <INSTANCE dmrole="coords:Point.axis1" dmtype="ivoa:RealQuantity">
-                  <ATTRIBUTE dmrole="ivoa:RealQuantity.value" dmtype="ivoa:real" ref="RAJ2000"/>
-                  <ATTRIBUTE dmrole="ivoa:Quantity.unit" dmtype="ivoa:Unit" value="deg"/>
-                </INSTANCE>
-                <INSTANCE dmrole="coords:Point.axis2" dmtype="ivoa:RealQuantity">
-                  <ATTRIBUTE dmrole="ivoa:RealQuantity.value" dmtype="ivoa:real" ref="DEJ2000"/>
-                  <ATTRIBUTE dmrole="ivoa:Quantity.unit" dmtype="ivoa:Unit" value="deg"/>
-                </INSTANCE>
-                <INSTANCE dmrole="coords:Coordinate.coordSys" dmref="SpaceSys_ICRS_Spherical"/>
+      <INSTANCE dmtype="meas:ProperMotion">
+        <ATTRIBUTE dmrole="meas:ProperMotion.lon">
+          <INSTANCE dmtype="coords:PhysicalCoordinate">
+            <ATTRIBUTE dmrole="coords:PhysicalCoordinate.cval">
+              <COLUMN dmtype="ivoa:RealQuantity" ref="_pm_ra"/>
+            </ATTRIBUTE>
+            <REFERENCE dmrole="coords:Coordinate.coordSys">
+              <IDREF>_coosys</IDREF>
+            </REFERENCE>
+          </INSTANCE>
+        </ATTRIBUTE>
+        <ATTRIBUTE dmrole="meas:ProperMotion.lat">
+          <INSTANCE dmtype="coords:PhysicalCoordinate">
+            <ATTRIBUTE dmrole="coords:PhysicalCoordinate.cval">
+              <COLUMN dmtype="ivoa:RealQuantity" ref="_pm_dec"/>
+            </ATTRIBUTE>
+            <REFERENCE dmrole="coords:Coordinate.coordSys">
+              <IDREF>_coosys</IDREF>
+            </REFERENCE>
+          </INSTANCE>
+        </ATTRIBUTE>
+        <COMPOSITION dmrole="meas:Measure.error">
+          <INSTANCE dmtype="meas:Error">
+            <ATTRIBUTE dmrole="meas:Error.statError">
+              <INSTANCE dmtype="meas:Ellipse">
+                <ATTRIBUTE dmrole="meas:Ellipse.semiAxis">
+                  <COLUMN dmtype="ivoa:RealQuantity" ref="_e_pm_maj"/>
+                  <COLUMN dmtype="ivoa:RealQuantity" ref="_e_pm_min"/>
+                </ATTRIBUTE>
               </INSTANCE>
-              </INSTANCE>
-              
-              <INSTANCE dmrole="meas:Measure.error" dmtype="meas:Error">
-                <INSTANCE dmrole="meas:Error.statError" dmtype="meas:Ellipse">
-                  <COLLECTION size="2" dmrole="meas:Ellipse.semiAxis">
-                    <INSTANCE dmrole="meas:Ellipse.semiAxis" dmtype="ivoa:RealQuantity">
-                      <ATTRIBUTE dmrole="ivoa:RealQuantity.value" dmtype="ivoa:real" ref="e_RAs"/>
-                      <ATTRIBUTE dmrole="ivoa:Quantity.unit" dmtype="ivoa:Unit" value="arcsec"/>
-                    </INSTANCE>
-                    <INSTANCE dmrole="meas:Ellipse.semiAxis" dmtype="ivoa:RealQuantity">
-                      <ATTRIBUTE dmrole="ivoa:RealQuantity.value" dmtype="ivoa:real" ref="e_DEs"/>
-                      <ATTRIBUTE dmrole="ivoa:Quantity.unit" dmtype="ivoa:Unit" value="arcsec"/>
-                    </INSTANCE>
-                  </COLLECTION>
-                  <INSTANCE dmrole="meas:Ellipse.posAngle" dmtype="ivoa:RealQuantity">
-                    <ATTRIBUTE dmrole="ivoa:RealQuantity.value" dmtype="ivoa:real" value="0.0"/>
-                    <ATTRIBUTE dmrole="ivoa:Quantity.unit" dmtype="ivoa:Unit" value="deg"/>
-                  </INSTANCE>
-                </INSTANCE>
-              </INSTANCE>
-            </INSTANCE>
-            <INSTANCE dmrole="mango:MangoObject.parameters" dmtype="mango:Parameter">
-              <ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="http://www.ivoa.net/rdf/uat#proper-motion"/>
-              <ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="pos.pm"/>
-              <ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string" value="Proper Motion"/>
-              <ATTRIBUTE dmrole="mango:Parameter.reductionStatus" dmtype="ivoa:string" value="Calibrated"/>
-              <INSTANCE dmrole="mango:Parameter.measure" dmtype="meas:ProperMotion">
-                <INSTANCE dmrole="meas:ProperMotion.lon" dmtype="coords:PhysicalCoordinate">
-                  <INSTANCE dmrole="coords:PhysicalCoordinate.cval" dmtype="ivoa:RealQuantity">
-                    <ATTRIBUTE dmrole="ivoa:RealQuantity.value" dmtype="ivoa:real" ref="pmRA"/>
-                    <ATTRIBUTE dmrole="ivoa:Quantity.unit" dmtype="ivoa:Unit" value="s/y"/>
-                  </INSTANCE>
-                </INSTANCE>
-                <INSTANCE dmrole="meas:ProperMotion.lat" dmtype="coords:PhysicalCoordinate">
-                  <INSTANCE dmrole="coords:PhysicalCoordinate.cval" dmtype="ivoa:RealQuantity">
-                    <ATTRIBUTE dmrole="ivoa:RealQuantity.value" dmtype="ivoa:real" ref="pmDE"/>
-                    <ATTRIBUTE dmrole="ivoa:Quantity.unit" dmtype="ivoa:Unit" value="s/y"/>
-                  </INSTANCE>
-                </INSTANCE>
-                <INSTANCE dmrole="meas:Measure.error" dmtype="meas:Error">
-                  <INSTANCE dmrole="meas:Error.statError" dmtype="Ellipse">
-                    <COLLECTION size="2" dmrole="meas:Ellipse.semiAxis">
-                      <INSTANCE dmrole="meas:Ellipse.semiAxis" dmtype="ivoa:RealQuantity">
-                        <ATTRIBUTE dmrole="ivoa:RealQuantity.value" dmtype="ivoa:real" ref="e_pmRA"/>
-                        <ATTRIBUTE dmrole="ivoa:Quantity.unit" dmtype="ivoa:Unit" value="mas/y"/>
-                      </INSTANCE>
-                      <INSTANCE dmrole="meas:Ellipse.semiAxis" dmtype="ivoa:RealQuantity">
-                        <ATTRIBUTE dmrole="ivoa:RealQuantity.value" dmtype="ivoa:real" ref="e_pmDE"/>
-                        <ATTRIBUTE dmrole="ivoa:Quantity.unit" dmtype="ivoa:Unit" value="mas/y"/>
-                      </INSTANCE>
-                    </COLLECTION>
-                    <INSTANCE dmrole="meas:Ellipse.posAngle" dmtype="ivoa:RealQuantity">
-                      <ATTRIBUTE dmrole="ivoa:RealQuantity.value" dmtype="ivoa:real" value="0.0"/>
-                      <ATTRIBUTE dmrole="ivoa:Quantity.unit" dmtype="ivoa:Unit" value="deg"/>
-                    </INSTANCE>
-                  </INSTANCE>
-                </INSTANCE>
-              </INSTANCE>
-            </INSTANCE>
-          </COLLECTION>
-        </INSTANCE>
-      </TABLE_ROW_TEMPLATE>
-    </COLLECTION>
-  </TABLE_MAPPING>
-</MODEL_INSTANCE>
- <DESCRIPTION>
+            </ATTRIBUTE>
+          </INSTANCE>
+        </COMPOSITION>
+      </INSTANCE>
+    </TEMPLATES>
+  </VODML>
+  <DESCRIPTION>
    VizieR Astronomical Server vizier.u-strasbg.fr
     Date: 2020-10-15T11:22:37 [V1.99+ (14-Oct-2013)]
    Explanations and Statistics of UCDs:			See LINK below
@@ -153,28 +131,28 @@ Execution Reports
     <FIELD name="Sp" ucd="src.spType" datatype="char" arraysize="2"><!-- ucd="SPECT_TYPE_GENERAL" -->
       <DESCRIPTION>Spectral type</DESCRIPTION>
     </FIELD>
-    <FIELD name="RAJ2000" ucd="pos.eq.ra;meta.main" ref="J2000_2000.000" datatype="char" arraysize="12" unit="&quot;h:m:s&quot;"><!-- ucd="POS_EQ_RA_MAIN" -->
+    <FIELD ID="_pos_ra" name="RAJ2000" ucd="pos.eq.ra;meta.main" ref="J2000_2000.000" datatype="char" arraysize="12"><!-- ucd="POS_EQ_RA_MAIN" -->
       <DESCRIPTION>Right Ascension for the Equinox=J2000.0 and Epoch=J2000.0, on the system of FK5</DESCRIPTION>
     </FIELD>
-    <FIELD name="DEJ2000" ucd="pos.eq.dec;meta.main" ref="J2000_2000.000" datatype="char" arraysize="12" unit="&quot;d:m:s&quot;"><!-- ucd="POS_EQ_DEC_MAIN" -->
+    <FIELD ID="_pos_dec" name="DEJ2000" ucd="pos.eq.dec;meta.main" ref="J2000_2000.000" datatype="char" arraysize="12"><!-- ucd="POS_EQ_DEC_MAIN" -->
       <DESCRIPTION>Declination for the equinox and epoch J2000.0, on the system of FK5</DESCRIPTION>
     </FIELD>
-    <FIELD name="pmRA" ucd="pos.pm;pos.eq.ra" ref="J2000_2000.000" datatype="float" width="7" precision="4" unit="s/yr"><!-- ucd="POS_EQ_PMRA" -->
+    <FIELD ID="_pm_ra" name="pmRA" ucd="pos.pm;pos.eq.ra" ref="J2000_2000.000" datatype="float" width="7" precision="4" unit="arcsec/yr"><!-- ucd="POS_EQ_PMRA" -->
       <DESCRIPTION>Proper motion in RA, J2000</DESCRIPTION>
     </FIELD>
-    <FIELD name="pmDE" ucd="pos.pm;pos.eq.dec" ref="J2000_2000.000" datatype="float" width="6" precision="3" unit="arcsec/yr"><!-- ucd="POS_EQ_PMDEC" -->
+    <FIELD ID="_pm_dec" name="pmDE" ucd="pos.pm;pos.eq.dec" ref="J2000_2000.000" datatype="float" width="6" precision="3" unit="arcsec/yr"><!-- ucd="POS_EQ_PMDEC" -->
       <DESCRIPTION>Proper motion in DE, J2000</DESCRIPTION>
     </FIELD>
-    <FIELD name="e_RAs" ucd="stat.error" datatype="short" width="2" unit="10mas"><!-- ucd="ERROR" -->
+    <FIELD ID="_e_pos_maj" name="e_RAs" ucd="stat.error" datatype="short" width="2" unit="10mas"><!-- ucd="ERROR" -->
       <DESCRIPTION>Mean error of RA</DESCRIPTION>
     </FIELD>
-    <FIELD name="e_DEs" ucd="stat.error" datatype="short" width="2" unit="10mas"><!-- ucd="ERROR" -->
+    <FIELD ID="_e_pos_min" name="e_DEs" ucd="stat.error" datatype="short" width="2" unit="10mas"><!-- ucd="ERROR" -->
       <DESCRIPTION>Mean error of DE</DESCRIPTION>
     </FIELD>
-    <FIELD name="e_pmRA" ucd="stat.error" datatype="float" width="4" precision="1" unit="mas/yr"><!-- ucd="ERROR" -->
+    <FIELD ID="_e_pm_maj" name="e_pmRA" ucd="stat.error" datatype="float" width="4" precision="1" unit="mas/yr"><!-- ucd="ERROR" -->
       <DESCRIPTION>Mean error of pmRA</DESCRIPTION>
     </FIELD>
-    <FIELD name="e_pmDE" ucd="stat.error" datatype="float" width="4" precision="1" unit="mas/yr"><!-- ucd="ERROR" -->
+    <FIELD ID="_e_pm_min" name="e_pmDE" ucd="stat.error" datatype="float" width="4" precision="1" unit="mas/yr"><!-- ucd="ERROR" -->
       <DESCRIPTION>Mean error of pmDE</DESCRIPTION>
     </FIELD>
     <FIELD name="recno" ucd="meta.record" datatype="int" width="8" type="hidden"><!-- ucd="RECORD" -->
@@ -187,12 +165,12 @@ Execution Reports
 <TR><TD>3</TD><TD>+84 0542</TD><TD>10.6</TD><TD>G5</TD><TD>00 01 27.925</TD><TD>+85 20 11.40</TD><TD>0.0176</TD><TD>0.031</TD><TD>7</TD><TD>8</TD><TD>3.6</TD><TD>4.0</TD><TD>3</TD></TR>
 <TR><TD>4</TD><TD>+82 0747</TD><TD>11.0</TD><TD>F5</TD><TD>00 01 44.904</TD><TD>+83 13 37.63</TD><TD>0.0254</TD><TD>-0.006</TD><TD>11</TD><TD>12</TD><TD>4.8</TD><TD>5.2</TD><TD>4</TD></TR>
 <TR><TD>5</TD><TD>+83 0672</TD><TD>11.3</TD><TD>K0</TD><TD>00 01 47.495</TD><TD>+83 52 52.61</TD><TD>0.0145</TD><TD>0.005</TD><TD>11</TD><TD>12</TD><TD>5.0</TD><TD>5.4</TD><TD>5</TD></TR>
-<TR><TD>6</TD><TD></TD><TD>11.1</TD><TD>A2</TD><TD>00 02 05.001</TD><TD>+80 13 09.32</TD><TD>-0.0041</TD><TD>-0.006</TD><TD>11</TD><TD>12</TD><TD>4.8</TD><TD>5.3</TD><TD>6</TD></TR>
+<TR><TD>6</TD><TD/><TD>11.1</TD><TD>A2</TD><TD>00 02 05.001</TD><TD>+80 13 09.32</TD><TD>-0.0041</TD><TD>-0.006</TD><TD>11</TD><TD>12</TD><TD>4.8</TD><TD>5.3</TD><TD>6</TD></TR>
 <TR><TD>7</TD><TD>+79 0798</TD><TD>11.3</TD><TD>G5</TD><TD>00 02 17.192</TD><TD>+80 41 48.33</TD><TD>-0.0012</TD><TD>-0.013</TD><TD>12</TD><TD>12</TD><TD>4.9</TD><TD>5.3</TD><TD>7</TD></TR>
 <TR><TD>8</TD><TD>+86 0347</TD><TD>8.0</TD><TD>F0</TD><TD>00 02 27.759</TD><TD>+87 01 57.84</TD><TD>0.0167</TD><TD>0.011</TD><TD>7</TD><TD>8</TD><TD>3.3</TD><TD>3.6</TD><TD>8</TD></TR>
 <TR><TD>9</TD><TD>+82 0748</TD><TD>7.3</TD><TD>A0</TD><TD>00 02 42.606</TD><TD>+82 58 22.99</TD><TD>0.0031</TD><TD>-0.015</TD><TD>9</TD><TD>10</TD><TD>3.8</TD><TD>4.2</TD><TD>9</TD></TR>
 <TR><TD>10</TD><TD>+79 0799p</TD><TD>8.1</TD><TD>F2</TD><TD>00 02 46.564</TD><TD>+80 16 55.61</TD><TD>0.0190</TD><TD>-0.001</TD><TD>5</TD><TD>7</TD><TD>2.1</TD><TD>2.3</TD><TD>10</TD></TR>
-<TR><TD>11</TD><TD>+79 0799s</TD><TD>10.4</TD><TD></TD><TD>00 02 48.940</TD><TD>+80 17 11.49</TD><TD>0.0157</TD><TD>0.007</TD><TD>10</TD><TD>11</TD><TD>4.6</TD><TD>4.7</TD><TD>11</TD></TR>
+<TR><TD>11</TD><TD>+79 0799s</TD><TD>10.4</TD><TD/><TD>00 02 48.940</TD><TD>+80 17 11.49</TD><TD>0.0157</TD><TD>0.007</TD><TD>10</TD><TD>11</TD><TD>4.6</TD><TD>4.7</TD><TD>11</TD></TR>
 <TR><TD>12</TD><TD>+81 0841</TD><TD>9.6</TD><TD>B8</TD><TD>00 03 16.517</TD><TD>+82 39 22.89</TD><TD>-0.0084</TD><TD>-0.024</TD><TD>10</TD><TD>10</TD><TD>4.4</TD><TD>4.6</TD><TD>12</TD></TR>
 <TR><TD>13</TD><TD>+79 0800</TD><TD>10.2</TD><TD>F0</TD><TD>00 03 17.608</TD><TD>+80 29 06.99</TD><TD>0.0088</TD><TD>-0.007</TD><TD>11</TD><TD>11</TD><TD>4.8</TD><TD>5.0</TD><TD>13</TD></TR>
 <TR><TD>14</TD><TD>+79 0801</TD><TD>10.7</TD><TD>K0</TD><TD>00 03 29.648</TD><TD>+80 44 16.25</TD><TD>0.0031</TD><TD>0.008</TD><TD>9</TD><TD>9</TD><TD>2.6</TD><TD>2.8</TD><TD>14</TD></TR>
@@ -210,7 +188,7 @@ Execution Reports
 <TR><TD>26</TD><TD>+83 0674</TD><TD>12.1</TD><TD>K2</TD><TD>00 07 20.383</TD><TD>+84 25 11.09</TD><TD>-0.0024</TD><TD>-0.020</TD><TD>12</TD><TD>13</TD><TD>5.2</TD><TD>5.7</TD><TD>26</TD></TR>
 <TR><TD>27</TD><TD>+83 0675</TD><TD>12.2</TD><TD>K0</TD><TD>00 07 44.925</TD><TD>+84 36 13.86</TD><TD>-0.0011</TD><TD>-0.015</TD><TD>12</TD><TD>13</TD><TD>5.3</TD><TD>5.9</TD><TD>27</TD></TR>
 <TR><TD>28</TD><TD>+84 0547</TD><TD>11.1</TD><TD>K0</TD><TD>00 07 54.039</TD><TD>+85 45 44.37</TD><TD>-0.0257</TD><TD>0.007</TD><TD>6</TD><TD>8</TD><TD>2.6</TD><TD>2.9</TD><TD>28</TD></TR>
-<TR><TD>29</TD><TD></TD><TD>10.9</TD><TD>F8</TD><TD>00 08 18.555</TD><TD>+80 10 01.37</TD><TD>-0.0072</TD><TD>-0.037</TD><TD>11</TD><TD>12</TD><TD>4.7</TD><TD>5.0</TD><TD>29</TD></TR>
+<TR><TD>29</TD><TD/><TD>10.9</TD><TD>F8</TD><TD>00 08 18.555</TD><TD>+80 10 01.37</TD><TD>-0.0072</TD><TD>-0.037</TD><TD>11</TD><TD>12</TD><TD>4.7</TD><TD>5.0</TD><TD>29</TD></TR>
 <TR><TD>30</TD><TD>+85 0412</TD><TD>9.0</TD><TD>G0</TD><TD>00 08 50.153</TD><TD>+86 47 16.43</TD><TD>0.3811</TD><TD>-0.003</TD><TD>6</TD><TD>8</TD><TD>3.2</TD><TD>3.5</TD><TD>30</TD></TR>
 <TR><TD>31</TD><TD>+79 0001</TD><TD>10.0</TD><TD>A0</TD><TD>00 09 28.619</TD><TD>+80 24 44.80</TD><TD>-0.0046</TD><TD>-0.028</TD><TD>11</TD><TD>11</TD><TD>4.5</TD><TD>4.7</TD><TD>31</TD></TR>
 <TR><TD>32</TD><TD>+79 0002</TD><TD>10.3</TD><TD>K0</TD><TD>00 09 53.429</TD><TD>+80 25 54.01</TD><TD>0.0013</TD><TD>-0.019</TD><TD>11</TD><TD>11</TD><TD>4.5</TD><TD>4.8</TD><TD>32</TD></TR>
@@ -218,7 +196,7 @@ Execution Reports
 <TR><TD>34</TD><TD>+83 0001</TD><TD>9.1</TD><TD>F5</TD><TD>00 10 05.004</TD><TD>+84 09 07.44</TD><TD>0.0187</TD><TD>0.007</TD><TD>10</TD><TD>10</TD><TD>4.6</TD><TD>4.6</TD><TD>34</TD></TR>
 <TR><TD>35</TD><TD>+81 0001</TD><TD>10.7</TD><TD>G5</TD><TD>00 10 28.002</TD><TD>+82 43 29.69</TD><TD>0.0261</TD><TD>-0.019</TD><TD>11</TD><TD>11</TD><TD>4.8</TD><TD>4.9</TD><TD>35</TD></TR>
 <TR><TD>36</TD><TD>+82 0001</TD><TD>10.4</TD><TD>F2</TD><TD>00 11 10.279</TD><TD>+83 03 48.74</TD><TD>-0.0042</TD><TD>-0.020</TD><TD>10</TD><TD>11</TD><TD>4.7</TD><TD>4.9</TD><TD>36</TD></TR>
-<TR><TD>37</TD><TD></TD><TD>10.3</TD><TD>A0</TD><TD>00 11 55.328</TD><TD>+80 17 37.11</TD><TD>0.0076</TD><TD>-0.005</TD><TD>11</TD><TD>11</TD><TD>4.5</TD><TD>4.8</TD><TD>37</TD></TR>
+<TR><TD>37</TD><TD/><TD>10.3</TD><TD>A0</TD><TD>00 11 55.328</TD><TD>+80 17 37.11</TD><TD>0.0076</TD><TD>-0.005</TD><TD>11</TD><TD>11</TD><TD>4.5</TD><TD>4.8</TD><TD>37</TD></TR>
 <TR><TD>38</TD><TD>+81 0002</TD><TD>11.7</TD><TD>K0</TD><TD>00 11 55.610</TD><TD>+81 58 52.34</TD><TD>-0.0103</TD><TD>-0.022</TD><TD>12</TD><TD>12</TD><TD>5.2</TD><TD>5.4</TD><TD>38</TD></TR>
 <TR><TD>39</TD><TD>+82 0002</TD><TD>10.2</TD><TD>K2</TD><TD>00 12 26.523</TD><TD>+83 11 43.58</TD><TD>0.0186</TD><TD>0.003</TD><TD>10</TD><TD>10</TD><TD>4.2</TD><TD>4.4</TD><TD>39</TD></TR>
 <TR><TD>40</TD><TD>+83 0002</TD><TD>11.1</TD><TD>K0</TD><TD>00 12 30.731</TD><TD>+84 31 32.64</TD><TD>0.0149</TD><TD>-0.003</TD><TD>11</TD><TD>12</TD><TD>4.9</TD><TD>5.3</TD><TD>40</TD></TR>

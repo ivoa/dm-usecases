@@ -36,7 +36,7 @@
 						<COLLECTION size="-1" dmrole="mango:MangoObject.associatedData" />
 						<COLLECTION size="-1" dmrole="mango:MangoObject.parameters">
 							<INSTANCE dmrole="mango:MangoObject.parameters" dmtype="mango:Parameter">
-								<ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="#position" />
+								<ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="http://www.ivoa.net/rdf/uat#astronomical-location" />
 								<ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="pos.eq;meta.main" />
 								<ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string" value="position" />
 								<INSTANCE dmrole="mango:Parameter.measure" dmtype="coords:Point">
@@ -107,7 +107,7 @@
 
 							</INSTANCE>
 							<INSTANCE ID="_pm" dmrole="mango:MangoObject.parameters" dmtype="mango:Parameter">
-								<ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="#propermotion" />
+								<ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="http://www.ivoa.net/rdf/uat#proper-motion" />
 								<ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="pos.pm" />
 								<ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string" value="Proper Motion" />
 								<INSTANCE dmrole="mango:Parameter.measure" dmtype="meas:ProperMotion">
@@ -141,7 +141,7 @@
 							</INSTANCE>
 
 							<INSTANCE ID="_vr" dmrole="mango:MangoObject.parameters" dmtype="mango:Parameter">
-								<ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="#radial velocity" />
+								<ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="http://www.ivoa.net/rdf/uat#radial-velocity" />
 								<ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="spect.dopplerVeloc" />
 								<ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string" value="Radial velocity" />
 								<INSTANCE dmrole="mango:Parameter.measure" dmtype="meas:GenericMeasure">
@@ -163,7 +163,7 @@
 							</INSTANCE>
 
 							<INSTANCE ID="_plx" dmrole="mango:MangoObject.parameters" dmtype="mango:Parameter">
-								<ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="#parallax" />
+								<ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="http://www.ivoa.net/rdf/uat#parallax" />
 								<ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="pos.parallax" />
 								<ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string" value="Parallax" />
 								<INSTANCE dmrole="mango:Parameter.measure" dmtype="meas:GenericMeasure">

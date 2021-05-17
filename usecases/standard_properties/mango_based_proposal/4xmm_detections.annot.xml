@@ -154,7 +154,7 @@
 						      Sky position
 						     -->
 							<INSTANCE dmrole="mango:Parameter.measure" dmtype="mango:Parameter">
-								<ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="#postion.corrected" />
+								<ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="http://www.ivoa.net/rdf/uat#astronomical-location" />
 								<ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="pos" />
 								<ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string" value="Corrected position" />
 								<ATTRIBUTE dmrole="mango:Parameter.reductionStatus" dmtype="ivoa:string" value="Corrected" />
@@ -184,7 +184,7 @@
                               Flux in each of the 5 bands
                              -->
 							<INSTANCE dmrole="mango:Parameter.measure" dmtype="mango:Parameter">
-								<ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="#flux.corrected" />
+								<ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="http://www.ivoa.net/rdf/uat#photometry" />
 								<ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="phot.flux" />
 								<ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string"
 									value="Flux in Energy band 1 0.2-0.5KeV (cameras merged)" />
@@ -205,7 +205,7 @@
 								</INSTANCE>
 							</INSTANCE>
 							<INSTANCE dmrole="mango:Parameter.measure" dmtype="mango:Parameter">
-								<ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="#flux.corrected" />
+								<ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="http://www.ivoa.net/rdf/uat#photometry" />
 								<ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="phot.flux" />
 								<ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string"
 									value="Flux in Energy band 2 0.5-1KeV (cameras merged)" />
@@ -226,7 +226,7 @@
 								</INSTANCE>
 							</INSTANCE>
 							<INSTANCE dmrole="mango:Parameter.measure" dmtype="mango:Parameter">
-								<ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="#flux.corrected" />
+								<ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="http://www.ivoa.net/rdf/uat#photometry" />
 								<ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="phot.flux" />
 								<ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string"
 									value="Flux in Energy band 2 1-2KeV (cameras merged)" />
@@ -247,7 +247,7 @@
 								</INSTANCE>
 							</INSTANCE>
 							<INSTANCE dmrole="mango:Parameter.measure" dmtype="mango:Parameter">
-								<ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="#flux.corrected" />
+								<ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="http://www.ivoa.net/rdf/uat#photometry" />
 								<ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="phot.flux" />
 								<ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string"
 									value="Flux in Energy band 2 2-4.5KeV (cameras merged)" />
@@ -268,7 +268,7 @@
 								</INSTANCE>
 							</INSTANCE>
 							<INSTANCE dmrole="mango:Parameter.measure" dmtype="mango:Parameter">
-								<ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="#flux.corrected" />
+								<ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="http://www.ivoa.net/rdf/uat#photometry" />
 								<ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="phot.flux" />
 								<ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string"
 									value="Flux in Energy band 2 4.5-12KeV (cameras merged)" />
@@ -292,7 +292,7 @@
 							  Hardness ratio covering these 5 bands
 							 -->
 							<INSTANCE dmrole="mango:Parameter.measure" dmtype="mango:Parameter">
-								<ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="#hardness_ration.computed" />
+								<ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="http://www.ivoa.net/rdf/uat#hardness-ratio" />
 								<ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="phot.flux;arith.ratio" />
 								<ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string"
 									value="Hardness Ratio in Energy band 1 and 2 (cameras merged)" />
@@ -313,7 +313,7 @@
 								</INSTANCE>
 							</INSTANCE>
 							<INSTANCE dmrole="mango:Parameter.measure" dmtype="mango:Parameter">
-								<ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="#hardness_ration.computed" />
+								<ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="http://www.ivoa.net/rdf/uat#hardness-ratio" />
 								<ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="phot.flux;arith.ratio" />
 								<ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string"
 									value="Hardness Ratio in Energy band 2 and 3 (cameras merged)" />
@@ -334,7 +334,7 @@
 								</INSTANCE>
 							</INSTANCE>
 							<INSTANCE dmrole="mango:Parameter.measure" dmtype="mango:Parameter">
-								<ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="#hardness_ration.computed" />
+								<ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="http://www.ivoa.net/rdf/uat#hardness-ratio" />
 								<ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="phot.flux;arith.ratio" />
 								<ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string"
 									value="Hardness Ratio in Energy band 3 and 4 (cameras merged)" />
@@ -355,7 +355,7 @@
 								</INSTANCE>
 							</INSTANCE>
 							<INSTANCE dmrole="mango:Parameter.measure" dmtype="mango:Parameter">
-								<ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="#hardness_ration.computed" />
+								<ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="http://www.ivoa.net/rdf/uat#hardness-ratio" />
 								<ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="phot.flux;arith.ratio" />
 								<ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string"
 									value="Hardness Ratio in Energy band 4 and 5 (cameras merged)" />

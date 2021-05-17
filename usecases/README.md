@@ -35,10 +35,10 @@
 | combined_data        |  S I              |             | S I                |                    |  S I             |
 | complex-shaped-object|  S                |             |                    |                    |                  |
 | orbital-system       |  S                |             |                    |                    |                  |
-| time-series          |                   | S I         | S I                |  S I               |                  |
+| time-series          |                   | S I         | S I                |  S I               |  S I             |
 
 * **S** supported
 * **I** implemented
 
-(*) Serialized with modelinstanceinvot
+(*) Serialized with modelinstanceinvot\
 (**) VODML-Mapper is available on http://dsa012.pha.jhu.edu:8081/VODML-Mapper/

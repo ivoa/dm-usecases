@@ -59,7 +59,13 @@
    * They are all considered as TimeDependant  parameters
    * So the structure of the instance is very similar to the previous one except than instead of having two associatedParameters (to the time) we have plenty of those now. 
    * We have defined CoordinateSystems. TimeSys (and HelioTimeSys) are classical coords datamodel instances. PhotSys (actually PhotFrame inside it) encompass an instance of PhotDM "Photcal". 
-   * we have added two yml files which implement excerpt of our two xml examples in yaml : TimeSeriesGAVO-Gaia-RP-annot.xml  and 
+   * we have added two yml files which implement excerpt of our two xml examples in yaml : TimeSeriesGAVO-Gaia-RP-annot.xml  and TimeSeriesMangoZTF.yml
+   
+**New version in May 2021**
+   * The 4 files TimeSeriesMangoZTF.new.yml, TimeSeriesMangoGAIADR2.new.yml,  TimeSeriesMangoZTF.new.xml and TimeSeriesGAVO-Gaia-RP.new.xml :
+   * - implement a new version of PhotCal based on PhotDM 1.1
+   * - add "direct" Parameters to the mangoObject describing the source both for ZTF and Gaia
+   * - make use of extension of Measures and Coordinates defined inside mango instead of GenericMeasure 
 
 
 

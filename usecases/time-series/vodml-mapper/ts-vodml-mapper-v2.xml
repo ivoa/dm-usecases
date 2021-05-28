@@ -1,0 +1,479 @@
+<VOTABLE
+    xmlns="http://www.ivoa.net/xml/VOTable/v1.4_vodml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.ivoa.net/xml/VOTable/v1.4_vodml https://volute.g-vo.org/svn/trunk/projects/dm/vo-dml-org/xsd/ext/VOTable-1.4_vodml.xsd">
+    <VODML>
+        <MODEL>
+            <NAME>cube</NAME>
+            <URL>http://volute.g-vo.org/svn/trunk/projects/dm/Cube/vo-dml/Cube-1.0.vo-dml.xml</URL>
+        </MODEL>
+        <MODEL>
+            <NAME>ds</NAME>
+            <URL>http://volute.g-vo.org/svn/trunk/projects/dm/DatasetMetadata/vo-dml/DatasetMetadata-1.0.vo-dml.xml</URL>
+        </MODEL>
+        <MODEL>
+            <NAME>mango</NAME>
+            <URL>https://raw.githubusercontent.com/ivoa-std/MANGO/a46441f6fc498a6aeb33ed97e65689fee3d00f6c/vo-dml/mango.vo-dml.xml</URL>
+        </MODEL>
+        <MODEL>
+            <NAME>meas</NAME>
+            <URL>http://volute.g-vo.org/svn/trunk/projects/dm/STC/Meas/vo-dml/STC_meas-v1.0.vo-dml.xml</URL>
+        </MODEL>
+        <MODEL>
+            <NAME>coords</NAME>
+            <URL>http://volute.g-vo.org/svn/trunk/projects/dm/STC/Coords/vo-dml/STC_coords-v1.0.vo-dml.xml</URL>
+        </MODEL>
+        <MODEL>
+            <NAME>ivoa</NAME>
+            <URL>http://volute.g-vo.org/svn/trunk/projects/dm/vo-dml/models/ivoa/vo-dml/IVOA-v1.0.vo-dml.xml</URL>
+        </MODEL>
+        <GLOBALS>
+            <INSTANCE dmtype="cube:SparseCube" ID="T1622151090309_100">
+                <COMPOSITION dmrole="cube:SparseCube.data">
+                    <EXTINSTANCES>T1622151090309_377</EXTINSTANCES>
+                </COMPOSITION>
+                <REFERENCE dmrole="cube:DataProduct.dataset">
+                    <IDREF>T1622151090309_161</IDREF>
+                </REFERENCE>
+            </INSTANCE>
+            <INSTANCE dmtype="ds:experiment.ObsDataset" ID="T1622151090309_161">
+                <ATTRIBUTE dmrole="ds:dataset.Dataset.dataProductType">
+                    <LITERAL dmtype="ds:dataset.DataProductType" value="TIMESERIES"/>
+                </ATTRIBUTE>
+                <ATTRIBUTE dmrole="ds:dataset.Dataset.dataProductSubtype">
+                    <LITERAL dmtype="ivoa:string" value="lightcurve"/>
+                </ATTRIBUTE>
+                <ATTRIBUTE dmrole="ds:experiment.ObsDataset.calibLevel">
+                    <LITERAL dmtype="ivoa:integer" value="1"/>
+                </ATTRIBUTE>
+                <COMPOSITION dmrole="ds:dataset.Dataset.curation">
+                    <INSTANCE dmtype="ds:dataset.Curation" ID="T1622151090309_314">
+                        <COMPOSITION dmrole="ds:dataset.Curation.publisher">
+                            <INSTANCE dmtype="ds:dataset.Publisher" ID="T1622151090309_341">
+                                <ATTRIBUTE dmrole="ds:dataset.Publisher.publisherID">
+                                    <LITERAL dmtype="ivoa:anyURI" value="ivo://org.gavo.dc"/>
+                                </ATTRIBUTE>
+                                <REFERENCE dmrole="ds:party.Role.party">
+                                    <IDREF>T1622151090309_358</IDREF>
+                                </REFERENCE>
+                            </INSTANCE>
+                        </COMPOSITION>
+                    </INSTANCE>
+                </COMPOSITION>
+                <REFERENCE dmrole="ds:experiment.ObsDataset.target">
+                    <IDREF>T1622151090309_192</IDREF>
+                </REFERENCE>
+            </INSTANCE>
+            <INSTANCE dmtype="ds:experiment.Target" ID="T1622151090309_192">
+                <ATTRIBUTE dmrole="ds:experiment.BaseTarget.name">
+                    <LITERAL dmtype="ivoa:string" value="1866721434011386240"/>
+                </ATTRIBUTE>
+                <REFERENCE dmrole="ds:experiment.BaseTarget.position">
+                    <IDREF>T1622151090309_213</IDREF>
+                </REFERENCE>
+            </INSTANCE>
+            <INSTANCE dmtype="meas:Position" ID="T1622151090309_213">
+                <ATTRIBUTE dmrole="meas:Position.coord">
+                    <INSTANCE dmtype="coords:Point">
+                        <ATTRIBUTE dmrole="coords:Point.axis2">
+                            <INSTANCE dmtype="ivoa:RealQuantity">
+                                <ATTRIBUTE dmrole="ivoa:Quantity.unit">
+                                    <LITERAL dmtype="ivoa:Unit" value="degree"/>
+                                </ATTRIBUTE>
+                                <ATTRIBUTE dmrole="ivoa:RealQuantity.value">
+                                    <LITERAL dmtype="ivoa:real" value="35.3014389949649"/>
+                                </ATTRIBUTE>
+                            </INSTANCE>
+                        </ATTRIBUTE>
+                        <ATTRIBUTE dmrole="coords:Point.axis1">
+                            <INSTANCE dmtype="ivoa:RealQuantity">
+                                <ATTRIBUTE dmrole="ivoa:Quantity.unit">
+                                    <LITERAL dmtype="ivoa:Unit" value="degree"/>
+                                </ATTRIBUTE>
+                                <ATTRIBUTE dmrole="ivoa:RealQuantity.value">
+                                    <LITERAL dmtype="ivoa:real" value="315.018457397759"/>
+                                </ATTRIBUTE>
+                            </INSTANCE>
+                        </ATTRIBUTE>
+                        <REFERENCE dmrole="coords:Coordinate.coordSys">
+                            <IDREF>T1622151090309_261</IDREF>
+                        </REFERENCE>
+                    </INSTANCE>
+                </ATTRIBUTE>
+            </INSTANCE>
+            <INSTANCE dmtype="coords:SpaceSys" ID="T1622151090309_261">
+                <COMPOSITION dmrole="coords:PhysicalCoordSys.frame">
+                    <INSTANCE dmtype="coords:SpaceFrame" ID="T1622151090309_293">
+                        <ATTRIBUTE dmrole="coords:SpaceFrame.spaceRefFrame">
+                            <LITERAL dmtype="ivoa:string" value="ICRS"/>
+                        </ATTRIBUTE>
+                        <ATTRIBUTE dmrole="coords:SpaceFrame.equinox">
+                            <LITERAL dmtype="coords:Epoch" value="J2015.5"/>
+                        </ATTRIBUTE>
+                    </INSTANCE>
+                </COMPOSITION>
+            </INSTANCE>
+            <INSTANCE dmtype="ds:party.Organization" ID="T1622151090309_358">
+                <ATTRIBUTE dmrole="ds:party.Party.name">
+                    <LITERAL dmtype="ivoa:string" value="GAVO Data Center"/>
+                </ATTRIBUTE>
+            </INSTANCE>
+            <INSTANCE dmtype="coords:TimeSys" ID="T1622151090309_487">
+                <COMPOSITION dmrole="coords:PhysicalCoordSys.frame">
+                    <INSTANCE dmtype="coords:TimeFrame" ID="T1622151090309_504">
+                        <ATTRIBUTE dmrole="coords:TimeFrame.timescale">
+                            <LITERAL dmtype="ivoa:string" value="TCB"/>
+                        </ATTRIBUTE>
+                        <ATTRIBUTE dmrole="coords:TimeFrame.refPosition">
+                            <INSTANCE dmtype="coords:StdRefLocation">
+                                <ATTRIBUTE dmrole="coords:StdRefLocation.position">
+                                    <LITERAL dmtype="ivoa:string" value="BARYCENTER"/>
+                                </ATTRIBUTE>
+                            </INSTANCE>
+                        </ATTRIBUTE>
+                    </INSTANCE>
+                </COMPOSITION>
+            </INSTANCE>
+            <INSTANCE dmtype="mango:extcoords.PhotometryCoordSys" ID="T1622151090309_573">
+                <COMPOSITION dmrole="coords:PhysicalCoordSys.frame">
+                    <INSTANCE dmtype="mango:extcoords.PhotFilter" ID="T1622151090309_590">
+                        <ATTRIBUTE dmrole="mango:extcoords.PhotFilter.name">
+                            <LITERAL dmtype="ivoa:string" value="GAIA/GAIA2r.G"/>
+                        </ATTRIBUTE>
+                        <ATTRIBUTE dmrole="mango:extcoords.PhotFilter.zeroPointFlux">
+                            <LITERAL dmtype="ivoa:real" value="2.49524e-9"/>
+                        </ATTRIBUTE>
+                        <ATTRIBUTE dmrole="mango:extcoords.PhotFilter.magnitudeSystem">
+                            <LITERAL dmtype="ivoa:string" value="Vega"/>
+                        </ATTRIBUTE>
+                        <ATTRIBUTE dmrole="mango:extcoords.PhotFilter.effectiveWavelength">
+                            <LITERAL dmtype="ivoa:real" value="6246.77"/>
+                        </ATTRIBUTE>
+                        <ATTRIBUTE dmrole="mango:extcoords.PhotFilter.unit">
+                            <LITERAL dmtype="ivoa:Unit" value="Angstrom"/>
+                        </ATTRIBUTE>
+                        <ATTRIBUTE dmrole="mango:extcoords.PhotFilter.bandWidth">
+                            <LITERAL dmtype="ivoa:real" value="4578.32"/>
+                        </ATTRIBUTE>
+                    </INSTANCE>
+                </COMPOSITION>
+            </INSTANCE>
+        </GLOBALS>
+        <TEMPLATES tableref="T1622151090309_453">
+            <INSTANCE dmtype="cube:NDPoint" ID="T1622151090309_377">
+                <CONTAINER>
+                    <IDREF>T1622151090309_100</IDREF>
+                </CONTAINER>
+                <COMPOSITION dmrole="cube:NDPoint.observable">
+                    <INSTANCE dmtype="cube:Observable" ID="T1622151090309_392">
+                        <ATTRIBUTE dmrole="cube:DataAxis.dependent">
+                            <LITERAL dmtype="ivoa:boolean" value="false"/>
+                        </ATTRIBUTE>
+                        <COMPOSITION dmrole="cube:MeasurementAxis.measure">
+                            <INSTANCE dmtype="meas:Time" ID="T1622151090309_409">
+                                <ATTRIBUTE dmrole="meas:Time.coord">
+                                    <INSTANCE dmtype="coords:JD">
+                                        <ATTRIBUTE dmrole="coords:JD.date">
+                                            <COLUMN dmtype="ivoa:real" ref="obs_time"/>
+                                        </ATTRIBUTE>
+                                        <REFERENCE dmrole="coords:Coordinate.coordSys">
+                                            <IDREF>T1622151090309_487</IDREF>
+                                        </REFERENCE>
+                                    </INSTANCE>
+                                </ATTRIBUTE>
+                            </INSTANCE>
+                        </COMPOSITION>
+                    </INSTANCE>
+                    <INSTANCE dmtype="cube:Observable" ID="T1622151090309_530">
+                        <ATTRIBUTE dmrole="cube:DataAxis.dependent">
+                            <LITERAL dmtype="ivoa:boolean" value="true"/>
+                        </ATTRIBUTE>
+                        <COMPOSITION dmrole="cube:MeasurementAxis.measure">
+                            <INSTANCE dmtype="meas:GenericMeasure" ID="T1622151090309_547">
+                                <ATTRIBUTE dmrole="meas:GenericMeasure.coord">
+                                    <INSTANCE dmtype="coords:PhysicalCoordinate">
+                                        <ATTRIBUTE dmrole="coords:PhysicalCoordinate.cval">
+                                            <COLUMN dmtype="ivoa:Quantity" ref="phot"/>
+                                        </ATTRIBUTE>
+                                        <REFERENCE dmrole="coords:Coordinate.coordSys">
+                                            <IDREF>T1622151090309_573</IDREF>
+                                        </REFERENCE>
+                                    </INSTANCE>
+                                </ATTRIBUTE>
+                            </INSTANCE>
+                        </COMPOSITION>
+                    </INSTANCE>
+                    <INSTANCE dmtype="cube:Observable" ID="T1622151090309_615">
+                        <ATTRIBUTE dmrole="cube:DataAxis.dependent">
+                            <LITERAL dmtype="ivoa:boolean" value="true"/>
+                        </ATTRIBUTE>
+                        <COMPOSITION dmrole="cube:MeasurementAxis.measure">
+                            <INSTANCE dmtype="meas:GenericMeasure" ID="T1622151090309_632">
+                                <ATTRIBUTE dmrole="meas:GenericMeasure.coord">
+                                    <INSTANCE dmtype="coords:PhysicalCoordinate">
+                                        <ATTRIBUTE dmrole="coords:PhysicalCoordinate.cval">
+                                            <COLUMN dmtype="ivoa:Quantity" ref="flux"/>
+                                        </ATTRIBUTE>
+                                    </INSTANCE>
+                                </ATTRIBUTE>
+                                <COMPOSITION dmrole="meas:Measure.error">
+                                    <INSTANCE dmtype="meas:Error" ID="T1622151090309_658">
+                                        <ATTRIBUTE dmrole="meas:Error.statError">
+                                            <INSTANCE dmtype="meas:Symmetrical">
+                                                <ATTRIBUTE dmrole="meas:Symmetrical.radius">
+                                                    <COLUMN dmtype="ivoa:RealQuantity" ref="flux_error"/>
+                                                </ATTRIBUTE>
+                                            </INSTANCE>
+                                        </ATTRIBUTE>
+                                    </INSTANCE>
+                                </COMPOSITION>
+                            </INSTANCE>
+                        </COMPOSITION>
+                    </INSTANCE>
+                </COMPOSITION>
+            </INSTANCE>
+        </TEMPLATES>
+    </VODML>
+    <RESOURCE>
+        <TABLE ID="T1622151090309_453" name="instance_G">
+            <INFO name="type" value="VOTABLE"/>
+            <INFO name="votable_url" value="https://raw.githubusercontent.com/ivoa/dm-usecases/main/usecases/time-series/raw_data/ts.vot"/>
+            <INFO name="table_rank" value="1"/>
+            <FIELD name="obs_time" datatype="double" ID="obs_time"/>
+            <FIELD name="phot" datatype="double" ID="phot"/>
+            <FIELD name="flux" datatype="float" ID="flux"/>
+            <FIELD name="flux_error" datatype="float" ID="flux_error"/>
+            <DATA>
+                <TABLEDATA>
+                    <TR>
+                        <TD>2456964.614751482</TD>
+                        <TD>13.1433285545337</TD>
+                        <TD>104238.602</TD>
+                        <TD>784.756287</TD>
+                    </TR>
+                    <TR>
+                        <TD>2456964.688753904</TD>
+                        <TD>13.145307101711005</TD>
+                        <TD>104048.82</TD>
+                        <TD>203.058762</TD>
+                    </TR>
+                    <TR>
+                        <TD>2456990.105054711</TD>
+                        <TD>13.051750456984891</TD>
+                        <TD>113412.211</TD>
+                        <TD>520.204834</TD>
+                    </TR>
+                    <TR>
+                        <TD>2457019.3419295456</TD>
+                        <TD>13.080361680003474</TD>
+                        <TD>110462.617</TD>
+                        <TD>115.218361</TD>
+                    </TR>
+                    <TR>
+                        <TD>2457019.4159321445</TD>
+                        <TD>13.085564601049686</TD>
+                        <TD>109934.539</TD>
+                        <TD>126.182106</TD>
+                    </TR>
+                    <TR>
+                        <TD>2457065.898628062</TD>
+                        <TD>13.10800968029834</TD>
+                        <TD>107685.227</TD>
+                        <TD>389.942261</TD>
+                    </TR>
+                    <TR>
+                        <TD>2457066.074785681</TD>
+                        <TD>13.104134378611676</TD>
+                        <TD>108070.273</TD>
+                        <TD>74.146286</TD>
+                    </TR>
+                    <TR>
+                        <TD>2457066.1487640734</TD>
+                        <TD>13.109822897622953</TD>
+                        <TD>107505.539</TD>
+                        <TD>188.289246</TD>
+                    </TR>
+                    <TR>
+                        <TD>2457066.3249472557</TD>
+                        <TD>13.10128410191652</TD>
+                        <TD>108354.352</TD>
+                        <TD>96.1394348</TD>
+                    </TR>
+                    <TR>
+                        <TD>2457066.3989527393</TD>
+                        <TD>13.100995597528158</TD>
+                        <TD>108383.148</TD>
+                        <TD>105.116081</TD>
+                    </TR>
+                    <TR>
+                        <TD>2457081.5825963076</TD>
+                        <TD>13.008353874924927</TD>
+                        <TD>118037.078</TD>
+                        <TD>1208.80115</TD>
+                    </TR>
+                    <TR>
+                        <TD>2457081.6566034523</TD>
+                        <TD>13.031208830929806</TD>
+                        <TD>115578.344</TD>
+                        <TD>195.553192</TD>
+                    </TR>
+                    <TR>
+                        <TD>2457081.832762772</TD>
+                        <TD>13.001301277300179</TD>
+                        <TD>118806.305</TD>
+                        <TD>1245.4635</TD>
+                    </TR>
+                    <TR>
+                        <TD>2457081.906770964</TD>
+                        <TD>13.031768797857135</TD>
+                        <TD>115518.75</TD>
+                        <TD>109.625305</TD>
+                    </TR>
+                    <TR>
+                        <TD>2457130.3938809815</TD>
+                        <TD>13.085899752457955</TD>
+                        <TD>109900.609</TD>
+                        <TD>82.0990906</TD>
+                    </TR>
+                    <TR>
+                        <TD>2457130.5700473306</TD>
+                        <TD>13.086879782098539</TD>
+                        <TD>109801.453</TD>
+                        <TD>183.367706</TD>
+                    </TR>
+                    <TR>
+                        <TD>2457160.812671543</TD>
+                        <TD>12.990842870790523</TD>
+                        <TD>119956.242</TD>
+                        <TD>106.287735</TD>
+                    </TR>
+                    <TR>
+                        <TD>2457188.0564631657</TD>
+                        <TD>13.093987718627234</TD>
+                        <TD>109084.969</TD>
+                        <TD>501.87973</TD>
+                    </TR>
+                    <TR>
+                        <TD>2457188.1304746564</TD>
+                        <TD>13.101001387701364</TD>
+                        <TD>108382.57</TD>
+                        <TD>539.240479</TD>
+                    </TR>
+                    <TR>
+                        <TD>2457230.2618075702</TD>
+                        <TD>13.089965407523454</TD>
+                        <TD>109489.844</TD>
+                        <TD>929.107666</TD>
+                    </TR>
+                    <TR>
+                        <TD>2457230.3358171373</TD>
+                        <TD>13.100171884467892</TD>
+                        <TD>108465.406</TD>
+                        <TD>580.758545</TD>
+                    </TR>
+                    <TR>
+                        <TD>2457242.0168405203</TD>
+                        <TD>13.139704520994812</TD>
+                        <TD>104587.117</TD>
+                        <TD>144.969971</TD>
+                    </TR>
+                    <TR>
+                        <TD>2457242.090848804</TD>
+                        <TD>13.13877482897491</TD>
+                        <TD>104676.711</TD>
+                        <TD>91.0609665</TD>
+                    </TR>
+                    <TR>
+                        <TD>2457288.200282992</TD>
+                        <TD>13.244023933780452</TD>
+                        <TD>95005.8672</TD>
+                        <TD>103.232765</TD>
+                    </TR>
+                    <TR>
+                        <TD>2457301.777669793</TD>
+                        <TD>13.233471623690427</TD>
+                        <TD>95933.7344</TD>
+                        <TD>256.566437</TD>
+                    </TR>
+                    <TR>
+                        <TD>2457301.9538197825</TD>
+                        <TD>13.22494127431079</TD>
+                        <TD>96690.4297</TD>
+                        <TD>73.0098953</TD>
+                    </TR>
+                    <TR>
+                        <TD>2457369.2196098543</TD>
+                        <TD>13.256924561828937</TD>
+                        <TD>93883.6953</TD>
+                        <TD>141.182571</TD>
+                    </TR>
+                    <TR>
+                        <TD>2457395.9637804604</TD>
+                        <TD>13.159863472720843</TD>
+                        <TD>102663.156</TD>
+                        <TD>318.280396</TD>
+                    </TR>
+                    <TR>
+                        <TD>2457446.1992984903</TD>
+                        <TD>13.106650583650332</TD>
+                        <TD>107820.109</TD>
+                        <TD>111.751579</TD>
+                    </TR>
+                    <TR>
+                        <TD>2457446.375459385</TD>
+                        <TD>13.103625026194251</TD>
+                        <TD>108120.984</TD>
+                        <TD>145.705811</TD>
+                    </TR>
+                    <TR>
+                        <TD>2457446.4494390027</TD>
+                        <TD>13.105192839011954</TD>
+                        <TD>107964.969</TD>
+                        <TD>185.77774</TD>
+                    </TR>
+                    <TR>
+                        <TD>2457446.625625258</TD>
+                        <TD>13.099763974466097</TD>
+                        <TD>108506.164</TD>
+                        <TD>723.06897</TD>
+                    </TR>
+                    <TR>
+                        <TD>2457463.6336232</TD>
+                        <TD>13.030502392158379</TD>
+                        <TD>115653.57</TD>
+                        <TD>102.266785</TD>
+                    </TR>
+                    <TR>
+                        <TD>2457463.7076316085</TD>
+                        <TD>13.030362897946631</TD>
+                        <TD>115668.43</TD>
+                        <TD>124.907585</TD>
+                    </TR>
+                    <TR>
+                        <TD>2457463.883794405</TD>
+                        <TD>13.02936852134825</TD>
+                        <TD>115774.414</TD>
+                        <TD>386.660461</TD>
+                    </TR>
+                    <TR>
+                        <TD>2457463.957804125</TD>
+                        <TD>13.034002422426937</TD>
+                        <TD>115281.344</TD>
+                        <TD>98.1785889</TD>
+                    </TR>
+                    <TR>
+                        <TD>2457507.3690639553</TD>
+                        <TD>13.019767042062135</TD>
+                        <TD>116802.781</TD>
+                        <TD>137.408569</TD>
+                    </TR>
+                    <TR>
+                        <TD>2457507.443075384</TD>
+                        <TD>13.014477387452114</TD>
+                        <TD>117373.227</TD>
+                        <TD>457.469208</TD>
+                    </TR>
+                </TABLEDATA>
+            </DATA>
+        </TABLE>
+    </RESOURCE>
+</VOTABLE>

@@ -30,7 +30,7 @@ Find mapping named "MAPPING usecases timeseries - ts - Cube" and click green dow
 
 The mapping shown is similar to this image:
 
-<img src="ts-vodml-mapper-v2.png"></img>
+<img src="ts-vodml-mapper.png"></img>
 Note that many of the elements have been collapsed, which leaves only those roles engaged in some mapping in the image.
 
 

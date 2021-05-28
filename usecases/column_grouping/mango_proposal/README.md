@@ -19,9 +19,45 @@
 - Some class names can differ from the last MANGO proposal
 - It is to be noted that the semantic fields are not properly set
 
-The demo client (`ModelInstanceInVot/python_workflow/python/client/demo/vizier_grouped_col_withref.py`) can generate one JSON serialization for each data row. These MANGO instances can be processed as dictionaries by any language. 
+The demo client (`ModelInstanceInVot/python_workflow/python/client/demo/vizier_grouped_col_withref.py`) can generate one Python dict serialization of the MANGO instance
         
-`4xmm_litewithsp.mangoinstance.json` contains that serialization for the first row
-- Source parameters are in the `mango:MangoObject.parameters` block of the instance.
-- Columns related to `VR` are in `mango:Parameter.parameters` block of the `VR` parameter.
-- `mango:Parameter.parameters` are simple references to the appropriate parameters.
+```python
+    votable_path = os.path.join(data_dir,
+                                "vizier_grouped_col_withref.annot.xml"
+                                )    
+    mango_browser = MangoBrowser(votable_path) 
+    
+    mango_parameters = mango_browser.get_parameters()
+    print(DictUtils.get_pretty_json(mango_parameters))
+    #OUTPUT IN THE JSON FILE
+    mango_data = mango_browser.get_data()
+    print(DictUtils.get_pretty_json(mango_data))
+```
+
+Output (1st row):
+
+```
+{
+  "data": [
+    [
+      1,
+      -11.0,
+      6,
+      "S"
+    ]
+  ],
+  "head": [
+    "mango:MangoObject.identifier",
+    "field:meas:GenericMeasure.coord (#radial velocity)",
+    "field:meas:GenericMeasure.coord (#Number.of.plates)",
+    "field:meas:GenericMeasure.coord (#observatory)"
+  ],
+  "selected_index": [
+    4,
+    3,
+    0,
+    1
+  ]
+}
+
+```

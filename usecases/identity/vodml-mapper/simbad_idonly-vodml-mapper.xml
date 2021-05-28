@@ -1,0 +1,90 @@
+<VOTABLE
+    xmlns="http://www.ivoa.net/xml/VOTable/v1.4_vodml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.ivoa.net/xml/VOTable/v1.4_vodml https://volute.g-vo.org/svn/trunk/projects/dm/vo-dml-org/xsd/ext/VOTable-1.4_vodml.xsd">
+    <VODML>
+        <MODEL>
+            <NAME>mango</NAME>
+            <URL>https://raw.githubusercontent.com/ivoa-std/MANGO/a46441f6fc498a6aeb33ed97e65689fee3d00f6c/vo-dml/mango.vo-dml.xml</URL>
+        </MODEL>
+        <MODEL>
+            <NAME>ivoa</NAME>
+            <URL>http://volute.g-vo.org/svn/trunk/projects/dm/vo-dml/models/ivoa/vo-dml/IVOA-v1.0.vo-dml.xml</URL>
+        </MODEL>
+        <TEMPLATES tableref="T1616436368167_1">
+            <INSTANCE dmtype="mango:Source" ID="T1616436368167_124">
+                <PRIMARYKEY>
+                    <PKFIELD>
+                        <COLUMN dmtype="ivoa:string" ref="T1616436368167_1_F21"/>
+                    </PKFIELD>
+                </PRIMARYKEY>
+            </INSTANCE>
+        </TEMPLATES>
+    </VODML>
+    <RESOURCE>
+        <TABLE ID="T1616436368167_1" name="Results">
+            <INFO name="type" value="VOTABLE"/>
+            <INFO name="votable_url" value="https://raw.githubusercontent.com/ivoa/dm-usecases/main/usecases/identity/raw_data/simbad_idonly.xml"/>
+            <INFO name="table_rank" value="1"/>
+            <FIELD name="coo_bibcode" datatype="char" ID="T1616436368167_1_F0"/>
+            <FIELD name="coo_err_angle" datatype="short" ID="T1616436368167_1_F1"/>
+            <FIELD name="coo_err_maj" datatype="float" ID="T1616436368167_1_F2"/>
+            <FIELD name="coo_err_maj_prec" datatype="short" ID="T1616436368167_1_F3"/>
+            <FIELD name="coo_err_min" datatype="float" ID="T1616436368167_1_F4"/>
+            <FIELD name="coo_err_min_prec" datatype="short" ID="T1616436368167_1_F5"/>
+            <FIELD name="coo_qual" datatype="char" ID="T1616436368167_1_F6"/>
+            <FIELD name="coo_wavelength" datatype="char" ID="T1616436368167_1_F7"/>
+            <FIELD name="dec_prec" datatype="short" ID="T1616436368167_1_F8"/>
+            <FIELD name="galdim_angle" datatype="short" ID="T1616436368167_1_F9"/>
+            <FIELD name="galdim_bibcode" datatype="char" ID="T1616436368167_1_F10"/>
+            <FIELD name="galdim_majaxis" datatype="float" ID="T1616436368167_1_F11"/>
+            <FIELD name="galdim_majaxis_prec" datatype="short" ID="T1616436368167_1_F12"/>
+            <FIELD name="galdim_minaxis" datatype="float" ID="T1616436368167_1_F13"/>
+            <FIELD name="galdim_minaxis_prec" datatype="short" ID="T1616436368167_1_F14"/>
+            <FIELD name="galdim_qual" datatype="char" ID="T1616436368167_1_F15"/>
+            <FIELD name="hpx" datatype="long" ID="T1616436368167_1_F16"/>
+            <FIELD name="morph_bibcode" datatype="char" ID="T1616436368167_1_F17"/>
+            <FIELD name="morph_qual" datatype="char" ID="T1616436368167_1_F18"/>
+            <FIELD name="morph_type" datatype="char" ID="T1616436368167_1_F19"/>
+            <FIELD name="nbref" datatype="int" ID="T1616436368167_1_F20"/>
+            <FIELD name="oid" datatype="long" ID="T1616436368167_1_F21"/>
+            <FIELD name="otype" datatype="int" ID="T1616436368167_1_F22"/>
+            <FIELD name="plx_bibcode" datatype="char" ID="T1616436368167_1_F23"/>
+            <FIELD name="plx_err" datatype="float" ID="T1616436368167_1_F24"/>
+            <FIELD name="plx_err_prec" datatype="short" ID="T1616436368167_1_F25"/>
+            <FIELD name="plx_prec" datatype="short" ID="T1616436368167_1_F26"/>
+            <FIELD name="plx_qual" datatype="char" ID="T1616436368167_1_F27"/>
+            <FIELD name="plx_value" datatype="double" ID="T1616436368167_1_F28"/>
+            <FIELD name="pm_bibcode" datatype="char" ID="T1616436368167_1_F29"/>
+            <FIELD name="pm_err_angle" datatype="short" ID="T1616436368167_1_F30"/>
+            <FIELD name="pm_err_maj" datatype="float" ID="T1616436368167_1_F31"/>
+            <FIELD name="pm_err_maj_prec" datatype="short" ID="T1616436368167_1_F32"/>
+            <FIELD name="pm_err_min" datatype="float" ID="T1616436368167_1_F33"/>
+            <FIELD name="pm_err_min_prec" datatype="short" ID="T1616436368167_1_F34"/>
+            <FIELD name="pm_qual" datatype="char" ID="T1616436368167_1_F35"/>
+            <FIELD name="pmdec" datatype="double" ID="T1616436368167_1_F36"/>
+            <FIELD name="pmdec_prec" datatype="short" ID="T1616436368167_1_F37"/>
+            <FIELD name="pmra" datatype="double" ID="T1616436368167_1_F38"/>
+            <FIELD name="pmra_prec" datatype="short" ID="T1616436368167_1_F39"/>
+            <FIELD name="ra_prec" datatype="short" ID="T1616436368167_1_F40"/>
+            <FIELD name="rvz_bibcode" datatype="char" ID="T1616436368167_1_F41"/>
+            <FIELD name="rvz_err" datatype="float" ID="T1616436368167_1_F42"/>
+            <FIELD name="rvz_err_prec" datatype="short" ID="T1616436368167_1_F43"/>
+            <FIELD name="rvz_nature" datatype="char" ID="T1616436368167_1_F44"/>
+            <FIELD name="rvz_qual" datatype="char" ID="T1616436368167_1_F45"/>
+            <FIELD name="rvz_radvel" datatype="double" ID="T1616436368167_1_F46"/>
+            <FIELD name="rvz_radvel_prec" datatype="short" ID="T1616436368167_1_F47"/>
+            <FIELD name="rvz_redshift" datatype="double" ID="T1616436368167_1_F48"/>
+            <FIELD name="rvz_redshift_prec" datatype="short" ID="T1616436368167_1_F49"/>
+            <FIELD name="rvz_type" datatype="char" ID="T1616436368167_1_F50"/>
+            <FIELD name="sp_bibcode" datatype="char" ID="T1616436368167_1_F51"/>
+            <FIELD name="sp_qual" datatype="char" ID="T1616436368167_1_F52"/>
+            <FIELD name="sp_type" datatype="char" ID="T1616436368167_1_F53"/>
+            <FIELD name="update_date" datatype="char" ID="T1616436368167_1_F54"/>
+            <FIELD name="vlsr" datatype="double" ID="T1616436368167_1_F55"/>
+            <FIELD name="main_id" datatype="char" ID="T1616436368167_1_F56"/>
+            <FIELD name="otype_txt" datatype="char" ID="T1616436368167_1_F57"/>
+            <FIELD name="ra" datatype="double" ID="T1616436368167_1_F58"/>
+            <FIELD name="dec" datatype="double" ID="T1616436368167_1_F59"/>
+        </TABLE>
+    </RESOURCE>
+</VOTABLE>

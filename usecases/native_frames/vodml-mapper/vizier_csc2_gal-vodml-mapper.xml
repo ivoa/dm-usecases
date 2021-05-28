@@ -1,0 +1,113 @@
+<VOTABLE
+    xmlns="http://www.ivoa.net/xml/VOTable/v1.4_vodml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.ivoa.net/xml/VOTable/v1.4_vodml https://volute.g-vo.org/svn/trunk/projects/dm/vo-dml-org/xsd/ext/VOTable-1.4_vodml.xsd">
+    <VODML>
+        <MODEL>
+            <NAME>mango</NAME>
+            <URL>https://raw.githubusercontent.com/ivoa-std/MANGO/a46441f6fc498a6aeb33ed97e65689fee3d00f6c/vo-dml/mango.vo-dml.xml</URL>
+        </MODEL>
+        <MODEL>
+            <NAME>meas</NAME>
+            <URL>http://volute.g-vo.org/svn/trunk/projects/dm/STC/Meas/vo-dml/STC_meas-v1.0.vo-dml.xml</URL>
+        </MODEL>
+        <MODEL>
+            <NAME>coords</NAME>
+            <URL>http://volute.g-vo.org/svn/trunk/projects/dm/STC/Coords/vo-dml/STC_coords-v1.0.vo-dml.xml</URL>
+        </MODEL>
+        <MODEL>
+            <NAME>ivoa</NAME>
+            <URL>http://volute.g-vo.org/svn/trunk/projects/dm/vo-dml/models/ivoa/vo-dml/IVOA-v1.0.vo-dml.xml</URL>
+        </MODEL>
+        <GLOBALS>
+            <INSTANCE dmtype="coords:SpaceSys" ID="T1616957660702_86">
+                <COMPOSITION dmrole="coords:PhysicalCoordSys.frame">
+                    <INSTANCE dmtype="coords:SpaceFrame" ID="T1616957660702_103">
+                        <ATTRIBUTE dmrole="coords:SpaceFrame.spaceRefFrame">
+                            <LITERAL dmtype="ivoa:string" value="ICRS"/>
+                        </ATTRIBUTE>
+                    </INSTANCE>
+                </COMPOSITION>
+            </INSTANCE>
+            <INSTANCE dmtype="mango:extcoords.LonLatCoordSys" ID="T1616957660702_124">
+                <COMPOSITION dmrole="coords:PhysicalCoordSys.frame">
+                    <INSTANCE dmtype="coords:SpaceFrame" ID="T1616957660702_141">
+                        <ATTRIBUTE dmrole="coords:SpaceFrame.spaceRefFrame">
+                            <LITERAL dmtype="ivoa:string" value="GALACTIC"/>
+                        </ATTRIBUTE>
+                        <ATTRIBUTE dmrole="coords:SpaceFrame.equinox">
+                            <LITERAL dmtype="coords:Epoch" value="J2000"/>
+                        </ATTRIBUTE>
+                    </INSTANCE>
+                </COMPOSITION>
+            </INSTANCE>
+        </GLOBALS>
+        <TEMPLATES tableref="T1616957660702_1">
+            <INSTANCE dmtype="mango:Source" ID="T1616957660702_14">
+                <PRIMARYKEY>
+                    <PKFIELD>
+                        <COLUMN dmtype="ivoa:string" ref="T1616957660702_1_F0"/>
+                    </PKFIELD>
+                </PRIMARYKEY>
+                <COMPOSITION dmrole="mango:Source.parameterDock">
+                    <INSTANCE dmtype="mango:Parameter" ID="T1616957660702_33">
+                        <ATTRIBUTE dmrole="mango:Parameter.ucd">
+                            <LITERAL dmtype="ivoa:string" value="pos.eq"/>
+                        </ATTRIBUTE>
+                        <COMPOSITION dmrole="mango:Parameter.measure">
+                            <INSTANCE dmtype="meas:Position" ID="T1616957660702_56">
+                                <ATTRIBUTE dmrole="meas:Position.coord">
+                                    <INSTANCE dmtype="coords:Point">
+                                        <ATTRIBUTE dmrole="coords:Point.axis1">
+                                            <COLUMN dmtype="ivoa:Quantity" ref="T1616957660702_1_F1"/>
+                                        </ATTRIBUTE>
+                                        <ATTRIBUTE dmrole="coords:Point.axis2">
+                                            <COLUMN dmtype="ivoa:Quantity" ref="T1616957660702_1_F2"/>
+                                        </ATTRIBUTE>
+                                        <REFERENCE dmrole="coords:Coordinate.coordSys">
+                                            <IDREF>T1616957660702_86</IDREF>
+                                        </REFERENCE>
+                                    </INSTANCE>
+                                </ATTRIBUTE>
+                            </INSTANCE>
+                        </COMPOSITION>
+                    </INSTANCE>
+                    <INSTANCE dmtype="mango:Parameter" ID="T1616957660702_162">
+                        <ATTRIBUTE dmrole="mango:Parameter.ucd">
+                            <LITERAL dmtype="ivoa:string" value="pos.galactic"/>
+                        </ATTRIBUTE>
+                        <COMPOSITION dmrole="mango:Parameter.measure">
+                            <INSTANCE dmtype="mango:extmeas.LonLatSkyPosition" ID="T1616957660702_185">
+                                <ATTRIBUTE dmrole="mango:extmeas.LonLatSkyPosition.coord">
+                                    <INSTANCE dmtype="mango:extcoords.LonLatPoint">
+                                        <ATTRIBUTE dmrole="mango:extcoords.LonLatPoint.longitude">
+                                            <COLUMN dmtype="ivoa:real" ref="T1616957660702_1_F3"/>
+                                        </ATTRIBUTE>
+                                        <ATTRIBUTE dmrole="mango:extcoords.LonLatPoint.latitude">
+                                            <COLUMN dmtype="ivoa:real" ref="T1616957660702_1_F4"/>
+                                        </ATTRIBUTE>
+                                        <REFERENCE dmrole="coords:Coordinate.coordSys">
+                                            <IDREF>T1616957660702_124</IDREF>
+                                        </REFERENCE>
+                                    </INSTANCE>
+                                </ATTRIBUTE>
+                            </INSTANCE>
+                        </COMPOSITION>
+                    </INSTANCE>
+                </COMPOSITION>
+            </INSTANCE>
+        </TEMPLATES>
+    </VODML>
+    <RESOURCE>
+        <TABLE ID="T1616957660702_1" name="IX/57/csc2master">
+            <INFO name="type" value="VOTABLE"/>
+            <INFO name="votable_url" value="https://raw.githubusercontent.com/ivoa/dm-usecases/main/usecases/native_frames/raw_data/vizier_csc2_gal.xml"/>
+            <INFO name="table_rank" value="1"/>
+            <INFO name="ID" value="Results"/>
+            <FIELD name="2CXO" datatype="char" ID="T1616957660702_1_F0"/>
+            <FIELD name="RAICRS" datatype="double" ID="T1616957660702_1_F1"/>
+            <FIELD name="DEICRS" datatype="double" ID="T1616957660702_1_F2"/>
+            <FIELD name="GLON" datatype="double" ID="T1616957660702_1_F3"/>
+            <FIELD name="GLAT" datatype="double" ID="T1616957660702_1_F4"/>
+        </TABLE>
+    </RESOURCE>
+</VOTABLE>

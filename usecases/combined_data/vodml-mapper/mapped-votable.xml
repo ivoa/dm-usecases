@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VOTABLE
+    xmlns="http://www.ivoa.net/xml/VOTable/v1.4_vodml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.ivoa.net/xml/VOTable/v1.4_vodml https://volute.g-vo.org/svn/trunk/projects/dm/vo-dml-org/xsd/ext/VOTable-1.4_vodml.xsd">
+    <VODML>
+        <MODEL>
+            <NAME>mango</NAME>
+            <URL>https://raw.githubusercontent.com/ivoa-std/MANGO/master/vo-dml/mango.vo-dml.xml</URL>
+        </MODEL>
+        <MODEL>
+            <NAME>meas</NAME>
+            <URL>http://volute.g-vo.org/svn/trunk/projects/dm/STC/Meas/vo-dml/STC_meas-v1.0.vo-dml.xml</URL>
+        </MODEL>
+        <MODEL>
+            <NAME>coords</NAME>
+            <URL>http://volute.g-vo.org/svn/trunk/projects/dm/STC/Coords/vo-dml/STC_coords-v1.0.vo-dml.xml</URL>
+        </MODEL>
+        <MODEL>
+            <NAME>ivoa</NAME>
+            <URL>http://volute.g-vo.org/svn/trunk/projects/dm/vo-dml/models/ivoa/vo-dml/IVOA-v1.0.vo-dml.xml</URL>
+        </MODEL>
+        <TEMPLATES tableref="T1616278954336_1">
+            <INSTANCE dmtype="mango:Source" ID="T1616278954336_25">
+                <PRIMARYKEY>
+                    <PKFIELD>
+                        <COLUMN dmtype="ivoa:string" ref="oidsaada_100"/>
+                    </PKFIELD>
+                </PRIMARYKEY>
+                <ATTRIBUTE dmrole="mango:Source.identifier">
+                    <COLUMN dmtype="ivoa:string" ref="namesaada_101"/>
+                </ATTRIBUTE>
+                <COMPOSITION dmrole="mango:Source.parameterDock">
+                    <INSTANCE dmtype="mango:Parameter" ID="T1616278954336_85">
+                        <ATTRIBUTE dmrole="mango:Parameter.ucd">
+                            <LITERAL dmtype="ivoa:string" value="ucd"/>
+                        </ATTRIBUTE>
+                        <ATTRIBUTE dmrole="mango:Parameter.description">
+                            <LITERAL dmtype="ivoa:string" value="Corrected Position"/>
+                        </ATTRIBUTE>
+                        <ATTRIBUTE dmrole="mango:Parameter.semantic">
+                            <INSTANCE dmtype="mango:VocabularyTerm">
+                                <ATTRIBUTE dmrole="mango:VocabularyTerm.label">
+                                    <LITERAL dmtype="ivoa:string" value="#postion.corrected"/>
+                                </ATTRIBUTE>
+                            </INSTANCE>
+                        </ATTRIBUTE>
+                        <COMPOSITION dmrole="mango:Parameter.measure">
+                            <INSTANCE dmtype="meas:Position" ID="T1616278954336_225">
+                                <ATTRIBUTE dmrole="meas:Position.coord">
+                                    <INSTANCE dmtype="coords:Point">
+                                        <ATTRIBUTE dmrole="coords:Point.axis1">
+                                            <COLUMN dmtype="ivoa:Quantity" ref="pos_ra_csa_102"/>
+                                        </ATTRIBUTE>
+                                        <ATTRIBUTE dmrole="coords:Point.axis2">
+                                            <COLUMN dmtype="ivoa:Quantity" ref="pos_dec_csa_103"/>
+                                        </ATTRIBUTE>
+                                    </INSTANCE>
+                                </ATTRIBUTE>
+                            </INSTANCE>
+                        </COMPOSITION>
+                    </INSTANCE>
+                </COMPOSITION>
+            </INSTANCE>
+        </TEMPLATES>
+        <TEMPLATES tableref="T1616278954336_14">
+            <INSTANCE dmtype="mango:WebEndpoint" ID="T1616278954336_44">
+                <CONTAINER>
+                    <FOREIGNKEY>
+                        <PKFIELD>
+                            <COLUMN dmtype="ivoa:string" ref="oidsaada_199"/>
+                        </PKFIELD>
+                        <TARGETID>T1616278954336_25</TARGETID>
+                    </FOREIGNKEY>
+                </CONTAINER>
+                <ATTRIBUTE dmrole="mango:AssociatedData.description">
+                    <LITERAL dmtype="ivoa:string" value="Raw Spectrum"/>
+                </ATTRIBUTE>
+                <ATTRIBUTE dmrole="mango:WebEndpoint.ContentType">
+                    <COLUMN dmtype="ivoa:string" ref="product_type"/>
+                </ATTRIBUTE>
+                <ATTRIBUTE dmrole="mango:WebEndpoint.url">
+                    <COLUMN dmtype="ivoa:anyURI" ref="data_access"/>
+                </ATTRIBUTE>
+                <ATTRIBUTE dmrole="mango:AssociatedData.semantic">
+                    <INSTANCE dmtype="mango:VocabularyTerm">
+                        <ATTRIBUTE dmrole="mango:VocabularyTerm.label">
+                            <LITERAL dmtype="ivoa:string" value="#spectrum.raw"/>
+                        </ATTRIBUTE>
+                    </INSTANCE>
+                </ATTRIBUTE>
+            </INSTANCE>
+        </TEMPLATES>
+    </VODML>
+    <RESOURCE>
+        <TABLE ID="T1616278954336_1" name="Results">
+            <INFO name="type" value="VOTABLE"/>
+            <INFO name="votable_url" value="https://raw.githubusercontent.com/ivoa/dm-usecases/main/usecases/combined_data/raw_data/4xmm_lite.xml"/>
+            <INFO name="table_rank" value="1"/>
+            <FIELD name="oidsaada" datatype="long" ID="oidsaada_100"/>
+            <FIELD name="namesaada" datatype="char" ID="namesaada_101"/>
+            <FIELD name="pos_ra_csa" datatype="double" ID="pos_ra_csa_102"/>
+            <FIELD name="pos_dec_csa" datatype="double" ID="pos_dec_csa_103"/>
+            <FIELD name="error_min_csa" datatype="double" ID="error_min_csa_106"/>
+        </TABLE>
+        <TABLE ID="T1616278954336_14" name="Spectra">
+            <INFO name="type" value="VOTABLE"/>
+            <INFO name="votable_url" value="https://raw.githubusercontent.com/ivoa/dm-usecases/main/usecases/combined_data/raw_data/4xmm_lite.xml"/>
+            <INFO name="table_rank" value="2"/>
+            <FIELD name="oidsaada" datatype="long" ID="oidsaada_199"/>
+            <FIELD name="camera" datatype="char" ID="camera"/>
+            <FIELD name="product_type" datatype="char" ID="product_type"/>
+            <FIELD name="data_access" datatype="char" ID="data_access"/>
+        </TABLE>
+    </RESOURCE>
+</VOTABLE>

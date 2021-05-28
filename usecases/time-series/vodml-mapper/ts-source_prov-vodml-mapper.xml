@@ -1,0 +1,125 @@
+<VOTABLE
+    xmlns="http://www.ivoa.net/xml/VOTable/v1.4_vodml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.ivoa.net/xml/VOTable/v1.4_vodml https://volute.g-vo.org/svn/trunk/projects/dm/vo-dml-org/xsd/ext/VOTable-1.4_vodml.xsd">
+    <VODML>
+        <MODEL>
+            <NAME>source</NAME>
+            <URL>https://volute.g-vo.org/svn/trunk/projects/dm/vo-dml-org/models/source-prov/SourceDM.vo-dml.xml</URL>
+        </MODEL>
+        <MODEL>
+            <NAME>meas</NAME>
+            <URL>http://volute.g-vo.org/svn/trunk/projects/dm/STC/Meas/vo-dml/STC_meas-v1.0.vo-dml.xml</URL>
+        </MODEL>
+        <MODEL>
+            <NAME>coords</NAME>
+            <URL>http://volute.g-vo.org/svn/trunk/projects/dm/STC/Coords/vo-dml/STC_coords-v1.0.vo-dml.xml</URL>
+        </MODEL>
+        <MODEL>
+            <NAME>PhotDM</NAME>
+            <URL>https://raw.githubusercontent.com/glemson/PhotDM/master/xml/PhotDM-v1.1.vo-dml.xml</URL>
+        </MODEL>
+        <MODEL>
+            <NAME>ivoa</NAME>
+            <URL>http://volute.g-vo.org/svn/trunk/projects/dm/vo-dml/models/ivoa/vo-dml/IVOA-v1.0.vo-dml.xml</URL>
+        </MODEL>
+        <GLOBALS>
+            <INSTANCE dmtype="PhotDM:PhotometryFilter" ID="T1619442105624_1">
+                <ATTRIBUTE dmrole="PhotDM:PhotometryFilter.bandName">
+                    <LITERAL dmtype="ivoa:string" value="GAIA.G"/>
+                </ATTRIBUTE>
+            </INSTANCE>
+            <INSTANCE dmtype="source:XMatchTuple" ID="T1619442105624_120">
+                <ATTRIBUTE dmrole="source:Source.catalogIdentifier">
+                    <LITERAL dmtype="ivoa:string" value="1866721434011386240"/>
+                </ATTRIBUTE>
+                <COMPOSITION dmrole="source:XMatchTuple.source">
+                    <EXTINSTANCES>T1619442105624_143</EXTINSTANCES>
+                </COMPOSITION>
+                <COMPOSITION dmrole="source:Source.position">
+                    <INSTANCE dmtype="source:SourcePosition" ID="T1619442105624_160">
+                        <ATTRIBUTE dmrole="meas:Position.coord">
+                            <INSTANCE dmtype="coords:Point">
+                                <ATTRIBUTE dmrole="coords:Point.axis1">
+                                    <INSTANCE dmtype="ivoa:RealQuantity">
+                                        <ATTRIBUTE dmrole="ivoa:Quantity.unit">
+                                            <LITERAL dmtype="ivoa:Unit" value="deg"/>
+                                        </ATTRIBUTE>
+                                        <ATTRIBUTE dmrole="ivoa:RealQuantity.value">
+                                            <LITERAL dmtype="ivoa:real" value="315.018457397759"/>
+                                        </ATTRIBUTE>
+                                    </INSTANCE>
+                                </ATTRIBUTE>
+                                <ATTRIBUTE dmrole="coords:Point.axis2">
+                                    <INSTANCE dmtype="ivoa:RealQuantity">
+                                        <ATTRIBUTE dmrole="ivoa:Quantity.unit">
+                                            <LITERAL dmtype="ivoa:Unit" value="deg"/>
+                                        </ATTRIBUTE>
+                                        <ATTRIBUTE dmrole="ivoa:RealQuantity.value">
+                                            <LITERAL dmtype="ivoa:real" value="35.3014389949649"/>
+                                        </ATTRIBUTE>
+                                    </INSTANCE>
+                                </ATTRIBUTE>
+                                <REFERENCE dmrole="coords:Coordinate.coordSys">
+                                    <IDREF>T1619442105624_210</IDREF>
+                                </REFERENCE>
+                            </INSTANCE>
+                        </ATTRIBUTE>
+                    </INSTANCE>
+                </COMPOSITION>
+            </INSTANCE>
+            <INSTANCE dmtype="coords:SpaceSys" ID="T1619442105624_210">
+                <COMPOSITION dmrole="coords:PhysicalCoordSys.frame">
+                    <INSTANCE dmtype="coords:SpaceFrame" ID="T1619442105624_227">
+                        <ATTRIBUTE dmrole="coords:SpaceFrame.spaceRefFrame">
+                            <LITERAL dmtype="ivoa:string" value="ICRS"/>
+                        </ATTRIBUTE>
+                        <ATTRIBUTE dmrole="coords:SpaceFrame.equinox">
+                            <LITERAL dmtype="coords:Epoch" value="J2015.5"/>
+                        </ATTRIBUTE>
+                    </INSTANCE>
+                </COMPOSITION>
+            </INSTANCE>
+        </GLOBALS>
+        <TEMPLATES tableref="T1619442105624_55">
+            <INSTANCE dmtype="source:Detection" ID="T1619442105624_80">
+                <COMPOSITION dmrole="source:Source.luminosity">
+                    <INSTANCE dmtype="source:LuminosityMeasurement" ID="T1619442105624_32">
+                        <ATTRIBUTE dmrole="source:LuminosityMeasurement.value">
+                            <COLUMN dmtype="ivoa:RealQuantity" ref="flux"/>
+                        </ATTRIBUTE>
+                        <ATTRIBUTE dmrole="source:LuminosityMeasurement.error">
+                            <COLUMN dmtype="ivoa:RealQuantity" ref="flux_error"/>
+                        </ATTRIBUTE>
+                        <REFERENCE dmrole="source:LuminosityMeasurement.filter">
+                            <IDREF>T1619442105624_1</IDREF>
+                        </REFERENCE>
+                    </INSTANCE>
+                </COMPOSITION>
+                <REFERENCE dmrole="source:Detection.image">
+                    <IDREF>T1619442105624_103</IDREF>
+                </REFERENCE>
+            </INSTANCE>
+            <INSTANCE dmtype="source:Image" ID="T1619442105624_103">
+                <ATTRIBUTE dmrole="source:Image.time">
+                    <COLUMN dmtype="ivoa:datetime" ref="obs_time"/>
+                </ATTRIBUTE>
+            </INSTANCE>
+            <INSTANCE dmtype="source:XMatchSource" ID="T1619442105624_143">
+                <REFERENCE dmrole="source:XMatchSource.source">
+                    <IDREF>T1619442105624_80</IDREF>
+                </REFERENCE>
+            </INSTANCE>
+        </TEMPLATES>
+    </VODML>
+    <RESOURCE>
+        <TABLE ID="T1619442105624_55" name="instance_G">
+            <INFO name="type" value="VOTABLE"/>
+            <INFO name="votable_url" value="https://raw.githubusercontent.com/ivoa/dm-usecases/main/usecases/time-series/raw_data/ts.vot"/>
+            <INFO name="table_rank" value="1"/>
+            <FIELD name="obs_time" datatype="double" ID="obs_time"/>
+            <FIELD name="phot" datatype="double" ID="phot"/>
+            <FIELD name="flux" datatype="float" ID="flux"/>
+            <FIELD name="flux_error" datatype="float" ID="flux_error"/>
+        </TABLE>
+    </RESOURCE>
+</VOTABLE>

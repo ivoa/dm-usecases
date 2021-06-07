@@ -71,7 +71,8 @@ Uses the 'rama' python package to parse annotated data file and instantiate
         * HardnessRatio; x1
 	
 * Consumption
-    * see [sp_summary.md](sp_summary.md) for a summary of the model instances generated from the annotated files.
+    * Generic scan for contained properties: see [sp_summary_generic.md](sp_summary_generic.md)
+    * Targeted search for specific properties: see [sp_summary.md](sp_summary.md)
 
 ## Challenge 2:
 * Annotation: vizier_propermotion_annotated.vot

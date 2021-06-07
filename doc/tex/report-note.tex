@@ -8,6 +8,7 @@
 \ivoagroup{Data Model}
 
 \author{Laurent Michel}
+\author{Jesus Salgado}
 
 \editor{Laurent Michel}
 
@@ -80,6 +81,8 @@ In addition to this 2 ad-hoc models have been used:
 
 \subsection{Mapping Syntax}
 
+The final solution should be complete enough to
+allow a proper object mapping but simple enough to be implemented. 
 Two different syntaxes have been used to annotate the use-cases datasets.
 
 \begin{itemize}
@@ -90,6 +93,11 @@ Two different syntaxes have been used to annotate the use-cases datasets.
 It is to be noted that ModelInstanceInVot derives from VODML Mapping.
 
 \subsection{Clients APIs}
+
+All the tools are still in prototype phase as they are not implementing
+an agreed standard mapping. Once the IVOA mapping  approach is defined, IVOA implementors should 
+collaborate to convert the library in a reference reusable implementation. Open issue on finding implementors
+resources from IVOA members
 
 \begin{itemize}
 \item \textbf{Astropy extension (Markus Demleitner)}  designed to process the annotation as proposed by Markus Demleitner.
@@ -287,7 +295,7 @@ to fill some gaps and to implement new functions.
 
 \begin{itemize}
 \item It is very desirable to finally have one syntax. There are ongoing discussions to merge both proposals 
-\item Extending our models to cover new use cases
+\item Model extensions to cover new use cases
 \end{itemize}
 
 

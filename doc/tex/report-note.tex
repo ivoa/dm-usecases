@@ -53,13 +53,13 @@ It is a 4 steps process that must issue a global strategy for the model usage in
 The primary goal of this workshop was to answer the following questions
 
 \begin{itemize}
-\item Do the proposed mode cover the science use-cases?
+\item Do the proposed models cover the science use-cases?
 \item What is the best mapping strategy?
 \item What is the most suitable annotation syntax.?
 \end{itemize}
 
 If we get a positive answer to all of the 3 questions, we will be able to propose a strait way to annotate data.
-Any missing information can be retrieved in the Github repository.
+Any other information can be retrieved in the Github repository (https://github.com/ivoa/dm-usecases).
 
 \section{Tools and Models}
 \subsection{Models}
@@ -79,7 +79,7 @@ source objects in an interoperable way.
 
 In addition to this 2 ad-hoc models have been used:
 \begin{itemize}
-\item Model based on MANGO components for the complex time series (F. Bonnarel et al.).
+\item A model based on MANGO components for the complex time series (F. Bonnarel et al.).
 \item Model classes referring to Meas/Coord elements but with different structures (M. Demleitner).
 \end{itemize}
 
@@ -100,7 +100,7 @@ It is to be noted that ModelInstanceInVot derives from VODML Mapping.
 
 All the tools are still in prototype phase as they are not implementing
 an agreed standard mapping. Once the IVOA mapping  approach is defined, IVOA implementors should 
-collaborate to convert the library in a reference reusable implementation. Open issue on finding implementors
+collaborate to convert the library in a reference reusable implementation. This is an open issue on finding implementors
 resources from IVOA members
 
 \begin{itemize}
@@ -114,7 +114,7 @@ resources from IVOA members
 \section{Use Case Implementation}
 \subsection{Use Cases}
 
-5 use-cases on 10 have been selected to assess te conclusions. This choice covers most of the current science cases. 
+5 use-cases on 10 have been selected to assess the conclusions. This choice covers most of the current science cases. 
 Table \ref{tbl:use-case} gives a brief description of them. All details can be found on Github.
 
 \begin{table}[!htbp]
@@ -128,7 +128,7 @@ Table \ref{tbl:use-case} gives a brief description of them. All details can be f
             time series & identifying the whole thing as a time series, 
                                   \newline  Identifying the independent axis/axes, associating values and errors 
                                   \newline Figuring out the observation position  
-                                  \newline This use-case comes with one simple time-series  and 2 more complex one (Gaia ZTF) where photometric points are mixed in data tables\\
+                                  \newline This use-case comes with one simple time-series  and 2 more complex one (Gaia  and ZTF) where photometric points are mixed in data tables\\
        \hline 
             standard properties  & 
             Allow clients to easily retrieve  scientifically relevant source properties \\
@@ -210,7 +210,8 @@ Matrix \ref{tbl:implementation} gives an implementation overview. All details ca
            &
            &
            X &
-           X \\
+           X
+            \\
       \hline 
            precise astrometry &
            X &
@@ -246,8 +247,8 @@ to fill some gaps and to implement new functions.
 \begin{itemize}
 \item VOTable annotations APIs must be included in AstroPy or PyVo,
 \item Need for making multi-body data (asteroids, planets...) interoperable
-\item Need for standardising multi-messenger meta-data
-\item Need for model for photon lists
+\item Need for a standard for multi-messenger meta-data
+\item Need for a model for photon lists
 \item Need for an accurate time model for moving objects
 \item Need for a model for orbital information
 \item Need for a better support for X-ray data (photon based datasets, source-detection or spectrum-model association, probabilistic errors)
@@ -276,7 +277,7 @@ to fill some gaps and to implement new functions.
  
  \section{Conclusions}
  
- It has been decided before Interop to withdraw the approach consisting of mapping data on a set on independent model components and hence to keep working with integrated models re-using Meas/Coordinates/PhotDM classes.
+ It has been decided before Interop to withdraw the approach consisting in mapping data on a set on independent model components and hence to keep working with integrated models re-using Meas/Coordinates/PhotDM classes.
  
 \subsection{What Worked Very Well}
 
@@ -291,19 +292,15 @@ to fill some gaps and to implement new functions.
 
 \begin{itemize}
 \item The connection of PhotDM with Meas/Coordinate/Mango/Cube has to be tuned. This is a pending issue while the PhotDM VODML/XML has not be released.
-\item Some update of Meas/Coordinate have been suggested, especially for the sky positions.
-\item A new class hierarchy has been proposed for the MANGO Parameters.
+\item Some update of Meas/Coordinate have been suggested, especially for the sky positions (see RFC2 page).
+\item Some class rearrangements have been proposed in the MANGO Parameters.
 \end{itemize}
 
 \subsection{What Has to Be Discussed}
 
 \begin{itemize}
 \item It is very desirable to finally have one syntax. There are ongoing discussions to merge both proposals 
-<<<<<<< HEAD
 \item Model extensions to cover new use cases
-=======
-\item Extending our models to cover new use cases
->>>>>>> main
 \end{itemize}
 
 

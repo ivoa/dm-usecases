@@ -21,5 +21,16 @@
 
 The demo client (`ModelInstanceInVot/python_workflow/python/client/demo/vizier_csc2_gal.py`) can generate one JSON serialization for each data row. These MANGO instance can be processed as dictionaries by any language. 
         
-`vizier_csc2_gal.mangoinstance.json` contains that serialization for the first row
-- Source parameters are in the `mango:MangoObject.parameters` block of the instance.
+The client output is in  `vizier_csc2_gal.mangoinstance.josn`      
+```python
+
+    mango_browser = MangoBrowser(votable_path) 
+    
+    mango_parameters = mango_browser.get_parameters()
+    print("======== Parameters ")
+    DictUtils.print_pretty_json(mango_parameters)
+        
+    print("======== 1st row data ")
+    mango_data = mango_browser.get_data()
+    DictUtils.print_pretty_json(mango_data)
+  ```

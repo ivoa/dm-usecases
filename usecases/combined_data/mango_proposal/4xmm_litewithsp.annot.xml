@@ -1,68 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- modif Mireille : for each Tag , dmrole should stand on the same line allow easier extraction of model classes using a awk script 
-	the goal is to extract from the mapping a tree representing the classes used from the diff models -->
-<VOTABLE xmlns="http://www.ivoa.net/xml/VOTable/v1.3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	version="1.3">
-    <MODEL_INSTANCE name="Mango" syntax="ModelInstanceInVot"
-        uri="https://github.com/ivoa-std/MANGO/blob/master/vo-dml/mango.vo-dml.xml">		
-        <GLOBALS>
+<VOTABLE xmlns="http://www.ivoa.net/xml/VOTable/v1.3"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.3">
+    <!-- modif Mireille : for each Tag , dmrole should stand on the same line allow easier extraction of model classes using a awk script 
+    the goal is to extract from the mapping a tree representing the classes used from the diff models -->
+	<MODEL_INSTANCE name="MANGO" syntax="ModelInstanceInVot" >
+		<GLOBALS>
 			<INSTANCE ID="SpaceFrame_ICRS" dmtype="coords:SpaceFrame">
-				<INSTANCE dmrole="coords:SpaceFrame.refPosition" dmtype="coords:StdRefLocation">
-					<ATTRIBUTE dmrole="coords:StdRefLocation.position" dmtype="ivoa:string" value="NoSet" />
+				<INSTANCE dmrole="coords:SpaceFrame.refPosition"
+					dmtype="coords:StdRefLocation">
+					<ATTRIBUTE dmrole="coords:StdRefLocation.position"
+						dmtype="ivoa:string" value="NoSet" />
 				</INSTANCE>
-				<ATTRIBUTE dmrole="coords:SpaceFrame.spaceRefFrame" dmtype="ivoa:string" value="ICRS" />
-				<ATTRIBUTE dmrole="coords:SpaceFrame.equinox" dmtype="coords:Epoch" value="NoSet" />
+				<ATTRIBUTE dmrole="coords:SpaceFrame.spaceRefFrame"
+					dmtype="ivoa:string" value="ICRS" />
+				<ATTRIBUTE dmrole="coords:SpaceFrame.equinox"
+					dmtype="coords:Epoch" value="NoSet" />
 			</INSTANCE>
 		</GLOBALS>
 		<TABLE_MAPPING tableref="Results">
 			<COLLECTION dmrole="root">
 				<TABLE_ROW_TEMPLATE>
 					<INSTANCE dmrole="root" dmtype="mango:MangoObject">
-						<ATTRIBUTE dmrole="mango:MangoObject.identifier" dmtype="ivoa:string" ref="namesaada" />
-						<COLLECTION size="-1" dmrole="mango:MangoObject.associatedData">
-							<JOIN tableref="Spectra" primary="oidsaada" foreign="oidsaada">
-								<INSTANCE dmrole="mango:MangoObject.associatedData" dmtype="mango:WebEndpoint">
-									<!--
-									    Q Mireille : why do we have a mapping here of the second table which will be described below? 
-									    we would only need the Join condition here , no? 
+						<ATTRIBUTE dmrole="mango:MangoObject.identifier"
+							dmtype="ivoa:string" ref="namesaada" />
+						<COLLECTION size="-1"
+							dmrole="mango:MangoObject.associatedDataDock">
+                                    <!--
+                                        Q Mireille : why do we have a mapping here of the second table which will be described below? 
+                                        we would only need the Join condition here , no? 
 
-									    update Mireille same as in the spectra table below: all attributes below belong to WebEndPoint no Parameter in the game 
-										here 
-										
-										R: This table contains the MANGO instances that are the root objects. Spectra are part of these objects, 
-										   it is then legal to put the spectrum mapping here. 
-										   Another possibility would be to use an INSTANCE with a dmref pointing on a mapping sequence located in the second table.
-										
-										-->
-									<ATTRIBUTE dmrole="mango:WebEndpoint.semantic" dmtype="ivoa:string" value="#spectrum.raw" />
-									<ATTRIBUTE dmrole="mango:WebEndpoint.description" dmtype="ivoa:string" value="Raw Spectrum" />
-									<ATTRIBUTE dmrole="mango:WebEndpoint.contentType" dmtype="ivoa:string" ref="product_type" />
-									<ATTRIBUTE dmrole="mango:WebEndpoint.url" dmtype="ivoa:string" ref="data_access" />
+                                        update Mireille same as in the spectra table below: all attributes below belong to WebEndPoint no Parameter in the game 
+                                        here 
+                                        
+                                        R: This table contains the MANGO instances that are the root objects. Spectra are part of these objects, 
+                                           it is then legal to put the spectrum mapping here. 
+                                           Another possibility would be to use an INSTANCE with a dmref pointing on a mapping sequence located in the second table.
+                                        
+                                        -->
+							<JOIN tableref="Spectra" primary="oidsaada"
+								foreign="oidsaada">
+								<INSTANCE dmrole="mango:MangoObject.associatedData" dmtype="mango:WebEndpoint">
+									<ATTRIBUTE dmrole="mango:WebEndpoint.semantic"
+										dmtype="ivoa:string" value="http://www.ivoa.net/rdf/product-type#spectrum" />
+									<ATTRIBUTE dmrole="mango:WebEndpoint.description"
+										dmtype="ivoa:string" value="Raw Spectrum" />
+									<ATTRIBUTE dmrole="mango:WebEndpoint.contentType"
+										dmtype="ivoa:string" ref="product_type" />
+									<ATTRIBUTE dmrole="mango:WebEndpoint.uri"
+										dmtype="ivoa:string" ref="data_access" />
 								</INSTANCE>
 							</JOIN>
 						</COLLECTION>
-						<COLLECTION size="-1" dmrole="mango:MangoObject.parameters">
-							<INSTANCE dmrole="mango:MangoObject.parameters" dmtype="mango:Parameter">
-								<ATTRIBUTE dmrole="mango:Parameter.semantic" dmtype="ivoa:string" value="#postion.corrected" />
-								<ATTRIBUTE dmrole="mango:Parameter.ucd" dmtype="ivoa:string" value="pos" />
-								<ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string" value="Corrected position" />
-								<INSTANCE dmrole="mango:Parameter.measure" dmtype="mango:stcextend.LonLatSkyPosition">
-									<INSTANCE dmrole="mango:stcextend.LonLatSkyPosition.coord" dmtype="mango:stcextend.LonLatPoint">
-										<ATTRIBUTE dmrole="mango:stcextend.LonLatPoint.longitude" dmtype="ivoa:real" ref="pos_ra_csa" />
-										<ATTRIBUTE dmrole="mango:stcextend.LonLatPoint.latitude" dmtype="ivoa:real" ref="pos_dec_csa" />
-										<INSTANCE dmrole="coords:Coordinate.coordSys" dmref="SpaceFrame_ICRS" />
+						<COLLECTION size="-1"
+							dmrole="mango:MangoObject.parameters">
+							<INSTANCE dmrole="mango:MangoObject.parameters"
+								dmtype="mango:Parameter">
+								<ATTRIBUTE dmrole="mango:Parameter.semantic"
+									dmtype="ivoa:string" value="http://www.ivoa.net/rdf/uat#astronomical-location" />
+								<ATTRIBUTE dmrole="mango:Parameter.ucd"
+									dmtype="ivoa:string" value="pos" />
+								<ATTRIBUTE dmrole="mango:Parameter.description"
+									dmtype="ivoa:string" value="Corrected position" />
+								<ATTRIBUTE dmrole="mango:Parameter.reductionStatus"
+									dmtype="ivoa:string" value="Corrected" />
+								<INSTANCE dmrole="mango:Parameter.measure"
+									dmtype="mango:stcextend.LonLatSkyPosition">
+									<INSTANCE
+										dmrole="mango:stcextend.LonLatSkyPosition.coord"
+										dmtype="mango:stcextend.LonLatPoint">
+										<ATTRIBUTE
+											dmrole="mango:stcextend.LonLatPoint.longitude"
+											dmtype="ivoa:real" ref="pos_ra_csa" />
+										<ATTRIBUTE
+											dmrole="mango:stcextend.LonLatPoint.latitude"
+											dmtype="ivoa:real" ref="pos_dec_csa" />
+										<INSTANCE dmrole="coords:Coordinate.coordSys"
+											dmref="SpaceFrame_ICRS" />
 									</INSTANCE>
-									<INSTANCE dmrole="meas:Measure.error" dmtype="meas:Error">
-										<INSTANCE dmrole="meas:Error.statError" dmtype="meas:Symmetrical">
-											<INSTANCE dmrole="meas:Symmetrical.radius" dmtype="ivoa:RealQuantity">
-												<ATTRIBUTE dmrole="ivoa:RealQuantity.value" dmtype="ivoa:real" value="0" />
-												<ATTRIBUTE dmrole="ivoa:Quantity.unit" dmtype="ivoa:Unit" value="NotSet" />
+									<INSTANCE dmrole="meas:Measure.error"
+										dmtype="meas:Error">
+										<INSTANCE dmrole="meas:Error.statError"
+											dmtype="meas:Symmetrical">
+											<INSTANCE dmrole="meas:Symmetrical.radius"
+												dmtype="ivoa:RealQuantity">
+												<ATTRIBUTE dmrole="ivoa:RealQuantity.value"
+													dmtype="ivoa:real" value="0" />
+												<ATTRIBUTE dmrole="ivoa:Quantity.unit"
+													dmtype="ivoa:Unit" value="NotSet" />
 											</INSTANCE>
 										</INSTANCE>
-										<INSTANCE dmrole="meas:Error.sysError" dmtype="meas:Symmetrical">
-											<INSTANCE dmrole="meas:Symmetrical.radius" dmtype="ivoa:RealQuantity">
-												<ATTRIBUTE dmrole="ivoa:RealQuantity.value" dmtype="ivoa:real" value="0" />
-												<ATTRIBUTE dmrole="ivoa:Quantity.unit" dmtype="ivoa:Unit" value="NotSet" />
+										<INSTANCE dmrole="meas:Error.sysError"
+											dmtype="meas:Symmetrical">
+											<INSTANCE dmrole="meas:Symmetrical.radius"
+												dmtype="ivoa:RealQuantity">
+												<ATTRIBUTE dmrole="ivoa:RealQuantity.value"
+													dmtype="ivoa:real" value="0" />
+												<ATTRIBUTE dmrole="ivoa:Quantity.unit"
+													dmtype="ivoa:Unit" value="NotSet" />
 											</INSTANCE>
 										</INSTANCE>
 									</INSTANCE>
@@ -73,23 +107,24 @@
 				</TABLE_ROW_TEMPLATE>
 			</COLLECTION>
 		</TABLE_MAPPING>
-		<TABLE_MAPPING tableref="Spectra">
-			<COLLECTION dmrole="root">
-				<TABLE_ROW_TEMPLATE>
-					<INSTANCE dmrole="root" dmtype="mango:WebEndpoint">
-						<!--update Mireille all attributes below belong to WebEndPoint no Parameter in the game here 
-						    R See above comment
-						-->
-						<ATTRIBUTE dmrole="mango:WebEndpoint.semantic" dmtype="ivoa:string" value="#spectrum.raw" />
-						<ATTRIBUTE dmrole="mango:WebEndPoint.description" dmtype="ivoa:string" value="Raw Spectrum" />
-						<ATTRIBUTE dmrole="mango:WebEndPoint.contentType" dmtype="ivoa:string" ref="product_type" />
-						<ATTRIBUTE dmrole="mango:WebEndPoint.url" dmtype="ivoa:string" ref="data_access" />
-					</INSTANCE>
-				</TABLE_ROW_TEMPLATE>
-			</COLLECTION>
-		</TABLE_MAPPING>
+        <TABLE_MAPPING tableref="Spectra">
+            <COLLECTION dmrole="root">
+                <TABLE_ROW_TEMPLATE>
+                    <INSTANCE dmrole="root" dmtype="mango:WebEndpointXXX">
+                        <ATTRIBUTE dmrole="mango:WebEndpoint.semantic"
+                            dmtype="ivoa:string" value="http://www.ivoa.net/rdf/product-type#spectrum" />
+                        <ATTRIBUTE dmrole="mango:Parameter.description"
+                            dmtype="ivoa:string" value="Raw Spectrum" />
+                        <ATTRIBUTE dmrole="mango:Parameter.contentType"
+                            dmtype="ivoa:string" ref="product_type" />
+                        <ATTRIBUTE dmrole="mango:Parameter.uri"
+                            dmtype="ivoa:string" ref="data_access" />
+                    </INSTANCE>
+                </TABLE_ROW_TEMPLATE>
+            </COLLECTION>
+        </TABLE_MAPPING>
 	</MODEL_INSTANCE>
-
+	
 	<DESCRIPTION><![CDATA[
 SaadaDB:
    name : FourXMMdr9
@@ -112,19 +147,24 @@ Archive generated by SAADA: http://saada.u-strasbg.fr
 		<DESCRIPTION>Native Saada</DESCRIPTION>
 		<INFO name="QUERY_STATUS" value="OK" />
 		<TABLE name="Results">
-			<FIELD ID="oidsaada_100" name="oidsaada" datatype="long" ucd="meta.id;meta.main">
+			<FIELD ID="oidsaada_100" name="oidsaada" datatype="long"
+				ucd="meta.id;meta.main">
 				<DESCRIPTION>Attribute managed by Saada</DESCRIPTION>
 			</FIELD>
-			<FIELD ID="namesaada_101" name="namesaada" datatype="char" ucd="meta.id" arraysize="*">
+			<FIELD ID="namesaada_101" name="namesaada" datatype="char"
+				ucd="meta.id" arraysize="*">
 				<DESCRIPTION>Attribute managed by Saada</DESCRIPTION>
 			</FIELD>
-			<FIELD ID="pos_ra_csa_102" name="pos_ra_csa" datatype="double" ucd="pos.eq.ra;meta.main" unit="deg">
+			<FIELD ID="pos_ra_csa_102" name="pos_ra_csa" datatype="double"
+				ucd="pos.eq.ra;meta.main" unit="deg">
 				<DESCRIPTION>Attribute managed by Saada</DESCRIPTION>
 			</FIELD>
-			<FIELD ID="pos_dec_csa_103" name="pos_dec_csa" datatype="double" ucd="pos.eq.dec;meta.main" unit="deg">
+			<FIELD ID="pos_dec_csa_103" name="pos_dec_csa"
+				datatype="double" ucd="pos.eq.dec;meta.main" unit="deg">
 				<DESCRIPTION>Attribute managed by Saada</DESCRIPTION>
 			</FIELD>
-			<FIELD ID="error_min_csa_106" name="error_min_csa" datatype="double" ucd="stat.error;phys.size" unit="deg">
+			<FIELD ID="error_min_csa_106" name="error_min_csa"
+				datatype="double" ucd="stat.error;phys.size" unit="deg">
 				<DESCRIPTION>Attribute managed by Saada</DESCRIPTION>
 			</FIELD>
 			<DATA>
@@ -169,13 +209,17 @@ Archive generated by SAADA: http://saada.u-strasbg.fr
 			</DATA>
 		</TABLE>
 		<TABLE name="Spectra">
-			<FIELD ID="oidsaada_199" name="oidsaada" datatype="long" ucd="meta.id;meta.main">
+			<FIELD ID="oidsaada_100" name="oidsaada" datatype="long"
+				ucd="meta.id;meta.main">
 			</FIELD>
-			<FIELD ID="camera" name="camera" datatype="char" ucd="meta.id;instr" arraysize="*">
+			<FIELD ID="camera" name="camera" datatype="char"
+				ucd="meta.id;instr" arraysize="*">
 			</FIELD>
-			<FIELD ID="product_type" name="product_type" datatype="char" ucd="meta.note" arraysize="*">
+			<FIELD ID="product_type" name="product_type" datatype="char"
+				ucd="meta.note" arraysize="*">
 			</FIELD>
-			<FIELD ID="data_access" name="data_access" datatype="char" ucd="meta.ref.url" arraysize="*">
+			<FIELD ID="data_access" name="data_access" datatype="char"
+				ucd="meta.ref.url" arraysize="*">
 			</FIELD>
 
 			<DATA>
@@ -192,7 +236,7 @@ Archive generated by SAADA: http://saada.u-strasbg.fr
 						<TD>581245887037857579</TD>
 						<TD>MOS2</TD>
 						<TD>application/fits</TD>
-						<TD>http://spectrum/581245887037857579/MO2</TD>
+						<TD>http://spectrum/581245887037857579/MOS2</TD>
 					</TR>
 
 					<TR>

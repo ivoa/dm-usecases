@@ -1,10 +1,24 @@
+======== Parameters 
 {
-  "@dmtype": "mango:MangoObject",
-  "mango:MangoObject.associatedData": [],
-  "mango:MangoObject.identifier": {
-    "@dmtype": "ivoa:string",
-    "@ref": "main_id",
-    "@value": "LEDA  889060"
-  },
-  "mango:MangoObject.parameters": []
+  "#0 meta.id;meta.main": {
+    "mango:MangoObject.identifier": {
+      "id": "main_id",
+      "index": 0
+    },
+    "measure_type": "mango:MangoObject.identifier"
+  }
+}
+======== 1st row data 
+{
+  "data": [
+    [
+      "LEDA  888961"
+    ]
+  ],
+  "head": [
+    "mango:MangoObject.identifier"
+  ],
+  "selected_index": [
+    0
+  ]
 }

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VOTABLE
+    xmlns="http://www.ivoa.net/xml/VOTable/v1.4_vodml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.ivoa.net/xml/VOTable/v1.4_vodml https://volute.g-vo.org/svn/trunk/projects/dm/vo-dml-org/xsd/ext/VOTable-1.4_vodml.xsd">
+    <VODML>
+        <MODEL>
+            <NAME>coords</NAME>
+            <URL>http://volute.g-vo.org/svn/trunk/projects/dm/STC/Coords/vo-dml/STC_coords-v1.0.vo-dml.xml</URL>
+        </MODEL>
+        <MODEL>
+            <NAME>ivoa</NAME>
+            <URL>http://volute.g-vo.org/svn/trunk/projects/dm/vo-dml/models/ivoa/vo-dml/IVOA-v1.0.vo-dml.xml</URL>
+        </MODEL>
+        <GLOBALS>
+            <INSTANCE dmtype="coords:SpaceSys" ID="T1615379927201_91">
+                <COMPOSITION dmrole="coords:PhysicalCoordSys.coordSpace">
+                    <INSTANCE dmtype="coords:SphericalCoordSpace" ID="T1615379927201_129">
+                        <COMPOSITION dmrole="coords:CoordSpace.axis">
+                            <INSTANCE dmtype="coords:ContinuousAxis" ID="T1615379927201_144">
+                                <ATTRIBUTE dmrole="coords:Axis.name">
+                                    <LITERAL dmtype="ivoa:string" value="ra"/>
+                                </ATTRIBUTE>
+                            </INSTANCE>
+                            <INSTANCE dmtype="coords:ContinuousAxis" ID="T1615379927201_165">
+                                <ATTRIBUTE dmrole="coords:Axis.name">
+                                    <LITERAL dmtype="ivoa:string" value="dec"/>
+                                </ATTRIBUTE>
+                            </INSTANCE>
+                        </COMPOSITION>
+                    </INSTANCE>
+                </COMPOSITION>
+            </INSTANCE>
+        </GLOBALS>
+        <TEMPLATES tableref="T1615379927201_1">
+            <INSTANCE dmtype="coords:Point">
+                <ATTRIBUTE dmrole="coords:Point.axis1">
+                    <COLUMN dmtype="ivoa:Quantity" ref="T1615379927201_1_F4"/>
+                </ATTRIBUTE>
+                <ATTRIBUTE dmrole="coords:Point.axis2">
+                    <COLUMN dmtype="ivoa:Quantity" ref="T1615379927201_1_F5"/>
+                </ATTRIBUTE>
+                <REFERENCE dmrole="coords:Coordinate.coordSys">
+                    <IDREF>T1615379927201_91</IDREF>
+                </REFERENCE>
+            </INSTANCE>
+        </TEMPLATES>
+    </VODML>
+    <RESOURCE>
+        <TABLE ID="T1615379927201_1" name="III/21/gcrv">
+            <INFO name="type" value="VOTABLE"/>
+            <INFO name="votable_url" value="https://raw.githubusercontent.com/ivoa/dm-usecases/main/usecases/column_grouping/mango_proposal/vizier_grouped_col_withref.annot.xml"/>
+            <INFO name="table_rank" value="1"/>
+            <INFO name="ID" value="Results"/>
+            <FIELD name="recno" datatype="int" ID="T1615379927201_1_F0"/>
+            <FIELD name="GCRV" datatype="int" ID="T1615379927201_1_F1"/>
+            <FIELD name="GC" datatype="int" ID="T1615379927201_1_F2"/>
+            <FIELD name="HD" datatype="int" ID="T1615379927201_1_F3"/>
+            <FIELD name="RAB1950" datatype="char" ID="T1615379927201_1_F4"/>
+            <FIELD name="DEB1950" datatype="char" ID="T1615379927201_1_F5"/>
+            <FIELD name="mag" datatype="short" ID="T1615379927201_1_F6"/>
+            <FIELD name="n_mag" datatype="char" ID="T1615379927201_1_F7"/>
+            <FIELD name="pm" datatype="short" ID="T1615379927201_1_F8"/>
+            <FIELD name="SpT" datatype="char" ID="T1615379927201_1_F9"/>
+            <FIELD name="RV" datatype="float" ID="T1615379927201_1_F10"/>
+            <FIELD name="q_RV" datatype="char" ID="T1615379927201_1_F11"/>
+            <FIELD name="o_RV" datatype="short" ID="T1615379927201_1_F12"/>
+            <FIELD name="r_RV" datatype="char" ID="T1615379927201_1_F13"/>
+            <FIELD name="_RA.icrs" datatype="char" ID="T1615379927201_1_F14"/>
+            <FIELD name="_DE.icrs" datatype="char" ID="T1615379927201_1_F15"/>
+        </TABLE>
+    </RESOURCE>
+</VOTABLE>

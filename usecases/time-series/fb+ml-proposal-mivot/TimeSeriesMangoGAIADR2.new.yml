@@ -1,0 +1,134 @@
+TimeSys : &timesystem
+   frame : #"Coords:TimeFrame"
+      timescale : "TCB"
+      refposition : "BARYCENTER"
+      refdirection: "NotSet"  
+PhotSys : &photsystem
+   PhotFrame : #"coords:CoordFrame"
+      cal : #"PhotDM:Photcal"
+           zeroPoint : #"PhotDM:ZeroPoint"
+              flux :
+                value : 4257.3
+                unit : "Jy" 
+           magnituteSystem :
+              type : "Vega"     
+           PhotometryFilter : #"PhotDM:PhotometryFilter"
+              identifier : "GAIA/GAIA.RP/RP"
+              spectralLocation :
+                value : 656.23
+                unit : "nm"
+SpaceSystem:    &spacesys
+      frame:  #"Coords: SpaceFrame"
+         refPosition : "BARYCENTER"
+         spaceFrame : "ICRS"
+MangoObject :
+   identifier : "GAIA source 6680733225618222592"
+   Parameter : # "mango:Parameter"
+      ucd: "pos.eq"
+      semantic: "spacePosition"
+      description: "Right Ascension and declination of source"
+      Measure: # "mango:LonLatSkyPosition"
+         Coord : # "mango:lonLatPoint"
+         longitude : 307.65830193737
+         latitude : -40.0037924124343
+         LonLatCoordSys : *spacesys
+   Parameter : # "mango:Parameter"
+      ucd: meta.title;obs
+      semantic: publisherTitle
+      description: "Publisher-assigned title of the data set"
+      Measure: # "mango:StringGenericMeasure"
+         Coord : # "mango:StringCoordinate"
+           cval : "Gaia DR2 RP photometry time series for star 6680733225618222592"
+   Parameter : # "mango:Parameter"
+      ucd: "notSet"
+      semantic: forAckowledgment
+      description: "legal acknowledgment Notice"
+      Measure: # "mango:StringGenericMeasure"
+         Coord : # "mango:StringCoordinate"
+           cval : " If you use public Gaia DR2 data in a paper, please take note of  `ESAC's guide`_ on how to acknowledge and cite it.  .. _ESAC's guide: http://gea.esac.esa.int/archive/documentation/GDR2/Miscellaneous/sec_credit_and_citation_instructions/"       
+   associatedData : # "mango:VOMOdelInstance"// dock an instance of timeseries data  
+      semantic : "TimeDependantAssociatedData"
+      description : "Instance of TimeSeriesData atttached to the source"
+      ivoid : "ivo://......"
+      modelURL : "http://lien/vers/vodml-xml/tsd.xml"
+      modelName : "TimeSeriesData"
+      modelDoc : "http://lien/vers/vodml-html/tsd.html"
+      modelInstance: # "tsd:Tsdata" // ModelInstanceremplacée (ou remplie ) par une instance de TimeSeries
+         - Point : # "mango:Parameter" // instance d'un Mango Parameter complexe contenant tous les Parameter pour un point
+            ucd: "time.epoch"
+            semantic: "independantTime"
+            description : "This is the time main stamp in JD"
+            Measure : # "Time"
+               Coord : #"JD"
+                  date : 2456914.6976151103
+                  coordSys : *timesystem
+            associatedParameters : #"mango:Parameter"
+               ucd :  "phot.flux;em.opt.R"
+               semantic : "RedBandFlux"
+               description : "This is the RP flux of the object for a given Time Stamp"
+               Measure : #"mango:PhotometricMeasure"
+                  Coord : #"mango:PhotometricCoord"
+                     value : 70494.1
+                     coordSys : *photsystem
+                  Error : 
+                     statError : 264.852
+            associatedParameters : #"mango:Parameter"
+               ucd :  "phot.mag;em.opt.R"
+               semantic : "RedBandMagnitude"
+               description : "This is the RP magnitude in the VEga system for the object for a given Time Stamp"
+               Measure : #"mango:PhotometricMeasure"
+                  Coord : # "mango:PhotometricCoord"
+                     value : 12.641518
+                     coordSys : *photsystem
+         - Point : #"mango:Parameter" // instance d'un Mango Parameter complexe contenant tous les Parameter pour un point"
+            ucd: "time.epoch"
+            semantic: "independantTime"
+            description : "This is the time main stamp in JD"
+            Measure : #"Time"
+               Coord : #"JD"
+                  date : 2456914.7716157604
+                  coordSys : *timesystem
+            associatedParameters : #"mango:Parameter"
+               ucd :  "phot.flux;em.opt.R"
+               semantic : "RedBandFlux"
+               description : "This is the RP flux of the object for a given Time Stamp"
+               Measure : #"mango:PhotometricMeasure"
+                  Coord : #"mango:PhometricCoord"
+                     value : 69736.7
+                     coordSys : *photsystem
+                  Error : 
+                     statError : 268.145
+            associatedParameters : #"mango:Parameter"
+               ucd :  "phot.mag;em.opt.R"
+               semantic : "RedBandMagnitude"
+               description : "This is the RP magnitude in the VEga system for the object for a given Time Stamp"
+               Measure : #"mango:PhotometricMeasure"
+                  Coord : #"mango:PhometricCoord"
+                     value: 12.653247
+                     coordSys : *photsystem
+         - Point : #"Time" // instance d'un Mango Parameter complexe contenant tous les Parameter pour un point
+            ucd: "time.epoch"
+            semantic: "independantTime"
+            description : "This is the time main stamp in JD"
+            Measure : #"Time"
+               Coord : #"JD"
+                  date : 2456948.579190581
+                  coordSys : *timesystem
+            associatedParameters : #"mango:Parameter"
+               ucd :  "phot.flux;em.opt.R"
+               semantic : "RedBandFlux"
+               description : "This is the RP flux of the object for a given Time Stamp"
+               Measure : #"mango:PhotometricMeasure"
+                  Coord : # "mango:PhometricCoord"
+                     value : 69990.5
+                     coordSys : *photsystem
+                  Error : 
+                     statError : 253.0
+            associatedParameters : #"mango:Parameter"
+               ucd :  "phot.mag;em.opt.R"
+               semantic : "RedBandMagnitude"
+               description : "This is the RP magnitude in the VEga system for the object for a given Time"
+               Measure : #"mango:PhotometricMeasure"
+                  Coord : # "mango:PhometricCoord" 
+                     value : 12.6493025
+                     coordSys : *photsystem

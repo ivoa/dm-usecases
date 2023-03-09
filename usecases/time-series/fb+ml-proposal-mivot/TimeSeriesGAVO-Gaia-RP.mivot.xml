@@ -24,13 +24,13 @@
 			<INSTANCE dmrole="ts:PhotFrame" dmtype="coords:CoordFrame" >	      
 				<INSTANCE dmrole="coords:CoordFrame.cal" dmtype="PhotDM:Photcal"  >
 					<INSTANCE dmrole="PhotDM:Photcal.zeroPoint" dmtype="PhotDM:ZeroPoint" > 
-						<INSTANCE dmrole="PhotDM:Photcal.magnitudeSystem" dmtype="PhotDM:MagnitudeSystem" >
-							<ATTRIBUTE  dmrole="PhotDM:MagnitudeSystem.type" dmtype="ivoa:string" value="Vega" />
-						</INSTANCE>
 						<INSTANCE dmrole="PhotDM:ZeroPoint.flux" dmtype="PhotDM:Flux">
 							<ATTRIBUTE  dmrole="PhotDM:Flux.value" dmtype="ivoa:real" value="2461.22" />		
 							<ATTRIBUTE dmrole="PhotDM:Flux.unit" dmtype="ivoa:string" value="Jy" />
 						</INSTANCE>
+					</INSTANCE>
+					<INSTANCE dmrole="PhotDM:Photcal.magnitudeSystem" dmtype="PhotDM:MagnitudeSystem" >
+						<ATTRIBUTE  dmrole="PhotDM:MagnitudeSystem.type" dmtype="ivoa:string" value="Vega" />
 					</INSTANCE>
 					<INSTANCE dmrole="PhotDM:Photcal.PhotometryFilter" dmtype="PhotDM:PhotometryFilter" >
 						<ATTRIBUTE dmrole="PhotDM:PhotometryFilter.identifier" dmtype="ivoa:string" value="GAIA/GAIA2rp/RP" />
@@ -98,8 +98,8 @@
 						<ATTRIBUTE dmrole="mango:Parameter.description" dmtype="ivoa:string" value="Right Ascension and declination of source"/>
 						<INSTANCE dmrole="mango:Parameter.measure" dmtype="mango:LonLatPosition">
 							<INSTANCE dmrole="mango:LonLatSkyPosition.coord" dmtype="mango:LonLatPoint">
-								<ATTRIBUTE dmrole="LonLatPoint.longitude" dmtype="ivoa:real" ref="ra"/>								
-								<ATTRIBUTE dmrole="LonLatPoint.latitude" dmtype="ivoa:real" ref="dec"/>
+								<ATTRIBUTE dmrole="mango:LonLatPoint.longitude" dmtype="ivoa:real" ref="ra"/>								
+								<ATTRIBUTE dmrole="mango:LonLatPoint.latitude" dmtype="ivoa:real" ref="dec"/>
 								<REFERENCE dmrole="mango:LonLatPoint.spaceSys" dmref="SpaceSys"/>
 							</INSTANCE>
 						</INSTANCE>

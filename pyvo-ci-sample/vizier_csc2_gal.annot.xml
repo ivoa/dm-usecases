@@ -120,7 +120,7 @@
           services)
         </DESCRIPTION>
       </FIELD>
-      <FIELD name="2CXO" ucd="meta.id;meta.main" datatype="char" arraysize="18"><!-- ucd="ID_MAIN" -->
+      <FIELD name="2CXO" ID="_2CXO" ucd="meta.id;meta.main" datatype="char" arraysize="18"><!-- ucd="ID_MAIN" -->
         <DESCRIPTION>Source name (Jhhmmss.s+ddmmssX) (name)</DESCRIPTION>
       </FIELD>
       <FIELD name="RAICRS" ucd="pos.eq.ra;meta.main" ref="H" datatype="double" width="11" precision="7" unit="deg"><!-- ucd="POS_EQ_RA_MAIN" -->

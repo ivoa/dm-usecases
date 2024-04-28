@@ -53,29 +53,29 @@
 			<FIELD name="pos_RADEC_corr" ucd="stat.error" datatype="double" unit="arcsec" />
 
 			<!-- Proper motion Errors on RA and DEC correlated each to other Errors on RA and DEC correlated with errors on the sky position -->
-			<FIELD name="pm_RA" ucd="pos.pm.ra;meta.main" datatype="double" unit="mas/y" />
-			<FIELD name="pm_DEC" ucd="pos.pm.dec;meta.main" datatype="double" unit="mas/year" />
+			<FIELD name="pm_RA" ucd="pos.pm;pos.eq.ra;meta.main" datatype="double" unit="mas/y" />
+			<FIELD name="pm_DEC" ucd="pos.pm;pos.eq.dec;meta.main" datatype="double" unit="mas/year" />
 			<FIELD name="pm_RA_err" ucd="stat.error" datatype="double" unit="arcsec" />
 			<FIELD name="pm_DEC_err" ucd="stat.error" datatype="double" unit="arcsec" />
 			<FIELD name="pm_RADEC_corr" ucd="stat.error" datatype="double" unit="arcsec" />
-			<FIELD name="pm_RA_pos_RA_corr" ucd="stat.error" datatype="double" unit="?" />
-			<FIELD name="pm_RA_pos_DEC_corr" ucd="stat.error" datatype="double" unit="?" />
-			<FIELD name="pm_DEC_pos_RA_corr" ucd="stat.error" datatype="double" unit="?" />
-			<FIELD name="pm_DEC_pos_DEC_corr" ucd="stat.error" datatype="double" unit="?" />
+			<FIELD name="pm_RA_pos_RA_corr" ucd="stat.error" datatype="double"  />
+			<FIELD name="pm_RA_pos_DEC_corr" ucd="stat.error" datatype="double"  />
+			<FIELD name="pm_DEC_pos_RA_corr" ucd="stat.error" datatype="double"  />
+			<FIELD name="pm_DEC_pos_DEC_corr" ucd="stat.error" datatype="double"  />
 
 			<!-- Radial velocity Error correlated with errors on the sky position -->
 			<FIELD name="RV" ucd="spect.dopplerVeloc;pos.heliocentric" datatype="double" unit="km/s" />
 			<FIELD name="RV_err" ucd="stat.error" datatype="double" unit="km/s" />
-			<FIELD name="RV_pos_RA_corr" ucd="stat.error" datatype="double" unit="?" />
-			<FIELD name="RV_pos_DEC_corr" ucd="stat.error" datatype="double" unit="?" />
+			<FIELD name="RV_pos_RA_corr" ucd="stat.error" datatype="double"  />
+			<FIELD name="RV_pos_DEC_corr" ucd="stat.error" datatype="double"  />
 
 			<!-- Parallax Error correlated with errors on the sky position -->
 			<FIELD name="PARALLAX" ucd="pos.parallax" datatype="double" unit="mas" />
 			<FIELD name="PARALLAX_err" ucd="stat.error" datatype="double" unit="mas" />
-			<FIELD name="PARALLAX_pos_DEC_corr" ucd="stat.error" datatype="double" unit="?" />
-			<FIELD name="PARALLAX_pos_RA_corr" ucd="stat.error" datatype="double" unit="?" />
-			<FIELD name="PARALLAX_pm_DEC_corr" ucd="stat.error" datatype="double" unit="?" />
-			<FIELD name="PARALLAX_pm_RA_corr" ucd="stat.error" datatype="double" unit="?" />
+			<FIELD name="PARALLAX_pos_DEC_corr" ucd="stat.error" datatype="double"  />
+			<FIELD name="PARALLAX_pos_RA_corr" ucd="stat.error" datatype="double"  />
+			<FIELD name="PARALLAX_pm_DEC_corr" ucd="stat.error" datatype="double"  />
+			<FIELD name="PARALLAX_pm_RA_corr" ucd="stat.error" datatype="double"  />
 
 			<DATA>
 				<TABLEDATA>

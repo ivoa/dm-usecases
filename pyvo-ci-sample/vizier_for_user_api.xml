@@ -64,7 +64,7 @@ Constraint -out.meta=dhuM</INFO>
     <FIELD name="recno" ucd="meta.record" datatype="int" width="8"><!-- ucd="RECORD" -->
       <DESCRIPTION>Record number assigned by the VizieR team. Should Not be used for identification.</DESCRIPTION>
     </FIELD>
-    <FIELD name="HIP" ucd="ID_MAIN" datatype="char" arraysize="6*"><!-- ucd="meta.id;meta.main" -->
+    <FIELD name="HIP" ucd="meta.id;meta.main" datatype="char" arraysize="6*"><!-- ucd="meta.id;meta.main" -->
       <DESCRIPTION>Identifier (HIP number) (H1) [datatype=int]</DESCRIPTION>
     </FIELD>
     <FIELD name="Proxy" ucd="meta.code" datatype="char" arraysize="1"><!-- ucd="CODE_MISC" -->
@@ -87,11 +87,11 @@ Constraint -out.meta=dhuM</INFO>
     <FIELD name="r_Vmag" ucd="meta.ref;pos.frame" datatype="char" arraysize="1"><!-- ucd="REFER_CODE" -->
       <DESCRIPTION>[GHT] Source of magnitude (H7)</DESCRIPTION>
     </FIELD>
-    <FIELD name="RAICRS" ucd="POS_EQ_RA_MAIN" ref="H_1991.250" datatype="double" width="12" precision="8" unit="deg"><!-- ucd="pos.eq.ra;meta.main" -->
+    <FIELD name="RAICRS" ucd="pos.eq.ra;meta.main" ref="H_1991.250" datatype="double" width="12" precision="8" unit="deg"><!-- ucd="pos.eq.ra;meta.main" -->
       <DESCRIPTION>? alpha, degrees (ICRS, Epoch=J1991.25) (H8)</DESCRIPTION>
       <VALUES null="NaN" />
     </FIELD>
-    <FIELD name="DEICRS" ucd="POS_EQ_DEC_MAIN" ref="H_1991.250" datatype="double" width="12" precision="8" unit="deg"><!-- ucd="pos.eq.dec;meta.main" -->
+    <FIELD name="DEICRS" ucd="pos.eq.dec;meta.main" ref="H_1991.250" datatype="double" width="12" precision="8" unit="deg"><!-- ucd="pos.eq.dec;meta.main" -->
       <DESCRIPTION>? delta, degrees (ICRS, Epoch=J1991.25) (H9)</DESCRIPTION>
       <VALUES null="NaN" />
     </FIELD>
@@ -138,47 +138,47 @@ Constraint -out.meta=dhuM</INFO>
       <DESCRIPTION>? Standard error in pmDE (H18)</DESCRIPTION>
       <VALUES null="NaN" />
     </FIELD>
-    <FIELD name="DE:RA" ucd="stat.correlation" datatype="float" width="5" precision="2"><!-- ucd="STAT_CORRELATION" -->
+    <FIELD name="DE:RA" ID="DE_RA" ucd="stat.correlation" datatype="float" width="5" precision="2"><!-- ucd="STAT_CORRELATION" -->
       <DESCRIPTION>[-1/1]? Correlation, DE/RA*cos(delta) (H19)</DESCRIPTION>
       <VALUES null="NaN" />
     </FIELD>
-    <FIELD name="Plx:RA" ucd="stat.correlation" datatype="float" width="5" precision="2"><!-- ucd="STAT_CORRELATION" -->
+    <FIELD name="Plx:RA" ID="Plx_RA" ucd="stat.correlation" datatype="float" width="5" precision="2"><!-- ucd="STAT_CORRELATION" -->
       <DESCRIPTION>[-1/1]? Correlation, Plx/RA*cos(delta) (H20)</DESCRIPTION>
       <VALUES null="NaN" />
     </FIELD>
-    <FIELD name="Plx:DE" ucd="stat.correlation" datatype="float" width="5" precision="2"><!-- ucd="STAT_CORRELATION" -->
+    <FIELD name="Plx:DE" ID="Plx_DE" ucd="stat.correlation" datatype="float" width="5" precision="2"><!-- ucd="STAT_CORRELATION" -->
       <DESCRIPTION>[-1/1]? Correlation, Plx/DE (H21)</DESCRIPTION>
       <VALUES null="NaN" />
     </FIELD>
-    <FIELD name="pmRA:RA" ucd="stat.correlation" datatype="float" width="5" precision="2"><!-- ucd="STAT_CORRELATION" -->
+    <FIELD name="pmRA:RA" ID="pmRA_R" ucd="stat.correlation" datatype="float" width="5" precision="2"><!-- ucd="STAT_CORRELATION" -->
       <DESCRIPTION>[-1/1]? Correlation, pmRA/RA*cos(delta) (H22)</DESCRIPTION>
       <VALUES null="NaN" />
     </FIELD>
-    <FIELD name="pmRA:DE" ucd="stat.correlation" datatype="float" width="5" precision="2"><!-- ucd="STAT_CORRELATION" -->
+    <FIELD name="pmRA:DE" ID="pmRA_DE" ucd="stat.correlation" datatype="float" width="5" precision="2"><!-- ucd="STAT_CORRELATION" -->
       <DESCRIPTION>[-1/1]? Correlation, pmRA/DE (H23)</DESCRIPTION>
       <VALUES null="NaN" />
     </FIELD>
-    <FIELD name="pmRA:Plx" ucd="stat.correlation" datatype="float" width="5" precision="2"><!-- ucd="STAT_CORRELATION" -->
+    <FIELD name="pmRA:Plx" ID="pmRA_Plx" ucd="stat.correlation" datatype="float" width="5" precision="2"><!-- ucd="STAT_CORRELATION" -->
       <DESCRIPTION>[-1/1]? Correlation, pmRA/Plx (H24)</DESCRIPTION>
       <VALUES null="NaN" />
     </FIELD>
-    <FIELD name="pmDE:RA" ucd="stat.correlation" datatype="float" width="5" precision="2"><!-- ucd="STAT_CORRELATION" -->
+    <FIELD name="pmDE:RA" ID="pmDE_RA" ucd="stat.correlation" datatype="float" width="5" precision="2"><!-- ucd="STAT_CORRELATION" -->
       <DESCRIPTION>[-1/1]? Correlation, pmDE/RA*cos(delta) (H25)</DESCRIPTION>
       <VALUES null="NaN" />
     </FIELD>
-    <FIELD name="pmDE:DE" ucd="stat.correlation" datatype="float" width="5" precision="2"><!-- ucd="STAT_CORRELATION" -->
+    <FIELD name="pmDE:DE" ID="pmDE_D" ucd="stat.correlation" datatype="float" width="5" precision="2"><!-- ucd="STAT_CORRELATION" -->
       <DESCRIPTION>[-1/1]? Correlation, pmDE/DE (H26)</DESCRIPTION>
       <VALUES null="NaN" />
     </FIELD>
-    <FIELD name="pmDE:Plx" ucd="stat.correlation" datatype="float" width="5" precision="2"><!-- ucd="STAT_CORRELATION" -->
+    <FIELD name="pmDE:Plx" ID="pmDE_Plx" ucd="stat.correlation" datatype="float" width="5" precision="2"><!-- ucd="STAT_CORRELATION" -->
       <DESCRIPTION>[-1/1]? Correlation, pmDE/Plx (H27)</DESCRIPTION>
       <VALUES null="NaN" />
     </FIELD>
-    <FIELD name="pmDE:pmRA" ucd="stat.correlation" datatype="float" width="5" precision="2"><!-- ucd="STAT_CORRELATION" -->
+    <FIELD name="pmDE:pmRA" ID="pmDE_pmRA" ucd="stat.correlation" datatype="float" width="5" precision="2"><!-- ucd="STAT_CORRELATION" -->
       <DESCRIPTION>[-1/1]? Correlation, pmDE/pmRA (H28)</DESCRIPTION>
       <VALUES null="NaN" />
     </FIELD>
-    <FIELD name="F1" ucd="stat.value;arith.ratio" datatype="short" width="3" unit="%"><!-- ucd="STAT_REJECT" -->
+    <FIELD name="F1" ucd="stat.value;arith.ratio" datatype="short" width="3"><!-- ucd="STAT_REJECT" -->
       <DESCRIPTION>? Percentage of rejected data (H29)</DESCRIPTION>
       <VALUES null="-32768" />
     </FIELD>
@@ -338,7 +338,7 @@ Constraint -out.meta=dhuM</INFO>
     <FIELD name="CPD" ucd="meta.id.cross" datatype="char" arraysize="10"><!-- ucd="ID_CROSSID" -->
       <DESCRIPTION>Cape Photographic DM &lt;I/108&gt; (H74)</DESCRIPTION>
     </FIELD>
-    <FIELD name="(V-I)red" ucd="phot.color;em.opt.V;em.opt.I" datatype="float" width="5" precision="2" unit="mag"><!-- ucd="PHOT_JHN_V-I" -->
+    <FIELD name="(V-I)red" ID="__V-I_red" ucd="phot.color;em.opt.V;em.opt.I" datatype="float" width="5" precision="2" unit="mag"><!-- ucd="PHOT_JHN_V-I" -->
       <DESCRIPTION>V-I used for reductions (H75)</DESCRIPTION>
     </FIELD>
     <FIELD name="SpType" ucd="src.spType" datatype="char" arraysize="12*"><!-- ucd="SPECT_TYPE_MK" -->

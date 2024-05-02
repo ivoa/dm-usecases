@@ -47,7 +47,7 @@ Constraint -out.meta=dhuM</INFO>
 <ATTRIBUTE dmrole="mango:EpochPosition.latitude" dmtype="ivoa:RealQuantity" ref="DEICRS" unit="deg"/>
 <ATTRIBUTE dmrole="mango:EpochPosition.pmLongitude" dmtype="ivoa:RealQuantity" ref="pmRA" unit="mas/yr"/>
 <ATTRIBUTE dmrole="mango:EpochPosition.pmLatitude" dmtype="ivoa:RealQuantity" ref="pmDE" unit="mas/yr"/>
-<ATTRIBUTE dmrole="mango:EpochPosition.epoch" dmtype="ivoa:RealQuantity" value="1991.250" unit="mas/yr"/>
+<ATTRIBUTE dmrole="mango:EpochPosition.epoch" dmtype="ivoa:RealQuantity" value="1991.250" unit="year"/>
 <REFERENCE dmrole="coords:Coordinate.coordSys" dmref="SpaceFrame_ICRS"/>
 </INSTANCE>
 </TEMPLATES>

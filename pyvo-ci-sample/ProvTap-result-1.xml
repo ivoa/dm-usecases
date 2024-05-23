@@ -1,0 +1,89 @@
+<?xml version='1.0'?>
+<VOTABLE version="1.4"
+ xmlns="http://www.ivoa.net/xml/VOTable/v1.3">
+<!--
+ !  VOTable written by STIL version 4.0 (uk.ac.starlink.votable.VOTableWriter)
+ !  at 2024-05-19T19:44:18
+ !-->
+<RESOURCE type="results" >
+
+<RESOURCE type='meta'>
+<VODML xmlns="http://www.ivoa.net/xml/mivot">
+<REPORT status="OK"/>
+<MODEL name="voprov" url="https://www.ivoa.net/xml/VODML/20191125/Provenance-v1.vo-dml.xml"/>
+<MODEL name="ivoa" url="https://ivoa.net/xml/VODML/IVOA-v1.vo-dml.xml" />
+<TEMPLATES tableref="res1"> 
+<INSTANCE dmtype="voprov:Entity">
+     <ATTRIBUTE dmrole="voprov:Entity.id" dmtype="ivoa:string" value="@@@@@"/>
+     <ATTRIBUTE dmrole="voprov:Entity.name" dmtype="ivoa:string" ref="tile_name"/>
+     <ATTRIBUTE dmrole="voprov:Entity.location" dmtype="ivoa:string" value ="@@@@@" />
+     <ATTRIBUTE dmrole="voprov:Entity.generatedAtTime" dmtype="ivoa:string" value ="@@@@@"/>
+     <ATTRIBUTE dmrole="voprov:Entity.invalidatedAtTime" dmtype="ivoa:string" value ="@@@@@" />
+     <ATTRIBUTE dmrole="voprov:Entity.comment" dmtype="ivoa:string" ref="tile_com" />
+     <ATTRIBUTE dmrole="voprov:Entity.classType" dmtype="ivoa:string" value ="@@@@@"/>
+     <ATTRIBUTE dmrole="voprov:Entity.value" dmtype="ivoa:string" value ="@@@@@" />
+     <INSTANCE dmrole="voprov:Entity.wasGeneratedBy" dmtype="voprov:WasGeneratedBy">
+	  <INSTANCE dmrole="voprov:WasGeneratedBy.activity" dmtype="voprov:Activity" >
+		  <ATTRIBUTE dmrole="voprov:Actvity.name" dmtype="ivoa:string" ref="gen_name" />      
+		  <ATTRIBUTE dmrole="voprov:Actvity.startTime" dmtype="ivoa:string" ref="gen_start" />      
+		  <ATTRIBUTE dmrole="voprov:Actvity.name" dmtype="ivoa:string" ref="gen_com" /> 
+	          <INSTANCE dmrole="voprov:Activity.Used" dmtype="voprov:Used">
+			  <COLLECTION dmrole="Used.entity" >
+	                     <INSTANCE dmtype="voprov:entity">
+				<ATTRIBUTE dmrole="voprov:Entity.name" dmtype="ivoa:string" ref="driz_name"/>
+				<ATTRIBUTE dmrole="voprov:Entity.comment" dmtype="ivoa:string" ref="driz_com"/>
+		             </INSTANCE>		  
+		          </COLLECTION>
+	          </INSTANCE>		  
+	 </INSTANCE>	 
+     </INSTANCE>	     
+</INSTANCE>
+</TEMPLATES>
+</VODML>
+</RESOURCE>
+
+<TABLE ID="res1" name="result_S1716147506717" nrows="3">
+<PARAM arraysize="2" datatype="char" name="QUERY_STATUS" value="OK"/>
+<PARAM arraysize="3" datatype="char" name="PROVIDER" value="CDS"/>
+<PARAM arraysize="482" datatype="char" name="QUERY" value="select tile.e_name as tile_name, tile.e_comment as tile_comment, hipsgen.a_name as hipsgen_name, hipsgen.a_starttime as hipsgen_start, hipsgen.a_comment as hipsgen_comment, drizzle.e_name as drizzle_name, drizzle.e_comment as drizzle_comment from entity tile join wasgeneratedby on tile.e_id = wgb_entity join activity hipsgen on wgb_activity = hipsgen.a_id join used on hipsgen.a_id = u_activity join entity drizzle on drizzle.e_id = u_entity where tile.e_name like '%Npix9199544' "/>
+<FIELD ID="tile_name" arraysize="*" datatype="char" name="tile_name" ucd="meta.title" utype="voprov:Entity.name"/>
+<FIELD ID="tile_com" arraysize="*" datatype="char" name="tile_comment" ucd="meta.description" utype="voprov:Entity.comment"/>
+<FIELD ID="gen_name" arraysize="*" datatype="char" name="hipsgen_name" ucd="meta.title" utype="voprov:Activity.name"/>
+<FIELD ID="gen_start" arraysize="*" datatype="char" name="hipsgen_start" ucd="time.start" utype="voprov:Activity.startTime"/>
+<FIELD ID="gen_com" arraysize="*" datatype="char" name="hipsgen_comment" ucd="meta.description" utype="voprov:Activity.comment"/>
+<FIELD ID="driz_name" arraysize="*" datatype="char" name="drizzle_name" ucd="meta.title" utype="voprov:Entity.name"/>
+<FIELD ID="driz_com" arraysize="*" datatype="char" name="drizzle_comment" ucd="meta.description" utype="voprov:Entity.comment"/>
+<DATA>
+<TABLEDATA>
+  <TR>
+    <TD>HST_B_Norder10_Npix9199544</TD>
+    <TD>Npix9199544 tile of HST-B HiPS of size 3.5*3.5 and including position 53.069038233321 and -27.822573192919</TD>
+    <TD>HST_B_Norder10_Npix9199544_Generation</TD>
+    <TD>2018-11-25T22:01Z</TD>
+    <TD>hipsGEN version 10.101 generation of  Npix9199544tile of HST-B HiPS</TD>
+    <TD>jcn614030_drc.fits</TD>
+    <TD>Drizzled HST image from ACS with filterCLEAR1L and F435W centered on 53.00678473642296 , -27.78192665265288 , with a position angle of 85.04776551398835 and 4214*0.05 arcsec x 4238*0.05 arsec field of view</TD>
+  </TR>
+  <TR>
+    <TD>HST_B_Norder10_Npix9199544</TD>
+    <TD>Npix9199544 tile of HST-B HiPS of size 3.5*3.5 and including position 53.069038233321 and -27.822573192919</TD>
+    <TD>HST_B_Norder10_Npix9199544_Generation</TD>
+    <TD>2018-11-25T22:01Z</TD>
+    <TD>hipsGEN version 10.101 generation of  Npix9199544tile of HST-B HiPS</TD>
+    <TD>jcn609020_drc.fits</TD>
+    <TD>Drizzled HST image from ACS with filterCLEAR1L and F435W centered on 52.99151354256089 , -27.88408454537657 , with a position angle of -3.965351763107996 and 4245*0.05 arcsec x 4278*0.05 arsec field of view</TD>
+  </TR>
+  <TR>
+    <TD>HST_B_Norder10_Npix9199544</TD>
+    <TD>Npix9199544 tile of HST-B HiPS of size 3.5*3.5 and including position 53.069038233321 and -27.822573192919</TD>
+    <TD>HST_B_Norder10_Npix9199544_Generation</TD>
+    <TD>2018-11-25T22:01Z</TD>
+    <TD>hipsGEN version 10.101 generation of  Npix9199544tile of HST-B HiPS</TD>
+    <TD>j8mt37011_drc.fits</TD>
+    <TD>Drizzled HST image from ACS with filterCLEAR1L and F435W centered on 53.00225346673538 , -27.78788832800237 , with a position angle of -3.906622001697139 and 4212*0.05 arcsec x 4239*0.05 arsec field of view</TD>
+  </TR>
+</TABLEDATA>
+</DATA>
+</TABLE>
+</RESOURCE>
+</VOTABLE>

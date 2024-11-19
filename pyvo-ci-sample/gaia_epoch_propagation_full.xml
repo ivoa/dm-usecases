@@ -35,7 +35,7 @@
     <COOSYS ID="J2000" system="eq_FK5" equinox="J2000" />
 
     <RESOURCE type="meta">
-      <VODML xmlns:dm-mapping="http://www.ivoa.net/xml/mivot">
+      <VODML xmlns="http://www.ivoa.net/xml/mivot">
         <MODEL name="mango" />
         <REPORT status="OK">hand-made mapping</REPORT>
         <GLOBALS>

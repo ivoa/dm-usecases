@@ -35,7 +35,7 @@
     <COOSYS ID="J2000" system="eq_FK5" equinox="J2000" />
 
     <RESOURCE type="meta">
-      <VODML xmlns:dm-mapping="http://www.ivoa.net/xml/mivot">
+      <VODML xmlns="http://www.ivoa.net/xml/mivot">
         <REPORT status="OK">hand-made mapping</REPORT>
           <MODEL name="ivoa" url="https://www.ivoa.net/xml/VODML/IVOA-v1.vo-dml.xml" />
           <MODEL name="coords" url="https://www.ivoa.net/xml/STC/20200908/Coords-v1.0.vo-dml.xml" />

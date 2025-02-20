@@ -5,7 +5,7 @@
   <RESOURCE ID="yCat_9057" name="IX/57" type="results">
 
     <RESOURCE type="meta">
-      <VODML xmlns:dm-mapping="http://www.ivoa.net/xml/merged-syntax">
+      <VODML xmlns="http://www.ivoa.net/xml/merged-syntax">
         <REPORT status="OK">hand-made mapping</REPORT>
 
         <MODEL name="meas" url="https://www.ivoa.net/xml/Meas/20200908/Meas-v1.0.vo-dml.xml" />
